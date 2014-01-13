@@ -99,5 +99,10 @@ namespace ChtemeleSurfaceApplication
         {
             //TODO: disable audio, animations here
         }
+
+        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
