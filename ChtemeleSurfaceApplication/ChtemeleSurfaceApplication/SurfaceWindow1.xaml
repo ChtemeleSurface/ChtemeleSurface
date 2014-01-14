@@ -9,7 +9,12 @@
 				Click="SurfaceButton_Click" Margin="0,1003,1824,0" Height="38" Width="73">
             Quitter
         </s:SurfaceButton>
+
+            <s:ScatterView Name="CarteNord"></s:ScatterView>
+            <s:ScatterView Name="CarteSud"></s:ScatterView>
+            <s:ScatterView Name="CarteEst"></s:ScatterView>
+            <s:ScatterView Name="CarteOuest"></s:ScatterView>
+      
     </Grid>
-
-
+   
 </s:SurfaceWindow>

@@ -30,6 +30,35 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
 
+            // CarteNord
+            ScatterViewItem CarteJoueurN = new ScatterViewItem();
+            CarteJoueurN.Content = new CartesJoueurs();
+            CarteJoueurN.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
+            CarteJoueurN.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
+            this.CarteNord.Items.Add(CarteJoueurN);
+
+            // CarteSud
+            ScatterViewItem CarteJoueurS = new ScatterViewItem();
+            CarteJoueurS.Content = new CartesJoueurs();
+            CarteJoueurS.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
+            CarteJoueurS.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
+            this.CarteSud.Items.Add(CarteJoueurS);
+
+            // CarteEst
+            ScatterViewItem CarteJoueurE = new ScatterViewItem();
+            CarteJoueurE.Content = new CartesJoueurs();
+            CarteJoueurE.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
+            CarteJoueurE.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
+            this.CarteEst.Items.Add(CarteJoueurE);
+
+            // CarteOuest
+            ScatterViewItem CarteJoueurO = new ScatterViewItem();
+            CarteJoueurO.Content = new CartesJoueurs();
+            CarteJoueurO.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
+            CarteJoueurO.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
+            this.CarteOuest.Items.Add(CarteJoueurO);
+
+
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
         }
