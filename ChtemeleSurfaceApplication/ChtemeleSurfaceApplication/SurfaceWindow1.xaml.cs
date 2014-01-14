@@ -65,6 +65,8 @@ namespace ChtemeleSurfaceApplication
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
+
+            ComputeWidgetsPositions(MainScatterView.Width, MainScatterView.Height);
         }
 
         /// <summary>
@@ -133,9 +135,33 @@ namespace ChtemeleSurfaceApplication
             //TODO: disable audio, animations here
         }
 
+<<<<<<< HEAD
+        /// <summary>
+        /// Re-dessine la fenêtre, repositionne les éléments
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainScatterView_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            ComputeWidgetsPositions(e.NewSize.Width, e.NewSize.Height);
+        }
+
+
+        private void ComputeWidgetsPositions(double x, double y)
+        {
+            PlayerSScatterView.Center = new Point(x / 2, y - (PlayerSScatterView.Height / 2));
+            PlayerOScatterView.Center = new Point(PlayerOScatterView.Height / 2, y / 2);
+            PlayerNScatterView.Center = new Point(x / 2, PlayerSScatterView.Height / 2);
+            PlayerEScatterView.Center = new Point(x - PlayerOScatterView.Height / 2, y/2);
+
+            CenterView.Height = y - PlayerSScatterView.Height - PlayerNScatterView.Height;
+            CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
+            CenterView.Center = new Point(x / 2, y / 2);
+=======
         private void SurfaceButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+>>>>>>> 12e679cd8ea979881d17bca23abf3947ebb87023
         }
     }
 }

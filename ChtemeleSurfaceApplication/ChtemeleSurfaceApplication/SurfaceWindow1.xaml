@@ -3,6 +3,69 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Title="ChtemeleSurfaceApplication" Height="1080" Width="1920">
+<<<<<<< HEAD
+
+    <s:ScatterView Name="MainScatterView" SizeChanged="MainScatterView_SizeChanged">
+
+        <s:ScatterViewItem Name="PlayerSScatterView"
+                           Orientation="0"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="600"
+                           Height="150"
+                           >
+            Joueur S
+        </s:ScatterViewItem>
+
+        <s:ScatterViewItem Name="PlayerOScatterView"
+                           Orientation="90"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="600"
+                           Height="150"
+                           >
+            Joueur O
+        </s:ScatterViewItem>
+
+        <s:ScatterViewItem Name="PlayerNScatterView"
+                           Orientation="180"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="600"
+                           Height="150"
+                           >
+            Joueur N
+        </s:ScatterViewItem>
+
+        <s:ScatterViewItem Name="PlayerEScatterView"
+                           Orientation="270"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="600"
+                           Height="150"
+                           >
+            Joueur E
+        </s:ScatterViewItem>
+
+        <s:ScatterViewItem Name="CenterView"
+                           Orientation="0"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="100"
+                           Height="100"
+                           Background="AntiqueWhite"
+                           >
+            CenterView
+        </s:ScatterViewItem>
+
+    </s:ScatterView>
+
+=======
   <Grid>
         <s:ScatterViewItem Name="clavier" Width="400" Height="130"/>
         <s:SurfaceButton	HorizontalAlignment="Center"
@@ -18,4 +81,5 @@
       
     </Grid>
    
+>>>>>>> 12e679cd8ea979881d17bca23abf3947ebb87023
 </s:SurfaceWindow>
