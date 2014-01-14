@@ -14,7 +14,9 @@
                            Width="700"
                            Height="150"
                            >
-            Joueur S
+            <s:ScatterView>
+                <s:ScatterViewItem Name="CarteSud"></s:ScatterViewItem>
+            </s:ScatterView>
         </s:ScatterViewItem>
 
         <s:ScatterViewItem Name="PlayerOScatterView"
@@ -25,7 +27,9 @@
                            Width="700"
                            Height="150"
                            >
-            Joueur O
+            <s:ScatterView>
+                <s:ScatterViewItem Name="CarteOuest"></s:ScatterViewItem>
+            </s:ScatterView>
         </s:ScatterViewItem>
 
         <s:ScatterViewItem Name="PlayerNScatterView"
@@ -36,7 +40,9 @@
                            Width="700"
                            Height="150"
                            >
-            Joueur N
+            <s:ScatterView>
+                <s:ScatterViewItem Name="CarteNord"></s:ScatterViewItem>
+            </s:ScatterView>
         </s:ScatterViewItem>
 
         <s:ScatterViewItem Name="PlayerEScatterView"
@@ -47,7 +53,9 @@
                            Width="700"
                            Height="150"
                            >
-            Joueur E
+            <s:ScatterView>
+                <s:ScatterViewItem Name="CarteEst"></s:ScatterViewItem>
+            </s:ScatterView>
         </s:ScatterViewItem>
 
         <s:ScatterViewItem Name="CenterView"
@@ -63,10 +71,5 @@
         </s:ScatterViewItem>
 
     </s:ScatterView>
-
-            <!--<s:ScatterView Name="CarteNord"></s:ScatterView>
-            <s:ScatterView Name="CarteSud"></s:ScatterView>
-            <s:ScatterView Name="CarteEst"></s:ScatterView>
-            <s:ScatterView Name="CarteOuest"></s:ScatterView>-->
       
 </s:SurfaceWindow>
