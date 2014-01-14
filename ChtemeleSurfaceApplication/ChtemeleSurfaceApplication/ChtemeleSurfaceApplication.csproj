@@ -66,6 +66,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageCode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RenduHTML.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SurfaceWindow1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +87,12 @@
     </Compile>
     <Compile Include="Clavier.xaml.cs">
       <DependentUpon>Clavier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageCode.xaml.cs">
+      <DependentUpon>PageCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RenduHTML.xaml.cs">
+      <DependentUpon>RenduHTML.xaml</DependentUpon>
     </Compile>
     <Compile Include="SurfaceWindow1.xaml.cs">
       <DependentUpon>SurfaceWindow1.xaml</DependentUpon>

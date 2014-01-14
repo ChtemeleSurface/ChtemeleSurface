@@ -6,7 +6,7 @@
     Title="ChtemeleSurfaceApplication" Height="1080" Width="1920">
 
     <s:ScatterView Name="MainScatterView" SizeChanged="MainScatterView_SizeChanged">
-
+             
         <s:ScatterViewItem Name="PlayerSScatterView"
                            Orientation="0"
                            CanMove="False"
@@ -76,7 +76,11 @@
                            Height="100"
                            Background="AntiqueWhite"
                            >
-            CenterView
+            <s:ScatterView Name="ScatterCenterView">
+                <custom:PageCode x:Name="PageCode" CanScale="False" Orientation="0"></custom:PageCode>
+                <Rectangle Name="ZonePioche"></Rectangle>
+                <custom:RenduHTML x:Name="PageRendu" CanScale="False" Orientation="0"></custom:RenduHTML>
+            </s:ScatterView>
         </s:ScatterViewItem>
 
     </s:ScatterView>

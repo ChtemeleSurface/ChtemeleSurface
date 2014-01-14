@@ -48,13 +48,11 @@ namespace ChtemeleSurfaceApplication
             CarteJoueurN.Width = CartesJoueurs.tailleW;
             CarteJoueurN.Height = CartesJoueurs.tailleH;
 
-
             // CarteSud
             ScatterViewItem CarteJoueurS = new ScatterViewItem();
             CarteJoueurS.Content = new CartesJoueurs();
             CarteJoueurS.Width = CartesJoueurs.tailleW;
             CarteJoueurS.Height = CartesJoueurs.tailleH;
-
 
             // CarteEst
             ScatterViewItem CarteJoueurE = new ScatterViewItem();
@@ -62,12 +60,42 @@ namespace ChtemeleSurfaceApplication
             CarteJoueurE.Width = CartesJoueurs.tailleW;
             CarteJoueurE.Height = CartesJoueurs.tailleH;
 
-
             // CarteOuest
             ScatterViewItem CarteJoueurO = new ScatterViewItem();
             CarteJoueurO.Content = new CartesJoueurs();
             CarteJoueurO.Width = CartesJoueurs.tailleW;
             CarteJoueurO.Height = CartesJoueurs.tailleH;
+
+            //Initialisation positions zone Nord
+            DocNord.Center = new Point(PlayerNScatterView.Width / 4, PlayerNScatterView.Height / 2);
+            ClavierNord.Center = new Point(PlayerNScatterView.Width / 2, PlayerNScatterView.Height / 2);
+            CarteNord.Center = new Point((PlayerNScatterView.Width / 2) + (PlayerNScatterView.Width / 4), PlayerNScatterView.Height / 2);
+
+            //Initialisation positions zone Sud
+            DocSud.Center = new Point(PlayerSScatterView.Width / 4, PlayerSScatterView.Height / 2);
+            ClavierSud.Center = new Point(PlayerSScatterView.Width / 2, PlayerSScatterView.Height / 2);
+            CarteSud.Center = new Point((PlayerSScatterView.Width / 2) + (PlayerSScatterView.Width / 4), PlayerSScatterView.Height / 2);
+
+            //Initialisation positions zone Est
+            DocEst.Center = new Point(PlayerEScatterView.Width / 4, PlayerEScatterView.Height / 2);
+            ClavierEst.Center = new Point(PlayerEScatterView.Width / 2, PlayerEScatterView.Height / 2);
+            CarteEst.Center = new Point((PlayerEScatterView.Width / 2) + (PlayerEScatterView.Width / 4), PlayerEScatterView.Height / 2);
+
+            //Initialisation positions zone Ouest
+            DocOuest.Center = new Point(PlayerOScatterView.Width / 4, PlayerOScatterView.Height / 2);
+            ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
+            CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 4), PlayerOScatterView.Height / 2);
+
+            //Position Widgets Centeriew
+
+
+
+            //Page de code balise carte
+
+
+
+            //Page rendu HTML
+
 
 
 
@@ -167,26 +195,7 @@ namespace ChtemeleSurfaceApplication
             CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
             CenterView.Center = new Point(x / 2, y / 2);
 
-            //Initialisation positions zone Nord
-            DocNord.Center = new Point(PlayerNScatterView.Width / 4, PlayerNScatterView.Height / 2);
-            ClavierNord.Center = new Point(PlayerNScatterView.Width / 2, PlayerNScatterView.Height / 2);
-            CarteNord.Center = new Point((PlayerNScatterView.Width / 2) + (PlayerNScatterView.Width / 4), PlayerNScatterView.Height / 2);
             
-            //Initialisation positions zone Sud
-            DocSud.Center = new Point(PlayerSScatterView.Width / 4, PlayerSScatterView.Height / 2);
-            ClavierSud.Center = new Point(PlayerSScatterView.Width / 2, PlayerSScatterView.Height / 2);
-            CarteSud.Center = new Point((PlayerSScatterView.Width / 2) + (PlayerSScatterView.Width / 4), PlayerSScatterView.Height / 2);
-
-            //Initialisation positions zone Est
-            DocEst.Center = new Point(PlayerEScatterView.Width / 4, PlayerEScatterView.Height / 2);
-            ClavierEst.Center = new Point(PlayerEScatterView.Width / 2, PlayerEScatterView.Height / 2);
-            CarteEst.Center = new Point((PlayerEScatterView.Width / 2) + (PlayerEScatterView.Width / 4), PlayerEScatterView.Height / 2);
-
-            //Initialisation positions zone Ouest
-            DocOuest.Center = new Point(PlayerOScatterView.Width / 4, PlayerOScatterView.Height / 2);
-            ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
-            CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 4), PlayerOScatterView.Height / 2);
-
         }
     }
 }
