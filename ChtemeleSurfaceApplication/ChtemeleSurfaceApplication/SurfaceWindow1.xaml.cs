@@ -167,7 +167,26 @@ namespace ChtemeleSurfaceApplication
             CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
             CenterView.Center = new Point(x / 2, y / 2);
 
-            //Mise en page 
+            //Initialisation positions zone Nord
+            DocNord.Center = new Point(PlayerNScatterView.Width / 4, PlayerNScatterView.Height / 2);
+            ClavierNord.Center = new Point(PlayerNScatterView.Width / 2, PlayerNScatterView.Height / 2);
+            CarteNord.Center = new Point((PlayerNScatterView.Width / 2) + (PlayerNScatterView.Width / 4), PlayerNScatterView.Height / 2);
+            
+            //Initialisation positions zone Sud
+            DocSud.Center = new Point(PlayerSScatterView.Width / 4, PlayerSScatterView.Height / 2);
+            ClavierSud.Center = new Point(PlayerSScatterView.Width / 2, PlayerSScatterView.Height / 2);
+            CarteSud.Center = new Point((PlayerSScatterView.Width / 2) + (PlayerSScatterView.Width / 4), PlayerSScatterView.Height / 2);
+
+            //Initialisation positions zone Est
+            DocEst.Center = new Point(PlayerEScatterView.Width / 4, PlayerEScatterView.Height / 2);
+            ClavierEst.Center = new Point(PlayerEScatterView.Width / 2, PlayerEScatterView.Height / 2);
+            CarteEst.Center = new Point((PlayerEScatterView.Width / 2) + (PlayerEScatterView.Width / 4), PlayerEScatterView.Height / 2);
+
+            //Initialisation positions zone Ouest
+            DocOuest.Center = new Point(PlayerOScatterView.Width / 4, PlayerOScatterView.Height / 2);
+            ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
+            CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 4), PlayerOScatterView.Height / 2);
+
         }
     }
 }

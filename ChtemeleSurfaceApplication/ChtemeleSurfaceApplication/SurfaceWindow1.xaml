@@ -16,9 +16,9 @@
                            Height="150"
                            >
             <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteSud"></custom:CartesJoueurs>
-                <s:ScatterViewItem Name="DocSud"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierSud"></s:ScatterViewItem>
+                <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" Orientation="0"></custom:CartesJoueurs>
+                <s:ScatterViewItem Name="DocSud" CanScale="False" Orientation="0"></s:ScatterViewItem>
+                <s:ScatterViewItem Name="ClavierSud" CanScale="False" Orientation="0"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
 
@@ -31,9 +31,9 @@
                            Height="150"
                            >
             <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteOuest"></custom:CartesJoueurs>
-                <s:ScatterViewItem Name="DocOuest"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierOuest"></s:ScatterViewItem>
+                <custom:CartesJoueurs x:Name="CarteOuest"  CanScale="False" Orientation="0"></custom:CartesJoueurs>
+                <s:ScatterViewItem Name="DocOuest" CanScale="False" Orientation="0"></s:ScatterViewItem>
+                <s:ScatterViewItem Name="ClavierOuest" CanScale="False" Orientation="0"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
 
@@ -46,9 +46,9 @@
                            Height="150"
                            >
             <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteNord"></custom:CartesJoueurs>
-                <s:ScatterViewItem Name="DocNord"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierNord"></s:ScatterViewItem>
+                <custom:CartesJoueurs x:Name="CarteNord" CanScale="False" Orientation="0"></custom:CartesJoueurs>
+                <s:ScatterViewItem Name="DocNord"  CanScale="False" Orientation="0"></s:ScatterViewItem>
+                <s:ScatterViewItem Name="ClavierNord"  CanScale="False" Orientation="0"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
 
@@ -61,9 +61,9 @@
                            Height="150"
                            >
             <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteEst"></custom:CartesJoueurs>
-                <s:ScatterViewItem Name="DocEst"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierEst"></s:ScatterViewItem>
+                <custom:CartesJoueurs x:Name="CarteEst" CanScale="False" Orientation="0"></custom:CartesJoueurs>
+                <s:ScatterViewItem Name="DocEst"  CanScale="False" Orientation="0"></s:ScatterViewItem>
+                <s:ScatterViewItem Name="ClavierEst"  CanScale="False" Orientation="0"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
 
