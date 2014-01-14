@@ -64,6 +64,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Class_Card.cs" />
+    <Compile Include="Class_CardAddOn.cs" />
+    <Compile Include="Class_CardAttack.cs" />
+    <Compile Include="Class_CardEvent.cs" />
+    <Compile Include="Class_CardHtml.cs" />
+    <Compile Include="Class_Combo.cs" />
+    <Compile Include="Class_Game.cs" />
+    <Compile Include="Class_Player.cs" />
     <Compile Include="SurfaceWindow1.xaml.cs">
       <DependentUpon>SurfaceWindow1.xaml</DependentUpon>
       <SubType>Code</SubType>
