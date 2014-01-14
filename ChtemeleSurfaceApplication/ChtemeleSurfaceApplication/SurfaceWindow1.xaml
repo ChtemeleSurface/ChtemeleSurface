@@ -17,7 +17,7 @@
                            >
             <s:ScatterView>
                 <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" Orientation="0"></custom:CartesJoueurs>
-                <s:ScatterViewItem Name="DocSud" CanScale="False" Orientation="0">
+                <s:ScatterViewItem Name="DocSud" CanScale="False" CanRotate="False" Orientation="0">
                     <s:ElementMenu ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <s:ElementMenuItem Header="Balises">
                             <s:ElementMenuItem Header="Balises Ouvrantes">
@@ -86,7 +86,7 @@
                         </s:ElementMenuItem>
                     </s:ElementMenu>
                 </s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierSud" CanScale="False" Orientation="0"></s:ScatterViewItem>
+                <s:ScatterViewItem Name="ClavierSud" CanScale="False" CanRotate="True" Orientation="0"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
 
