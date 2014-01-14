@@ -14,7 +14,7 @@
                            Width="700"
                            Height="150"
                            >
-            <s:ScatterView>
+            <s:ScatterView Name="scatterSud">
                 <s:ScatterViewItem Name="CarteSud"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
@@ -27,7 +27,7 @@
                            Width="700"
                            Height="150"
                            >
-            <s:ScatterView>
+            <s:ScatterView Name="scatterOuest">
                 <s:ScatterViewItem Name="CarteOuest"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
@@ -40,7 +40,7 @@
                            Width="700"
                            Height="150"
                            >
-            <s:ScatterView>
+            <s:ScatterView Name="scatterNord">
                 <s:ScatterViewItem Name="CarteNord"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
@@ -53,7 +53,7 @@
                            Width="700"
                            Height="150"
                            >
-            <s:ScatterView>
+            <s:ScatterView Name="scatterEst">
                 <s:ScatterViewItem Name="CarteEst"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>

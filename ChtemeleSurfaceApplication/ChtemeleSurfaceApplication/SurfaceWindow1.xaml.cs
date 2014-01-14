@@ -30,9 +30,17 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
 
-            /*ScatterViewItem clavier = new ScatterViewItem();
-            clavier.Content = new Clavier();
-            this.clavier.Content = clavier;*/
+            //Clavier Sud
+            ScatterViewItem clav = new ScatterViewItem();
+            clav.Content = new Clavier();
+            clav.Width = 400;
+            clav.Height = 130;
+            clav.Center = new System.Windows.Point(clav.Width/2, clav.Height/2);
+            clav.Orientation = 0;
+            clav.CanMove = false;
+            clav.CanRotate = false;
+            clav.CanScale = false;
+            this.scatterSud.Items.Add(clav);
 
             // CarteNord
             ScatterViewItem CarteJoueurN = new ScatterViewItem();
