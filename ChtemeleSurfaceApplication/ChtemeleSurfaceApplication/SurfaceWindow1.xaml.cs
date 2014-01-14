@@ -88,7 +88,9 @@ namespace ChtemeleSurfaceApplication
 
             //Position Widgets Centeriew
 
-
+            PageCode.Height = ScatterCenterView.Height;
+            PageRendu.Height = ScatterCenterView.Height;
+            ZonePioche.Height = ScatterCenterView.Height;
 
             //Page de code balise carte
 
