@@ -11,6 +11,8 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -24,36 +26,68 @@
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Label Grid.ColumnSpan="9"/>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="0" Click="SurfaceButton_Click">A</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="1" Click="SurfaceButton_Click">Z</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="2" Click="SurfaceButton_Click">E</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="3" Click="SurfaceButton_Click">R</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="4" Click="SurfaceButton_Click">T</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="5" Click="SurfaceButton_Click">Y</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="6" Click="SurfaceButton_Click">U</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="7" Click="SurfaceButton_Click">I</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="8" Click="SurfaceButton_Click">O</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="9" Click="SurfaceButton_Click">P</s:SurfaceButton>
+        <Label Grid.ColumnSpan="1"/>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="0" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Echap</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="2" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">1</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="3" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">2</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="4" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">3</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="5" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">4</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="6" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">5</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="7" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">6</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="8" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">7</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="9" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">8</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="10" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">9</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="11" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">0</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="12" Click="SurfaceButton_Click" Grid.ColumnSpan="3" FontSize="10" Padding="3,1,10,10">RetArr</s:SurfaceButton>
 
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="0" Click="SurfaceButton_Click">Q</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="1" Click="SurfaceButton_Click">S</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="2" Click="SurfaceButton_Click">D</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="3" Click="SurfaceButton_Click">F</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="4" Click="SurfaceButton_Click">G</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="5" Click="SurfaceButton_Click">H</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="6" Click="SurfaceButton_Click">J</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="7" Click="SurfaceButton_Click">K</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="8" Click="SurfaceButton_Click">L</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="9" Click="SurfaceButton_Click">M</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="0" Click="SurfaceButton_Click" Grid.ColumnSpan="3" FontSize="10" Padding="3,1,10,10">Tab</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="3" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">A</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="4" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Z</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="5" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">E</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="6" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">R</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="7" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">T</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="8" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Y</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="9" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">U</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="10" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">I</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="11" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">O</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="12" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">P</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="13" Click="SurfaceButton_Click" Grid.ColumnSpan="2" Grid.RowSpan="2" FontSize="10" Padding="3,1,10,10">Entrée</s:SurfaceButton>
 
-        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="0" Click="SurfaceButton_Click">W</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="1" Click="SurfaceButton_Click">X</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="2" Click="SurfaceButton_Click">C</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="3" Click="SurfaceButton_Click">V</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="4" Click="SurfaceButton_Click">B</s:SurfaceButton>
-        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="5" Click="SurfaceButton_Click">N</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="0" Click="SurfaceButton_Click" Grid.ColumnSpan="3" FontSize="10" Padding="3,1,10,10">Verr.maj</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="3" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Q</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="4" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">S</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="5" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">D</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="6" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">F</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="7" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">G</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="8" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">H</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="9" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">J</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="10" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">K</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="11" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">L</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="12" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">M</s:SurfaceButton>
+
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="0" Click="SurfaceButton_Click" Grid.ColumnSpan="3" FontSize="10" Padding="3,1,10,10">Maj</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="3" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">W</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="4" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">X</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="5" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">C</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="6" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">V</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="7" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">B</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="8" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">N</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="9" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">?</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="10" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">.</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="11" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Maj</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="13" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Suppr</s:SurfaceButton>
+
+        <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="0" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Ctrl</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="2" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Alt</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="4" Click="SurfaceButton_Click" Grid.ColumnSpan="7" FontSize="10" Padding="3,1,10,10"></s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="11" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Alt Gr</s:SurfaceButton>
+        <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="13" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Ctrl</s:SurfaceButton>
     </Grid>
 </UserControl>
