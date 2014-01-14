@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="ChtemeleSurfaceApplication.Clavier"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:s="http://schemas.microsoft.com/surface/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="130" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="9"/>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="0" Click="SurfaceButton_Click">A</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="1" Click="SurfaceButton_Click">Z</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="2" Click="SurfaceButton_Click">E</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="3" Click="SurfaceButton_Click">R</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="4" Click="SurfaceButton_Click">T</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="5" Click="SurfaceButton_Click">Y</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="6" Click="SurfaceButton_Click">U</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="7" Click="SurfaceButton_Click">I</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="8" Click="SurfaceButton_Click">O</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="0" Grid.Column="9" Click="SurfaceButton_Click">P</s:SurfaceButton>
+
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="0" Click="SurfaceButton_Click">Q</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="1" Click="SurfaceButton_Click">S</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="2" Click="SurfaceButton_Click">D</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="3" Click="SurfaceButton_Click">F</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="4" Click="SurfaceButton_Click">G</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="5" Click="SurfaceButton_Click">H</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="6" Click="SurfaceButton_Click">J</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="7" Click="SurfaceButton_Click">K</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="8" Click="SurfaceButton_Click">L</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="1" Grid.Column="9" Click="SurfaceButton_Click">M</s:SurfaceButton>
+
+        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="0" Click="SurfaceButton_Click">W</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="1" Click="SurfaceButton_Click">X</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="2" Click="SurfaceButton_Click">C</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="3" Click="SurfaceButton_Click">V</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="4" Click="SurfaceButton_Click">B</s:SurfaceButton>
+        <s:SurfaceButton Margin="5" Grid.Row="2" Grid.Column="5" Click="SurfaceButton_Click">N</s:SurfaceButton>
+    </Grid>
+</UserControl>

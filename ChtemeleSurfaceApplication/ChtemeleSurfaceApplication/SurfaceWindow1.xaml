@@ -4,6 +4,7 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Title="ChtemeleSurfaceApplication" Height="1080" Width="1920">
   <Grid>
+        <s:ScatterViewItem Name="clavier" Width="400" Height="130"/>
         <s:SurfaceButton	HorizontalAlignment="Center"
 				VerticalAlignment="Center"
 				Click="SurfaceButton_Click" Margin="0,1003,1824,0" Height="38" Width="73">

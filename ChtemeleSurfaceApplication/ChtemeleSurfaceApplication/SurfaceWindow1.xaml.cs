@@ -30,6 +30,10 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
 
+            ScatterViewItem clavier = new ScatterViewItem();
+            clavier.Content = new Clavier();
+            this.clavier.Content = clavier;
+
             // CarteNord
             ScatterViewItem CarteJoueurN = new ScatterViewItem();
             CarteJoueurN.Content = new CartesJoueurs();
