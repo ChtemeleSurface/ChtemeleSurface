@@ -86,12 +86,6 @@ namespace ChtemeleSurfaceApplication
             ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
             CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 4), PlayerOScatterView.Height / 2);
 
-            //Position Widgets Centeriew
-
-            PageCode.Height = ScatterCenterView.Height;
-            PageRendu.Height = ScatterCenterView.Height;
-            ZonePioche.Height = ScatterCenterView.Height;
-
             //Page de code balise carte
 
 
@@ -195,9 +189,23 @@ namespace ChtemeleSurfaceApplication
             //taille et position du centralview
             CenterView.Height = y - PlayerSScatterView.Height - PlayerNScatterView.Height;
             CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
-            CenterView.Center = new Point(x / 2, y / 2);
+            CenterView.Center = new Point(x / 2.0, y / 2.0);
 
-            
+            //Position Widgets Centeriew
+            ScatterCenterView.Height = CenterView.Height;
+            ScatterCenterView.Width = CenterView.Width;
+
+            PageCode.Height = ScatterCenterView.Height;
+            PageRendu.Height = ScatterCenterView.Height;
+            ZonePioche.Height = ScatterCenterView.Height;
+
+            ZonePioche.Width = ScatterCenterView.Width/10;
+            PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+            PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+
+            ZonePioche.Center = new Point(ScatterCenterView.Width / 2.0, ScatterCenterView.Height / 2.0);
+            PageCode.Center = new Point(PageCode.Width/2.0, ScatterCenterView.Height/2.0);
+            PageRendu.Center = new Point(ScatterCenterView.Width - PageCode.Width / 2.0, ScatterCenterView.Height / 2.0);
         }
     }
 }

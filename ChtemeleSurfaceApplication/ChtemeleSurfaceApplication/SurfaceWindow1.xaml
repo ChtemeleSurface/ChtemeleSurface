@@ -78,7 +78,7 @@
                            >
             <s:ScatterView Name="ScatterCenterView">
                 <custom:PageCode x:Name="PageCode" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:PageCode>
-                <s:ScatterViewItem Name="ZonePioche" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
+                <s:ScatterViewItem x:Name="ZonePioche" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
                 <custom:RenduHTML x:Name="PageRendu" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:RenduHTML>
             </s:ScatterView>
         </s:ScatterViewItem>
