@@ -12,12 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Microsoft.Surface.Presentation.Controls;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
     /// Logique d'interaction pour CartesJoueurs.xaml
     /// </summary>
-    public partial class CartesJoueurs : UserControl
+    public partial class CartesJoueurs : ScatterViewItem
     {
         public static int tailleW = 200;
         public static int tailleH = 150;

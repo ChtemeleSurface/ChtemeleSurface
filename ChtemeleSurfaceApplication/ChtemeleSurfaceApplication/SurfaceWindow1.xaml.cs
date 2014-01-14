@@ -148,14 +148,18 @@ namespace ChtemeleSurfaceApplication
 
         private void ComputeWidgetsPositions(double x, double y)
         {
+            //Position des zones joueurs
             PlayerSScatterView.Center = new Point(x / 2, y - (PlayerSScatterView.Height / 2));
             PlayerOScatterView.Center = new Point(PlayerOScatterView.Height / 2, y / 2);
             PlayerNScatterView.Center = new Point(x / 2, PlayerSScatterView.Height / 2);
             PlayerEScatterView.Center = new Point(x - PlayerOScatterView.Height / 2, y/2);
 
+            //taille et position du centralview
             CenterView.Height = y - PlayerSScatterView.Height - PlayerNScatterView.Height;
             CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
             CenterView.Center = new Point(x / 2, y / 2);
+
+            //Mise en page 
         }
     }
 }
