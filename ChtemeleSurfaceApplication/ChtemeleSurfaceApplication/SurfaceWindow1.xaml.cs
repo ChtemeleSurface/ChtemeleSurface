@@ -30,7 +30,7 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
 
-            ScatterViewItem clavier = new ScatterViewItem();
+            /* ScatterViewItem clavier = new ScatterViewItem();
             clavier.Content = new Clavier();
             this.clavier.Content = clavier;
 
@@ -60,7 +60,7 @@ namespace ChtemeleSurfaceApplication
             CarteJoueurO.Content = new CartesJoueurs();
             CarteJoueurO.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
             CarteJoueurO.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
-            this.CarteOuest.Items.Add(CarteJoueurO);
+            this.CarteOuest.Items.Add(CarteJoueurO);*/
 
 
             // Add handlers for window availability events
@@ -135,7 +135,6 @@ namespace ChtemeleSurfaceApplication
             //TODO: disable audio, animations here
         }
 
-<<<<<<< HEAD
         /// <summary>
         /// Re-dessine la fenêtre, repositionne les éléments
         /// </summary>
@@ -157,11 +156,6 @@ namespace ChtemeleSurfaceApplication
             CenterView.Height = y - PlayerSScatterView.Height - PlayerNScatterView.Height;
             CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
             CenterView.Center = new Point(x / 2, y / 2);
-=======
-        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
->>>>>>> 12e679cd8ea979881d17bca23abf3947ebb87023
         }
     }
 }
