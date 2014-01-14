@@ -19,9 +19,13 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class CartesJoueurs : UserControl
     {
+        public static int tailleW = 200;
+        public static int tailleH = 150;
+
         public CartesJoueurs()
         {
             InitializeComponent();
+
         }
     }
 }

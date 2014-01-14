@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:s="http://schemas.microsoft.com/surface/2008"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="500">
+             d:DesignHeight="150" d:DesignWidth="200">
 
-    <Grid ShowGridLines="False" Background="White">
+    <Grid ShowGridLines="True" Background="White" Height="150" Width="200">
         <Grid.Resources>
             <Style TargetType="{x:Type ColumnDefinition}">
                 <Setter Property="Width" Value="30"/>
@@ -25,18 +25,22 @@
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="353" />
-            <ColumnDefinition Width="147*" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="80" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="105"/>
-            <RowDefinition Height="245*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
-
+        
         <!--  <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource DayOfWeek}">NomJoueur</TextBlock> -->
 
 
-        <TextBlock FontSize="25" FontWeight="Bold" Grid.Column="0" Grid.Row="0" Name="Pseudo">(Nom navigateur)</TextBlock>
+        <TextBlock Name="PseudoCarte" Grid.Column="0" Grid.Row="0" FontSize="12" FontWeight="Bold" >(Nom navigateur)</TextBlock>
+        <TextBlock Name="PoseeCarte" Grid.Column="0" Grid.Row="1" FontSize="10" FontWeight="Bold">Dernière carte posée :</TextBlock>
+        <TextBlock Name="BonusCarte" Grid.Column="1" Grid.Row="0" FontSize="10" FontWeight="Bold">Bonus : </TextBlock>
+        <TextBlock Name="NbPointCarte" Grid.Column="1" Grid.Row="1" FontSize="8" FontWeight="Bold">Nombre de points :</TextBlock>
+        
 
     </Grid>
 

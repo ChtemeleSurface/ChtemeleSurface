@@ -12,6 +12,6 @@ namespace ChtemeleSurfaceApplication
         // ??? Score
         private int score;
         // Tableau du dernier combo, 12 étant le nb max de carte en main
-        private fixed int lastCombo [12];
+        private  int []lastCombo = new int [12];
     }
 }

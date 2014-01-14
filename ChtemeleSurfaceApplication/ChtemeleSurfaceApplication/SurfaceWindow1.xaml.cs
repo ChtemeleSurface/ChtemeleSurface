@@ -33,29 +33,29 @@ namespace ChtemeleSurfaceApplication
             // CarteNord
             ScatterViewItem CarteJoueurN = new ScatterViewItem();
             CarteJoueurN.Content = new CartesJoueurs();
-            CarteJoueurN.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
-            CarteJoueurN.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
+            CarteJoueurN.Width = CartesJoueurs.tailleW;
+            CarteJoueurN.Height = CartesJoueurs.tailleH;
             this.CarteNord.Items.Add(CarteJoueurN);
 
             // CarteSud
             ScatterViewItem CarteJoueurS = new ScatterViewItem();
             CarteJoueurS.Content = new CartesJoueurs();
-            CarteJoueurS.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
-            CarteJoueurS.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
+            CarteJoueurS.Width = CartesJoueurs.tailleW;
+            CarteJoueurS.Height = CartesJoueurs.tailleH;
             this.CarteSud.Items.Add(CarteJoueurS);
 
             // CarteEst
             ScatterViewItem CarteJoueurE = new ScatterViewItem();
             CarteJoueurE.Content = new CartesJoueurs();
-            CarteJoueurE.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
-            CarteJoueurE.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
+            CarteJoueurE.Width = CartesJoueurs.tailleW;
+            CarteJoueurE.Height = CartesJoueurs.tailleH;
             this.CarteEst.Items.Add(CarteJoueurE);
 
             // CarteOuest
             ScatterViewItem CarteJoueurO = new ScatterViewItem();
             CarteJoueurO.Content = new CartesJoueurs();
-            CarteJoueurO.Width = InteractiveSurface.PrimarySurfaceDevice.Bounds.Width / 4;
-            CarteJoueurO.Height = InteractiveSurface.PrimarySurfaceDevice.Bounds.Height / 4;
+            CarteJoueurO.Width = CartesJoueurs.tailleW;
+            CarteJoueurO.Height = CartesJoueurs.tailleH;
             this.CarteOuest.Items.Add(CarteJoueurO);
 
 
