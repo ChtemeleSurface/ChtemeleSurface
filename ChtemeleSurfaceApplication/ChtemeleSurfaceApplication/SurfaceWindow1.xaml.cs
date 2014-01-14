@@ -30,6 +30,10 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
 
+            /*ScatterViewItem clavier = new ScatterViewItem();
+            clavier.Content = new Clavier();
+            this.clavier.Content = clavier;
+
             // CarteNord
             ScatterViewItem CarteJoueurN = new ScatterViewItem();
             CarteJoueurN.Content = new CartesJoueurs();
@@ -56,11 +60,13 @@ namespace ChtemeleSurfaceApplication
             CarteJoueurO.Content = new CartesJoueurs();
             CarteJoueurO.Width = CartesJoueurs.tailleW;
             CarteJoueurO.Height = CartesJoueurs.tailleH;
-            this.CarteOuest.Items.Add(CarteJoueurO);
+            this.CarteOuest.Items.Add(CarteJoueurO);*/
 
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
+
+            ComputeWidgetsPositions(MainScatterView.Width, MainScatterView.Height);
         }
 
         /// <summary>
@@ -129,9 +135,27 @@ namespace ChtemeleSurfaceApplication
             //TODO: disable audio, animations here
         }
 
-        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Re-dessine la fenêtre, repositionne les éléments
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainScatterView_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            this.Close();
+            ComputeWidgetsPositions(e.NewSize.Width, e.NewSize.Height);
+        }
+
+
+        private void ComputeWidgetsPositions(double x, double y)
+        {
+            PlayerSScatterView.Center = new Point(x / 2, y - (PlayerSScatterView.Height / 2));
+            PlayerOScatterView.Center = new Point(PlayerOScatterView.Height / 2, y / 2);
+            PlayerNScatterView.Center = new Point(x / 2, PlayerSScatterView.Height / 2);
+            PlayerEScatterView.Center = new Point(x - PlayerOScatterView.Height / 2, y/2);
+
+            CenterView.Height = y - PlayerSScatterView.Height - PlayerNScatterView.Height;
+            CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
+            CenterView.Center = new Point(x / 2, y / 2);
         }
     }
 }

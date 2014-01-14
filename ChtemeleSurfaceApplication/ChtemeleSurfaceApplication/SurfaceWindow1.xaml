@@ -3,18 +3,70 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Title="ChtemeleSurfaceApplication" Height="1080" Width="1920">
-  <Grid>
-        <s:SurfaceButton	HorizontalAlignment="Center"
-				VerticalAlignment="Center"
-				Click="SurfaceButton_Click" Margin="0,1003,1824,0" Height="38" Width="73">
-            Quitter
-        </s:SurfaceButton>
 
-            <s:ScatterView Name="CarteNord"></s:ScatterView>
+    <s:ScatterView Name="MainScatterView" SizeChanged="MainScatterView_SizeChanged">
+
+        <s:ScatterViewItem Name="PlayerSScatterView"
+                           Orientation="0"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="700"
+                           Height="150"
+                           >
+            Joueur S
+        </s:ScatterViewItem>
+
+        <s:ScatterViewItem Name="PlayerOScatterView"
+                           Orientation="90"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="700"
+                           Height="150"
+                           >
+            Joueur O
+        </s:ScatterViewItem>
+
+        <s:ScatterViewItem Name="PlayerNScatterView"
+                           Orientation="180"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="700"
+                           Height="150"
+                           >
+            Joueur N
+        </s:ScatterViewItem>
+
+        <s:ScatterViewItem Name="PlayerEScatterView"
+                           Orientation="270"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="700"
+                           Height="150"
+                           >
+            Joueur E
+        </s:ScatterViewItem>
+
+        <s:ScatterViewItem Name="CenterView"
+                           Orientation="0"
+                           CanMove="False"
+                           CanRotate="False"
+                           CanScale="False"
+                           Width="100"
+                           Height="100"
+                           Background="AntiqueWhite"
+                           >
+            CenterView
+        </s:ScatterViewItem>
+
+    </s:ScatterView>
+
+            <!--<s:ScatterView Name="CarteNord"></s:ScatterView>
             <s:ScatterView Name="CarteSud"></s:ScatterView>
             <s:ScatterView Name="CarteEst"></s:ScatterView>
-            <s:ScatterView Name="CarteOuest"></s:ScatterView>
+            <s:ScatterView Name="CarteOuest"></s:ScatterView>-->
       
-    </Grid>
-   
 </s:SurfaceWindow>
