@@ -6,7 +6,7 @@
              xmlns:s="http://schemas.microsoft.com/surface/2008"
              mc:Ignorable="d" 
              Height="300" Width="300">
-    <Grid>
-            
-    </Grid>
+
+    <WebBrowser  Height="auto" Width="auto" x:Name="WB1"/> 
+
 </s:ScatterViewItem>

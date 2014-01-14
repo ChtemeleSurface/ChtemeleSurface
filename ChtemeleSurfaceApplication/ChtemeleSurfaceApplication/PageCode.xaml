@@ -7,6 +7,8 @@
              mc:Ignorable="d" 
              Height="300" Width="300">
     <Grid Background="Gray">
+        <TextBlock Width="auto" Height="auto">
             
+        </TextBlock>
     </Grid>
 </s:ScatterViewItem>
