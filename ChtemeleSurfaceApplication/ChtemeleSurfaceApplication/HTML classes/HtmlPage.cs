@@ -11,7 +11,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public HtmlPage()
         {
-            
+            mainTag = new HtmlElement();
         }
     }
 }
