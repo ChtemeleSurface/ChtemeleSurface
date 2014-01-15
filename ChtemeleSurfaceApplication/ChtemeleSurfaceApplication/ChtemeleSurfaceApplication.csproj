@@ -78,16 +78,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Carte classes\AddonCarte.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Carte classes\AttaqueCarte.cs" />
+    <Compile Include="Carte classes\Carte.cs" />
     <Compile Include="CartesJoueurs.xaml.cs">
       <DependentUpon>CartesJoueurs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Clavier.xaml.cs">
       <DependentUpon>Clavier.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Carte classes\EventCarte.cs" />
+    <Compile Include="Carte classes\HTMLCarte.cs" />
+    <Compile Include="HTML classes\HtmlElement.cs" />
+    <Compile Include="HTML classes\HtmlTag.cs" />
+    <Compile Include="HTML classes\HtmlTagAttribute.cs" />
+    <Compile Include="HTML classes\HtmlTagContent.cs" />
+    <Compile Include="HTML classes\HtmlText.cs" />
     <Compile Include="PageCode.xaml.cs">
       <DependentUpon>PageCode.xaml</DependentUpon>
     </Compile>
@@ -131,6 +141,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
