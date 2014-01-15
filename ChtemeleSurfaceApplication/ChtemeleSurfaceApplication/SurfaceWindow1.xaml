@@ -17,8 +17,76 @@
                            >
             <s:ScatterView>
                 <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" Orientation="0"></custom:CartesJoueurs>
-                <s:ScatterViewItem Name="DocSud" CanScale="False" Orientation="0"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierSud" CanScale="False" Orientation="0"></s:ScatterViewItem>
+                <s:ScatterViewItem Name="DocSud" CanScale="False" CanRotate="False" Orientation="0">
+                    <s:ElementMenu ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <s:ElementMenuItem Header="Balises">
+                            <s:ElementMenuItem Header="Balises Ouvrantes">
+                                <s:ElementMenuItem Header="Texte">
+                                    <s:ElementMenuItem Header="h1"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="h2"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="p"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="strong"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="em"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="a"></s:ElementMenuItem>
+                                </s:ElementMenuItem>
+                                <s:ElementMenuItem Header="Structure">
+                                    <s:ElementMenuItem Header="div"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="blockquote"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="header"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="footer"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="aside"></s:ElementMenuItem>
+                                </s:ElementMenuItem>
+                            </s:ElementMenuItem>
+                            <s:ElementMenuItem Header="Balises Fermantes">
+                                <s:ElementMenuItem Header="Texte">
+                                    <s:ElementMenuItem Header="/h1"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/h2"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/p"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/strong"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/em"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/a"></s:ElementMenuItem>
+                                </s:ElementMenuItem>
+                                <s:ElementMenuItem Header="Structure">
+                                    <s:ElementMenuItem Header="/div"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/blockquote"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/header"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/footer"></s:ElementMenuItem>
+                                    <s:ElementMenuItem Header="/aside"></s:ElementMenuItem>
+                                </s:ElementMenuItem>
+                            </s:ElementMenuItem>
+                            <s:ElementMenuItem Header="Balises simples">
+                                <s:ElementMenuItem Header="hr/"></s:ElementMenuItem>
+                                <s:ElementMenuItem Header="br/"></s:ElementMenuItem>
+                                <s:ElementMenuItem Header="img/"></s:ElementMenuItem>
+                            </s:ElementMenuItem>
+                        </s:ElementMenuItem>
+                        <s:ElementMenuItem Header="Attributs">
+                            <s:ElementMenuItem Header="a">
+                                <s:ElementMenuItem Header="Href"></s:ElementMenuItem>
+                            </s:ElementMenuItem>
+                            <s:ElementMenuItem Header="img">
+                                <s:ElementMenuItem Header="Src"></s:ElementMenuItem>
+                                <s:ElementMenuItem Header="alt"></s:ElementMenuItem>
+                            </s:ElementMenuItem>
+                        </s:ElementMenuItem>
+                        <s:ElementMenuItem Header="Add-ons">
+                            <s:ElementMenuItem Header="Ctrl+F5"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="Browser Update"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="Antivirus"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="Code Inspector"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="Café"></s:ElementMenuItem>
+                        </s:ElementMenuItem>
+                        <s:ElementMenuItem Header="Attaques">
+                            <s:ElementMenuItem Header="Freeze"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="Crash Browser"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="Man in the Middle"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="303 SeeOther"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="403 Forbidden"></s:ElementMenuItem>
+                            <s:ElementMenuItem Header="404 Not Found"></s:ElementMenuItem>
+                        </s:ElementMenuItem>
+                    </s:ElementMenu>
+                </s:ScatterViewItem>
+                <s:ScatterViewItem Name="ClavierSud" CanScale="False" CanRotate="True" Orientation="0"></s:ScatterViewItem>
             </s:ScatterView>
         </s:ScatterViewItem>
 
