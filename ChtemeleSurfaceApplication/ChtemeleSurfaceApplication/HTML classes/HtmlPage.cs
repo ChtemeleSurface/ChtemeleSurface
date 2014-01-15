@@ -7,11 +7,11 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 {
     class HtmlPage
     {
-        private HtmlElement mainTag;
+        private HtmlElement _mainTag;
 
         public HtmlPage()
         {
-            
+            _mainTag._tagContent.Add(new HtmlTag("body", HtmlTag.HTMLTagType.OPENTAG));
         }
     }
 }
