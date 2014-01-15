@@ -5,7 +5,12 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
-    class HtmlElement
+    class HtmlElement : HtmlTagContent
     {
+        private string name;
+        private bool isCorrect;
+        private List<HtmlTagAttribute> attributes;
+        private List<HtmlTagContent> tagContent;
+        private int score;
     }
 }

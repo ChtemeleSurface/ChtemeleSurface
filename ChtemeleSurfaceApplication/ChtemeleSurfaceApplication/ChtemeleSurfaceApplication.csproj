@@ -105,6 +105,7 @@
     <Compile Include="Carte classes\EventCarte.cs" />
     <Compile Include="Carte classes\HTMLCarte.cs" />
     <Compile Include="HTML classes\HtmlElement.cs" />
+    <Compile Include="HTML classes\HtmlPage.cs" />
     <Compile Include="HTML classes\HtmlTag.cs" />
     <Compile Include="HTML classes\HtmlTagAttribute.cs" />
     <Compile Include="HTML classes\HtmlTagContent.cs" />
