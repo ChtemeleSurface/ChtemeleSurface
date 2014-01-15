@@ -11,7 +11,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public HtmlPage()
         {
-            _mainTag = new HtmlElement("body");
+            _mainTag._tagContent.Add(new HtmlTag("body", HtmlTag.HTMLTagType.OPENTAG));
         }
     }
 }

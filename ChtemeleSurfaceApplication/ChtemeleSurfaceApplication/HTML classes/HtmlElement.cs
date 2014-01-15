@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using ChtemeleSurfaceApplication.HTML_classes;
+
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
     class HtmlElement : HtmlTagContent
     {
-        private string _name;
-        private bool _isCorrect;
-        private List<HtmlTagAttribute> _attributes;
-        private List<HtmlTagContent> _tagContent;
-        private int _score;
+        private string _name {get; set;}
+        private bool _isCorrect { get; set; }
+        private List<HtmlTagAttribute> _attributes { get; set; }
+        private List<HtmlTagContent> _tagContent { get; set; }
+        private int _score { get; set; }
 
         public HtmlElement(string name)
         {
             _name = name;
             _isCorrect = false;
             _score = 0;
-
-            //_tagContent.Add(new HtmlTag("body", HtmlTag.));
         }
     }
 }
