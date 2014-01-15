@@ -7,10 +7,15 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 {
     class HtmlElement : HtmlTagContent
     {
-        private string name;
-        private bool isCorrect;
-        private List<HtmlTagAttribute> attributes;
-        private List<HtmlTagContent> tagContent;
-        private int score;
+        private string _name;
+        private bool _isCorrect;
+        private List<HtmlTagAttribute> _attributes;
+        private List<HtmlTagContent> _tagContent;
+        private int _score;
+
+        public HtmlElement(string name)
+        {
+
+        }
     }
 }
