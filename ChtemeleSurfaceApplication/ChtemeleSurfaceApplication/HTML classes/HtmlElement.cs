@@ -15,7 +15,11 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public HtmlElement(string name)
         {
+            _name = name;
+            _isCorrect = false;
+            _score = 0;
 
+            //_tagContent.Add(new HtmlTag("body", HtmlTag.));
         }
     }
 }
