@@ -32,13 +32,28 @@ namespace ChtemeleSurfaceApplication
             // Envoie l'URL par méthode SET -> utilisé lors du chargement d'un nouveau fichier
             // Le site doit ABSOLULENT avoir un affichage adaptatif selon la résolution !
 
-            Uri uri = new Uri(@"index.html", UriKind.Relative);
-            string temp = uri.ToString(); //uri.OriginalString
-            string temp2 = uri.OriginalString;
+            //Uri uri = new Uri(@"index.html", UriKind.Relative);
+           //Uri uri = new Uri("Ressources/Documentation/index.html", UriKind.Relative);
+            //string temp = uri.ToString(); //uri.OriginalString
+           // string temp2 = uri.OriginalString;
 
-            setFileUrl("http://www.lukew.com/ff/entry.asp?933");  // http://www.lukew.com/ff/entry.asp?933  // F:/DUT INFORMATIQUE/2ND/TUT/ChtemeleSurface/ChtemeleSurfaceApplication/ChtemeleSurfaceApplication/bin/Debug/index.html
+
+            //setFileUrl(temp);  // http://www.lukew.com/ff/entry.asp?933  // F:/DUT INFORMATIQUE/2ND/TUT/ChtemeleSurface/ChtemeleSurfaceApplication/Documentation/index.html
+            //"/<ApplicationName>;component/Icons/folder.png"
             // Envoie la source (page web) a afficher
-            WebRenderer();
+            //WebRenderer();
+
+
+            System.Uri uri1 = new Uri(@"F:/DUT INFORMATIQUE/2ND/TUT/ChtemeleSurface/ChtemeleSurfaceApplication/Documentation/");
+            System.Uri uri2 = new Uri(@"F:/DUT INFORMATIQUE/2ND/TUT/ChtemeleSurface/ChtemeleSurfaceApplication/Documentation/index.html");
+
+            Uri relativeUri = uri2.MakeRelativeUri(uri1);
+
+            Console.WriteLine(relativeUri.ToString());
+
+            Uri muri = new Uri(@".\\Resources\\Documentation\\index.html", UriKind.Relative);
+            Uri muri2 = new Uri(@"index.html", UriKind.Relative);
+            //WB1.Navigate(muri2);
         }
 
         

@@ -29,8 +29,10 @@ namespace ChtemeleSurfaceApplication
             InitializeComponent();
 
             // URL du fichier local à lire (ne fonctionne pas avec les URLs distantes)
-            setTextCode("C:/Program Files (x86)/Common Files/Java/Java Update/task.xml");
-            ///PageCode.xaml
+            string temp = System.IO.Directory.GetCurrentDirectory();
+            temp = temp + "\\Resources\\Documentation\\index.html";
+            setTextCode(temp);
+            
             // affiche le code dans la zone prévu
             ShowCode();
         }
@@ -55,7 +57,5 @@ namespace ChtemeleSurfaceApplication
             for (int i = 0; i < lines.Length; i++)
                 CodeText.Inlines.Add(new Run(lines[i]));
         }
-
-
     }
 }
