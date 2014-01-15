@@ -5,7 +5,9 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication
 {
-    class EventCarte : Carte
+    abstract class EventCarte : Carte
     {
+        abstract void onPlay();
+        abstract void onValid();
     }
 }

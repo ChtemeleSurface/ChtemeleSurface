@@ -17,5 +17,10 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         {
 
         }
+
+        public HtmlElement()
+        {
+            // TODO: Complete member initialization
+        }
     }
 }

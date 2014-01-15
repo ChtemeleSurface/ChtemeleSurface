@@ -7,8 +7,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 {
     class HtmlTagContent
     {
-        private int uniqId;
-        private int score;
-        private HtmlElement parent;
+        private int _uniqId;
+        private int _score;
+        private HtmlElement _parent;
     }
 }

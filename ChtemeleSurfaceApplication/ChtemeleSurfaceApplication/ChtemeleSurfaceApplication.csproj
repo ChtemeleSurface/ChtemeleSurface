@@ -96,6 +96,8 @@
     <Compile Include="Carte classes\Attaques\Freeze.cs" />
     <Compile Include="Carte classes\Attaques\ManInTheMiddle.cs" />
     <Compile Include="Carte classes\Carte.cs" />
+    <Compile Include="Carte classes\HTMLAttributeCarte.cs" />
+    <Compile Include="Carte classes\HTMLTagCarte.cs" />
     <Compile Include="CartesJoueurs.xaml.cs">
       <DependentUpon>CartesJoueurs.xaml</DependentUpon>
     </Compile>
