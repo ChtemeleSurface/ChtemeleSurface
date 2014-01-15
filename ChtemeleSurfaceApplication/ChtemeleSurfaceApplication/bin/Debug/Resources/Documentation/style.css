@@ -1,0 +1,73 @@
+body
+{
+	background-color: grey;
+	margin:0;
+}
+header
+{
+	width:100%;
+	height:100px;
+	background-color:red;
+}
+/*==========
+ ===LIENS=== 
+ =========*/
+
+/* visité */
+a:visited 
+{
+    color: #AAA;
+}
+/* survolé (curseur/doigt) */
+a:hover
+{
+	color: red;
+}
+/*==========
+ ====TAGS=== 
+ =========*/
+ /* les blocs droite et gauche*/
+ 
+ .menu_tag
+{
+	position:absolute;
+	display:inline-block;
+	top: 8%;
+	left: 0;
+	width: 50%;
+}
+
+.menu_tag2
+{
+	position:absolute;
+	display:inline-block;
+	top: 8%;
+	right: 0;
+	width: 50%;
+}
+
+h1
+{
+	text-align:center;
+	margin:0;	
+}
+
+#navigation 
+{
+	width: 50%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#navigation li 
+{
+	background: #c00 ;
+	color: #fff ;
+	border: 1px solid #600 ;
+	margin-bottom: 1px ;
+	text-align:center;
+	font-size:5em;
+	margin: 0;
+	padding: 0;
+}
