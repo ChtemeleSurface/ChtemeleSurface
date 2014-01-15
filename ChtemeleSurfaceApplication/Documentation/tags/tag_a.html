@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Titre de la page</title>
+  <title>&lt;a&gt;</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 	
 
 	<p>
-			&lt;a&gt; définie un hyper-lien, qui est utilisé pour renvoyer sur une page web en cliquant dessus.
+		&lt;a&gt; définit un hyper-lien, qui est utilisé pour renvoyer sur une page en cliquant dessus.
 
 		<br>L'attribut le plus important de la balise &lt;a&gt; est le href, qui indique la destination.
 
@@ -27,35 +27,35 @@
 	<table border="1px" id="table1">
 		<tbody>
 			<tr>
-				<th style="width:20%">Attribute</th>
+				<th style="width:20%">Attribute (spécifique à la balise)</th>
 				<th style="width:20%">Value</th>
 				<th>Description</th>
 			</tr>
 			
 			<tr>
-				<th>href</th>
-				<th>URL</th>
-				<th>Spécifie l'URL de la page auquel le lien renvoie (nous emmènes)</th>
+				<td>href</td>
+				<td>URL</td>
+				<td>Spécifie l'URL de la page auquel le lien renvoie (nous emmènes)</td>
 			</tr>
 			<tr>
-				<th>download</th>
-				<th>filename</th>
-				<th>Spécifie la cible de l'hyperlien a telecharger</th>
+				<td>download</td>
+				<td>filename</td>
+				<td>Spécifie la cible de l'hyperlien a telecharger</td>
 			</tr>
 			<tr>
-				<th>hreflang</th>
-				<th>language_code</th>
-				<th>Spécifie le langage du document</th>
+				<td>hreflang</td>
+				<td>language_code</td>
+				<td>Spécifie le langage du document</td>
 			</tr>
 			<tr>
-				<th>media</th>
-				<th>media_query</th>
-				<th>Spécifie le media pour lequel le document est optimisé<th>
+				<td>media</td>
+				<td>media_query</td>
+				<td>Spécifie le media pour lequel le document est optimisé</td>
 			</tr>
 			<tr>
-				<th>rel</th>
-				<th>alternate 
-					<br>author
+				<td>rel</td>
+				<td>alternate 
+					<br>autdor
 					<br>bookmark
 					<br>help
 					<br>license
@@ -65,26 +65,57 @@
 					<br>prefetch
 					<br>prev
 					<br>search
-					<br>tag</th>
-				<th>Spécifie les relations entre le document ouvert et le document attaché</th>
+					<br>tag</td>
+				<td>Spécifie les relations entre le document ouvert et le document attaché</td>
 			</tr>
 			<tr>
-				<th>target</th>
-				<th>_blank
+				<td>target</td>
+				<td>_blank
 				<br>_parent
 				<br>_self
 				<br>_top
-				<br>framename</th>
-				<th>Spécifie ou ouvrir le document</th>
+				<br>framename</td>
+				<td>Spécifie ou ouvrir le document</td>
 			</tr>
 			<tr>
-				<th>type</th>
-				<th>MIME_type</th>
-				<th>Spécifie le MIME type du document attaché</th>
+				<td>type</td>
+				<td>MIME_type</td>
+				<td>Spécifie le MIME type du document attaché</td>
+			</tr>
+			
+		</tbody>
+		</table>	
+		
+		---------------
+		
+		<table border="1px" id="table1">
+		<tbody>
+			<tr>
+				<th style="width:20%">Attribute (géneraux)</th>
+				<th>Description</th>
+			</tr>
+			
+			<tr>
+				<td>Class</td>
+				<td>Spécifie un ou plusieurs nom(s) de classe pour un element(réfere à une classe dans le css)</td>
+			</tr>
+			<tr>
+				<td>id</td>
+				<td>Spécifie un id unique pour un element</td>
+			</tr>
+			<tr>
+				<td>style</td>
+				<td>Spécifie un style css sur une ligne</td>
+			</tr>
+			<tr>
+				<td>title</td>
+				<td>Spécifie des informations à propos de l'élement</td>
 			</tr>
 			
 		</tbody>
 	</table>
+	
+	
 	<!--
 	Pas de PHP
 	eviter je Javascript on sait pas comment il est géré sur Surface
