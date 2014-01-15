@@ -9,17 +9,19 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 {
     class HtmlElement : HtmlTagContent
     {
-        private string _name {get; set;}
-        private bool _isCorrect { get; set; }
-        private List<HtmlTagAttribute> _attributes { get; set; }
-        private List<HtmlTagContent> _tagContent { get; set; }
-        private int _score { get; set; }
+        private string _name;
+        private bool _isCorrect;
+        public List<HtmlTagAttribute> attributes;
+        public List<HtmlTagContent> tagContent;
+        private int _score;
 
         public HtmlElement(string name)
         {
             _name = name;
             _isCorrect = false;
             _score = 0;
+            attributes = new List<HtmlTagAttribute>();
+            tagContent = new List<HtmlTagContent>();
         }
     }
 }
