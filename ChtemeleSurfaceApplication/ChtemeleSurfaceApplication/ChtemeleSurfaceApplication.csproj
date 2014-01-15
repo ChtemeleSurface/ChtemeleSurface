@@ -83,7 +83,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Carte classes\Addons\Antivirus.cs" />
+    <Compile Include="Carte classes\Addons\BrowserUpdate.cs" />
+    <Compile Include="Carte classes\Addons\Cafe.cs" />
+    <Compile Include="Carte classes\Addons\CodeInspector.cs" />
+    <Compile Include="Carte classes\Addons\CtrlF5.cs" />
     <Compile Include="Carte classes\AttaqueCarte.cs" />
+    <Compile Include="Carte classes\Attaques\CrashBrowser.cs" />
+    <Compile Include="Carte classes\Attaques\Error303.cs" />
+    <Compile Include="Carte classes\Attaques\Error403.cs" />
+    <Compile Include="Carte classes\Attaques\Error404.cs" />
+    <Compile Include="Carte classes\Attaques\Freeze.cs" />
+    <Compile Include="Carte classes\Attaques\ManInTheMiddle.cs" />
     <Compile Include="Carte classes\Carte.cs" />
     <Compile Include="CartesJoueurs.xaml.cs">
       <DependentUpon>CartesJoueurs.xaml</DependentUpon>

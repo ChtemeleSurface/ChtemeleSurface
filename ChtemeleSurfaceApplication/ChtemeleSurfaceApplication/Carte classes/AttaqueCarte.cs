@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication
 {
-    class AttaqueCarte
+    class AttaqueCarte : EventCarte
     {
 
     }

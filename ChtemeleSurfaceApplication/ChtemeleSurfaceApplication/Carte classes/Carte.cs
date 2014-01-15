@@ -7,6 +7,6 @@ namespace ChtemeleSurfaceApplication
 {
     class Carte
     {
-        //fonction avec tout les classes
+       
     }
 }

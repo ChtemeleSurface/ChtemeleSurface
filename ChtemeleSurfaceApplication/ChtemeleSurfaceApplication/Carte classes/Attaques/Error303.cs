@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ChtemeleSurfaceApplication.HTML_classes
+namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
 {
-    class HtmlTagAttribute
+    class Error303 : AttaqueCarte
     {
-
     }
 }

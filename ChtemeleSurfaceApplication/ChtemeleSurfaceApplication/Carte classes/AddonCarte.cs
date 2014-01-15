@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication
 {
-    class AddonCarte
+    class AddonCarte : EventCarte
     {
+
     }
 }

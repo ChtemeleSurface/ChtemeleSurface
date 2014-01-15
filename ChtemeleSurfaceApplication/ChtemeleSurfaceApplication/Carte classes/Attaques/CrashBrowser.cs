@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ChtemeleSurfaceApplication
+namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
 {
-    class HTMLCarte : Carte
+    class CrashBrowser : AttaqueCarte
+
     {
     }
 }
