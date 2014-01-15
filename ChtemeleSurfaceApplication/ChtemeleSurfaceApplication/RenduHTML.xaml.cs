@@ -31,7 +31,12 @@ namespace ChtemeleSurfaceApplication
             
             // Envoie l'URL par méthode SET -> utilisé lors du chargement d'un nouveau fichier
             // Le site doit ABSOLULENT avoir un affichage adaptatif selon la résolution !
-            setFileUrl("http://www.lukew.com/ff/entry.asp?933");
+
+            Uri uri = new Uri(@"index.html", UriKind.Relative);
+            string temp = uri.ToString(); //uri.OriginalString
+            string temp2 = uri.OriginalString;
+
+            setFileUrl("http://www.lukew.com/ff/entry.asp?933");  // http://www.lukew.com/ff/entry.asp?933  // F:/DUT INFORMATIQUE/2ND/TUT/ChtemeleSurface/ChtemeleSurfaceApplication/ChtemeleSurfaceApplication/bin/Debug/index.html
             // Envoie la source (page web) a afficher
             WebRenderer();
         }
@@ -52,6 +57,8 @@ namespace ChtemeleSurfaceApplication
         {
             WB1.Navigate(new Uri(getFileUrl()));
 
+            //Uri uri = new Uri(@"Images\Backgrounds\Background1.png", UriKind.Relative);
+            //string temp = uri.ToString(); //uri.OriginalString
         }
     }
 }

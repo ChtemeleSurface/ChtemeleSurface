@@ -30,6 +30,7 @@ namespace ChtemeleSurfaceApplication
 
             // URL du fichier local à lire (ne fonctionne pas avec les URLs distantes)
             setTextCode("C:/Program Files (x86)/Common Files/Java/Java Update/task.xml");
+            ///PageCode.xaml
             // affiche le code dans la zone prévu
             ShowCode();
         }
@@ -43,6 +44,7 @@ namespace ChtemeleSurfaceApplication
         // Lis un fichier et enregistre chaque ligne
         public void setTextCode(string fileUrl)
         {
+
             lines = System.IO.File.ReadAllLines(@fileUrl); //@+fileUrl
         }
 
