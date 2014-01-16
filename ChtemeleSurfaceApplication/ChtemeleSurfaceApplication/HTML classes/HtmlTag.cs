@@ -55,18 +55,22 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         public override string renderHTML(string attribs)
         {
             string res = "";
+            //on détermine le type de balise
             bool multiline = multiLineTags.Exists(v => v == _tagname);
             bool monoline = monoLineTags.Exists(v => v == _tagname);
 
+            //On indente
             if (multiline && _type == HTMLTagType.OPENTAG) res += new String(' ', nbOpenTags * indentSize);
             else if (multiline && _type == HTMLTagType.ENDTAG) res += new String(' ', (nbOpenTags-1) * indentSize);
             else if (monoline && _type == HTMLTagType.OPENTAG) res += new String(' ', nbOpenTags * indentSize);
 
+            //on insère la balise
             res += openSymbol[_type];
             res += _tagname;
             if (_type == HTMLTagType.OPENTAG) res += attribs;
             res += endSymbol;
 
+            //on ajoute un retour à la ligne (des fois)
             if (multiline) res += "\n";
             if (_type == HTMLTagType.ENDTAG && monoline) res += "\n";
 
