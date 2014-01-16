@@ -8,7 +8,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
     class Combo
     {
         // Contient le code (HTML) du joueur
-        private string code;
+        private string[] code;
         // Score du code total
         private int codeScore;
         // Dernier combo du joueur (code total joué)
@@ -16,6 +16,12 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Nb de carte que le joueur a joué
         private int nbCarte;
 
+        public enum BonusCombo
+        {
+            FULLHAND,
+            NOERROR,
+            LASTTURN
+        }
 
         // SET - GET
         // variable -> codeScore;
@@ -31,12 +37,12 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         // SET - GET
         // variable -> []code;
-        public string getCodeJoueur()
+        public string[] getCodeJoueur()
         {
             return code;
         }
 
-        public void setCodeJoueur(string a)
+        public void setCodeJoueur(string[] a)
         {
             code = a;
         }
@@ -55,7 +61,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         // SET - GET
         // variable -> nbCarte;
-        public int getComboNbCartes()
+        public int getNbCarte()
         {
             return nbCarte;
         }

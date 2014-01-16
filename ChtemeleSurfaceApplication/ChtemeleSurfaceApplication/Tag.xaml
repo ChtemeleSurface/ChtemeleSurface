@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Ellipse Width="120" Height="120" Fill="BlueViolet"/>
+        <s:ElementMenu ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <s:ElementMenuItem Header="Valider"></s:ElementMenuItem>
+            <s:ElementMenuItem Header="Afficher la Doc"></s:ElementMenuItem>
+        </s:ElementMenu>
+        <Ellipse Width="120" Height="120" Fill="BlueViolet"></Ellipse>
     </Grid>
 </s:TagVisualization>
