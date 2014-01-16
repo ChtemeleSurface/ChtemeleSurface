@@ -16,6 +16,12 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Nb de carte que le joueur a joué
         private int nbCarte;
 
+        public enum BonusCombo
+        {
+            FULLHAND,
+            NOERROR,
+            LASTTURN
+        }
 
         // SET - GET
         // variable -> codeScore;
