@@ -8,5 +8,14 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
     class Antivirus : AddonCarte
     {
 
+        public override void onPlay()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void onValid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

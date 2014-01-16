@@ -8,7 +8,7 @@ namespace ChtemeleSurfaceApplication
 {
     abstract class HTMLCarte : Carte
     {
-        abstract void onPlay();
-        abstract void onValid();
+        override public abstract void onPlay();
+        override public abstract void onValid();
     }
 }

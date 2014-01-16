@@ -8,8 +8,8 @@ namespace ChtemeleSurfaceApplication
     abstract class Carte
     {
 
-        abstract void onPlay();
-        abstract void onValid();
+        public abstract void onPlay();
+        public abstract void onValid();
 
     }
 }

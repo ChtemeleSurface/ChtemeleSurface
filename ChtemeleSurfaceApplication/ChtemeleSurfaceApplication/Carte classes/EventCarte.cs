@@ -7,7 +7,7 @@ namespace ChtemeleSurfaceApplication
 {
     abstract class EventCarte : Carte
     {
-        abstract void onPlay();
-        abstract void onValid();
+        override public abstract void onPlay();
+        override public abstract void onValid();
     }
 }
