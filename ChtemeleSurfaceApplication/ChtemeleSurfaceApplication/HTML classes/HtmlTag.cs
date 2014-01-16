@@ -21,8 +21,23 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             {HTMLTagType.ENDTAG , "</"}
         };
         private static string endSymbol = ">";
-        
 
+        private static List<string> multiLineTags = new List<string>
+        {
+            "body", "p", "div", "blockquote", "header", "footer", "aside", "hr"
+        };
+
+        private static List<string> monoLineTags = new List<string>
+        {
+            "h1", "h2", "br"
+        };
+
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <param name="type"></param>
         public HtmlTag(string tag, HTMLTagType type)
         {
             _tagname = tag;
@@ -37,12 +52,17 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         public override string renderHTML(string attribs)
         {
             string res = "";
+            bool multiline = multiLineTags.Exists(v => v == _tagname);
+            bool monoline = monoLineTags.Exists(v => v == _tagname);
 
             res += openSymbol[_type];
             res += _tagname;
             if (_type == HTMLTagType.OPENTAG) res += attribs;
             res += endSymbol;
 
+            if (multiline) res += "\n";
+            if (_type == HTMLTagType.ENDTAG && monoline) res += "\n";
+            
             return res;
         }
     }
