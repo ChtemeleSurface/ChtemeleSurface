@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.Game_classes
 {
@@ -26,7 +27,15 @@ namespace ChtemeleSurfaceApplication.Game_classes
             // Définition joueurO
 
         }
-        
+
+        HtmlPage _page;
+
+        public Game()
+        {
+            _page = new HtmlPage();
+            SurfaceWindow1.instance.PageCode.ShowCode(getRawHTML());
+        }
+
 
         // SET - GET
         // variable -> step;
@@ -49,6 +58,12 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public void setActualnbSteps(int a)
         {
             nbSteps = a;
+        }
+
+        public string getRawHTML()
+        {
+            string ret = _page.renderHTML();
+            return ret;
         }
 
     }

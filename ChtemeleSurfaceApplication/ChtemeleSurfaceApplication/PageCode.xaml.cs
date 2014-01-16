@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 //using System.Windows.Shapes;
 
-
+using ChtemeleSurfaceApplication.HTML_classes;
 using Microsoft.Surface.Presentation.Controls;
 
 namespace ChtemeleSurfaceApplication
@@ -29,6 +29,7 @@ namespace ChtemeleSurfaceApplication
     {
         private string lines;
 
+
         // Constructeur
         public PageCode()
         {
@@ -38,9 +39,6 @@ namespace ChtemeleSurfaceApplication
             string temp = System.IO.Directory.GetCurrentDirectory();
             temp = temp + "\\Resources\\Documentation\\index.html";
             setTextCode(temp);
-
-            // affiche le code dans la zone prévu
-            ShowCode();
         }
 
         // Retourne les lignes récupéré par le set
@@ -58,14 +56,11 @@ namespace ChtemeleSurfaceApplication
 
         // Lis chaque ligne du tableau et envoie chaque ligne dans un Inline
         // Gestion de l'indentation et coloration syntaxique non-géré
-        public void ShowCode()
+        public void ShowCode(string html)
         {
 
-            
-
-
             //CodeText.Inlines.Add(new Run(lines[i]));
-            CodeText.Inlines.Add(new Run(lines));
+            CodeText.Inlines.Add(new Run(html));
         }
     }
 }
