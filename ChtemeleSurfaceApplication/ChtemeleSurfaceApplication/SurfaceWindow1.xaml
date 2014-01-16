@@ -3,7 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     xmlns:custom="clr-namespace:ChtemeleSurfaceApplication"
-    Title="ChtemeleSurfaceApplication" Height="1080" Width="1920">
+    Title="ChtemeleSurfaceApplication" Height="1080" Width="1920"
+                 
+                 Loaded="SurfaceWindow_Loaded">
 
     <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <s:TagVisualizer.Definitions>

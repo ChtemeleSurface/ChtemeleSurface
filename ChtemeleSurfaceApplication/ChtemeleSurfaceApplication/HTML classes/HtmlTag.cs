@@ -16,7 +16,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public HtmlTag(string tag, HTMLTagType type)
         {
-
+            _tagname = tag;
+            _type = type;
         }
 
         public override string renderHTML()
@@ -31,9 +32,9 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             }
             else
             {
-                res += "<";
+                res += "</";
                 res += _tagname;
-                res += "/>";
+                res += ">";
             }
 
             return res;

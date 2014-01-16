@@ -7,15 +7,18 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.Carte_classes
 {
-    class HTMLTagCarte
+    class HTMLTagCarte : HTMLCarte
     {
-        private HtmlTag _tag;
+        private string _tag;
         private HtmlTag.HTMLTagType _type;
 
         public static Dictionary<AvailableTags, int> ValeurTags;
 
-        public HTMLTagCarte()
+        public HTMLTagCarte(string tag, HtmlTag.HTMLTagType type)
         {
+            _tag = tag;
+            _type = type;
+
             //valeur balises ouvrantes
             ValeurTags = new Dictionary<AvailableTags, int>();
             ValeurTags.Add(AvailableTags.O_H1,          2);
@@ -82,5 +85,15 @@ namespace ChtemeleSurfaceApplication.Carte_classes
 
         };
 
+
+        public override void onPlay()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void onValid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
