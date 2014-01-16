@@ -32,6 +32,9 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             "h1", "h2", "br"
         };
 
+        private static int nbOpenTags = 0;
+        private static int indentSize = 4;
+
 
         /// <summary>
         /// Constructor
@@ -55,6 +58,10 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             bool multiline = multiLineTags.Exists(v => v == _tagname);
             bool monoline = monoLineTags.Exists(v => v == _tagname);
 
+            if (multiline && _type == HTMLTagType.OPENTAG) res += new String(' ', nbOpenTags * indentSize);
+            else if (multiline && _type == HTMLTagType.ENDTAG) res += new String(' ', (nbOpenTags-1) * indentSize);
+            else if (monoline && _type == HTMLTagType.OPENTAG) res += new String(' ', nbOpenTags * indentSize);
+
             res += openSymbol[_type];
             res += _tagname;
             if (_type == HTMLTagType.OPENTAG) res += attribs;
@@ -62,6 +69,10 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
             if (multiline) res += "\n";
             if (_type == HTMLTagType.ENDTAG && monoline) res += "\n";
+
+            //on met à jour l'indentation
+            if (_type == HTMLTagType.OPENTAG) nbOpenTags++;
+            else nbOpenTags--;
             
             return res;
         }
