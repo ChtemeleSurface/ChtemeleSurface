@@ -5,8 +5,9 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication
 {
-    class AttaqueCarte : EventCarte
+    abstract class AttaqueCarte : EventCarte
     {
-
+        override public abstract void onPlay();
+        override public abstract void onValid();
     }
 }

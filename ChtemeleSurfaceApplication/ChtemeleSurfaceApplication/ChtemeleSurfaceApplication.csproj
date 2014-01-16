@@ -99,6 +99,8 @@
     <Compile Include="Carte classes\Attaques\Freeze.cs" />
     <Compile Include="Carte classes\Attaques\ManInTheMiddle.cs" />
     <Compile Include="Carte classes\Carte.cs" />
+    <Compile Include="Carte classes\HTMLAttributeCarte.cs" />
+    <Compile Include="Carte classes\HTMLTagCarte.cs" />
     <Compile Include="CartesJoueurs.xaml.cs">
       <DependentUpon>CartesJoueurs.xaml</DependentUpon>
     </Compile>
@@ -109,6 +111,10 @@
     <Compile Include="Carte classes\HTMLCarte.cs" />
     <Compile Include="File classes\FileReader.cs" />
     <Compile Include="File classes\FileWriter.cs" />
+    <Compile Include="Game classes\Combo.cs" />
+    <Compile Include="Game classes\Effect.cs" />
+    <Compile Include="Game classes\Game.cs" />
+    <Compile Include="Game classes\Player.cs" />
     <Compile Include="HTML classes\HtmlElement.cs" />
     <Compile Include="HTML classes\HtmlPage.cs" />
     <Compile Include="HTML classes\HtmlTag.cs" />
