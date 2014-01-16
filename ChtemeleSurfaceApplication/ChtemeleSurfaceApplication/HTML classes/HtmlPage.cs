@@ -12,6 +12,15 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         public HtmlPage()
         {
             _mainTag.tagContent.Add(new HtmlTag("body", HtmlTag.HTMLTagType.OPENTAG));
+            _mainTag.tagContent.Add(new HtmlTag("body", HtmlTag.HTMLTagType.ENDTAG));
+        }
+
+        public string renderHTML(){
+            string res = "";
+
+            
+
+            return res;
         }
     }
 }
