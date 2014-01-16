@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace ChtemeleSurfaceApplication.Game_classes
 {
     class Game
@@ -12,7 +13,19 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Nombre de tour total
         private int nbSteps;
         // variables joueurs
-        // private ? joueurS, joueurN, jouerE, joueurO;
+        private Player joueurS, joueurN, joueurE, joueurO;
+
+        public Game()
+        {
+            // Définition joueurS
+
+            // Définition joueurN
+
+            // Définition joueurE
+
+            // Définition joueurO
+
+        }
         
 
         // SET - GET

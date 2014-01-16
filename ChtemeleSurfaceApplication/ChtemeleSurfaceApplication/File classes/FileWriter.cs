@@ -17,7 +17,7 @@ namespace ChtemeleSurfaceApplication.File_classes
         // Ecrit un string après  UN ou DES caractères de délimitation
         // FileUrl -> chemin local absolu vers le fichier
         // string[] textToWrite -> permet d'enregistrer plusieurs lignes
-        public void writeInFile(string FileUrl, string[] textToWrite, string delimitation)
+        public void writeInFile(string FileUrl, string textToWrite, string delimitation)
         {
             System.IO.StreamWriter fileWriter = new System.IO.StreamWriter(FileUrl, true);  // Writer
             string[] lines = System.IO.File.ReadAllLines(FileUrl);                          // Reader
@@ -27,12 +27,17 @@ namespace ChtemeleSurfaceApplication.File_classes
             {
                 if (lines[i] == delimitation)
                 {
-                    // écrit la ligne
-                    fileWriter.WriteLine("Fourth line");
+                    // écrit le texte demandé à la ligne
+                    fileWriter.WriteLine(textToWrite);
                 }
-            }    
+            }            
+        }
 
-            
+
+        public void writeBasicHTML5Code(string fileUrl)
+        {
+            string delimitation = "";
+            writeInFile(fileUrl, basicHTML5code,delimitation);
         }
 
 
