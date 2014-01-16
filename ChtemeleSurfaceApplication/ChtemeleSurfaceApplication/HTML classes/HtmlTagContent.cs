@@ -10,5 +10,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private int _uniqId;
         private int _score;
         private HtmlElement _parent;
+
+
+        public virtual string renderHTML();
     }
 }

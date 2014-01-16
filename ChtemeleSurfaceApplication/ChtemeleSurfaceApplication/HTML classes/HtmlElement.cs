@@ -28,5 +28,29 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         {
             // TODO: Complete member initialization
         }
+
+
+        //renvoie une string du rendu HTML de l'élément
+        public string RenderHTML(){
+            string res = "";
+            string resattr = "";
+            if (tagContent.Count == 0) return res;
+
+            if (attributes.Count > 0)
+            {
+                foreach (HtmlTagAttribute attr in attributes)
+                {
+                    resattr += " ";
+                    resattr += attr.RenderHTML();
+                }
+            }
+
+            foreach (HtmlTagContent elem in tagContent)
+            {
+                res += elem.renderHTML();
+            }
+
+            return res;
+        }
     }
 }
