@@ -86,7 +86,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         public string renderHTML(){
             string res = "";
 
-            res += _mainTag.RenderHTML();
+            res += _mainTag.renderHTML();
 
             return res;
         }
