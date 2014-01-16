@@ -86,5 +86,4 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             _type = HtmlTag.HTMLTagType.OPENTAG; 
         }
     }
-
 }

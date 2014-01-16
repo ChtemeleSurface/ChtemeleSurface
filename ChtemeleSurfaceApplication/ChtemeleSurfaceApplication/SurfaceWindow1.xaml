@@ -5,7 +5,12 @@
     xmlns:custom="clr-namespace:ChtemeleSurfaceApplication"
     Title="ChtemeleSurfaceApplication" Height="1080" Width="1920">
 
-    <s:ScatterView Name="MainScatterView" SizeChanged="MainScatterView_SizeChanged">
+    <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <s:TagVisualizer.Definitions>
+            <s:TagVisualizationDefinition Value="0xC0" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
+        </s:TagVisualizer.Definitions>
+
+        <s:ScatterView Name="MainScatterView" SizeChanged="MainScatterView_SizeChanged">
              
         <s:ScatterViewItem Name="PlayerSScatterView"
                            Orientation="0"
@@ -150,7 +155,7 @@
                 <custom:RenduHTML x:Name="PageRendu" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:RenduHTML>
             </s:ScatterView>
         </s:ScatterViewItem>
-
-    </s:ScatterView>
-      
+        
+       </s:ScatterView>
+    </s:TagVisualizer>
 </s:SurfaceWindow>
