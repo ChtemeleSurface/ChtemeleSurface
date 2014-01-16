@@ -49,6 +49,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             ValeurTags.Add(AvailableTags.S_HR,          6);
             ValeurTags.Add(AvailableTags.S_IMG,         8);
 
+            _type = HtmlTag.HTMLTagType.OPENTAG; 
         }
 
         public enum AvailableTags
@@ -83,5 +84,6 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             S_IMG
 
         };
+
     }
 }

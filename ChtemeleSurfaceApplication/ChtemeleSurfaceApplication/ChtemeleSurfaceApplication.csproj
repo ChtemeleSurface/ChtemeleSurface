@@ -110,6 +110,9 @@
     </Compile>
     <Compile Include="Carte classes\EventCarte.cs" />
     <Compile Include="Carte classes\HTMLCarte.cs" />
+    <Compile Include="Effect classes\BrowserUpdate.cs" />
+    <Compile Include="Effect classes\CrashBrowser.cs" />
+    <Compile Include="Effect classes\Freeze.cs" />
     <Compile Include="File classes\FileReader.cs" />
     <Compile Include="File classes\FileWriter.cs" />
     <Compile Include="Game classes\Combo.cs" />
