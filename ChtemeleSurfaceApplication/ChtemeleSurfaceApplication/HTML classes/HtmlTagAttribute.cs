@@ -18,7 +18,11 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public string RenderHTML()
         {
-            string res = "";
+            string res = " ";
+            res += _key;
+            res += "=\"";
+            res += _value;
+            res += "\"";
 
             return res;
         }

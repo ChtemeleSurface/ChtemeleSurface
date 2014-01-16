@@ -5,13 +5,14 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
-    class HtmlTagContent
+    abstract class HtmlTagContent
     {
         private int _uniqId;
         private int _score;
         private HtmlElement _parent;
 
 
-        public virtual string renderHTML();
+        public abstract string renderHTML();
+        public abstract string renderHTML(string attribs);
     }
 }

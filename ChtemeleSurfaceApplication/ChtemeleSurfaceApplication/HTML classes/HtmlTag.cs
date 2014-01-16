@@ -19,13 +19,38 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         }
 
-        override public string RenderHTML(){
+        public override string renderHTML()
+        {
             string res = "";
 
             if (_type == HTMLTagType.OPENTAG)
             {
-
+                res += "<";
+                res += _tagname;
+                res += ">";
             }
+            else
+            {
+                res += "<";
+                res += _tagname;
+                res += "/>";
+            }
+
+            return res;
+        }
+
+        public override string renderHTML(string attribs)
+        {
+            string res = "";
+
+            if (_type == HTMLTagType.OPENTAG)
+            {
+                res += "<";
+                res += _tagname;
+                res += attribs;
+                res += ">";
+            }
+            else throw new NotSupportedException("Les balises fermantes d'acceptent pas d'attributs.");
 
             return res;
         }
