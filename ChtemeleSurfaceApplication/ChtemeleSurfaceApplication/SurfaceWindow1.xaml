@@ -21,7 +21,7 @@
                            Height="150"
                            >
             <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="True" Orientation="0"></custom:CartesJoueurs>
+                <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
                 <s:ScatterViewItem Name="DocSud" CanScale="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
                 <s:ScatterViewItem Name="ClavierSud" CanScale="False" CanRotate="True" Orientation="0"></s:ScatterViewItem>
             </s:ScatterView>

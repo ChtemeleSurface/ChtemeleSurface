@@ -10,5 +10,11 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Tableau des codes effets
         private int[] codeEffect;
         // Effet
+
+        // constructeur
+        public Effect()
+        {
+
+        }
     }
 }
