@@ -16,6 +16,8 @@ using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
 
+using ChtemeleSurfaceApplication.Game_classes;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -23,12 +25,17 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
+        public static SurfaceWindow1 instance = null;
+
+        private Game _game;
+
         /// <summary>
         /// Default constructor.
         /// </summary>
         public SurfaceWindow1()
         {
             InitializeComponent();
+            instance = this;
 
            /* //Clavier Sud
             ScatterViewItem clav = new ScatterViewItem();
@@ -206,6 +213,11 @@ namespace ChtemeleSurfaceApplication
             ZonePioche.Center = new Point(ScatterCenterView.Width / 2.0, ScatterCenterView.Height / 2.0);
             PageCode.Center = new Point(PageCode.Width/2.0, ScatterCenterView.Height/2.0);
             PageRendu.Center = new Point(ScatterCenterView.Width - PageCode.Width / 2.0, ScatterCenterView.Height / 2.0);
+        }
+
+        private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            _game = new Game();
         }
     }
 }

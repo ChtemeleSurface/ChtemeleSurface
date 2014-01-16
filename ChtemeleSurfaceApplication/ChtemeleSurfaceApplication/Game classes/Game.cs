@@ -20,8 +20,8 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public Game()
         {
-            HtmlPage page = new HtmlPage();
-
+            _page = new HtmlPage();
+            SurfaceWindow1.instance.PageCode.ShowCode(getRawHTML());
         }
 
 
@@ -46,6 +46,12 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public void setActualnbSteps(int a)
         {
             nbSteps = a;
+        }
+
+        public string getRawHTML()
+        {
+            string ret = _page.renderHTML();
+            return ret;
         }
 
     }

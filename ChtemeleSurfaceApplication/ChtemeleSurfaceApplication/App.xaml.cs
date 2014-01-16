@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
+using ChtemeleSurfaceApplication.Game_classes;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -12,5 +14,10 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class App : Application
     {
+        
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
     }
 }
