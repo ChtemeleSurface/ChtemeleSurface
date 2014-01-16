@@ -16,18 +16,6 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // variables joueurs
         private Player joueurS, joueurN, joueurE, joueurO;
 
-        public Game()
-        {
-            // Définition joueurS
-
-            // Définition joueurN
-
-            // Définition joueurE
-
-            // Définition joueurO
-
-        }
-
         HtmlPage _page;
 
         public Game()

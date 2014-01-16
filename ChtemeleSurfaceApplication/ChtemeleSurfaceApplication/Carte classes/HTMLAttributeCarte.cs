@@ -16,5 +16,15 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             _value = value;
 
         }
+
+        public override void onPlay()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void onValid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
