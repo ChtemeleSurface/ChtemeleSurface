@@ -31,7 +31,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
 
         //renvoie une string du rendu HTML de l'élément
-        public string RenderHTML(){
+        override public string RenderHTML(){
             string res = "";
             string resattr = "";
             if (tagContent.Count == 0) return res;
@@ -47,7 +47,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
             foreach (HtmlTagContent elem in tagContent)
             {
-                res += elem.renderHTML();
+                res += elem.RenderHTML();
             }
 
             return res;

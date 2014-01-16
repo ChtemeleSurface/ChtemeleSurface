@@ -12,6 +12,6 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private HtmlElement _parent;
 
 
-        public virtual string renderHTML();
+        public virtual string RenderHTML() { return null; }
     }
 }
