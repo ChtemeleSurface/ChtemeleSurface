@@ -11,9 +11,48 @@ namespace ChtemeleSurfaceApplication.HTML_classes
     {
         public enum HTMLTagType {OPENTAG, ENDTAG};
 
+        private string _tagname;
+        private HTMLTagType _type;
+
         public HtmlTag(string tag, HTMLTagType type)
         {
 
+        }
+
+        public override string renderHTML()
+        {
+            string res = "";
+
+            if (_type == HTMLTagType.OPENTAG)
+            {
+                res += "<";
+                res += _tagname;
+                res += ">";
+            }
+            else
+            {
+                res += "<";
+                res += _tagname;
+                res += "/>";
+            }
+
+            return res;
+        }
+
+        public override string renderHTML(string attribs)
+        {
+            string res = "";
+
+            if (_type == HTMLTagType.OPENTAG)
+            {
+                res += "<";
+                res += _tagname;
+                res += attribs;
+                res += ">";
+            }
+            else throw new NotSupportedException("Les balises fermantes d'acceptent pas d'attributs.");
+
+            return res;
         }
     }
 }

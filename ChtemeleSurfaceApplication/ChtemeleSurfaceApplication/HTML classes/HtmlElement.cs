@@ -28,5 +28,40 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         {
             // TODO: Complete member initialization
         }
+
+
+        //renvoie une string du rendu HTML de l'élément
+        public override string renderHTML()
+        {
+            string res = "";
+            string resattr = "";
+            if (tagContent.Count == 0) return res;
+
+            //attributs
+            if (attributes.Count > 0)
+            {
+                foreach (HtmlTagAttribute attr in attributes)
+                {
+                    resattr += " ";
+                    resattr += attr.RenderHTML();
+                }
+            }
+
+            //balise ouvrante
+            //string opentag = tagContent.ElementAt(0).renderHTML(resattr);
+
+            foreach (HtmlTagContent elem in tagContent)
+            {
+                res += elem.renderHTML();
+            }
+
+            return res;
+        }
+
+
+        public override string renderHTML(string attribs)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
