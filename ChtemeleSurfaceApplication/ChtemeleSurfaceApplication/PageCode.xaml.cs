@@ -1,4 +1,9 @@
 ﻿using System;
+
+using System.IO;
+
+//using System.Windows.Shapes.Path;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +15,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+//using System.Windows.Shapes;
+
 
 using Microsoft.Surface.Presentation.Controls;
 
@@ -32,7 +38,7 @@ namespace ChtemeleSurfaceApplication
             string temp = System.IO.Directory.GetCurrentDirectory();
             temp = temp + "\\Resources\\Documentation\\index.html";
             setTextCode(temp);
-            
+
             // affiche le code dans la zone prévu
             ShowCode();
         }
@@ -54,6 +60,11 @@ namespace ChtemeleSurfaceApplication
         // Gestion de l'indentation et coloration syntaxique non-géré
         public void ShowCode()
         {
+
+            
+
+
+            //CodeText.Inlines.Add(new Run(lines[i]));
             for (int i = 0; i < lines.Length; i++)
                 CodeText.Inlines.Add(new Run(lines[i]));
         }
