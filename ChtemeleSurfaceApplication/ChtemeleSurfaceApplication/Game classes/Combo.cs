@@ -12,7 +12,12 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Score du code total
         private int codeScore;
 
-
+        public enum BonusCombo
+        {
+            FULLHAND,
+            NOERRER,
+            LASTTURN
+        };
 
 
 
@@ -32,9 +37,5 @@ namespace ChtemeleSurfaceApplication.Game_classes
         //    //return code;
         //}
 
-        public void setScoreJoueur(int score)
-        {
-            codeScore = score;
-        }
     }
 }
