@@ -78,15 +78,16 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             _mainTag.tagContent.Add(_baliseH2);
             _mainTag.tagContent.Add(_baliseDIV);
 
-
             _mainTag.tagContent.Add(new HtmlTag("body", HtmlTag.HTMLTagType.ENDTAG));
+
+
 
         }
 
         public string renderHTML(){
             string res = "";
 
-            res += _mainTag.RenderHTML();
+            res += _mainTag.renderHTML();
 
             return res;
         }

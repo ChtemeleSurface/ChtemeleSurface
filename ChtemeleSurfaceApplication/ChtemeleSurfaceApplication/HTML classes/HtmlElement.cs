@@ -52,7 +52,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
             foreach (HtmlTagContent elem in tagContent)
             {
-                res += elem.RenderHTML();
+                res += elem.renderHTML();
             }
 
             return res;

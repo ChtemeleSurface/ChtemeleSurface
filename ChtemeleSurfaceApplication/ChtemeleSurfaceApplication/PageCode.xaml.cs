@@ -20,6 +20,8 @@ using System.Windows.Navigation;
 
 using Microsoft.Surface.Presentation.Controls;
 
+using ChtemeleSurfaceApplication.HTML_classes;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -27,7 +29,7 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class PageCode : ScatterViewItem
     {
-        private string[] lines;
+        private string lines;
 
         // Constructeur
         public PageCode()
@@ -44,7 +46,7 @@ namespace ChtemeleSurfaceApplication
         }
 
         // Retourne les lignes récupéré par le set
-        public string[] getTextCode()
+        public string getTextCode()
         {
             return lines;
         }
@@ -53,7 +55,7 @@ namespace ChtemeleSurfaceApplication
         public void setTextCode(string fileUrl)
         {
 
-            lines = System.IO.File.ReadAllLines(@fileUrl); //@+fileUrl
+            lines = System.IO.File.ReadAllText(@fileUrl); //@+fileUrl
         }
 
         // Lis chaque ligne du tableau et envoie chaque ligne dans un Inline
@@ -61,12 +63,8 @@ namespace ChtemeleSurfaceApplication
         public void ShowCode()
         {
 
-            
-
-
             //CodeText.Inlines.Add(new Run(lines[i]));
-            for (int i = 0; i < lines.Length; i++)
-                CodeText.Inlines.Add(new Run(lines[i]));
+            CodeText.Inlines.Add(new Run());
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using ChtemeleSurfaceApplication.HTML_classes;
+
 namespace ChtemeleSurfaceApplication.Game_classes
 {
     class Game
@@ -13,7 +15,15 @@ namespace ChtemeleSurfaceApplication.Game_classes
         private int nbSteps;
         // variables joueurs
         // private ? joueurS, joueurN, jouerE, joueurO;
-        
+
+        HtmlPage _page;
+
+        public Game()
+        {
+            HtmlPage page = new HtmlPage();
+
+        }
+
 
         // SET - GET
         // variable -> step;
