@@ -13,10 +13,6 @@ namespace ChtemeleSurfaceApplication.Game_classes
         private int codeScore;
 
 
-
-
-
-
         public int getScoreJoueur()
         {
             return codeScore;
@@ -31,10 +27,5 @@ namespace ChtemeleSurfaceApplication.Game_classes
         //{
         //    //return code;
         //}
-
-        public void setScoreJoueur(int score)
-        {
-            codeScore = score;
-        }
     }
 }

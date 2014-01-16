@@ -18,7 +18,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         public string renderHTML(){
             string res = "";
 
-            
+            res += _mainTag.renderHTML();
 
             return res;
         }
