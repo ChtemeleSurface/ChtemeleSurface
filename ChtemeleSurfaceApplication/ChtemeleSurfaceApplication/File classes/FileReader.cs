@@ -95,7 +95,9 @@ namespace ChtemeleSurfaceApplication.File_classes
         public bool testFinPartie(string FileName)
         {
             /* TODO le code */
-            return true;
+
+            int nbSteps;// en attente du get
+            return false;
         }
 
     }

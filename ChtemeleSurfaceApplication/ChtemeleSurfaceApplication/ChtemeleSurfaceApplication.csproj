@@ -106,6 +106,10 @@
     <Compile Include="Carte classes\HTMLCarte.cs" />
     <Compile Include="File classes\FileReader.cs" />
     <Compile Include="File classes\FileWriter.cs" />
+    <Compile Include="Game classes\Combo.cs" />
+    <Compile Include="Game classes\Effect.cs" />
+    <Compile Include="Game classes\Game.cs" />
+    <Compile Include="Game classes\Player.cs" />
     <Compile Include="HTML classes\HtmlElement.cs" />
     <Compile Include="HTML classes\HtmlPage.cs" />
     <Compile Include="HTML classes\HtmlTag.cs" />
