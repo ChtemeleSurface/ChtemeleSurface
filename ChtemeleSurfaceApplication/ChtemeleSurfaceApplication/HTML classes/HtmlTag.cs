@@ -14,6 +14,15 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private string _tagname;
         private HTMLTagType _type;
 
+        //options de génération HTML
+        private static Dictionary<HTMLTagType, string> openSymbol = new Dictionary<HTMLTagType,string>
+        {
+            {HTMLTagType.OPENTAG , "<"},
+            {HTMLTagType.ENDTAG , "</"}
+        };
+        private static string endSymbol = ">";
+        
+
         public HtmlTag(string tag, HTMLTagType type)
         {
             _tagname = tag;
@@ -22,36 +31,17 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public override string renderHTML()
         {
-            string res = "";
-
-            if (_type == HTMLTagType.OPENTAG)
-            {
-                res += "<";
-                res += _tagname;
-                res += ">";
-            }
-            else
-            {
-                res += "</";
-                res += _tagname;
-                res += ">";
-            }
-
-            return res;
+            return renderHTML("");
         }
 
         public override string renderHTML(string attribs)
         {
             string res = "";
 
-            if (_type == HTMLTagType.OPENTAG)
-            {
-                res += "<";
-                res += _tagname;
-                res += attribs;
-                res += ">";
-            }
-            else throw new NotSupportedException("Les balises fermantes d'acceptent pas d'attributs.");
+            res += openSymbol[_type];
+            res += _tagname;
+            if (_type == HTMLTagType.OPENTAG) res += attribs;
+            res += endSymbol;
 
             return res;
         }
