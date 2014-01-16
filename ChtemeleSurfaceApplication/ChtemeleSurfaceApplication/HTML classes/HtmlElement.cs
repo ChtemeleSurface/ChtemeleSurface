@@ -23,5 +23,10 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             attributes = new List<HtmlTagAttribute>();
             tagContent = new List<HtmlTagContent>();
         }
+
+        public HtmlElement()
+        {
+            // TODO: Complete member initialization
+        }
     }
 }
