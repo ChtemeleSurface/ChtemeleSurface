@@ -28,7 +28,9 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
             // Initialise l'adresse de la doc
-            DocUrl = System.IO.Path.GetFullPath("./Resources/Documentation/index.html");
+            DocUrl = System.IO.Directory.GetCurrentDirectory();
+            DocUrl = DocUrl + "/Resources/Documentation/index.html";
+            //DocUrl = System.IO.Path.GetFullPath("./Resources/Documentation/index.html");
             // Affiche la doc dans la zone défini
             WB.Navigate(new Uri(DocUrl));
         }

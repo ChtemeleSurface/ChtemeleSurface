@@ -29,7 +29,9 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
 
-            fileURL = System.IO.Path.GetFullPath("./Resources/Savegame/game_0.html");
+            fileURL = System.IO.Directory.GetCurrentDirectory();
+            fileURL = fileURL + "/Resources/Savegame/game_0.html";
+            //fileURL = System.IO.Path.GetFullPath("./Resources/Savegame/game_0.html");
             
 
             WebRenderer();

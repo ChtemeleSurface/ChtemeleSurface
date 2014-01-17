@@ -36,7 +36,9 @@ namespace ChtemeleSurfaceApplication
             InitializeComponent();
 
             // URL du fichier local à lire (ne fonctionne pas avec les URLs distantes)
-            string temp = System.IO.Path.GetFullPath("./Resources/Savegame/game_0.html");
+            string temp = System.IO.Directory.GetCurrentDirectory();
+            temp = temp + "/Resources/Savegame/game_0.html";
+            //string temp = System.IO.Path.GetFullPath("./Resources/Savegame/game_0.html");
 
             setTextCode(temp);
         }
