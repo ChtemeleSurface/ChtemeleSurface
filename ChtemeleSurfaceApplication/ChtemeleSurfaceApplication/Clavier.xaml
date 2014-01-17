@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ChtemeleSurfaceApplication.Clavier"
+﻿<s:ScatterViewItem x:Class="ChtemeleSurfaceApplication.Clavier"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -90,4 +90,4 @@
         <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="11" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Alt Gr</s:SurfaceButton>
         <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="13" Click="SurfaceButton_Click" Grid.ColumnSpan="2" FontSize="10" Padding="3,1,10,10">Ctrl</s:SurfaceButton>
     </Grid>
-</UserControl>
+</s:ScatterViewItem>

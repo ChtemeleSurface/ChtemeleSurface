@@ -12,12 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Microsoft.Surface.Presentation.Controls;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
     /// Logique d'interaction pour Clavier.xaml
     /// </summary>
-    public partial class Clavier : UserControl
+    public partial class Clavier : ScatterViewItem
     {
         public Clavier()
         {

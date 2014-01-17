@@ -25,7 +25,7 @@
             <s:ScatterView>
                 <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
                 <s:ScatterViewItem Name="DocSud" CanScale="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierSud" CanScale="False" CanRotate="True" Orientation="0"></s:ScatterViewItem>
+                    <custom:Clavier x:Name="ClavierSud" ></custom:Clavier>
             </s:ScatterView>
         </s:ScatterViewItem>
 
@@ -40,7 +40,7 @@
             <s:ScatterView>
                 <custom:CartesJoueurs x:Name="CarteOuest"  CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
                 <s:ScatterViewItem Name="DocOuest" CanScale="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierOuest" CanScale="False" Orientation="0"></s:ScatterViewItem>
+                    <custom:Clavier x:Name="ClavierOuest"></custom:Clavier>
             </s:ScatterView>
         </s:ScatterViewItem>
 
@@ -55,7 +55,7 @@
             <s:ScatterView>
                 <custom:CartesJoueurs x:Name="CarteNord" CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
                 <s:ScatterViewItem Name="DocNord"  CanScale="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierNord"  CanScale="False" Orientation="0"></s:ScatterViewItem>
+                    <custom:Clavier x:Name="ClavierNord" ></custom:Clavier>
             </s:ScatterView>
         </s:ScatterViewItem>
 
@@ -70,7 +70,7 @@
             <s:ScatterView>
                 <custom:CartesJoueurs x:Name="CarteEst" CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
                 <s:ScatterViewItem Name="DocEst"  CanScale="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
-                <s:ScatterViewItem Name="ClavierEst"  CanScale="False" Orientation="0"></s:ScatterViewItem>
+                    <custom:Clavier x:Name="ClavierEst" ></custom:Clavier>
             </s:ScatterView>
         </s:ScatterViewItem>
 

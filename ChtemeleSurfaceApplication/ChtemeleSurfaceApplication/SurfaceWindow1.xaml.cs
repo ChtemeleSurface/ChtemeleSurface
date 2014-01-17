@@ -37,17 +37,41 @@ namespace ChtemeleSurfaceApplication
             InitializeComponent();
             instance = this;
 
-           /* //Clavier Sud
-            ScatterViewItem clav = new ScatterViewItem();
-            clav.Content = new Clavier();
-            clav.Width = 400;
-            clav.Height = 130;
-            clav.Center = new System.Windows.Point(clav.Width/2, clav.Height/2);
-            clav.Orientation = 0;
-            clav.CanMove = false;
-            clav.CanRotate = false;
-            clav.CanScale = false;
-            this.scatterSud.Items.Add(clav);*/
+            //Clavier Nord
+            ScatterViewItem clavN = new ScatterViewItem();
+            clavN.Content = new Clavier();
+            clavN.Orientation = 0;
+            clavN.CanScale = false;
+            clavN.CanRotate = true;
+            clavN.Width = 400;
+            clavN.Height = 130;
+
+            //Clavier Sud
+            ScatterViewItem clavS = new ScatterViewItem();
+            clavS.Content = new Clavier();
+            clavS.Orientation = 0;
+            clavS.CanScale = false;
+            clavS.CanRotate = true;
+            clavS.Width = 400;
+            clavS.Height = 130;
+
+            //Clavier Est
+            ScatterViewItem clavE = new ScatterViewItem();
+            clavE.Content = new Clavier();
+            clavE.Orientation = 0;
+            clavE.CanScale = false;
+            clavE.CanRotate = true;
+            clavE.Width = 400;
+            clavE.Height = 130;
+
+            //Clavier Ouest
+            ScatterViewItem clavO = new ScatterViewItem();
+            clavO.Content = new Clavier();
+            clavO.Orientation = 0;
+            clavO.CanScale = false;
+            clavO.CanRotate = true;
+            clavO.Width = 400;
+            clavO.Height = 130;
 
             // CarteNord
             ScatterViewItem CarteJoueurN = new ScatterViewItem();
