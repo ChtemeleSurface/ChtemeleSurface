@@ -17,7 +17,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         public override string renderHTML()
         {
             string ret = "";
-            ret += new String(' ', HtmlTagContent.indentCount * HtmlTagContent.indentSize);
+            ret += new String(' ', HtmlElement.indentCount * HtmlElement.indentSize);
             ret += _str;
             ret += "\n";
 

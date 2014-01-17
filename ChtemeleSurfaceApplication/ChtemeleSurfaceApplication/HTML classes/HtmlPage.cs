@@ -11,7 +11,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public HtmlPage()
         {
-           
+           /*
             //instantiation balises test
             HtmlElement _baliseH1 = new HtmlElement("H1");
             _baliseH1.tagContent.Add(new HtmlTag("h1", HtmlTag.HTMLTagType.OPENTAG));
@@ -84,7 +84,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
             _mainTag.tagContent.Add(new HtmlTag("body", HtmlTag.HTMLTagType.ENDTAG));
 
-
+            */
 
         }
 
