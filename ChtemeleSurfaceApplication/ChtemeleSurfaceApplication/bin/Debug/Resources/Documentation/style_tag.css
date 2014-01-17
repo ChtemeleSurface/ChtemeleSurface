@@ -232,3 +232,23 @@ p{
 hr{
 	width: 90%;
 }
+
+aside{
+	position:fixed;
+	right:0%;
+	width:5%;
+}
+
+.backToIndex a {
+display:block;
+width:100%;
+line-height:100%;
+text-align:center;
+vertical-align:middle;
+background:url(img/boutonnoir.png) no-repeat;
+color:white;
+text-decoration:none;
+}
+.backToIndex a:hover {
+background:url(img/boutonnoir2.png) no-repeat;
+}
