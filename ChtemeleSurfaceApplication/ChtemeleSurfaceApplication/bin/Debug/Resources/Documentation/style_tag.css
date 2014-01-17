@@ -114,7 +114,10 @@ samp {
     font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
 }
 code { line-height: 1em; }
-table { margin-bottom: 1.5em; }
+table {
+	margin: 0;
+	padding:0;
+ }
 
 /* avoid top margins on first content element */
 p:first-child,
