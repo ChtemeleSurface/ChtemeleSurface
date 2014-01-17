@@ -15,6 +15,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         private int nbSteps;
         // variables joueurs
         private Player joueurS, joueurN, joueurE, joueurO;
+        private Player _curPlayer;
 
         HtmlPage _page;
 

@@ -6,14 +6,19 @@ using ChtemeleSurfaceApplication.Fabriques;
 
 namespace ChtemeleSurfaceApplication
 {
-    abstract class Carte
+    class CarteAssoc
     {
-
-        public abstract void onPlay();
-        public abstract void onValid();
-
-        //pointeur fonction
+        public int tag;
         public delegate Carte generateCarte();
+        public string descriptionFilename;
+        public string keyword;
+
+        public CarteAssoc(int t, generateCarte g, string d, string k){
+            tag = t;
+            //this. = g;
+            descriptionFilename = d;
+            keyword = k;
+        }
 
         //association des tags avec les cartes
         public static Dictionary<int, generateCarte> AssocTagCarte = new Dictionary<int, generateCarte>
@@ -69,10 +74,31 @@ namespace ChtemeleSurfaceApplication
             {0xE6, FabriqueCarte.CreateTITLE}
         };
 
+    }
+
+    abstract class Carte
+    {
+
+        public abstract void onPlay();
+        public abstract void onValid();
+        public abstract void onDelete();
+
+        private string _description;
+
+
+        //pointeur fonction
+        
+
+        
+
         public Carte()
+        {
+            loadDescription();
+        }
+
+        public void loadDescription()
         {
 
         }
-
     }
 }

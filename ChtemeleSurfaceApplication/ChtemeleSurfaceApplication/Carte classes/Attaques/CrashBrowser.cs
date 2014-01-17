@@ -8,12 +8,12 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
     class CrashBrowser : AttaqueCarte
 
     {
-        public override void onPlay()
+        public override void onValid()
         {
             throw new NotImplementedException();
         }
 
-        public override void onValid()
+        public override void onDelete()
         {
             throw new NotImplementedException();
         }

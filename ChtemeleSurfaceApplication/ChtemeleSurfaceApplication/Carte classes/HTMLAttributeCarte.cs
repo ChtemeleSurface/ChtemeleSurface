@@ -26,5 +26,10 @@ namespace ChtemeleSurfaceApplication.Carte_classes
         {
             throw new NotImplementedException();
         }
+
+        public override void onDelete()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
