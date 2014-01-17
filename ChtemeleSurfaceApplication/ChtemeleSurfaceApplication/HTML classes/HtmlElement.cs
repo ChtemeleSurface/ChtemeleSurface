@@ -47,9 +47,6 @@ namespace ChtemeleSurfaceApplication.HTML_classes
                 }
             }
 
-            //balise ouvrante
-            //string opentag = tagContent.ElementAt(0).renderHTML(resattr);
-
             foreach (HtmlTagContent elem in tagContent)
             {
                 res += elem.renderHTML();

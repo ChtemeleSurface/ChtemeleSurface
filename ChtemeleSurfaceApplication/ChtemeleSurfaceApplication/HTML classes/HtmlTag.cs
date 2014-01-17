@@ -32,9 +32,6 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             "h1", "h2", "br"
         };
 
-        private static int nbOpenTags = 0;
-        private static int indentSize = 4;
-
 
         /// <summary>
         /// Constructor
@@ -58,11 +55,18 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             //on détermine le type de balise
             bool multiline = multiLineTags.Exists(v => v == _tagname);
             bool monoline = monoLineTags.Exists(v => v == _tagname);
+            bool inline = (!multiline && !monoline);
 
-            //On indente
-            if (multiline && _type == HTMLTagType.OPENTAG) res += new String(' ', nbOpenTags * indentSize);
-            else if (multiline && _type == HTMLTagType.ENDTAG) res += new String(' ', (nbOpenTags-1) * indentSize);
-            else if (monoline && _type == HTMLTagType.OPENTAG) res += new String(' ', nbOpenTags * indentSize);
+            //on détermine les caractères d'indentation
+            string indent = "";
+            if (multiline && _type == HTMLTagType.OPENTAG) indent = new String(' ', HtmlTagContent.indentCount * HtmlTagContent.indentSize);
+            else if (multiline && _type == HTMLTagType.ENDTAG) indent = new String(' ', (HtmlTagContent.indentCount - 1) * HtmlTagContent.indentSize);
+            else if (monoline && _type == HTMLTagType.OPENTAG) indent = new String(' ', HtmlTagContent.indentCount * HtmlTagContent.indentSize);
+
+            //on commence à une ligne nouvelle si on est une balise block.
+
+            //on indente (seulement si on est une balise block)
+            if(!inline) res += indent;
 
             //on insère la balise
             res += openSymbol[_type];
@@ -71,12 +75,15 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             res += endSymbol;
 
             //on ajoute un retour à la ligne (des fois)
-            if (multiline) res += "\n";
+            if (multiline)
+            {
+                res += "\n";
+            }
             if (_type == HTMLTagType.ENDTAG && monoline) res += "\n";
 
             //on met à jour l'indentation
-            if (_type == HTMLTagType.OPENTAG) nbOpenTags++;
-            else nbOpenTags--;
+            if (_type == HTMLTagType.OPENTAG) HtmlTagContent.indentCount++;
+            else HtmlTagContent.indentCount--;
             
             return res;
         }

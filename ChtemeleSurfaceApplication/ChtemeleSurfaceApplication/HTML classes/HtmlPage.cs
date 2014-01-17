@@ -15,15 +15,19 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             //instantiation balises test
             HtmlElement _baliseH1 = new HtmlElement("H1");
             _baliseH1.tagContent.Add(new HtmlTag("h1", HtmlTag.HTMLTagType.OPENTAG));
+            _baliseH1.tagContent.Add(new HtmlText("Ceci est un titre."));
             _baliseH1.tagContent.Add(new HtmlTag("h1", HtmlTag.HTMLTagType.ENDTAG));
 
             HtmlElement _baliseH2 = new HtmlElement("H2");
             _baliseH2.tagContent.Add(new HtmlTag("h2", HtmlTag.HTMLTagType.OPENTAG));
+            _baliseH2.tagContent.Add(new HtmlText("Ceci est un sous-titre."));
             _baliseH2.tagContent.Add(new HtmlTag("h2", HtmlTag.HTMLTagType.ENDTAG));
 
             HtmlElement _baliseP = new HtmlElement("P");
             _baliseP.tagContent.Add(new HtmlTag("p", HtmlTag.HTMLTagType.OPENTAG));
+            _baliseP.tagContent.Add(new HtmlText("Ceci est un paragraphe."));
             _baliseP.tagContent.Add(new HtmlTag("p", HtmlTag.HTMLTagType.ENDTAG));
+            _baliseP.attributes.Add(new HtmlTagAttribute("class", "monparagraphe"));
 
             HtmlElement _baliseDIV = new HtmlElement("DIV");
             _baliseDIV.tagContent.Add(new HtmlTag("div", HtmlTag.HTMLTagType.OPENTAG));
