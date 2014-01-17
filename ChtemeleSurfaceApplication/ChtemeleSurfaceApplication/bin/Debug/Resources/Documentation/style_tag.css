@@ -233,7 +233,7 @@ hr{
 	width: 90%;
 }
 
-aside{
+aside.backToIndex{
 	position:fixed;
 	right:0%;
 	width:5%;

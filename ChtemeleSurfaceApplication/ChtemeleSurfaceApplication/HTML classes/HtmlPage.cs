@@ -11,7 +11,16 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public HtmlPage()
         {
-           
+            _mainTag = new HtmlElement("body");
+            _mainTag.closeTag();
+
+            HtmlElement _baliseH1 = new HtmlElement("h1");
+            _baliseH1.addContent(new HtmlText("Ceci est un putain de titre !"));
+            _baliseH1.closeTag();
+            _mainTag.addContent(_baliseH1);
+
+
+           /*
             //instantiation balises test
             HtmlElement _baliseH1 = new HtmlElement("H1");
             _baliseH1.tagContent.Add(new HtmlTag("h1", HtmlTag.HTMLTagType.OPENTAG));
@@ -84,7 +93,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
             _mainTag.tagContent.Add(new HtmlTag("body", HtmlTag.HTMLTagType.ENDTAG));
 
-
+            */
 
         }
 
