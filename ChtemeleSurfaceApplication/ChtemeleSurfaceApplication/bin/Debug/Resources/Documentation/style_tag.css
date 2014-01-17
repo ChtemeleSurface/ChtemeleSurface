@@ -223,13 +223,32 @@ p{
 	border: inset 2px grey;
 	padding: 10px;
 	/*arrondir les coins en haut à gauche et en bas à droite*/
-	-moz-border-radius:10px 0;
+/*	-moz-border-radius:10px 0;
 	-webkit-border-radius:10px 0;
-	border-radius:10px 0;
-	 box-shadow : 5px 3px 4px  #000000 ;
+	border-radius:10px 0;*/
 	
 }
 
 hr{
 	width: 90%;
+}
+
+aside.backToIndex{
+	position:fixed;
+	right:0%;
+	width:5%;
+}
+
+.backToIndex a {
+display:block;
+width:100%;
+line-height:100%;
+text-align:center;
+vertical-align:middle;
+background:url(img/boutonnoir.png) no-repeat;
+color:white;
+text-decoration:none;
+}
+.backToIndex a:hover {
+background:url(img/boutonnoir2.png) no-repeat;
 }
