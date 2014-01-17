@@ -190,11 +190,12 @@ body > script {display: none !important;}
 header{
 	color:grey;
 	margin-top: 10px;
-	margin-left: 10px;
+	width: 85%;
+	margin-left: 17%;
+	padding-left: 2%;
 	margin-right: 30%;
-	padding-left: 5px;
 	border-left: solid 3px black;
-	 border-bottom:1px dashed green;
+	border-bottom:1px dashed green;
 }
 
 /* Met en évidence les citations */
@@ -251,4 +252,19 @@ text-decoration:none;
 }
 .backToIndex a:hover {
 background:url(img/boutonnoir2.png) no-repeat;
+}
+
+section{
+	width: 85%;
+	margin-left: 15%;
+	/*margin-top: 10px;*/
+	padding: 2%;
+    /*border: 1px solid blue;*/
+}
+
+nav{
+	color: rgb(100, 0, 0);
+	float: left;
+    width: 15%;
+    /*border: 1px solid black;*/
 }
