@@ -54,12 +54,20 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             _tagname = name;
             attributes = new List<HtmlTagAttribute>();
             tagContent = new List<HtmlTagContent>();
+            openTag();
+
         }
 
         public void closeTag()
         {
             _endTag = new HtmlTag(_tagname, HtmlTag.HTMLTagType.ENDTAG);
             _closed = true;
+        }
+
+        public void openTag()
+        {
+            _openTag = new HtmlTag(_tagname, HtmlTag.HTMLTagType.OPENTAG);
+            _closed = false;
         }
 
         public void addContent(HtmlTagContent c)

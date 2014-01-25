@@ -9,6 +9,16 @@ namespace ChtemeleSurfaceApplication.Game_classes
 {
     class Game
     {
+        //Singleton
+        private static Game instance = null;
+        public static Game getInstance{
+            get{
+                if (instance == null)
+                    instance = new Game();
+                return instance;
+            }
+        }
+
         // Tour actuel
         private int step;
         // Nombre de tour total
@@ -17,12 +27,12 @@ namespace ChtemeleSurfaceApplication.Game_classes
         private Player joueurS, joueurN, joueurE, joueurO;
         private Player _curPlayer;
 
-        HtmlPage _page;
+        public HtmlPage _page;
 
-        public Game()
+        protected Game()
         {
             _page = new HtmlPage();
-            SurfaceWindow1.instance.PageCode.ShowCode(getRawHTML());
+            //SurfaceWindow1.instance.PageCode.ShowCode(getRawHTML());
         }
 
 
