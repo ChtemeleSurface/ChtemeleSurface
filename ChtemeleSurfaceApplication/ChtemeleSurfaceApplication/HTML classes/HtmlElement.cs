@@ -38,11 +38,13 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         private static List<string> monoLineTags = new List<string>
         {
-            "h1", "h2", "br"
+            "h1", "h2", "h3", "h4", "h5", "h6", "br"
         };
 
         public static int indentCount = 0;
         public static int indentSize = 4;
+
+        private static bool endLined = false;
 
 
 
@@ -80,7 +82,6 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         public override string renderHTML()
         {
             string res = "";
-            if (tagContent.Count == 0) return res;
 
             //on détermine le type de balise
             bool multiline = multiLineTags.Exists(v => v == _tagname);
@@ -88,8 +89,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             bool inline = (!multiline && !monoline);
 
             //on détermine les caractères d'indentation
-            string indent = "";
-            if (!inline) indent = new String(' ', indentCount * indentSize);
+            //string indent = "";
+            //if (!inline) indent = new String(' ', indentCount * indentSize);
 
             //chaine des attributs
             string resattr = "";
@@ -103,26 +104,42 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             }
             
             //indentation avant les multilines (intent ='' pour les inlines)
-            res += indent;
+            //if (!inline) res += indent;
 
 
             //OpenTag
+            //if (multiline) res += '\n';
             res += _openTag.renderHTML(resattr);
 
-            //retour à la ligne post-multiline
+            //retour à la ligne post-OpenTag multiline
             if (multiline) res += '\n';
 
             //content
-            foreach (HtmlTagContent elem in tagContent)
+            if (tagContent.Count > 0)
             {
-                res += elem.renderHTML();
+                foreach (HtmlTagContent elem in tagContent)
+                {
+                    res += elem.renderHTML();
+                }
             }
 
-            //EndTag
-            res += _endTag.renderHTML();
+            //indentation avant les multilines (intent ='' pour les inlines)
+            if (multiline && !endLined)
+            {
+                res += '\n';
+            }
+            else endLined = false;
 
-            //retour à la ligne post-multiline
-            if (!inline) res += '\n';
+            //EndTag
+            if (isClosed())
+                res += _endTag.renderHTML();
+
+            //retour à la ligne post-non-inline
+            if (!inline)
+            {
+                res += '\n';
+                endLined = true;
+            }
 
             return res;
         }

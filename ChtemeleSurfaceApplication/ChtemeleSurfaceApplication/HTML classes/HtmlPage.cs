@@ -15,9 +15,35 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             _mainTag.closeTag();
 
             HtmlElement _baliseH1 = new HtmlElement("h1");
-            _baliseH1.addContent(new HtmlText("Ceci est un putain de titre !"));
-            _baliseH1.closeTag();
-            _mainTag.addContent(_baliseH1);
+                _baliseH1.addContent(new HtmlText("Ceci est un putain de titre !"));
+                _baliseH1.closeTag();
+                _mainTag.addContent(_baliseH1);
+
+            HtmlElement _baliseH2 = new HtmlElement("h2");
+                _baliseH2.addContent(new HtmlText("Et ça, c'est un péripatéticienne de sous-titre !"));
+                _baliseH2.closeTag();
+                _mainTag.addContent(_baliseH2);
+
+            HtmlElement _baliseP = new HtmlElement("p");
+                _baliseP.addContent(new HtmlText("Lorem Ipsum et de toute façon je met le texte que je veux tout le monde s'en calice !"));
+                HtmlElement _baliseBR = new HtmlElement("br");
+                    _baliseP.addContent(_baliseBR);
+                _baliseP.addContent(new HtmlText("Voilà, d'abord !!"));
+                _baliseP.closeTag();
+                _mainTag.addContent(_baliseP);
+
+            HtmlElement _baliseDIV1 = new HtmlElement("div");
+                _baliseDIV1.closeTag();
+                _mainTag.addContent(_baliseDIV1);
+
+                HtmlElement _baliseDIV2 = new HtmlElement("div");
+                    _baliseDIV2.closeTag();
+                    _baliseDIV1.addContent(_baliseDIV2);
+
+                HtmlElement _baliseH3 = new HtmlElement("h3");
+                    _baliseH3.addContent(new HtmlText("Et ça, c'est un péripatéticienne de sous-sous-titre !"));
+                    _baliseH3.closeTag();
+                    _baliseDIV2.addContent(_baliseH3);
 
 
            /*
