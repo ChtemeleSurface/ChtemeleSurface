@@ -109,6 +109,9 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             //OpenTag
             res += _openTag.renderHTML(resattr);
 
+            //retour à la ligne post-multiline
+            if (multiline) res += '\n';
+
             //content
             foreach (HtmlTagContent elem in tagContent)
             {
