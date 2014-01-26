@@ -8,14 +8,16 @@ namespace ChtemeleSurfaceApplication
 {
     class CarteAssoc
     {
-        public int tag;
         public delegate Carte generateCarte();
+
+        public int tag;
         public string descriptionFilename;
         public string keyword;
+        public generateCarte myFunc;
 
         public CarteAssoc(int t, generateCarte g, string d, string k){
             tag = t;
-            //this. = g;
+            myFunc = g;
             descriptionFilename = d;
             keyword = k;
         }
