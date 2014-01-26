@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
     class HtmlPage
     {
         private HtmlElement _mainTag;
+
+
+        //paramètres de génération HTML
+        public static int indentLevel = 0;
+        public static int indentSize = 4;
 
         public HtmlPage()
         {
@@ -129,6 +135,47 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             string res = "";
 
             res += _mainTag.renderHTML();
+
+            res = autoIndent(res);
+
+            return res;
+        }
+
+        public string autoIndent(string res)
+        {
+            indentLevel = 0;
+            int indentCount = 0;
+
+            string[] lines = res.Split('\n');
+
+            //on parcours toutes les lignes du code HTML
+            for (int i = 0; i < lines.Length; ++i)
+            {
+                lines[i] = new String(' ', indentSize * indentLevel) + lines[i];
+
+                indentCount = 0;
+                if (lines[i].Length == 0) continue;
+                //on doit d'abord déterminer si la ligne commence par un tag.
+                Match m = Regex.Match(lines[i], @"^</?(\w+)");
+                if (m.Success)
+                {
+                    
+                    string tag = m.Value.Substring(1);
+                    Console.Write(tag);
+                    if (!HtmlElement.multiLineTags.Exists(v => v == tag) && !HtmlElement.singleTags.Exists(v => v == tag))
+                    {
+                        if (tag.ElementAt(0) == '/')
+                            indentCount--;
+                        else
+                            indentCount++;
+                    }
+                }
+                
+                indentLevel += indentCount;
+                
+            }
+
+            res = String.Join("\n", lines);
 
             return res;
         }

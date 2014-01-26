@@ -31,20 +31,20 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         };
         private static string endSymbol = ">";
 
-        private static List<string> multiLineTags = new List<string>
+        public static List<string> multiLineTags = new List<string>
         {
-            "body", "p", "div", "blockquote", "header", "footer", "aside", "hr"
+            "body", "p", "div", "blockquote", "header", "footer", "aside", "hr", "img"
         };
 
-        private static List<string> monoLineTags = new List<string>
+        public static List<string> monoLineTags = new List<string>
         {
             "h1", "h2", "h3", "h4", "h5", "h6", "br"
         };
 
-        public static int indentCount = 0;
-        public static int indentSize = 4;
-
-        private static bool endLined = false;
+        public static List<string> singleTags = new List<string>
+        {
+            "br", "hr", "img"
+        };
 
 
 
@@ -124,22 +124,14 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             }
 
             //indentation avant les multilines (intent ='' pour les inlines)
-            if (multiline && !endLined)
-            {
-                res += '\n';
-            }
-            else endLined = false;
+            if (multiline) res += '\n';
 
             //EndTag
             if (isClosed())
                 res += _endTag.renderHTML();
 
             //retour à la ligne post-non-inline
-            if (!inline)
-            {
-                res += '\n';
-                endLined = true;
-            }
+            if (!inline) res += '\n';
 
             return res;
         }

@@ -52,8 +52,11 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             res += endSymbol;
 
             //on met à jour l'indentation
-            if (_type == HTMLTagType.OPENTAG) HtmlElement.indentCount++;
-            else HtmlElement.indentCount--;
+            if (HtmlElement.singleTags.Exists(v => v == _tagname))
+            {
+                if (_type == HTMLTagType.OPENTAG) HtmlPage.indentLevel++;
+                else HtmlPage.indentLevel--;
+            }
             
             return res;
         }
