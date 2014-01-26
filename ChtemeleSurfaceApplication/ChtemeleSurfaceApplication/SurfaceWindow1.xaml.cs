@@ -239,7 +239,7 @@ namespace ChtemeleSurfaceApplication
 
         private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            _game = new Game();
+            _game = Game.getInstance;
         }
     }
 }
