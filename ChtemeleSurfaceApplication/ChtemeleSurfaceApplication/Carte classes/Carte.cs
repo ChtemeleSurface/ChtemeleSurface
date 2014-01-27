@@ -35,7 +35,7 @@ namespace ChtemeleSurfaceApplication
             {0x57, FabriqueCarte.CreateCrashBrowser},
             {0x59, FabriqueCarte.CreateError303},
             {0x5B, FabriqueCarte.CreateError403},
-            {0x5B, FabriqueCarte.CreateError404},
+            {0x51, FabriqueCarte.CreateError404},
             {0x5E, FabriqueCarte.CreateFreeze},
             {0x5F, FabriqueCarte.CreateManInTheMiddle},
             // cartes ouvrantes
