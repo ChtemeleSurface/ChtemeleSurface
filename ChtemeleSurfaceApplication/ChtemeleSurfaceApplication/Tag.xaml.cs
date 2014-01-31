@@ -12,5 +12,10 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
         }
+
+        private void valider(object sender, RoutedEventArgs e)
+        {
+            CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value]();
+        }
     }
 }
