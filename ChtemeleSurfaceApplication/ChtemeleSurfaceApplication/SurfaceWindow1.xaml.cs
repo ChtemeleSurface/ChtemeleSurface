@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,12 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
             instance = this;
+
+            //nom application
+
+            //icon application
+
+
 
            /* //Clavier Nord
             ScatterViewItem clavN = new ScatterViewItem();
@@ -114,14 +121,6 @@ namespace ChtemeleSurfaceApplication
             DocOuest.Center = new Point(PlayerOScatterView.Width / 6, PlayerOScatterView.Height / 2);
            // ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
             CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 3), PlayerOScatterView.Height / 2);
-
-            //Page de code balise carte
-
-
-
-            //Page rendu HTML
-
-
 
 
             // Add handlers for window availability events
