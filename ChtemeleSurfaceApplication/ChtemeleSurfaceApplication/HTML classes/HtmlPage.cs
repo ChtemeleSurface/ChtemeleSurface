@@ -10,10 +10,10 @@ namespace ChtemeleSurfaceApplication.HTML_classes
     {
         private HtmlElement _mainTag;
 
-
         //paramètres de génération HTML
         public static int indentLevel = 0;
         public static int indentSize = 4;
+        public static int computedIndentChanges = 0;
 
         public HtmlPage()
         {
@@ -66,14 +66,23 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public string autoIndent(string res)
         {
-            indentLevel = 0;
+            indentLevel = 1;
 
             //On parcout toutes les balises et les retours à la ligne de la séquence.
 
-            string pattern = @"(\n|(<(?</?tagname>\w+)>))";    // capture soit "\n", soit "<{tagname}>", soit "</{tagname}>"
 
-            //Regex.Replace(res, pattern, fetchIndentItem);
+            MatchEvaluator evalLine = new MatchEvaluator(fetchLine);
 
+            string linePattern = @"\n+(?<line>.*)";
+
+            try
+            {
+                res = Regex.Replace(res, linePattern, evalLine);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             //Match m = Regex. (res, @"^</?(\w+)");
 
             /*
@@ -117,20 +126,42 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         {
             string s = item.ToString();
 
-            if (s == "\n")  //nouvelle ligne
+            if(Regex.IsMatch(s, @"^<\w+>$"))       //balise ouvrante
             {
-                s = new String(' ', indentSize * indentLevel) + s;
+                if(HtmlElement.singleTags.Exists(v => v == item.Groups["tagname"].ToString())){
+                    //balise simple
+                }
+                else
+                    computedIndentChanges++;
             }
-            else if(Regex.IsMatch(s, @"^<\w+>$"))       //balise ouvrante
+            else //if (Regex.IsMatch(s, @"^</\w+>$"))       //balise fermante seule
             {
-                indentLevel++;
-            }
-            else    //balise fermante
-            {
-                indentLevel--;
+                computedIndentChanges--;
             }
 
             return s;
+        }
+
+        private static string fetchLine(Match item)
+        {
+            computedIndentChanges = 0;
+            string s = item.ToString();
+
+            string pattern = @"</?(?<tagname>\w+)>";    // capture soit "\n", soit "<{tagname}>", soit "</{tagname}>"
+            MatchEvaluator evalElem = new MatchEvaluator(fetchIndentItem);
+
+            try
+            {
+                s = Regex.Replace(s, pattern, evalElem);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            if (computedIndentChanges < 0) indentLevel += computedIndentChanges;
+            string res = '\n' + new string(' ', indentSize * indentLevel) + item.Groups["line"].ToString();
+            if (computedIndentChanges > 0) indentLevel += computedIndentChanges;
+            return res;
         }
     }
 }
