@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 
 using Microsoft.Surface.Presentation.Controls;
 
+using ChtemeleSurfaceApplication.Game_classes;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -27,7 +29,26 @@ namespace ChtemeleSurfaceApplication
         public CartesJoueurs()
         {
             InitializeComponent();
+            /*
+            PseudoCarte.Text = Player.ListNomsJoueur[0];
+             */
+
+            //cacher gride1 pour choix navigateur
 
         }
+
+
+        public void ChoixNavigateur()
+        {
+            //appel PopUp
+
+
+            //nomJoueur.setNom(Liste[Boutonclique.valeur]);
+
+            //une fois choisi, cacher gride2, afficher gride1
+        }
+
+
+
     }
 }

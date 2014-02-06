@@ -38,12 +38,6 @@ namespace ChtemeleSurfaceApplication
             InitializeComponent();
             instance = this;
 
-            //nom application
-
-            //icon application
-
-
-
            /* //Clavier Nord
             ScatterViewItem clavN = new ScatterViewItem();
             clavN.Content = new Clavier();

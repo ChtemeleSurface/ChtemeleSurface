@@ -6,24 +6,49 @@
              xmlns:s="http://schemas.microsoft.com/surface/2008"
              mc:Ignorable="d" 
              Height="150" Width="200">
+    <Grid>
+<!--
+        <Grid Name="CarteJoueurGrid" ShowGridLines="True" Background="YellowGreen" Height="150" Width="200">
 
-    <Grid ShowGridLines="True" Background="White" Height="150" Width="200">
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="80" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="100" />
-        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
 
-        <TextBlock Name="PseudoCarte" Grid.Column="0" Grid.Row="0" FontSize="12" FontWeight="Bold" >(Nom navigateur)</TextBlock>
-        <TextBlock Name="PoseeCarte" Grid.Column="0" Grid.Row="1" FontSize="10" FontWeight="Bold">Dernière carte posée :</TextBlock>
-        <TextBlock Name="BonusCarte" Grid.Column="1" Grid.Row="0" FontSize="10" FontWeight="Bold">Bonus : </TextBlock>
-        <TextBlock Name="NbPointCarte" Grid.Column="1" Grid.Row="1" FontSize="8" FontWeight="Bold">Nombre de points :</TextBlock>
-        
+            <TextBlock Name="PseudoCarte" Grid.Column="0" Grid.Row="0" FontSize="12" FontWeight="Bold" ></TextBlock>
+            <TextBlock Name="PoseeCarte" Grid.Column="0" Grid.Row="1" FontSize="10" FontWeight="Bold">Dernière carte posée :</TextBlock>
+            <TextBlock Name="BonusCarte" Grid.Column="1" Grid.Row="0" FontSize="10" FontWeight="Bold">Bonus:</TextBlock>
+            <TextBlock Name="NbPointCarte" Grid.Column="1" Grid.Row="1" FontSize="8" FontWeight="Bold">Nombre de points :</TextBlock>
+
+        </Grid>
+-->
+        <Grid Name="ChoixNav">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="101"/>
+                <ColumnDefinition/>                
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="1" FontSize="10" Padding="3,1,10,10">Choisi ton moteur:</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Firefox</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Chrome</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Internet Explorer</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Safari</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="5" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Opera</s:SurfaceButton>
+        </Grid>
 
     </Grid>
-
 </s:ScatterViewItem>
