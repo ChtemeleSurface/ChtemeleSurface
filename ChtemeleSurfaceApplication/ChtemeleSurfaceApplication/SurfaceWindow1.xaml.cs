@@ -234,5 +234,25 @@ namespace ChtemeleSurfaceApplication
         {
             _game = Game.getInstance;
         }
+
+        private void removedCard(object sender, TagVisualizerEventArgs e)
+        {
+            //A revoir -> Codage de gros porc
+            new Tag().destroy();
+        }
+
+        /*private void OnVisualizationAdded(object sender, TagVisualizerEventArgs e)
+        {
+            // Get a reference to the SimpleVisualization object.
+            SimpleVisualization visualization = (SimpleVisualization )e.TagVisualization;
+            // Add a handler for the LostTag event.
+            visualization.LostTag += new RoutedEventHandler(OnLostTag);
+        }
+
+        private void OnLostTag(object sender, RoutedEventArgs e)
+        {
+            // Get a reference to the TagVisualization object.
+            TagVisualization visualization = (TagVisualization)e.Source;
+        }*/
     }
 }
