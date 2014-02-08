@@ -7,8 +7,7 @@
              mc:Ignorable="d" 
              Height="150" Width="200">
     <Grid>
-<!--
-        <Grid Name="CarteJoueurGrid" ShowGridLines="True" Background="YellowGreen" Height="150" Width="200">
+        <Grid Name="CarteJoueurGrid" ShowGridLines="True" Background="YellowGreen" Height="150" Width="200" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120" />
@@ -25,7 +24,6 @@
             <TextBlock Name="NbPointCarte" Grid.Column="1" Grid.Row="1" FontSize="8" FontWeight="Bold">Nombre de points :</TextBlock>
 
         </Grid>
--->
         <Grid Name="ChoixNav">
             
             <Grid.ColumnDefinitions>
@@ -43,11 +41,11 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <s:SurfaceButton Margin="1" Grid.Row="0" Grid.Column="1" FontSize="10" Padding="3,1,10,10">Choisi ton moteur:</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Firefox</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Chrome</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Internet Explorer</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Safari</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="5" Grid.Column="1" Click="SurfaceButton_Click" FontSize="10" Padding="3,1,10,10">Opera</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="1" Click="ChoixNavigateur" FontSize="10" Padding="3,1,10,10">Firefox</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="1" Click="ChoixNavigateur" FontSize="10" Padding="3,1,10,10">Chrome</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="1" Click="ChoixNavigateur" FontSize="10" Padding="3,1,10,10">Internet Explorer</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="1" Click="ChoixNavigateur" FontSize="10" Padding="3,1,10,10">Safari</s:SurfaceButton>
+            <s:SurfaceButton Margin="1" Grid.Row="5" Grid.Column="1" Click="ChoixNavigateur" FontSize="10" Padding="3,1,10,10">Opera</s:SurfaceButton>
         </Grid>
 
     </Grid>
