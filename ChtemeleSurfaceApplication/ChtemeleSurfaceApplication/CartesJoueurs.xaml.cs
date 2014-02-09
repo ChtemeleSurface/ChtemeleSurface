@@ -41,7 +41,7 @@ namespace ChtemeleSurfaceApplication
         }
 
 
-        public void ChoixNavigateur()
+        public void ChoixNavigateur(object sender, RoutedEventArgs e)
         {
             //appel PopUp
 
@@ -49,7 +49,10 @@ namespace ChtemeleSurfaceApplication
             //nomJoueur.setNom(Liste[Boutonclique.valeur]);
 
             //une fois choisi, cacher gride2, afficher gride1
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
         }
+<<<<<<< HEAD
 
         private void SurfaceButton_Click(object sender, RoutedEventArgs e)
         {
@@ -61,5 +64,7 @@ namespace ChtemeleSurfaceApplication
 
 
 
+=======
+>>>>>>> b6de0ac4cd5a06189d6b8d010b109a35016193c1
     }
 }
