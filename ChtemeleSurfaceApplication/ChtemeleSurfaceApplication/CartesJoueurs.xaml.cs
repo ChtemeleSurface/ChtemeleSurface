@@ -52,7 +52,6 @@ namespace ChtemeleSurfaceApplication
             ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
         }
-<<<<<<< HEAD
 
         private void SurfaceButton_Click(object sender, RoutedEventArgs e)
         {
@@ -62,9 +61,5 @@ namespace ChtemeleSurfaceApplication
             ChoixNav.IsEnabled = false;
         }
 
-
-
-=======
->>>>>>> b6de0ac4cd5a06189d6b8d010b109a35016193c1
     }
 }
