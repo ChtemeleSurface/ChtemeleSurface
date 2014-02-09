@@ -34,7 +34,10 @@ namespace ChtemeleSurfaceApplication
              */
 
             //cacher gride1 pour choix navigateur
-
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Hidden;
+            ChoixNav.Visibility = System.Windows.Visibility.Visible;
+            CarteJoueurGrid.IsEnabled = false;
+            ChoixNav.IsEnabled = true;
         }
 
 
@@ -46,6 +49,14 @@ namespace ChtemeleSurfaceApplication
             //nomJoueur.setNom(Liste[Boutonclique.valeur]);
 
             //une fois choisi, cacher gride2, afficher gride1
+        }
+
+        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
+        {
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.IsEnabled = true;
+            ChoixNav.IsEnabled = false;
         }
 
 
