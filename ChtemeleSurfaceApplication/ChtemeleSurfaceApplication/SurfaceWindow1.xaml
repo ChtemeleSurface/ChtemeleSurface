@@ -7,7 +7,7 @@
     Icon="resources/icon.jpg"
     Loaded="SurfaceWindow_Loaded">
 
-    <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VisualizationRemoved="removedCard">
+    <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <s:TagVisualizer.Definitions>
             <s:TagVisualizationDefinition Value="0x6D" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
             <s:TagVisualizationDefinition Value="0x67" TagRemovedBehavior="Fade" Source="Tag.xaml"/>

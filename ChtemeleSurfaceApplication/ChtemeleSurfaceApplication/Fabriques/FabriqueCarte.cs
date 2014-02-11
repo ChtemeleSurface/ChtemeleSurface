@@ -12,8 +12,6 @@ namespace ChtemeleSurfaceApplication.Fabriques
 {
     class FabriqueCarte
     {
-       
-
         /*---- Cartes Addons ----*/
         //Antivirus
         public static Antivirus CreateAntivirus()
