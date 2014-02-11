@@ -19,6 +19,8 @@ using Microsoft.Surface.Presentation.Input;
 
 using ChtemeleSurfaceApplication.Game_classes;
 
+
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -57,27 +59,35 @@ namespace ChtemeleSurfaceApplication
 
             // CarteNord
             ScatterViewItem CarteJoueurN = new ScatterViewItem();
-            CarteJoueurN.Content = new CartesJoueurs();
+            CartesJoueurs CarteNord = new CartesJoueurs();
+            CarteJoueurN.Content = CarteNord;
             CarteJoueurN.Width = CartesJoueurs.tailleW;
             CarteJoueurN.Height = CartesJoueurs.tailleH;
+            CarteNord.position = Player.NORD;
 
             // CarteSud
             ScatterViewItem CarteJoueurS = new ScatterViewItem();
-            CarteJoueurS.Content = new CartesJoueurs();
+            CartesJoueurs CarteSud = new CartesJoueurs();
+            CarteJoueurS.Content = CarteSud;
             CarteJoueurS.Width = CartesJoueurs.tailleW;
             CarteJoueurS.Height = CartesJoueurs.tailleH;
+            CarteSud.position = Player.SUD;
 
             // CarteEst
             ScatterViewItem CarteJoueurE = new ScatterViewItem();
-            CarteJoueurE.Content = new CartesJoueurs();
+            CartesJoueurs CarteEst = new CartesJoueurs();
+            CarteJoueurE.Content = CarteEst;
             CarteJoueurE.Width = CartesJoueurs.tailleW;
             CarteJoueurE.Height = CartesJoueurs.tailleH;
+            CarteEst.position = Player.EST;
 
             // CarteOuest
             ScatterViewItem CarteJoueurO = new ScatterViewItem();
-            CarteJoueurO.Content = new CartesJoueurs();
+            CartesJoueurs CarteOuest = new CartesJoueurs();
+            CarteJoueurO.Content = CarteOuest;
             CarteJoueurO.Width = CartesJoueurs.tailleW;
             CarteJoueurO.Height = CartesJoueurs.tailleH;
+            CarteOuest.position = Player.OUEST;
 
             // Doc Nord
             ScatterViewItem DocN = new ScatterViewItem();

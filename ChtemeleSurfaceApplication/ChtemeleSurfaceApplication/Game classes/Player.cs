@@ -20,15 +20,22 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Nombre de carte à piocher (par defaut : 10)
         private int nbCardPlayerPioche; // ET OUAIS FRENGLISH !
 
-        private int position; //position du joueur sur l'écran : 0=nord, 1=est, 2=sud, 3=ouest
+        private int position; //position du joueur sur l'écran : 1=nord, 2=est, 3=sud, 4=ouest
+        public const int OUT = 0;
+        public const int NORD = 1;
+        public const int EST = 2;
+        public const int SUD = 3;
+        public const int OUEST = 4;
 
-        // association nom joueur sur la carte
-        public static List<string> ListNomsJoueur = new List<string> { 
-            "Firefox",
-            "Chrome",
-            "Internet Explorer",
-            "Safari",
-            "Opera"
+
+         //association des tags avec les cartes
+        public static Dictionary<string, int> Navigateur = new Dictionary<string, int>
+        {
+            {"Firefox", 0},
+            {"Chrome", 1},
+            {"Internet Explorer", 2},
+            {"Safari", 3},
+            {"Opera", 4}
         };
         
         // Nom joueur
@@ -39,9 +46,12 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
 
         //constructeur
-        Player(string nom)
+        public Player(int navigateur, CartesJoueurs carteJ)
         {
-            nom = Nom;
+            Nom = CartesJoueurs.Navigateurs[navigateur];
+            Carte = carteJ;
+
+            Carte.PseudoCarte.Text = Nom;
         }
 
 
