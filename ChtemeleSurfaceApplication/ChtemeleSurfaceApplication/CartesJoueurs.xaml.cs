@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 
 using Microsoft.Surface.Presentation.Controls;
 
+using ChtemeleSurfaceApplication.Game_classes;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -27,7 +29,37 @@ namespace ChtemeleSurfaceApplication
         public CartesJoueurs()
         {
             InitializeComponent();
+            /*
+            PseudoCarte.Text = Player.ListNomsJoueur[0];
+             */
 
+            //cacher gride1 pour choix navigateur
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Hidden;
+            ChoixNav.Visibility = System.Windows.Visibility.Visible;
+            CarteJoueurGrid.IsEnabled = false;
+            ChoixNav.IsEnabled = true;
         }
+
+
+        public void ChoixNavigateur(object sender, RoutedEventArgs e)
+        {
+            //appel PopUp
+
+
+            //nomJoueur.setNom(Liste[Boutonclique.valeur]);
+
+            //une fois choisi, cacher gride2, afficher gride1
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
+        {
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.IsEnabled = true;
+            ChoixNav.IsEnabled = false;
+        }
+
     }
 }

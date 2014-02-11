@@ -3,10 +3,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     xmlns:custom="clr-namespace:ChtemeleSurfaceApplication"
-    Title="ChtemeleSurfaceApplication" Height="1080" Width="1920"
+    Title="cHTeMeLe" Height="1080" Width="1920"
+    Icon="resources/icon.jpg"
     Loaded="SurfaceWindow_Loaded">
 
-    <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VisualizationRemoved="removedCard">
         <s:TagVisualizer.Definitions>
             <s:TagVisualizationDefinition Value="0x6D" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
             <s:TagVisualizationDefinition Value="0x67" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
