@@ -22,6 +22,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
             HtmlElement _baliseH1 = new HtmlElement("h1");
                 _baliseH1.addContent(new HtmlText("Ceci est un putain de titre !"));
+                _baliseH1.attributes.Add(new HtmlTagAttribute("class", "montitre"));
                 _baliseH1.closeTag();
                 _mainTag.addContent(_baliseH1);
 
@@ -39,6 +40,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
                 _mainTag.addContent(_baliseP);
 
             HtmlElement _baliseDIV1 = new HtmlElement("div");
+            _baliseDIV1.attributes.Add(new HtmlTagAttribute("id", "DTC"));
                 _baliseDIV1.closeTag();
                 _mainTag.addContent(_baliseDIV1);
 
@@ -126,7 +128,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         {
             string s = item.ToString();
 
-            if(Regex.IsMatch(s, @"^<\w+>$"))       //balise ouvrante
+            if (Regex.IsMatch(s, @"^<(\w+)(\s[^>]*)?>$"))       //balise ouvrante
             {
                 if(HtmlElement.singleTags.Exists(v => v == item.Groups["tagname"].ToString())){
                     //balise simple
@@ -147,9 +149,9 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             computedIndentChanges = 0;
             string s = item.ToString();
 
-            string pattern = @"</?(?<tagname>\w+)>";    // capture soit "\n", soit "<{tagname}>", soit "</{tagname}>"
+            string pattern = @"</?(?<tagname>\w+)(\s[^>]*)?>";
             MatchEvaluator evalElem = new MatchEvaluator(fetchIndentItem);
-
+            
             try
             {
                 s = Regex.Replace(s, pattern, evalElem);
@@ -158,7 +160,12 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             {
                 Console.WriteLine(e.Message);
             }
-            if (computedIndentChanges < 0) indentLevel += computedIndentChanges;
+
+            if (computedIndentChanges < 0)
+            {
+                indentLevel += computedIndentChanges;
+                if (indentLevel < 0) indentLevel = 0;
+            }
             string res = '\n' + new string(' ', indentSize * indentLevel) + item.Groups["line"].ToString();
             if (computedIndentChanges > 0) indentLevel += computedIndentChanges;
             return res;
