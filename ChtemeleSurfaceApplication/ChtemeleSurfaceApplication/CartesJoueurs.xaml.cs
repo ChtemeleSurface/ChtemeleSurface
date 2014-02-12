@@ -63,7 +63,7 @@ namespace ChtemeleSurfaceApplication
         {
             //nomJoueur.setNom(Liste[Boutonclique.valeur]);
 
-            if (Game.getInstance.LocationNav[NavClicke] == 0)
+            if (Game.getInstance.LocationNav[NavClicke] != 0)
             {
                 return ;
             }
@@ -82,44 +82,71 @@ namespace ChtemeleSurfaceApplication
                     break;
             }
 
+            foreach (KeyValuePair<int, CartesJoueurs> carte in SurfaceWindow1.tabCartes)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    if (i == NavClicke)
+                    {
+                        switch (i)
+                        {
+                            case 0: BtnNav0.IsEnabled = false;
+                                break;
+                            case 1: BtnNav1.IsEnabled = false;
+                                break;
+                            case 2: BtnNav2.IsEnabled = false;
+                                break;
+                            case 3: BtnNav3.IsEnabled = false;
+                                break;
+                            case 4: BtnNav4.IsEnabled = false;
+                                break;
+                        }
+                        
+                    }
+                }
+                
+            }
+
 
             //une fois choisi, cacher gride2, afficher gride1
-            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void SurfaceButton_Click0(object sender, RoutedEventArgs e)
         {
 
             ChoixNavigateur(position, FIREFOX);
+            PseudoCarte.Text = Navigateurs[FIREFOX];
 
-
-            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            CarteJoueurGrid.IsEnabled = true;
-            ChoixNav.IsEnabled = false;
+            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            //CarteJoueurGrid.IsEnabled = true;
+            //ChoixNav.IsEnabled = true;
         }
 
         private void SurfaceButton_Click1(object sender, RoutedEventArgs e)
         {
 
             ChoixNavigateur(position, CHROME);
+            PseudoCarte.Text = Navigateurs[CHROME];
 
-            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            CarteJoueurGrid.IsEnabled = true;
-            ChoixNav.IsEnabled = false;
+           // CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            //CarteJoueurGrid.IsEnabled = true;
+           // ChoixNav.IsEnabled = false;
         }
 
         private void SurfaceButton_Click2(object sender, RoutedEventArgs e)
         {
 
             ChoixNavigateur(position, IE);
+            PseudoCarte.Text = Navigateurs[IE];
 
-            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            CarteJoueurGrid.IsEnabled = true;
-            ChoixNav.IsEnabled = false;
+            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+           // ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            //CarteJoueurGrid.IsEnabled = true;
+            //ChoixNav.IsEnabled = false;
 
         }
 
@@ -127,22 +154,24 @@ namespace ChtemeleSurfaceApplication
         {
 
             ChoixNavigateur(position, SAFARI);
+            PseudoCarte.Text = Navigateurs[SAFARI];
 
-            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            CarteJoueurGrid.IsEnabled = true;
-            ChoixNav.IsEnabled = false;
+            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            //CarteJoueurGrid.IsEnabled = true;
+           // ChoixNav.IsEnabled = false;
         }
 
         private void SurfaceButton_Click4(object sender, RoutedEventArgs e)
         {
 
             ChoixNavigateur(position, OPERA);
+            PseudoCarte.Text = Navigateurs[OPERA];
 
-            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            CarteJoueurGrid.IsEnabled = true;
-            ChoixNav.IsEnabled = false;
+            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            //CarteJoueurGrid.IsEnabled = true;
+            //ChoixNav.IsEnabled = false;
 
         }
         

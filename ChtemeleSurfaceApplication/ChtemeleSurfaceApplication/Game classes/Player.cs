@@ -20,7 +20,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Nombre de carte à piocher (par defaut : 10)
         private int nbCardPlayerPioche; // ET OUAIS FRENGLISH !
 
-        private int position; //position du joueur sur l'écran : 1=nord, 2=est, 3=sud, 4=ouest
+        public int position; //position du joueur sur l'écran : 1=nord, 2=est, 3=sud, 4=ouest
         public const int OUT = 0;
         public const int NORD = 1;
         public const int EST = 2;

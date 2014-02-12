@@ -43,11 +43,11 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Margin="1" Grid.Row="0" Grid.Column="1" FontSize="10" Padding="3,1,10,10">Choisi ton navigateur:</TextBlock>
-            <s:SurfaceButton Margin="1" Grid.Row="1" Grid.Column="1" Click="SurfaceButton_Click0" FontSize="10" Padding="3,1,10,10">Firefox</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="2" Grid.Column="1" Click="SurfaceButton_Click1" FontSize="10" Padding="3,1,10,10">Chrome</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="3" Grid.Column="1" Click="SurfaceButton_Click2" FontSize="10" Padding="3,1,10,10">Internet Explorer</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="4" Grid.Column="1" Click="SurfaceButton_Click3" FontSize="10" Padding="3,1,10,10">Safari</s:SurfaceButton>
-            <s:SurfaceButton Margin="1" Grid.Row="5" Grid.Column="1" Click="SurfaceButton_Click4" FontSize="10" Padding="3,1,10,10">Opera</s:SurfaceButton>
+            <s:SurfaceButton Name="BtnNav0" Margin="1" Grid.Row="1" Grid.Column="1" Click="SurfaceButton_Click0" FontSize="10" Padding="3,1,10,10">Firefox</s:SurfaceButton>
+            <s:SurfaceButton Name="BtnNav1" Margin="1" Grid.Row="2" Grid.Column="1" Click="SurfaceButton_Click1" FontSize="10" Padding="3,1,10,10">Chrome</s:SurfaceButton>
+            <s:SurfaceButton Name="BtnNav2" Margin="1" Grid.Row="3" Grid.Column="1" Click="SurfaceButton_Click2" FontSize="10" Padding="3,1,10,10">Internet Explorer</s:SurfaceButton>
+            <s:SurfaceButton Name="BtnNav3" Margin="1" Grid.Row="4" Grid.Column="1" Click="SurfaceButton_Click3" FontSize="10" Padding="3,1,10,10">Safari</s:SurfaceButton>
+            <s:SurfaceButton Name="BtnNav4" Margin="1" Grid.Row="5" Grid.Column="1" Click="SurfaceButton_Click4" FontSize="10" Padding="3,1,10,10">Opera</s:SurfaceButton>
         </Grid>
 
     </Grid>
