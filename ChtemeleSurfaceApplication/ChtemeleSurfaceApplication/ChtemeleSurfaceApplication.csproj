@@ -59,6 +59,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Fabriques\FabriqueCarte.cs" />
+    <Compile Include="Modele\MdlCarteJoueur.cs" />
+    <Compile Include="Modele\Modele.cs" />
     <Compile Include="PageDoc.xaml.cs">
       <DependentUpon>PageDoc.xaml</DependentUpon>
     </Compile>

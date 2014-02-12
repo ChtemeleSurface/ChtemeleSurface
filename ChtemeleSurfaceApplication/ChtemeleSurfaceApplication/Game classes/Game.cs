@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 
 using ChtemeleSurfaceApplication.HTML_classes;
-using ChtemeleSurfaceApplication.Modeles;
 
 namespace ChtemeleSurfaceApplication.Game_classes
 {
