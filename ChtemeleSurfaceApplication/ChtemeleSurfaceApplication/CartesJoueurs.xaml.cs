@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Microsoft.Surface.Presentation.Controls;
 
 using ChtemeleSurfaceApplication.Game_classes;
+using ChtemeleSurfaceApplication.Modeles;
 
 namespace ChtemeleSurfaceApplication
 {
@@ -26,12 +27,18 @@ namespace ChtemeleSurfaceApplication
         public static int tailleW = 200;
         public static int tailleH = 150;
 
-        public CartesJoueurs()
+        //Modèle
+        private MdlCarteJoueur _mdl;
+
+
+        public CartesJoueurs(MdlCarteJoueur mdl)
         {
             InitializeComponent();
             /*
             PseudoCarte.Text = Player.ListNomsJoueur[0];
              */
+
+            _mdl = mdl;
 
             //cacher gride1 pour choix navigateur
             CarteJoueurGrid.Visibility = System.Windows.Visibility.Hidden;
@@ -59,6 +66,13 @@ namespace ChtemeleSurfaceApplication
             ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             CarteJoueurGrid.IsEnabled = true;
             ChoixNav.IsEnabled = false;
+        }
+
+
+        //  UPDATE
+        public void update()
+        {
+
         }
 
     }
