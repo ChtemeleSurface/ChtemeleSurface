@@ -1,6 +1,10 @@
 ﻿using System.Windows;
 using Microsoft.Surface.Presentation.Controls;
 
+using ChtemeleSurfaceApplication.Carte_classes.Addons;
+using ChtemeleSurfaceApplication.Carte_classes.Attaques;
+using ChtemeleSurfaceApplication.Carte_classes; 
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -10,25 +14,18 @@ namespace ChtemeleSurfaceApplication
     {
         private bool played;
         public static int multiCardOnScreen = 0;
+        private static Carte curCard;
+        private static CarteAssoc carteAssoc;
 
         public Tag()
         {
             InitializeComponent();
-            played = false;
-            multiCardOnScreen++;
-            if (multiCardOnScreen != 1)
-            {
-                ElemMenu.Visibility = System.Windows.Visibility.Hidden;
-                Retirer_carte.Visibility = System.Windows.Visibility.Visible;
-                Retirer_carte.Text = "Plusieurs cartes sont détectées, veuillez retirer cette carte.";
-            }
         }
 
         private void valider(object sender, RoutedEventArgs e)
         {
             if (played == false)
             {
-                CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value]();
                 Retirer_carte.Visibility = System.Windows.Visibility.Visible;
                 ElemMenu.Visibility = System.Windows.Visibility.Hidden;
                 Retirer_carte.Text = "Carte jouée, veuillez retirer cette carte.";
@@ -36,10 +33,25 @@ namespace ChtemeleSurfaceApplication
             }
         }
 
-        public void destroy()
+        private void gotTag(object sender, RoutedEventArgs e)
         {
-            //A revoir -> Codage de gros porc
-            multiCardOnScreen -= 2;
+            played = false;
+            multiCardOnScreen++;
+            if (carteAssoc == null)
+                carteAssoc = new CarteAssoc();
+            if (multiCardOnScreen != 1)
+            {
+                ElemMenu.Visibility = System.Windows.Visibility.Hidden;
+                Retirer_carte.Visibility = System.Windows.Visibility.Visible;
+                Retirer_carte.Text = "Plusieurs cartes sont détectées, veuillez retirer cette carte.";
+            }
+            else
+                curCard = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].getCarte();
+        }
+
+        private void lostTag(object sender, RoutedEventArgs e)
+        {
+            multiCardOnScreen--;
         }
     }
 }

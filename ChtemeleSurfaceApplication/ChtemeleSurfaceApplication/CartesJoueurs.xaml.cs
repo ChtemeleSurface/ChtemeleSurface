@@ -32,6 +32,25 @@ namespace ChtemeleSurfaceApplication
 
 
         public CartesJoueurs(MdlCarteJoueur mdl)
+        public const int FIREFOX = 0;
+        public const int CHROME = 1;
+        public const int IE = 2;
+        public const int SAFARI = 3;
+        public const int OPERA = 4;
+
+        public int position;
+
+        //association des tags avec les cartes
+        public static Dictionary<int, string> Navigateurs = new Dictionary<int, string>
+        {
+            {FIREFOX, "Firefox"},
+            {CHROME, "Chrome"},
+            {IE, "Internet Explorer"},
+            {SAFARI, "Safari"},
+            {OPERA, "Opera"}
+        };
+
+        public CartesJoueurs()
         {
             InitializeComponent();
             /*
@@ -48,20 +67,41 @@ namespace ChtemeleSurfaceApplication
         }
 
 
-        public void ChoixNavigateur(object sender, RoutedEventArgs e)
+        public void ChoixNavigateur(int positionJoueur, int NavClicke)
         {
-            //appel PopUp
-
-
             //nomJoueur.setNom(Liste[Boutonclique.valeur]);
+
+            if (Game.getInstance.LocationNav[NavClicke] == 0)
+            {
+                return ;
+            }
+
+            Game.getInstance.LocationNav[NavClicke] = positionJoueur;
+
+            switch(positionJoueur)
+            {
+                case Player.NORD : Game.getInstance.setJoueurN(new Player(NavClicke, this));
+                    break;
+                case Player.EST: Game.getInstance.setJoueurE(new Player(NavClicke, this));
+                    break;
+                case Player.SUD: Game.getInstance.setJoueurS(new Player(NavClicke, this));
+                    break;
+                case Player.OUEST: Game.getInstance.setJoueurO(new Player(NavClicke, this));
+                    break;
+            }
+
 
             //une fois choisi, cacher gride2, afficher gride1
             ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
         }
 
-        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
+        private void SurfaceButton_Click0(object sender, RoutedEventArgs e)
         {
+
+            ChoixNavigateur(position, FIREFOX);
+
+
             CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
             ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             CarteJoueurGrid.IsEnabled = true;
@@ -74,6 +114,53 @@ namespace ChtemeleSurfaceApplication
         {
 
         }
+
+        private void SurfaceButton_Click1(object sender, RoutedEventArgs e)
+        {
+
+            ChoixNavigateur(position, CHROME);
+
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.IsEnabled = true;
+            ChoixNav.IsEnabled = false;
+        }
+
+        private void SurfaceButton_Click2(object sender, RoutedEventArgs e)
+        {
+
+            ChoixNavigateur(position, IE);
+
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.IsEnabled = true;
+            ChoixNav.IsEnabled = false;
+
+        }
+
+        private void SurfaceButton_Click3(object sender, RoutedEventArgs e)
+        {
+
+            ChoixNavigateur(position, SAFARI);
+
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.IsEnabled = true;
+            ChoixNav.IsEnabled = false;
+        }
+
+        private void SurfaceButton_Click4(object sender, RoutedEventArgs e)
+        {
+
+            ChoixNavigateur(position, OPERA);
+
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.IsEnabled = true;
+            ChoixNav.IsEnabled = false;
+
+        }
+        
 
     }
 }

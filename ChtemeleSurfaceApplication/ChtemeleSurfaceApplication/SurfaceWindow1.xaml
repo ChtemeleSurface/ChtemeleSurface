@@ -7,7 +7,7 @@
     Icon="resources/icon.jpg"
     Loaded="SurfaceWindow_Loaded">
 
-    <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VisualizationRemoved="removedCard">
+    <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <s:TagVisualizer.Definitions>
             <s:TagVisualizationDefinition Value="0x6D" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
             <s:TagVisualizationDefinition Value="0x67" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
@@ -60,21 +60,29 @@
         </s:TagVisualizer.Definitions>
 
         <s:ScatterView Name="MainScatterView" SizeChanged="MainScatterView_SizeChanged">
-             
-        <s:ScatterViewItem Name="PlayerSScatterView"
+            <s:ScatterView.Background>
+                <ImageBrush ImageSource="resources/fond.jpg"/>
+            </s:ScatterView.Background>
+            
+
+            <s:ScatterViewItem Name="PlayerSScatterView"
                            Orientation="0"
                            CanMove="False"
                            CanRotate="False"
                            CanScale="False"
                            Width="700"
                            Height="150"
-                           >
-            <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
-                 <custom:PageDoc x:Name="DocSud" CanScale="False" CanRotate="False" Orientation="0"></custom:PageDoc>
+                           Background="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="350"/>
+                    </Grid.ColumnDefinitions>
+                    <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
+                    <custom:PageDoc x:Name="DocSud" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
                     <!---
                         <custom:Clavier x:Name="ClavierSud" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
-            </s:ScatterView>
+                </Grid>
         </s:ScatterViewItem>
 
         <s:ScatterViewItem Name="PlayerOScatterView"
@@ -84,13 +92,17 @@
                            CanScale="False"
                            Width="700"
                            Height="150"
-                           >
-            <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteOuest"  CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
-                    <custom:PageDoc x:Name="DocOuest" CanScale="False" CanRotate="False" Orientation="0"></custom:PageDoc>
+                           Background="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="350"/>
+                    </Grid.ColumnDefinitions>
+                    <custom:CartesJoueurs x:Name="CarteOuest"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
+                    <custom:PageDoc x:Name="DocOuest" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
                     <!---  <custom:Clavier x:Name="ClavierOuest" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
-            </s:ScatterView>
-        </s:ScatterViewItem>
+                </Grid>
+            </s:ScatterViewItem>
 
         <s:ScatterViewItem Name="PlayerNScatterView"
                            Orientation="180"
@@ -99,13 +111,17 @@
                            CanScale="False"
                            Width="700"
                            Height="150"
-                           >
-            <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteNord" CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
-                <custom:PageDoc x:Name="DocNord"  CanScale="False" CanRotate="False" Orientation="0"></custom:PageDoc>
+                           Background="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="350"/>
+                    </Grid.ColumnDefinitions>
+                    <custom:CartesJoueurs x:Name="CarteNord" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
+                    <custom:PageDoc x:Name="DocNord"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
                     <!---  <custom:Clavier x:Name="ClavierNord" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
-            </s:ScatterView>
-        </s:ScatterViewItem>
+                </Grid>
+            </s:ScatterViewItem>
 
         <s:ScatterViewItem Name="PlayerEScatterView"
                            Orientation="270"
@@ -114,13 +130,17 @@
                            CanScale="False"
                            Width="700"
                            Height="150"
-                           >
-            <s:ScatterView>
-                <custom:CartesJoueurs x:Name="CarteEst" CanScale="False" CanRotate="False" Orientation="0"></custom:CartesJoueurs>
-                <custom:PageDoc x:Name="DocEst"  CanScale="False" CanRotate="False" Orientation="0"></custom:PageDoc>
+                           Background="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="350"/>
+                    </Grid.ColumnDefinitions>
+                    <custom:CartesJoueurs x:Name="CarteEst" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
+                    <custom:PageDoc x:Name="DocEst"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
                     <!---  <custom:Clavier x:Name="ClavierEst" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
-            </s:ScatterView>
-        </s:ScatterViewItem>
+                </Grid>
+            </s:ScatterViewItem>
 
         <s:ScatterViewItem Name="CenterView"
                            Orientation="0"
@@ -129,8 +149,7 @@
                            CanScale="False"
                            Width="100"
                            Height="100"
-                           Background="AntiqueWhite"
-                           >
+                           Background="AntiqueWhite">
             <s:ScatterView Name="ScatterCenterView">
                 <custom:PageCode x:Name="PageCode" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:PageCode>
                 <s:ScatterViewItem x:Name="ZonePioche" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
