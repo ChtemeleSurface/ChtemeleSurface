@@ -101,12 +101,10 @@ namespace ChtemeleSurfaceApplication
                             case 4: BtnNav4.IsEnabled = false;
                                 break;
                         }
-                        
                     }
                 }
                 
             }
-
 
             //une fois choisi, cacher gride2, afficher gride1
             //ChoixNav.Visibility = System.Windows.Visibility.Hidden;

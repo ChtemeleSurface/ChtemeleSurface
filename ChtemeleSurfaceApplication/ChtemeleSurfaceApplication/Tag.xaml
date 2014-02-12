@@ -15,8 +15,8 @@
         </Grid.RowDefinitions>
         <s:SurfaceTextBox Name="Retirer_carte" Grid.Row="0" Visibility="Hidden"></s:SurfaceTextBox>
         <s:ElementMenu Name="ElemMenu" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
-            <s:ElementMenuItem Header="Valider" Click="valider"></s:ElementMenuItem>
-            <s:ElementMenuItem Header="Afficher la Doc"></s:ElementMenuItem>
+            <!--<s:ElementMenuItem Header="Valider" Click="valider"></s:ElementMenuItem>
+            <s:ElementMenuItem Header="Afficher la Doc"></s:ElementMenuItem>-->
         </s:ElementMenu>
         <Ellipse Width="120" Height="120" Fill="BlueViolet" Grid.Row="1"></Ellipse>
     </Grid>
