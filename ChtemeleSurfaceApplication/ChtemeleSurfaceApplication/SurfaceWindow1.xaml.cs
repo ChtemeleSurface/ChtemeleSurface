@@ -29,8 +29,10 @@ namespace ChtemeleSurfaceApplication
     public partial class SurfaceWindow1 : SurfaceWindow
     {
         public static SurfaceWindow1 instance = null;
-
+      
         private Game _game;
+
+        public static Dictionary<int, CartesJoueurs> tabCartes;
 
         /// <summary>
         /// Default constructor.
@@ -57,36 +59,24 @@ namespace ChtemeleSurfaceApplication
             clavO.Content = new Clavier();
             */
 
+            tabCartes = new Dictionary<int, CartesJoueurs>
+            {
+                {Player.SUD, CarteSud},
+                {Player.EST, CarteEst},
+                {Player.NORD, CarteNord},
+                {Player.OUEST, CarteOuest}
+            };
+
             // CarteNord
-            ScatterViewItem CarteJoueurN = new ScatterViewItem();
-            CartesJoueurs CarteNord = new CartesJoueurs();
-            CarteJoueurN.Content = CarteNord;
-            CarteJoueurN.Width = CartesJoueurs.tailleW;
-            CarteJoueurN.Height = CartesJoueurs.tailleH;
             CarteNord.position = Player.NORD;
 
             // CarteSud
-            ScatterViewItem CarteJoueurS = new ScatterViewItem();
-            CartesJoueurs CarteSud = new CartesJoueurs();
-            CarteJoueurS.Content = CarteSud;
-            CarteJoueurS.Width = CartesJoueurs.tailleW;
-            CarteJoueurS.Height = CartesJoueurs.tailleH;
             CarteSud.position = Player.SUD;
 
             // CarteEst
-            ScatterViewItem CarteJoueurE = new ScatterViewItem();
-            CartesJoueurs CarteEst = new CartesJoueurs();
-            CarteJoueurE.Content = CarteEst;
-            CarteJoueurE.Width = CartesJoueurs.tailleW;
-            CarteJoueurE.Height = CartesJoueurs.tailleH;
             CarteEst.position = Player.EST;
 
             // CarteOuest
-            ScatterViewItem CarteJoueurO = new ScatterViewItem();
-            CartesJoueurs CarteOuest = new CartesJoueurs();
-            CarteJoueurO.Content = CarteOuest;
-            CarteJoueurO.Width = CartesJoueurs.tailleW;
-            CarteJoueurO.Height = CartesJoueurs.tailleH;
             CarteOuest.position = Player.OUEST;
 
             // Doc Nord
