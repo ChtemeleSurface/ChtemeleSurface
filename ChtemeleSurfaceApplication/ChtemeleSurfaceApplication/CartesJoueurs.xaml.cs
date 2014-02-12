@@ -90,15 +90,15 @@ namespace ChtemeleSurfaceApplication
                     {
                         switch (i)
                         {
-                            case 0: BtnNav0.IsEnabled = false;
+                            case 0: carte.Value.BtnNav0.IsEnabled = false;
                                 break;
-                            case 1: BtnNav1.IsEnabled = false;
+                            case 1: carte.Value.BtnNav1.IsEnabled = false;
                                 break;
-                            case 2: BtnNav2.IsEnabled = false;
+                            case 2: carte.Value.BtnNav2.IsEnabled = false;
                                 break;
-                            case 3: BtnNav3.IsEnabled = false;
+                            case 3: carte.Value.BtnNav3.IsEnabled = false;
                                 break;
-                            case 4: BtnNav4.IsEnabled = false;
+                            case 4: carte.Value.BtnNav4.IsEnabled = false;
                                 break;
                         }
                     }
@@ -106,9 +106,11 @@ namespace ChtemeleSurfaceApplication
                 
             }
 
-            //une fois choisi, cacher gride2, afficher gride1
-            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            ChoixNav.IsEnabled = false;
+            ChoixNav.Visibility = System.Windows.Visibility.Hidden;
+            CarteJoueurGrid.IsEnabled = true;
+            CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+            
         }
 
         private void SurfaceButton_Click0(object sender, RoutedEventArgs e)
@@ -120,7 +122,6 @@ namespace ChtemeleSurfaceApplication
             //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
             //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             //CarteJoueurGrid.IsEnabled = true;
-            //ChoixNav.IsEnabled = true;
         }
 
         private void SurfaceButton_Click1(object sender, RoutedEventArgs e)
@@ -132,7 +133,6 @@ namespace ChtemeleSurfaceApplication
            // CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
             //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             //CarteJoueurGrid.IsEnabled = true;
-           // ChoixNav.IsEnabled = false;
         }
 
         private void SurfaceButton_Click2(object sender, RoutedEventArgs e)
@@ -144,7 +144,6 @@ namespace ChtemeleSurfaceApplication
             //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
            // ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             //CarteJoueurGrid.IsEnabled = true;
-            //ChoixNav.IsEnabled = false;
 
         }
 
@@ -157,7 +156,6 @@ namespace ChtemeleSurfaceApplication
             //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
             //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             //CarteJoueurGrid.IsEnabled = true;
-           // ChoixNav.IsEnabled = false;
         }
 
         private void SurfaceButton_Click4(object sender, RoutedEventArgs e)
@@ -169,7 +167,6 @@ namespace ChtemeleSurfaceApplication
             //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
             //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             //CarteJoueurGrid.IsEnabled = true;
-            //ChoixNav.IsEnabled = false;
 
         }
         
