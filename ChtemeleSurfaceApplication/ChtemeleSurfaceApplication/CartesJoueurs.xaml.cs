@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//using System.Drawing;
+
 using Microsoft.Surface.Presentation.Controls;
 
 using ChtemeleSurfaceApplication.Game_classes;
@@ -167,6 +169,25 @@ namespace ChtemeleSurfaceApplication
             //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
             //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             //CarteJoueurGrid.IsEnabled = true;
+
+        }
+
+        private void Combo1_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            //Bitmap image = new Bitmap("Resources/croix.bmp", true);
+            //Combo1.Image = "Pixel format: " + image1.PixelFormat.ToString();
+            //Image image1 = Image.FromFile("c:\\MyImage.bmp");
+
+        }
+
+        private void Combo2_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            //Bitmap image = new Bitmap("Resources/croix.bmp", true);
+        }
+
+        private void Combo3_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            //Bitmap image = new Bitmap("Resources/croix.bmp", true);
 
         }
         
