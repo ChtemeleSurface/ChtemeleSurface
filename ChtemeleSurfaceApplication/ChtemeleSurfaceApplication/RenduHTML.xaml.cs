@@ -51,7 +51,7 @@ namespace ChtemeleSurfaceApplication
         // Initialise la source de la page à afficher
         private void WebRenderer()
         {
-            WB1.Navigate(new Uri(getFileUrl()));
+            webControl.Source = new Uri(getFileUrl());
         }
     }
 }
