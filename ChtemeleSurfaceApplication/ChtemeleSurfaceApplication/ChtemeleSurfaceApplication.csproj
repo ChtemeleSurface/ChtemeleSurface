@@ -39,7 +39,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Awesomium\wrappers\Awesomium.NET\Assemblies\Awesomium.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Awesomium.Windows.Controls">
+    <Reference Include="Awesomium.Windows.Controls, Version=1.7.3.0, Culture=neutral, PublicKeyToken=7a34e179b8b61c39, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Awesomium\wrappers\Awesomium.NET\Assemblies\Awesomium.Windows.Controls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
