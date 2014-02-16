@@ -19,6 +19,8 @@ namespace ChtemeleSurfaceApplication.Game_classes
             }
         }
 
+        public static int defaultHandSize = 10;
+
         // Tour actuel
         private int step;
         // Nombre de tour total
@@ -42,11 +44,11 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public Dictionary<int, int> LocationNav = new Dictionary<int, int>
         {
-            {CartesJoueurs.FIREFOX, 0},
-            {CartesJoueurs.CHROME, 0},
-            {CartesJoueurs.IE, 0},
-            {CartesJoueurs.SAFARI, 0},
-            {CartesJoueurs.OPERA, 0}
+            {Player.FIREFOX, 0},
+            {Player.CHROME, 0},
+            {Player.IE, 0},
+            {Player.SAFARI, 0},
+            {Player.OPERA, 0}
         };
 
         protected Game()

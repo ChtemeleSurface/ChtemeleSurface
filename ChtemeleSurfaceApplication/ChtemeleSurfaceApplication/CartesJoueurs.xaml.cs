@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Microsoft.Surface.Presentation.Controls;
 
 using ChtemeleSurfaceApplication.Game_classes;
+using ChtemeleSurfaceApplication.Modeles;
 
 namespace ChtemeleSurfaceApplication
 {
@@ -23,63 +24,64 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class CartesJoueurs : ScatterViewItem
     {
+        // Constantes, enumérations         ======================================================================================================
+
         public static int tailleW = 200;
         public static int tailleH = 150;
 
+        // Variables membres                ======================================================================================================
 
-        public const int FIREFOX = 0;
-        public const int CHROME = 1;
-        public const int IE = 2;
-        public const int SAFARI = 3;
-        public const int OPERA = 4;
-
+        private MdlCarteJoueur _mdl;
         public int position;
 
-        //association des tags avec les cartes
-        public static Dictionary<int, string> Navigateurs = new Dictionary<int, string>
-        {
-            {FIREFOX, "Firefox"},
-            {CHROME, "Chrome"},
-            {IE, "Internet Explorer"},
-            {SAFARI, "Safari"},
-            {OPERA, "Opera"}
-        };
+        // Constructeurs                    ======================================================================================================
 
         public CartesJoueurs()
         {
             InitializeComponent();
-            /*
-            PseudoCarte.Text = Player.ListNomsJoueur[0];
-             */
 
             //cacher gride1 pour choix navigateur
             CarteJoueurGrid.Visibility = System.Windows.Visibility.Hidden;
             ChoixNav.Visibility = System.Windows.Visibility.Visible;
             CarteJoueurGrid.IsEnabled = false;
             ChoixNav.IsEnabled = true;
+            
+            // Au départ, aucun modèle car aucun joueur.
+            _mdl = null;
+            position = 0;
         }
 
+        // Fonctionnalités                  ======================================================================================================
 
+        // Associe un nouveau joueur à la CarteJoueur
         public void ChoixNavigateur(int positionJoueur, int NavClicke)
         {
-            //nomJoueur.setNom(Liste[Boutonclique.valeur]);
-
+            // Si le navigateur sélectionné a déjà été pris, on se barre direct.
             if (Game.getInstance.LocationNav[NavClicke] != 0)
             {
                 return ;
             }
-
+            // On dit à Game que ce navigateur est désormais pris.
             Game.getInstance.LocationNav[NavClicke] = positionJoueur;
 
+            //On créée le nouveau joueur
             switch(positionJoueur)
             {
-                case Player.NORD : Game.getInstance.setJoueurN(new Player(NavClicke, this));
+                case Player.NORD :
+                    _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
+                    Game.getInstance.setJoueurN(_mdl.getPlayer());
                     break;
-                case Player.EST: Game.getInstance.setJoueurE(new Player(NavClicke, this));
+                case Player.EST: 
+                    _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
+                    Game.getInstance.setJoueurE(_mdl.getPlayer());
                     break;
-                case Player.SUD: Game.getInstance.setJoueurS(new Player(NavClicke, this));
+                case Player.SUD: 
+                    _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
+                    Game.getInstance.setJoueurS(_mdl.getPlayer());
                     break;
-                case Player.OUEST: Game.getInstance.setJoueurO(new Player(NavClicke, this));
+                case Player.OUEST: 
+                    _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
+                    Game.getInstance.setJoueurO(_mdl.getPlayer());
                     break;
             }
 
@@ -107,77 +109,56 @@ namespace ChtemeleSurfaceApplication
                 
             }
 
+            // On déactive le choix de navigateur et on active la carte Joueur
             ChoixNav.IsEnabled = false;
             ChoixNav.Visibility = System.Windows.Visibility.Hidden;
             CarteJoueurGrid.IsEnabled = true;
             CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
+
+            // Update final
+            update();
             
         }
 
+        // Evénements                  ======================================================================================================
+
+        // Clic sur les boutons de choix de navigateur
         private void SurfaceButton_Click0(object sender, RoutedEventArgs e)
         {
-
-            ChoixNavigateur(position, FIREFOX);
-            PseudoCarte.Text = Navigateurs[FIREFOX];
-
-            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            //CarteJoueurGrid.IsEnabled = true;
-        }
-
-
-        //  UPDATE
-        public void update()
-        {
-
+            ChoixNavigateur(position, Player.FIREFOX);
+            _mdl.setPlayerName(Player.browserNames[Player.FIREFOX]);
         }
 
         private void SurfaceButton_Click1(object sender, RoutedEventArgs e)
         {
-
-            ChoixNavigateur(position, CHROME);
-            PseudoCarte.Text = Navigateurs[CHROME];
-
-           // CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            //CarteJoueurGrid.IsEnabled = true;
+            ChoixNavigateur(position, Player.CHROME);
+            _mdl.setPlayerName(Player.browserNames[Player.CHROME]);
         }
 
         private void SurfaceButton_Click2(object sender, RoutedEventArgs e)
         {
-
-            ChoixNavigateur(position, IE);
-            PseudoCarte.Text = Navigateurs[IE];
-
-            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-           // ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            //CarteJoueurGrid.IsEnabled = true;
-
+            ChoixNavigateur(position, Player.IE);
+            _mdl.setPlayerName(Player.browserNames[Player.IE]);
         }
 
         private void SurfaceButton_Click3(object sender, RoutedEventArgs e)
         {
-
-            ChoixNavigateur(position, SAFARI);
-            PseudoCarte.Text = Navigateurs[SAFARI];
-
-            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            //CarteJoueurGrid.IsEnabled = true;
+            ChoixNavigateur(position, Player.SAFARI);
+            _mdl.setPlayerName(Player.browserNames[Player.SAFARI]);
         }
 
         private void SurfaceButton_Click4(object sender, RoutedEventArgs e)
         {
-
-            ChoixNavigateur(position, OPERA);
-            PseudoCarte.Text = Navigateurs[OPERA];
-
-            //CarteJoueurGrid.Visibility = System.Windows.Visibility.Visible;
-            //ChoixNav.Visibility = System.Windows.Visibility.Hidden;
-            //CarteJoueurGrid.IsEnabled = true;
-
+            ChoixNavigateur(position, Player.OPERA);
+            _mdl.setPlayerName(Player.browserNames[Player.OPERA]);
         }
-        
 
+        // Update                         ======================================================================================================
+
+        public void update()
+        {
+            PseudoCarte.Text = _mdl.getPlayerName();
+            Points.Text = _mdl.getPlayerScore().ToString();
+        }
     }
 }
