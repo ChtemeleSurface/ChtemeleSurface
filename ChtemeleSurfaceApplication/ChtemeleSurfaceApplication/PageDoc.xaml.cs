@@ -30,7 +30,7 @@ namespace ChtemeleSurfaceApplication
             // Initialise l'adresse de la doc
             DocUrl = System.IO.Directory.GetCurrentDirectory();
             DocUrl = DocUrl + "/Resources/Documentation/index.html";
-            //webControl.Source = new Uri(DocUrl);
+            webControl.Source = new Uri(DocUrl);
             
         }
     }
