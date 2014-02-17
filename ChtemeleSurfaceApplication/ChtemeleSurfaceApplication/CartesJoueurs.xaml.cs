@@ -69,19 +69,19 @@ namespace ChtemeleSurfaceApplication
             {
                 case Player.NORD :
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
-                    Game.getInstance.setJoueurN(_mdl.getPlayer());
+                    Game.getInstance.joueurN = _mdl.getPlayer();
                     break;
                 case Player.EST: 
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
-                    Game.getInstance.setJoueurE(_mdl.getPlayer());
+                    Game.getInstance.joueurE = _mdl.getPlayer();
                     break;
                 case Player.SUD: 
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
-                    Game.getInstance.setJoueurS(_mdl.getPlayer());
+                    Game.getInstance.joueurS = _mdl.getPlayer();
                     break;
                 case Player.OUEST: 
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
-                    Game.getInstance.setJoueurO(_mdl.getPlayer());
+                    Game.getInstance.joueurO = _mdl.getPlayer();
                     break;
             }
 

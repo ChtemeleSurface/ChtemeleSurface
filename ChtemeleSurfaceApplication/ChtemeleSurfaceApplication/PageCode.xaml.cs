@@ -19,6 +19,7 @@ using System.Windows.Navigation;
 
 using ChtemeleSurfaceApplication.HTML_classes;
 using ChtemeleSurfaceApplication.Game_classes;
+using ChtemeleSurfaceApplication.Modeles;
 using Microsoft.Surface.Presentation.Controls;
 
 namespace ChtemeleSurfaceApplication
@@ -28,24 +29,30 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class PageCode : ScatterViewItem
     {
-        private string _text;
+        // Constantes, enumérations         ======================================================================================================
 
+        // Variables membres                ======================================================================================================
 
-        // Constructeur
+        private string _text;               // texte html à afficher
+        private MdlPageCode _mdl;           // Modèle
+
+        // Constructeurs                    ======================================================================================================
+
         public PageCode()
         {
             InitializeComponent();
 
-            _text = Game.getInstance._page.renderHTML();
+            _mdl = new MdlPageCode();
 
             // URL du fichier local à lire (ne fonctionne pas avec les URLs distantes)
             //string temp = System.IO.Directory.GetCurrentDirectory();
             //temp = temp + "/Resources/Savegame/game_0.html";
             //string temp = System.IO.Path.GetFullPath("./Resources/Savegame/game_0.html");
 
-            setTextCode(_text);
             ShowCode();
         }
+
+        // Fonctionnalités                  ======================================================================================================
 
         // Retourne les lignes récupéré par le set
         public string getTextCode()
@@ -56,17 +63,14 @@ namespace ChtemeleSurfaceApplication
         // Lis un fichier et enregistre chaque ligne
         public void setTextCode(string txt)
         {
-
-            //_text = System.IO.File.ReadAllText(@fileUrl); //@+fileUrl
             _text = txt;
         }
 
-        // Lis chaque ligne du tableau et envoie chaque ligne dans un Inline
-        // Gestion de l'indentation et coloration syntaxique non-géré
+        // Affiche le texte
         public void ShowCode()
         {
-            //CodeText.Inlines.Add(new Run(lines[i]));
-            CodeText.Inlines.Add(new Run(_text));
+            _mdl.renderPage();
+            CodeText.Inlines.Add(new Run(_mdl.getCode()));
         }
     }
 }

@@ -37,16 +37,18 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         // Variables membres                ======================================================================================================
 
-        public  string name;            //Nom du joueur
-        public  int score;              //score total accumulé
-        private Combo _lastCombo;        //Dernière combinaison effectuée
-        public  int handSize;           //taille max de la main du joueur;
-        public  int nbCards;            //nombre de cartes en main.
-        private List<Effect> _effects;   //Effets actifs sur le joueur
-        private int _position;   //position du joueur (voir enumeration)
+        public  string name;                //Nom du joueur
+        public  int score;                  //score total accumulé
+        private Combo _lastCombo;           //Dernière combinaison effectuée
+        public  int handSize;               //taille max de la main du joueur;
+        public  int nbCards;                //nombre de cartes en main.
+        private List<Effect> _effects;      //Effets actifs sur le joueur
+        private int _position;              //position du joueur (voir enumeration)
 
         // Constructeurs                    ======================================================================================================
 
+        // Paramètres : n nom du joueur
+        //              p position du joueur
         public Player(string n, int p)
         {
             name = n;

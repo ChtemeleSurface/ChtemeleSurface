@@ -10,20 +10,12 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication
 {
+    //Classe qui gère le lien entre le tag, la carte et sa description.
     class CarteAssoc
     {
-        public delegate Carte generateCarte();
+        // Constantes, enumérations         ======================================================================================================
 
-        public int tag;
-        public string descriptionFilename;
-        public string keyword;
-        public Carte card;
-        //association des tags avec les cartes
-        public static Dictionary<int, CarteAssoc> AssocTagCarte;
-
-        public CarteAssoc()
-        {
-            AssocTagCarte = new Dictionary<int, CarteAssoc>
+        public static Dictionary<int, CarteAssoc> AssocTagCarte = new Dictionary<int, CarteAssoc>
             {
                 // cartes addons
                 {0x6D, new CarteAssoc(0x6D, FabriqueCarte.CreateAntivirus(), "ba", "ab")},
@@ -75,8 +67,22 @@ namespace ChtemeleSurfaceApplication
                 {0xE5, new CarteAssoc(0xE5, FabriqueCarte.CreateSTYLE(), "ba", "ab")},
                 {0xE6, new CarteAssoc(0xE6, FabriqueCarte.CreateTITLE(), "ba", "ab")}
             };
-        }
 
+        public delegate Carte generateCarte();
+
+        // Variables membres                ======================================================================================================
+
+        public int tag;
+        public string descriptionFilename;
+        public string keyword;
+        public Carte card;
+
+        // Constructeurs                    ======================================================================================================
+
+        // Paramètres : t tag
+        //              delegate de construction
+        //              d uri du fichier de description
+        //              k mot-clé de la carte
         public CarteAssoc(int t, Carte carte, string d, string k){
             tag = t;
             descriptionFilename = d;
@@ -84,31 +90,42 @@ namespace ChtemeleSurfaceApplication
             card = carte;
         }
 
+        // Accesseurs / Mutateurs           ======================================================================================================
+
         public Carte getCarte()
         {
             return card;
         }
     }
 
+
+
+
+
+
+
+
     abstract class Carte
     {
+        // Constantes, enumérations         ======================================================================================================
 
-        public abstract void onPlay();
-        public abstract void onValid();
-        public abstract void onDelete();
+
+        // Variables membres                ======================================================================================================
 
         private string _description;
 
-
-        //pointeur fonction
-        
-
-        
+        // Constructeurs                    ======================================================================================================
 
         public Carte()
         {
             loadDescription();
         }
+
+        // Fonctionnalités                  ======================================================================================================
+
+        public abstract void onPlay();
+        public abstract void onValid();
+        public abstract void onDelete();
 
         public void loadDescription()
         {

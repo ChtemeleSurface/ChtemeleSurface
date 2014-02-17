@@ -7,14 +7,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
 {
     class Combo
     {
-        // Contient le code (HTML) du joueur
-        private string[] code;
-        // Score du code total
-        private int codeScore;
-        // Dernier combo du joueur (code total joué)
-        private string lastCombo;
-        // Nb de carte que le joueur a joué
-        private int nbCarte;
+        // Constantes, enumérations         ======================================================================================================
 
         public enum BonusCombo
         {
@@ -23,52 +16,25 @@ namespace ChtemeleSurfaceApplication.Game_classes
             LASTTURN
         }
 
-        // SET - GET
-        // variable -> codeScore;
-        public int getScoreJoueur()
-        {
-            return codeScore;
-        }
+        // Variables membres                ======================================================================================================
 
-        public void setScoreJoueur(int a)
-        {
-            codeScore = a;
-        }
+        private string code;                // code de la combinaison
+        private int codeScore;              // Score généré par la combinaison
+        private int nbCarte;                // Nombre de cartes de la combinaison
 
-        // SET - GET
-        // variable -> []code;
-        public string[] getCodeJoueur()
-        {
-            return code;
-        }
+        // Constructeurs                    ======================================================================================================
 
-        public void setCodeJoueur(string[] a)
-        {
-            code = a;
-        }
+        // Accesseurs / Mutateurs           ======================================================================================================
 
-        // SET - GET
-        // variable -> []lastCombo;
-        public string getComboJoueur()
-        {
-            return lastCombo;
-        }
+        public int getScore() { return codeScore; }
+        public void setScoreJoueur(int a) { codeScore = a; }
 
-        public void setComboJoueur(string a)
-        {
-            lastCombo = a;
-        }
+        public string getCodeJoueur() { return code; }
+        public void setCodeJoueur(string a) { code = a; }
 
-        // SET - GET
-        // variable -> nbCarte;
-        public int getNbCarte()
-        {
-            return nbCarte;
-        }
+        public int getNbCarte() { return nbCarte; }
+        public void setComboJoueur(int a) { nbCarte = a; }
 
-        public void setComboJoueur(int a)
-        {
-            nbCarte = a;
-        }
+        // Fonctionnalités                  ======================================================================================================
     }
 }

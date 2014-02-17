@@ -28,11 +28,16 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
-        public static SurfaceWindow1 instance = null;
-      
-        private Game _game;
+        // Constantes, enumérations         ======================================================================================================
 
-        public static Dictionary<int, CartesJoueurs> tabCartes;
+        public static SurfaceWindow1 instance = null;               //Singleton
+
+        // Variables membres                ======================================================================================================
+
+        private Game _game;                                         // Référence vers le jeu
+        public static Dictionary<int, CartesJoueurs> tabCartes;     // Tableau des cartes Joueurs localisées
+
+        // Constructeurs                    ======================================================================================================
 
         /// <summary>
         /// Default constructor.
@@ -42,7 +47,7 @@ namespace ChtemeleSurfaceApplication
             InitializeComponent();
             instance = this;
 
-           /* //Clavier Nord
+            /* //Clavier Nord
             ScatterViewItem clavN = new ScatterViewItem();
             clavN.Content = new Clavier();
 
@@ -67,53 +72,44 @@ namespace ChtemeleSurfaceApplication
                 {Player.OUEST, CarteOuest}
             };
 
-            // CarteNord
+            // Position des cartes joueurs
             CarteNord.position = Player.NORD;
-
-            // CarteSud
             CarteSud.position = Player.SUD;
-
-            // CarteEst
             CarteEst.position = Player.EST;
-
-            // CarteOuest
             CarteOuest.position = Player.OUEST;
 
-            // Doc Nord
+            // Documentations
             ScatterViewItem DocN = new ScatterViewItem();
             DocN.Content = new PageDoc();
 
-            // Doc Sud
             ScatterViewItem DocS = new ScatterViewItem();
             DocS.Content = new PageDoc();
 
-            // Doc Est
             ScatterViewItem DocE = new ScatterViewItem();
             DocE.Content = new PageDoc();
 
-            // Doc Ouest
             ScatterViewItem DocO = new ScatterViewItem();
             DocO.Content = new PageDoc();
 
 
             //Initialisation positions zone Nord
             DocNord.Center = new Point(PlayerNScatterView.Width / 6, PlayerNScatterView.Height / 2);
-           // ClavierNord.Center = new Point(PlayerNScatterView.Width / 2, PlayerNScatterView.Height / 2);
+            // ClavierNord.Center = new Point(PlayerNScatterView.Width / 2, PlayerNScatterView.Height / 2);
             CarteNord.Center = new Point((PlayerNScatterView.Width / 2) + (PlayerNScatterView.Width / 3), PlayerNScatterView.Height / 2);
 
             //Initialisation positions zone Sud
             DocSud.Center = new Point(PlayerSScatterView.Width / 6, PlayerSScatterView.Height / 2);
-           // ClavierSud.Center = new Point(PlayerSScatterView.Width / 2, PlayerSScatterView.Height / 2);
+            // ClavierSud.Center = new Point(PlayerSScatterView.Width / 2, PlayerSScatterView.Height / 2);
             CarteSud.Center = new Point((PlayerSScatterView.Width / 2) + (PlayerSScatterView.Width / 3), PlayerSScatterView.Height / 2);
 
             //Initialisation positions zone Est
             DocEst.Center = new Point(PlayerEScatterView.Width / 6, PlayerEScatterView.Height / 2);
-           // ClavierEst.Center = new Point(PlayerEScatterView.Width / 2, PlayerEScatterView.Height / 2);
+            // ClavierEst.Center = new Point(PlayerEScatterView.Width / 2, PlayerEScatterView.Height / 2);
             CarteEst.Center = new Point((PlayerEScatterView.Width / 2) + (PlayerEScatterView.Width / 3), PlayerEScatterView.Height / 2);
 
             //Initialisation positions zone Ouest
             DocOuest.Center = new Point(PlayerOScatterView.Width / 6, PlayerOScatterView.Height / 2);
-           // ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
+            // ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
             CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 3), PlayerOScatterView.Height / 2);
 
 
@@ -122,6 +118,8 @@ namespace ChtemeleSurfaceApplication
 
             ComputeWidgetsPositions(MainScatterView.Width, MainScatterView.Height);
         }
+
+        // Evénements                  ======================================================================================================
 
         /// <summary>
         /// Occurs when the window is about to close. 

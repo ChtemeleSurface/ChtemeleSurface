@@ -56,6 +56,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         }
 
+        public HtmlElement mainTag() { return _mainTag; }
+
         public string renderHTML(){
             string res = "";
 

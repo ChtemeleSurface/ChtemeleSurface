@@ -24,6 +24,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         }
 
+        public string getText() { return _str; }
+
         public override string renderHTML(string attribs)
         {
             throw new NotImplementedException();

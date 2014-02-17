@@ -12,15 +12,23 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class Tag : TagVisualization
     {
+        // Constantes, enumérations         ======================================================================================================
+
+        // Variables membres                ======================================================================================================
+
         private bool played;
         public static int multiCardOnScreen = 0;
         private static Carte curCard;
         private static CarteAssoc carteAssoc;
 
+        // Constructeurs                    ======================================================================================================
+
         public Tag()
         {
             InitializeComponent();
         }
+
+        // Fonctionnalités                  ======================================================================================================
 
         private void valider(object sender, RoutedEventArgs e)
         {
@@ -37,8 +45,8 @@ namespace ChtemeleSurfaceApplication
         {
             played = false;
             multiCardOnScreen++;
-            if (carteAssoc == null)
-                carteAssoc = new CarteAssoc();
+            /*if (carteAssoc == null)
+                carteAssoc = new CarteAssoc();*/
             if (multiCardOnScreen != 1)
             {
                 ElemMenu.Visibility = System.Windows.Visibility.Hidden;

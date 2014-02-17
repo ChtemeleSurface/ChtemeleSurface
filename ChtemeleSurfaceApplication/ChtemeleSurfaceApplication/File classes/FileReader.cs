@@ -109,8 +109,8 @@ namespace ChtemeleSurfaceApplication.File_classes
             return false;
         }
 
-        // Test si une partie est fini
-        public bool testFinPartie(string FileName)
+        // Test si une partie est finie
+        /*public bool testFinPartie(string FileName)
         {
             
             int nbSteps = classeGame.getActualnbSteps();
@@ -123,7 +123,7 @@ namespace ChtemeleSurfaceApplication.File_classes
                 return false;         
 
             return true;
-        }
+        }*/
 
 
         // Permet de lire une ligne dans un fichier

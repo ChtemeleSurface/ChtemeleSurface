@@ -15,12 +15,12 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private HTMLTagType _type;
 
         //options de génération HTML
-        private static Dictionary<HtmlTag.HTMLTagType, string> openSymbol = new Dictionary<HtmlTag.HTMLTagType, string>
+        public static Dictionary<HtmlTag.HTMLTagType, string> openSymbol = new Dictionary<HtmlTag.HTMLTagType, string>
         {
             {HtmlTag.HTMLTagType.OPENTAG , "<"},
             {HtmlTag.HTMLTagType.ENDTAG , "</"}
         };
-        private static string endSymbol = ">";
+        public static string endSymbol = ">";
 
 
         /// <summary>
@@ -34,7 +34,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             _type = type;
         }
 
-        
+        public string getTagName() { return _tagname; }
+        public HTMLTagType getType() { return _type; }
 
         public string renderHTML()
         {
