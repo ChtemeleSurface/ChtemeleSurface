@@ -75,11 +75,11 @@
                            Background="Transparent">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="370"/>
                         <ColumnDefinition Width="350"/>
                     </Grid.ColumnDefinitions>
-                    <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
-                    <custom:PageDoc x:Name="DocSud" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
+                    <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Center="0,0" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
+                    <custom:PageDoc x:Name="DocSud" CanScale="False" CanRotate="False" Center="0,0" Orientation="0" Grid.Column="0" ></custom:PageDoc>
                     <!---
                         <custom:Clavier x:Name="ClavierSud" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
                 </Grid>
