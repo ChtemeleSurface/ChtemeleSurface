@@ -4,19 +4,20 @@
 
 /* base font-size corresponds to 10px and is adapted to rem unit */
 html {
-    font-size: 62.5%;
+    font-size: 45%;
 	/*cybercrab.com/screencheck*/
 }
 body {
-	margin-left: 5%;
-	margin-right: 5%;
+
     background-color: #fff;
     color: #000;
     font-family: "Century Gothic", helvetica, arial, sans-serif;
     font-size: 1.4em; /* equiv 14px */
     line-height: 1.5; /* adapt to your design */
+	margin: 2px;
+	padding: 2px;
 }
-
+ 
 /* font-sizing for content */
 /* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
 p,
@@ -42,6 +43,7 @@ h1, .h1-like {
     font-weight: normal;
     line-height: 1.6154em;
     margin: .8077em 0 0 0;
+	font-family:"Courrier New", Times, Monospace;
 }
 h2, .h2-like {
     font-size: 1.7143em; /* equiv 24px */
@@ -49,30 +51,35 @@ h2, .h2-like {
     line-height: 1.75em;
     margin: .875em 0 0 0;
 	color: rgb(100, 0, 0);
+	font-family:"Courrier New", Times, Monospace;
 }
 h3, .h3-like {
     font-size: 1.5714em; /* equiv 22px */
     font-weight: normal;
     line-height: 1.909em;
     margin: .9545em 0 0 0;
+	font-family:"Courrier New", Times, Monospace;
 }
 h4, .h4-like {
     font-size: 1.4286em; /* equiv 20px */
     font-weight: normal;
     line-height: 1.05em;
     margin:  1.05em 0 0 0;
+	font-family:"Courrier New", Times, Monospace;
 }
 h5, .h5-like {
     font-size: 1.2857em; /* equiv 18px */
     font-weight: normal;
     line-height: 1.1667em;
     margin:  1.1667em 0 0 0;
+	font-family:"Courrier New", Times, Monospace;
 }
 h6, .h6-like {
     font-size: 1.1429em; /* equiv 16px */
     font-weight: normal;
     line-height: 1.3125em;
     margin:  1.3125em 0 0 0;
+	font-family:"Courrier New", Times, Monospace;
 }
 
 /* alternate font-sizing */
@@ -196,11 +203,11 @@ header{
 	color:grey;
 	margin-top: 10px;
 	width: 85%;
-	margin-left: 17%;
+	margin-left: 2%;
 	padding-left: 2%;
 	margin-right: 30%;
 	border-left: solid 3px black;
-	border-bottom:1px dashed green;
+	border-bottom:1px dashed rgb(100,0,0);
 }
 
 /* Met en évidence les citations */
@@ -222,12 +229,15 @@ table td, table th {
   border: 1px solid #ccc; /* Pas de bordure = "none". */
   vertical-align: top; /* Valeur par défaut: "middle" */
 }
+table td{
+	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+}
 
 p{
-	margin-top: 35px;
-	margin-bottom: 35px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	border: inset 2px grey;
-	padding: 10px;
+	padding: 2px;
 	/*arrondir les coins en haut à gauche et en bas à droite*/
 /*	-moz-border-radius:10px 0;
 	-webkit-border-radius:10px 0;
@@ -236,15 +246,15 @@ p{
 }
 
 hr{
-	width: 90%;
+	width: 100%;
 	color: rgb(100, 0, 0);
 	background-color: rgb(100, 0, 0):
 }
 
 aside.backToIndex{
 	position:fixed;
-	right:0%;
-	width:5%;
+	left: 0%;
+	width:10%;
 }
 
 .backToIndex a {
@@ -262,12 +272,11 @@ background:url(img/boutonnoir2.png) no-repeat;
 }
 
 section{
-	width: 85%;
-	margin-left: 8%;
+	width: 100%;
 	right: 0em;
 	/*float: right;*/
 	/*margin-top: 10px;*/
-	padding: 2%;
+	
     /*border: 1px solid blue;*/
 }
 
@@ -280,4 +289,25 @@ nav{
 	min-width: 2%;
 	max-width: 100%;
     /*border: 1px solid black;*/
+}
+
+a.retour
+{
+	top: 0%;
+	left: 85%;
+	position:fixed;
+	display:block;
+	width:15%;
+	height: 20px;
+	line-height:150%;
+	text-align:center;
+	vertical-align:middle;
+	background:url(img/boutonnoir.png) no-repeat;
+	color:white;
+	text-decoration:none;
+}
+
+a.retour:hover
+{
+	background:url(img/boutonnoir2.png) no-repeat;
 }

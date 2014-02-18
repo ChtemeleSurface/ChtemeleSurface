@@ -2,184 +2,145 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width"/>
   <title>&lt;a&gt;</title>
   <link rel="stylesheet" href="../style_tag.css">
 </head>
 <body>
 
-	<nav>
-			<ul>
-				<li><h1>Balises: </h1></li>
-				<ul>
-					<li>&lt;h1&gt; et &lt;h2&gt;</li>
-					<li>&lt;p&gt;</li>
-					<li>&lt;div&gt;</li>
-					<li>&lt;blockquote&gt;</li>
-					<li>&lt;header&gt;</li>
-					<li>&lt;footer&gt;</li>
-					<li>&lt;aside&gt;</li>
-					<li>&lt;strong&gt;</li>
-					<li>&lt;em&gt;</li>
-					<li>&lt;a&gt;</li>
-					<li>&lt;hr&gt;</li>
-					<li>&lt;br&gt;</li>
-					<li>&lt;img&gt;</li>
-				</ul>
-				
-				<li><h1>Add-ons :</h1></li>
-				<ul>
-					<li>Ctrl +F5</li>
-					<li>Browser Update</li>
-					<li>Antivirus</li>
-					<li>Code Inspector</li>
-					<li>Café</li>
-				</ul>
-				
-				<li><h1>Attaques :</h1></li>
-				<ul>
-					<li>Freeze</li>
-					<li>Crash Browser</li>
-					<li>Man in the middle</li>
-					<li>303 See Other</li>
-					<li>403 Forbidden</li>
-					<li>404 Not Found</li>
-				</ul>
-				
-				
-			</ul>
-		
-		</nav>
 	<header>
 		<h1><u>La balise &lt;a&gt;</u></h1>
 	</header>
-	
-	<aside class="backToIndex">
-		<a  href="../index.html">Retour</a>
-	</aside>
-	
+
 	<section>
+		<h2>Définition: </h2>
+		<p>
+			&lt;a&gt; définit un hyper-lien, qui est utilisé pour renvoyer sur une page en cliquant dessus.
 
-	<p>
-		&lt;a&gt; définit un hyper-lien, qui est utilisé pour renvoyer sur une page en cliquant dessus.
+			<br>L'attribut le plus important de la balise &lt;a&gt; est le href, qui indique la destination.
 
-		<br>L'attribut le plus important de la balise &lt;a&gt; est le href, qui indique la destination.
+			<br>Par défaut, les liens apparaissent comme ceci dans les differents navigateurs:
 
-		<br>Par défaut, les liens apparaissent comme ceci dans les differents navigateurs:
+			<br>Un lien non visité est souligné et de couleur bleu.
+			<br>Un lien visité est souligné mais de couleur violette.
+			<br>Un lien actif est souligné mais de couleur rouge.
+		</p>
 
-		<br>Un lien non visité est souligné et de couleur bleu.
-		<br>Un lien visité est souligné mais de couleur violette.
-		<br>Un lien actif est souligné mais de couleur rouge.
-	</p>
-
-	
-	<table border="1" id="table1">
-		<tbody>
-			<tr>
-				<th>Attribute (spécifique à la balise)</th>
-				<th>Value</th>
-				<th>Description</th>
-			</tr>
+		<hr>
+		<h2>Attributs: </h2>
+		<table border="1" >
+			<tbody>
+				<tr>
+					<th>Attribute (spécifique à la balise)</th>
+					<th>Value</th>
+					<th>Description</th>
+				</tr>
+				
+				<tr>
+					<td>href</td>
+					<td>URL</td>
+					<td>Spécifie l'URL de la page auquel le lien renvoie (nous emmènes)</td>
+				</tr>
+				<tr>
+					<td>download</td>
+					<td>filename</td>
+					<td>Spécifie la cible de l'hyperlien a telecharger</td>
+				</tr>
+				<tr>
+					<td>hreflang</td>
+					<td>language_code</td>
+					<td>Spécifie le langage du document</td>
+				</tr>
+				<tr>
+					<td>media</td>
+					<td>media_query</td>
+					<td>Spécifie le media pour lequel le document est optimisé</td>
+				</tr>
+				<tr>
+					<td>rel</td>
+					<td>alternate 
+						<br>autdor
+						<br>bookmark
+						<br>help
+						<br>license
+						<br>next
+						<br>nofollow
+						<br>noreferrer
+						<br>prefetch
+						<br>prev
+						<br>search
+						<br>tag</td>
+					<td>Spécifie les relations entre le document ouvert et le document attaché</td>
+				</tr>
+				<tr>
+					<td>target</td>
+					<td>_blank
+					<br>_parent
+					<br>_self
+					<br>_top
+					<br>framename</td>
+					<td>Spécifie ou ouvrir le document</td>
+				</tr>
+				<tr>
+					<td>type</td>
+					<td>MIME_type</td>
+					<td>Spécifie le MIME type du document attaché</td>
+				</tr>
+				
+			</tbody>
+			</table>	
 			
-			<tr>
-				<td>href</td>
-				<td>URL</td>
-				<td>Spécifie l'URL de la page auquel le lien renvoie (nous emmènes)</td>
-			</tr>
-			<tr>
-				<td>download</td>
-				<td>filename</td>
-				<td>Spécifie la cible de l'hyperlien a telecharger</td>
-			</tr>
-			<tr>
-				<td>hreflang</td>
-				<td>language_code</td>
-				<td>Spécifie le langage du document</td>
-			</tr>
-			<tr>
-				<td>media</td>
-				<td>media_query</td>
-				<td>Spécifie le media pour lequel le document est optimisé</td>
-			</tr>
-			<tr>
-				<td>rel</td>
-				<td>alternate 
-					<br>autdor
-					<br>bookmark
-					<br>help
-					<br>license
-					<br>next
-					<br>nofollow
-					<br>noreferrer
-					<br>prefetch
-					<br>prev
-					<br>search
-					<br>tag</td>
-				<td>Spécifie les relations entre le document ouvert et le document attaché</td>
-			</tr>
-			<tr>
-				<td>target</td>
-				<td>_blank
-				<br>_parent
-				<br>_self
-				<br>_top
-				<br>framename</td>
-				<td>Spécifie ou ouvrir le document</td>
-			</tr>
-			<tr>
-				<td>type</td>
-				<td>MIME_type</td>
-				<td>Spécifie le MIME type du document attaché</td>
-			</tr>
+			<br><hr><br>
 			
-		</tbody>
-		</table>	
+			<table border="1" >
+			<tbody>
+				<tr>
+					<th>Attribute (géneraux)</th>
+					<th>Description</th>
+				</tr>
+				
+				<tr>
+					<td>Class</td>
+					<td>Spécifie un ou plusieurs nom(s) de classe pour un element(réfere à une classe dans le css)</td>
+				</tr>
+				<tr>
+					<td>id</td>
+					<td>Spécifie un id unique pour un element</td>
+				</tr>
+				<tr>
+					<td>style</td>
+					<td>Spécifie un style css sur une ligne</td>
+				</tr>
+				<tr>
+					<td>title</td>
+					<td>Spécifie des informations à propos de l'élement</td>
+				</tr>
+				
+			</tbody>
+		</table>
 		
-		---------------
 		
-		<table border="1" id="table1">
-		<tbody>
-			<tr>
-				<th>Attribute (géneraux)</th>
-				<th>Description</th>
-			</tr>
-			
-			<tr>
-				<td>Class</td>
-				<td>Spécifie un ou plusieurs nom(s) de classe pour un element(réfere à une classe dans le css)</td>
-			</tr>
-			<tr>
-				<td>id</td>
-				<td>Spécifie un id unique pour un element</td>
-			</tr>
-			<tr>
-				<td>style</td>
-				<td>Spécifie un style css sur une ligne</td>
-			</tr>
-			<tr>
-				<td>title</td>
-				<td>Spécifie des informations à propos de l'élement</td>
-			</tr>
-			
-		</tbody>
-	</table>
-	
-	
-	<!--
-	Pas de PHP
-	eviter je Javascript on sait pas comment il est géré sur Surface
-	tu peux ajouter des images, je t'ai préparé un dossier,
-	<img src="../img/mon_image.jpg">
-	tu peux aussi modifier le css et l'index c'est grossier mais fonctionnel
-	Pense à ne pas faire trop large ou sinon utilise des pourcentages
-	pour ce qui est de la hauteur on pourra descendre avec un curseur
-	
-	Précision: des attributs sont clairement inutile pour le jeu, mais le but est d'aprendre, autant en mettre le plus possible à mon avis.
-	-->
-	Exemple :
-		<a href="../index.html">Retour à la page d'accueil de la documentation</a>
-	
+		<!--
+		Pas de PHP
+		eviter je Javascript on sait pas comment il est géré sur Surface
+		tu peux ajouter des images, je t'ai préparé un dossier,
+		<img src="../img/mon_image.jpg">
+		tu peux aussi modifier le css et l'index c'est grossier mais fonctionnel
+		Pense à ne pas faire trop large ou sinon utilise des pourcentages
+		pour ce qui est de la hauteur on pourra descendre avec un curseur
+		
+		Précision: des attributs sont clairement inutile pour le jeu, mais le but est d'aprendre, autant en mettre le plus possible à mon avis.
+		-->
+		<br>
+		<hr>
+		<h2>Exemple : </h2>
+		<br>
+			<a href="../index.html">Retour à la page d'accueil de la documentation</a>
+		<pre>
+			<span style="color:blue;">&lt;a </span><span style="color:red;">href</span>=<span style="color:purple;">"../index.html"</span>Retour à la page d'accueil de la documentation<span style="color:blue;">&lt;/a&gt;</span>
+		</pre>
 
 	</section>	
 	
 </body>
-</html>
+</html> <a class="retour" href="../index.html">Retour</a>
