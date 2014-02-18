@@ -199,7 +199,7 @@ namespace ChtemeleSurfaceApplication
         }
 
 
-        private void ComputeWidgetsPositions(double x, double y)
+        public void ComputeWidgetsPositions(double x, double y)
         {
             //Position des zones joueurs
             PlayerSScatterView.Center = new Point(x / 2, y - (PlayerSScatterView.Height / 2));
@@ -219,8 +219,7 @@ namespace ChtemeleSurfaceApplication
             ScatterCenterView.Width = CenterView.Width;
 
 
-
-            if ((CenterView.Orientation == 0 && PageCode.Orientation == 0) || (PageCode.Orientation == 180 && PageCode.Orientation == 0))
+            if ((CenterView.Orientation == 0 && PageCode.Orientation == 90) || (PageCode.Orientation == 180 && PageCode.Orientation == 90))
             {
                 // valeurs en 1920 * 1080
                 /*PageCode.Width = 750;
@@ -228,20 +227,21 @@ namespace ChtemeleSurfaceApplication
                 PageRendu.Width = 750;
                 PageRendu.Height = 758;*/
 
+                ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;
+                ZonePioche.Height = ScatterCenterView.Height;
+
                 PageCode.Height = ScatterCenterView.Height;
                 PageRendu.Height = ScatterCenterView.Height;
-                ZonePioche.Height = ScatterCenterView.Height;
                 PageRendu.Height = ScatterCenterView.Height;
                 PageCode.Height = ScatterCenterView.Height;
 
                 ZonePioche.Width = ScatterCenterView.Width / 10;
                 PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
                 PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
-                ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;
                 PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
                 PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
             }
-            if ((CenterView.Orientation == 0 && PageCode.Orientation == 90) || (PageCode.Orientation == 180 && PageCode.Orientation == 90))
+            if ((CenterView.Orientation == 0 && PageCode.Orientation == 0) || (PageCode.Orientation == 180 && PageCode.Orientation == 0))
             {
                 // valeurs en 1920 * 1080
                 /*PageCode.Width = 758;
@@ -249,16 +249,17 @@ namespace ChtemeleSurfaceApplication
                 PageRendu.Width = 758;
                 PageRendu.Height = 758;*/
 
+                ZonePioche.Height = ScatterCenterView.Height;
+
                 PageCode.Width = ScatterCenterView.Height;
                 PageRendu.Width = ScatterCenterView.Height;
-                ZonePioche.Height = ScatterCenterView.Height;
                 PageRendu.Width = ScatterCenterView.Height;
                 PageCode.Width = ScatterCenterView.Height;
 
-                ZonePioche.Height = ScatterCenterView.Height;
+                ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;
+
                 PageCode.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
                 PageRendu.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
-                ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;
                 PageCode.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
                 PageRendu.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
             }
@@ -290,8 +291,6 @@ namespace ChtemeleSurfaceApplication
                     CenterView.Orientation = 0;
                     PageCode.Orientation = 90;
                     PageRendu.Orientation = 90;
-                    PageCode.Width = 200;
-                    PageRendu.Width = 200;
                     break;
                 case 180:
                     CenterView.Orientation = 180;
