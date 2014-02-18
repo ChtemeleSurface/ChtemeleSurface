@@ -14,12 +14,17 @@ using ChtemeleSurfaceApplication.Game_classes;
 
 namespace ChtemeleSurfaceApplication.Effect_classes
 {
-    class Freeze
+    class Freeze : Effect
     {
-        public Player player;
+        private Player _player;
 
         // Constructeur
         public Freeze()
+        {
+
+        }
+
+        public void activate()
         {
 
         }

@@ -74,11 +74,11 @@
     <Compile Include="PageDoc.xaml.cs">
       <DependentUpon>PageDoc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PopUpEffect.xaml.cs">
+      <DependentUpon>PopUpEffect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tag.xaml.cs">
       <DependentUpon>Tag.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEST.xaml.cs">
-      <DependentUpon>TEST.xaml</DependentUpon>
     </Compile>
     <Page Include="CartesJoueurs.xaml">
       <SubType>Designer</SubType>
@@ -95,6 +95,10 @@
     <Page Include="PageDoc.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PopUpEffect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RenduHTML.xaml">
       <SubType>Designer</SubType>
@@ -161,10 +165,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TEST.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -194,11 +194,13 @@
   <ItemGroup>
     <Resource Include="Resources\icon.jpg" />
     <Resource Include="Resources\fond.jpg" />
+    <Resource Include="Resources\croix.bmp" />
     <Content Include="Resources\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ChtemeleSurfaceApplication.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup />

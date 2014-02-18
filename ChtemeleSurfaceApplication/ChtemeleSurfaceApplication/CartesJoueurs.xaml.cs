@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//using System.Drawing;
+
 using Microsoft.Surface.Presentation.Controls;
 
 using ChtemeleSurfaceApplication.Game_classes;
@@ -46,11 +48,17 @@ namespace ChtemeleSurfaceApplication
             ChoixNav.Visibility = System.Windows.Visibility.Visible;
             CarteJoueurGrid.IsEnabled = false;
             ChoixNav.IsEnabled = true;
-            
+
             // Au départ, aucun modèle car aucun joueur.
             _mdl = null;
             position = 0;
             nbCarteJoueurActiv = 0;
+
+            // image effect cacher au départ
+            EffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
+            EffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
+            EffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+
         }
 
         // Fonctionnalités                  ======================================================================================================
@@ -61,27 +69,27 @@ namespace ChtemeleSurfaceApplication
             // Si le navigateur sélectionné a déjà été pris, on se barre direct.
             if (Game.getInstance.LocationNav[NavClicke] != 0)
             {
-                return ;
+                return;
             }
             // On dit à Game que ce navigateur est désormais pris.
             Game.getInstance.LocationNav[NavClicke] = positionJoueur;
 
             //On créée le nouveau joueur
-            switch(positionJoueur)
+            switch (positionJoueur)
             {
-                case Player.NORD :
+                case Player.NORD:
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
                     Game.getInstance.joueurN = _mdl.getPlayer();
                     break;
-                case Player.EST: 
+                case Player.EST:
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
                     Game.getInstance.joueurE = _mdl.getPlayer();
                     break;
-                case Player.SUD: 
+                case Player.SUD:
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
                     Game.getInstance.joueurS = _mdl.getPlayer();
                     break;
-                case Player.OUEST: 
+                case Player.OUEST:
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
                     Game.getInstance.joueurO = _mdl.getPlayer();
                     break;
@@ -108,7 +116,7 @@ namespace ChtemeleSurfaceApplication
                         }
                     }
                 }
-                
+
             }
 
             // On déactive le choix de navigateur et on active la carte Joueur
@@ -119,7 +127,7 @@ namespace ChtemeleSurfaceApplication
 
             // Update final
             update();
-            
+
         }
 
         // Evénements                  ======================================================================================================
@@ -155,11 +163,14 @@ namespace ChtemeleSurfaceApplication
             _mdl.setPlayerName(Player.browserNames[Player.OPERA]);
         }
 
+
         // Update                         ======================================================================================================
 
         public void update()
         {
+            //affiche pseudo du joueur
             PseudoCarte.Text = _mdl.getPlayerName();
+            //affiche points du joueur
             Points.Text = _mdl.getPlayerScore().ToString();
             nbCarteJoueurActiv++;
 
@@ -167,6 +178,43 @@ namespace ChtemeleSurfaceApplication
             {
                 Game.getInstance.hideCarteJoueur();
             }
+            //affiche dernière combinaison de balises posée
+            Combinaison.Text = _mdl.getComboCode().ToString();
+
+            //affichage des effects
+            if (_mdl.hasBrowserUpdate())
+            {
+                EffectBrowserUpdate.Visibility = System.Windows.Visibility.Visible;
+                EffectBrowserUpdate.IsEnabled = true;
+            }
+            else
+            {
+                EffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
+                EffectBrowserUpdate.IsEnabled = false;
+            }
+
+            if (_mdl.hasCrashBrowser())
+            {
+                EffectCrashBrowser.Visibility = System.Windows.Visibility.Visible;
+                EffectCrashBrowser.IsEnabled = true;
+            }
+            else
+            {
+                EffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
+                EffectCrashBrowser.IsEnabled = false;
+            }
+
+            if (_mdl.hasBrowserUpdate())
+            {
+                EffectFreeze.Visibility = System.Windows.Visibility.Visible;
+                EffectFreeze.IsEnabled = true;
+            }
+            else
+            {
+                EffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+                EffectFreeze.IsEnabled = false;
+            }
         }
+
     }
 }

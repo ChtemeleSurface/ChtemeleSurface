@@ -216,13 +216,17 @@ namespace ChtemeleSurfaceApplication
             ScatterCenterView.Height = CenterView.Height;
             ScatterCenterView.Width = CenterView.Width;
 
-            PageCode.Height = ScatterCenterView.Height;
-            PageRendu.Height = ScatterCenterView.Height;
             ZonePioche.Height = ScatterCenterView.Height;
+            /*PageRendu.Height = ScatterCenterView.Height;
+            PageCode.Height = ScatterCenterView.Height;*/
 
-            ZonePioche.Width = ScatterCenterView.Width/10;
-            PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
-            PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+            ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;   // laisse deux bordure qu'on peut remplir avec un BG
+           /* PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+            PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;*/
+            PageCode.Width = 548;
+            PageRendu.Width = 548;
+            PageCode.Height = 548;
+            PageRendu.Height = 548;
 
             ZonePioche.Center = new Point(ScatterCenterView.Width / 2.0, ScatterCenterView.Height / 2.0);
             PageCode.Center = new Point(PageCode.Width/2.0, ScatterCenterView.Height/2.0);
@@ -247,6 +251,8 @@ namespace ChtemeleSurfaceApplication
                     CenterView.Orientation = 0;
                     PageCode.Orientation = 90;
                     PageRendu.Orientation = 90;
+                    PageCode.Width = 200;
+                    PageRendu.Width = 200;
                     break;
                 case 180:
                     CenterView.Orientation = 180;
