@@ -91,8 +91,8 @@ namespace ChtemeleSurfaceApplication
             ScatterViewItem DocO = new ScatterViewItem();
             DocO.Content = new PageDoc();
 
-
-            //Initialisation positions zone Nord
+            // NE FONCTIONNE PAS (n'est pas utilisé par surface pour placer les élements)
+           /* //Initialisation positions zone Nord
             DocNord.Center = new Point(PlayerNScatterView.Width / 6, PlayerNScatterView.Height / 2);
             // ClavierNord.Center = new Point(PlayerNScatterView.Width / 2, PlayerNScatterView.Height / 2);
             CarteNord.Center = new Point((PlayerNScatterView.Width / 2) + (PlayerNScatterView.Width / 3), PlayerNScatterView.Height / 2);
@@ -111,7 +111,7 @@ namespace ChtemeleSurfaceApplication
             DocOuest.Center = new Point(PlayerOScatterView.Width / 6, PlayerOScatterView.Height / 2);
             // ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
             CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 3), PlayerOScatterView.Height / 2);
-
+            */
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
