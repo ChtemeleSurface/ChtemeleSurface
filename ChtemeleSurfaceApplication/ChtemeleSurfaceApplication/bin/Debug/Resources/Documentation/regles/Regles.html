@@ -1,0 +1,329 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width"/>
+  <title>&lt;Regles&gt;</title>
+  <link rel="stylesheet" href="../style_tag.css">
+</head>
+<body>
+
+	<nav>
+		<ul>
+			<li><h1>Balises: </h1></li>
+			<ul>
+				<li>&lt;h1&gt; et &lt;h2&gt;</li>
+				<li>&lt;p&gt;</li>
+				<li>&lt;div&gt;</li>
+				<li>&lt;blockquote&gt;</li>
+				<li>&lt;header&gt;</li>
+				<li>&lt;footer&gt;</li>
+				<li>&lt;aside&gt;</li>
+				<li>&lt;strong&gt;</li>
+				<li>&lt;em&gt;</li>
+				<li>&lt;a&gt;</li>
+				<li>&lt;hr&gt;</li>
+				<li>&lt;br&gt;</li>
+				<li>&lt;img&gt;</li>
+			</ul>
+			
+			<li><h1>Add-ons :</h1></li>
+			<ul>
+				<li>Ctrl +F5</li>
+				<li>Browser Update</li>
+				<li>Antivirus</li>
+				<li>Code Inspector</li>
+				<li>Café</li>
+			</ul>
+			
+			<li><h1>Attaques :</h1></li>
+			<ul>
+				<li>Freeze</li>
+				<li>Crash Browser</li>
+				<li>Man in the middle</li>
+				<li>303 See Other</li>
+				<li>403 Forbidden</li>
+				<li>404 Not Found</li>
+			</ul>
+			
+			<li><h1>Regles :</h1></li>
+			<ul>
+				<li>Regles du jeu: </li>
+			</ul>
+		</ul>
+	
+	</nav>
+	<section>
+		<header>
+			<h1><u>Regles du jeu: </u></h1>
+		</header>
+		
+		<section>
+		
+			<h2>But du jeu: </h2>
+			<p>
+				<br>Poser sur la table, les unes après les autres les balises HTML pour former le code d'une page web.
+				<br>Chaque carte posée rapporte des points, le but étant de finir la partie avec le plus de points possible.
+			</p>
+			
+			<hr>
+			
+			<h2>Un jeu à tour de rôle: </h2>
+			<p>
+				<br>Chaque joueur exécute son tour l’un après l’autre, dans le sens horaire (de gauche à droite).
+				<br>Le déroulement d’un tour est le suivant :
+				<br>
+				<br>•	Le joueur doit piocher un certain nombre de cartes pour que sa main comporte 10 cartes.
+				<br>Ce nombre peut varier au cours de la partie.
+				<br>•	Le joueur a deux options :
+				<br>o	Soit il pose des cartes de sa main pour marquer des points (en respectant la syntaxe et la logique du HTML5) et saisit du code html au clavier (quand le jeu lui propose),
+				<br>o	Soit il se  défausse d’une à trois cartes de sa main.
+				<br>
+				<br>Une fois le tour terminé, on comptabilise le nombre de points que le joueur a marqué et  l’ajoute à son  score total.
+				<br>Il existe deux types de cartes : les cartes HTML et les cartes Action. Un joueur ne peut poser qu’une seule carte action lors de chacun de ses tours. En revanche, il peut poser autant de cartes HTML qu’il veut.
+
+			</p>
+			
+			<hr>
+			
+			<h2>Poser des cartes: </h2>
+			<p>
+				<br>Les joueurs posent leurs cartes une par une.
+				<br>
+				<br>Il faut poser les cartes dans l’éditeur de code.
+			</p>
+			
+			<hr>
+			
+			<h2>Les cartes HTML: </h2>
+			<p>
+				Quand une carte HTML est posée dans l’éditeur, une fenêtre apparaîtra dans laquelle le joueur pourra trouver des informations sur le code qui sera ajouté.
+				<br>Il y aura également la présence d’un bouton de validation sur lequel il faudra appuyer pour valider le placement de la carte.
+				<br><br>Certaines cartes HTML demandent de choisir ou de saisir du contenu. Le joueur devra alors choisir sur la fenêtre qui sera apparue quel contenu intégrer à la carte HTML ou taper le contenu à l’aide de son clavier personnel, place juste devant lui sur la table. Il est aussi possible de générer un contenu texte automatiquement grâce à un bouton de cette fenêtre.
+				<br><br>Si le joueur effectue des erreurs de code HTML avec les cartes qu’il pose, celles-ci seront surlignées en rouge. Il pourra lire en bas de l’éditeur de quelle erreur il s’agit, comment la corriger dans les conditions réelles du programmeur. Cependant tout le code incorrect sera effacé de l’éditeur et ce joueur perdra autant de points ce que code devait lui faire gagner.
+
+			</p>	
+
+			<hr>
+			
+			<h2>Les cartes Action: </h2>
+			<p>
+				Quand un joueur pose une carte action, une fenêtre semblable à celles des cartes HTML s’ouvrira dans laquelle il devra cliquer sur le bouton de validation.
+				<br>On distingue deux types de cartes Action : les Add-ons et les Attaques.
+				<br><br>Poser un Add-on aura un effet bénéfique temporaire sur vous. Il sera visible à droite de votre fiche de score et consultable par tout le monde.
+				<br><br>Poser une Attaque vous demandera de désigner votre cible dans une fenêtre qui apparaitra.
+				<br>Les Attaques provoquent des effets instantanés négatifs pour votre cible. C’est à eux de faire face.
+				<br><br>Les cartes Action ne rapportent pas de points.
+
+			</p>		
+			
+			<hr>
+			
+			<h2>Calcul du score: </h2>
+			<p>
+				Ceci est le point le plus important de ces règles. En effet vous devez construire votre manière de jouer selon la façon dont le score est calculé. Voici tous les principes de calcul :
+				<br>•	Chaque carte posée rapport un certain nombre de points. Ce nombre est indiqué sur la carte.
+				<br>•	En fermant une balise HTML, vous remportez la somme des points des cartes qui ont composé cette balise.
+				<br>•	Certains bonus de points sont accordés dans les cas ci-dessous :
+				
+			</p>
+				
+			<hr>	
+				
+			<h2>Bonus de points:</h2>
+			<table border="1" id="table1">
+				<tbody>
+					<tr>
+						<th>Action effectuée</th>
+						<th>Bonus</th>
+					</tr>
+					
+					<tr>
+						<td>Poser au moins 10 cartes en un tour</td>
+						<td>+10</td>
+					</tr>
+					<tr>
+						<td>Ne pas faire d’erreur HTML durant la partie</td>
+						<td>+10</td>
+					</tr>
+					<tr>
+						<td>Fermer une balise au dernier tour</td>
+						<td>+3</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+			<br>
+			<hr>
+			
+			<h2>Fin de partie: </h2>
+			<p>
+				Une partie est terminée quand 10 tours de table se sont écoulées.  Ce nombre peut être ajusté à la création de la partie.
+				<br><br>Il se peut que la page HTML ne soit pas valide à la fin de la partie car des balises n’ont pas été fermées. Dans ce cas les joueurs ayants ouvert ces balises invalides perdent le total des points de chaque carte formant la balise.
+
+			</p>		
+
+			<hr>
+			
+			<h2>La vue HTML: </h2>
+			<p>
+				Cette vue donne en temps réel ce que rendra le code HTML dans un navigateur. 
+				<br><br>Il y a trois boutons en bas de cette vue qui permettent de changer le style de la page.
+			</p>		
+
+			<h2>Listes des cartes: </h2>
+			<table border="1" id="table1">
+				<tbody>
+					<tr>
+						<th>Balise(ouverture)</th>
+						<th>Fermeture</th>
+					</tr>
+					
+					<tr>
+						<td>&lt;h1&gt;</td>
+						<td>+&lt;/h1&gt;</td>
+					</tr>
+					<tr>
+						<td>&lt;h2&gt;</td>
+						<td>&lt;/h2&gt;</td>
+					</tr>
+					<tr>
+						<td>&lt;p&gt;</td>
+						<td>&lt;/p&gt;</td>
+					</tr><tr>
+						<td>&lt;div&gt;</td>
+						<td>&lt;/div&gt;</td>
+					</tr><tr>
+						<td>&lt;blockquote&gt;</td>
+						<td>&lt;/blockquote&gt;</td>
+					</tr><tr>
+						<td>&lt;header&gt;</td>
+						<td>&lt;/header&gt;</td>
+					</tr><tr>
+						<td>&lt;footer&gt;</td>
+						<td>&lt;/footer&gt;</td>
+					</tr><tr>
+						<td>&lt;aside&gt;</td>
+						<td>&lt;/aside&gt;</td>
+					</tr><tr>
+						<td>&lt;strong&gt;</td>
+						<td>&lt;/strong&gt;</td>
+					</tr><tr>
+						<td>&lt;em&gt;</td>
+						<td>&lt;/em&gt;</td>
+					</tr><tr>
+						<td>&lt;a&gt;</td>
+						<td>&lt;/a&gt;</td>
+					</tr><tr>
+						<td>&lt;hr&gt;</td>
+						<td>Ne se ferme pas</td>
+					</tr><tr>
+						<td>&lt;br&gt;</td>
+						<td>Ne se ferme pas</td>
+					</tr><tr>
+						<td>&lt;img&gt;</td>
+						<td>Ne se ferme pas</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+			<br>
+			<br>
+			
+			<table border="1" id="table1">
+				<tbody>
+					<tr>
+						<th>Attributs</th>
+						<th> </th>
+					</tr>
+					<tr>
+						<td>&lt;img&gt;</td>
+						<td>Href</td>
+					</tr>				
+					<tr>
+						<td>&lt;img&gt;</td>
+						<td>Src, alt</td>
+					</tr>
+					<tr>
+						<td>Toutes les balises</td>
+						<td>Class, id, style, title</td>
+					</tr>
+				</tbody>
+			</table>
+
+					
+			<br>
+			<br>
+			
+			<table border="1" id="table1">
+				<tbody>
+					<tr>
+						<th>Add-ons</th>
+						<th>Effet</th>
+					</tr>
+					<tr>
+						<td>Ctrl + F5</td>
+						<td>Défaussez-vous de toutes vos cartes et piochez-en autant.</td>
+					</tr>				
+					<tr>
+						<td>Browser Update</td>
+						<td>Au prochain tour vous piocherez jusqu’à avoir 2 cartes de plus. (12 au lieu de 10, 8 au lieu de 10.)</td>
+					</tr>
+					<tr>
+						<td>Antivirus</td>
+						<td>Utilisez cette carte uniquement quand vous êtes ciblés. Contrecarre l’attaque qui vous cible.</td>
+					</tr>
+					<tr>
+						<td>Code Inspector</td>
+						<td>Regardez les 4 cartes du dessus de la pioche, prenez-en deux et mettez les autres sur la pioche dans l’ordre de votre choix.</td>
+					</tr>
+					<tr>
+						<td>Café</td>
+						<td>Piochez des cartes jusqu’à en avoir 10.</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<br>
+			<br>
+			
+			<table border="1" id="table1">
+				<tbody>
+					<tr>
+						<th>Attaques</th>
+						<th>Effet</th>
+					</tr>
+					<tr>
+						<td>Freeze</td>
+						<td>Le joueur ciblé passera son prochain tour.</td>
+					</tr>				
+					<tr>
+						<td>Crash Browser</td>
+						<td>Au prochain tour, le joueur ciblé ne piochera que jusqu’à avoir 4 cartes de moins. (6 au lieu de 10, 8 au lieu de 12.)</td>
+					</tr>
+					<tr>
+						<td>Man in The Middle</td>
+						<td>Regardez les cartes du joueur ciblé et volez-lui en jusqu’à deux de votre choix.</td>
+					</tr>
+					<tr>
+						<td>303 See Other</td>
+						<td>Enchangez vos cartes avec celles du joueur ciblé.</td>
+					</tr>
+					<tr>
+						<td>403 Forbidden</td>
+						<td>Regardez les cartes du joueur ciblé et défaussez-en jusqu’à 6.</td>
+					</tr>
+					<tr>
+						<td>404 Not Found</td>
+						<td>Retirez au score du joueur ciblé le nombre de points qu’il a marqué lors de son dernier tour. (Ce nombre est affiché sur sa fiche navigateur.)</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</section>
+		
+	</section>
+</body>
+</html>

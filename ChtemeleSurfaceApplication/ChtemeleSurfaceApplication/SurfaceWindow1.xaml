@@ -75,11 +75,13 @@
                            Background="Transparent">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="350"/>
-                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
-                    <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
-                    <custom:PageDoc x:Name="DocSud" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
+                    <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
+                    <custom:PageDoc x:Name="DocSud" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0" ></custom:PageDoc>
                     <!---
                         <custom:Clavier x:Name="ClavierSud" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
                 </Grid>
@@ -95,10 +97,12 @@
                            Background="Transparent">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="350"/>
-                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
-                    <custom:CartesJoueurs x:Name="CarteOuest"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
+                    <custom:CartesJoueurs x:Name="CarteOuest"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
                     <custom:PageDoc x:Name="DocOuest" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
                     <!---  <custom:Clavier x:Name="ClavierOuest" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
                 </Grid>
@@ -114,10 +118,12 @@
                            Background="Transparent">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="350"/>
-                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
-                    <custom:CartesJoueurs x:Name="CarteNord" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
+                    <custom:CartesJoueurs x:Name="CarteNord" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
                     <custom:PageDoc x:Name="DocNord"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
                     <!---  <custom:Clavier x:Name="ClavierNord" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
                 </Grid>
@@ -133,10 +139,12 @@
                            Background="Transparent">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="350"/>
-                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
-                    <custom:CartesJoueurs x:Name="CarteEst" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="1"></custom:CartesJoueurs>
+                    <custom:CartesJoueurs x:Name="CarteEst" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
                     <custom:PageDoc x:Name="DocEst"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
                     <!---  <custom:Clavier x:Name="ClavierEst" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
                 </Grid>

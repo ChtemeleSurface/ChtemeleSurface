@@ -91,8 +91,8 @@ namespace ChtemeleSurfaceApplication
             ScatterViewItem DocO = new ScatterViewItem();
             DocO.Content = new PageDoc();
 
-
-            //Initialisation positions zone Nord
+            // NE FONCTIONNE PAS (n'est pas utilisé par surface pour placer les élements)
+           /* //Initialisation positions zone Nord
             DocNord.Center = new Point(PlayerNScatterView.Width / 6, PlayerNScatterView.Height / 2);
             // ClavierNord.Center = new Point(PlayerNScatterView.Width / 2, PlayerNScatterView.Height / 2);
             CarteNord.Center = new Point((PlayerNScatterView.Width / 2) + (PlayerNScatterView.Width / 3), PlayerNScatterView.Height / 2);
@@ -111,12 +111,14 @@ namespace ChtemeleSurfaceApplication
             DocOuest.Center = new Point(PlayerOScatterView.Width / 6, PlayerOScatterView.Height / 2);
             // ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
             CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 3), PlayerOScatterView.Height / 2);
-
+            */
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
 
             ComputeWidgetsPositions(MainScatterView.Width, MainScatterView.Height);
+
+            rotateCenterView(0);
         }
 
         // Evénements                  ======================================================================================================
@@ -215,13 +217,17 @@ namespace ChtemeleSurfaceApplication
             ScatterCenterView.Height = CenterView.Height;
             ScatterCenterView.Width = CenterView.Width;
 
-            PageCode.Height = ScatterCenterView.Height;
-            PageRendu.Height = ScatterCenterView.Height;
             ZonePioche.Height = ScatterCenterView.Height;
+            /*PageRendu.Height = ScatterCenterView.Height;
+            PageCode.Height = ScatterCenterView.Height;*/
 
-            ZonePioche.Width = ScatterCenterView.Width/10;
-            PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
-            PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+            ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;   // laisse deux bordure qu'on peut remplir avec un BG
+           /* PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+            PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;*/
+            PageCode.Width = 548;
+            PageRendu.Width = 548;
+            PageCode.Height = 548;
+            PageRendu.Height = 548;
 
             ZonePioche.Center = new Point(ScatterCenterView.Width / 2.0, ScatterCenterView.Height / 2.0);
             PageCode.Center = new Point(PageCode.Width/2.0, ScatterCenterView.Height/2.0);
@@ -231,6 +237,35 @@ namespace ChtemeleSurfaceApplication
         private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
         {
             _game = Game.getInstance;
+        }
+
+        public void rotateCenterView(int angle)
+        {
+            switch(angle)
+            {
+                case 0:
+                    CenterView.Orientation = 0;
+                    PageCode.Orientation = 0;
+                    PageRendu.Orientation = 0;
+                    break;
+                case 90:
+                    CenterView.Orientation = 0;
+                    PageCode.Orientation = 90;
+                    PageRendu.Orientation = 90;
+                    PageCode.Width = 200;
+                    PageRendu.Width = 200;
+                    break;
+                case 180:
+                    CenterView.Orientation = 180;
+                    PageCode.Orientation = 0;
+                    PageRendu.Orientation = 0;
+                    break;
+                case 270:
+                    CenterView.Orientation = 180;
+                    PageCode.Orientation = 90;
+                    PageRendu.Orientation = 90;
+                    break;
+            }
         }
     }
 }
