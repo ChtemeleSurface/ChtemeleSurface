@@ -122,8 +122,9 @@ namespace ChtemeleSurfaceApplication.Game_classes
             return _nbPlayer;
         }
 
-        public void hideCarteJoueur()
+        public void initGame()
         {
+            //Supprime les zone de joueur inactive
             if(joueurS == null)
                 SurfaceWindow1.getInstance.PlayerSScatterView.Visibility = System.Windows.Visibility.Hidden;
             if (joueurE == null)
@@ -132,6 +133,14 @@ namespace ChtemeleSurfaceApplication.Game_classes
                 SurfaceWindow1.getInstance.PlayerOScatterView.Visibility = System.Windows.Visibility.Hidden;
             if (joueurN == null)
                 SurfaceWindow1.getInstance.PlayerNScatterView.Visibility = System.Windows.Visibility.Hidden;
+
+            //initialise la parti
+            if (joueurS != null)
+                _currentPlayer = joueurS;
+            else if (joueurO != null)
+                _currentPlayer = joueurO;
+            else
+                _currentPlayer = joueurN;       //On ne va pas plus loin, la parti est de minimum 2 joueurs
         }
     }
 }

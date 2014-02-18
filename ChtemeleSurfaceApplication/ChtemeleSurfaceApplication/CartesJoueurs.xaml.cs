@@ -176,7 +176,7 @@ namespace ChtemeleSurfaceApplication
 
             if (nbCarteJoueurActiv == Game.getInstance.getNbPlayer())
             {
-                Game.getInstance.hideCarteJoueur();
+                Game.getInstance.initGame();
             }
             //affiche dernière combinaison de balises posée
             Combinaison.Text = _mdl.getComboCode().ToString();
