@@ -74,11 +74,11 @@
     <Compile Include="PageDoc.xaml.cs">
       <DependentUpon>PageDoc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PopUpEffect.xaml.cs">
+      <DependentUpon>PopUpEffect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tag.xaml.cs">
       <DependentUpon>Tag.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TEST.xaml.cs">
-      <DependentUpon>TEST.xaml</DependentUpon>
     </Compile>
     <Page Include="CartesJoueurs.xaml">
       <SubType>Designer</SubType>
@@ -95,6 +95,10 @@
     <Page Include="PageDoc.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PopUpEffect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RenduHTML.xaml">
       <SubType>Designer</SubType>
@@ -158,10 +162,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Tag.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TEST.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

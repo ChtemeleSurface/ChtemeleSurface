@@ -26,12 +26,12 @@
             </Grid.RowDefinitions>
 
             <TextBlock Name="PseudoCarte" Grid.Column="0" Grid.Row="0" FontSize="12" Grid.ColumnSpan="4" Padding="10,10,0,0" FontWeight="Bold" ></TextBlock>
-            <Label Name="Combo1" Grid.Column="0" Grid.Row="1" Padding="10,7,0,0" Image.ImageFailed="Combo1_ImageFailed"></Label>
-            <Label Name="Combo2" Grid.Column="1" Grid.Row="1" Padding="10,7,0,0" Image.ImageFailed="Combo2_ImageFailed"></Label>
-            <Label Name="Combo3" Grid.Column="2" Grid.Row="1" Padding="10,7,0,0" Image.ImageFailed="Combo3_ImageFailed"></Label>
+            <Image Name="EffectBrowserUpdate" Source="Resources/croix.bmp" Grid.Column="0" Grid.Row="1"></Image>
+            <Image Name="EffectCrashBrowser" Source="Resources/croix.bmp" Grid.Column="1" Grid.Row="1"></Image>
+            <Image Name="EffectFreeze" Source="Resources/croix.bmp" Grid.Column="2" Grid.Row="1"></Image>
             <TextBlock Grid.Column="0" Grid.Row="2" FontSize="12" Grid.ColumnSpan="4" Padding="5,15,0,0" FontStyle="Italic" >Dernière combinaison :</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="3" FontSize="12" Grid.ColumnSpan="4" Padding="5,0,0,0" >balise balise balise balise...</TextBlock>
-            <TextBlock Name="Points" Grid.Column="4" Grid.Row="0" FontSize="42" Grid.ColumnSpan="2" Grid.RowSpan="2" Padding="10,0,10,0" FontWeight="Normal" HorizontalAlignment="Right">74</TextBlock>
+            <TextBlock Name="Combinaison" Grid.Column="0" Grid.Row="3" FontSize="12" Grid.ColumnSpan="4" Padding="5,0,0,0" >balise balise balise balise...</TextBlock>
+            <TextBlock Name="Points" Grid.Column="4" Grid.Row="0" FontSize="42" Grid.ColumnSpan="2" Grid.RowSpan="2" Padding="10,0,10,0" FontWeight="Normal" HorizontalAlignment="Right"></TextBlock>
             <TextBlock Name="PointsCombo" Grid.Column="4" Grid.Row="2" FontSize="32" Grid.ColumnSpan="2" Grid.RowSpan="2" Padding="10,10,10,10" FontWeight="Normal" HorizontalAlignment="Right" VerticalAlignment="Bottom">+6</TextBlock>
         </Grid>
 

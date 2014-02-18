@@ -53,7 +53,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         {
             name = n;
             score = 0;
-            _lastCombo = null;
+            _lastCombo = new Combo();
             handSize = Game.defaultHandSize;
             nbCards = handSize;
             _effects = new List<Effect>();
