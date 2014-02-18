@@ -117,8 +117,6 @@ namespace ChtemeleSurfaceApplication
             AddWindowAvailabilityHandlers();
 
             ComputeWidgetsPositions(MainScatterView.Width, MainScatterView.Height);
-
-            rotateCenterView(90);
         }
 
         // Evénements                  ======================================================================================================

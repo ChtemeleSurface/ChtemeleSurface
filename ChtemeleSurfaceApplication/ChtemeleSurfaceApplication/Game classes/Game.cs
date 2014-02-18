@@ -80,5 +80,31 @@ namespace ChtemeleSurfaceApplication.Game_classes
             return ret;
         }
 
+        public void nextPlayer()
+        {
+            switch(_currentPlayer.position())
+            {
+                case 1:
+                    _currentPlayer = joueurE;
+                    if (joueurE == null)
+                        nextPlayer();
+                    break;
+                case 2:
+                    _currentPlayer = joueurS;
+                    if (joueurS == null)
+                        nextPlayer();
+                    break;
+                case 3:
+                    _currentPlayer = joueurO;
+                    if (joueurO == null)
+                        nextPlayer();
+                    break;
+                case 4:
+                    _currentPlayer = joueurN;
+                    if (joueurN == null)
+                        nextPlayer();
+                    break;
+            }
+        }
     }
 }
