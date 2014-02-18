@@ -156,14 +156,49 @@ namespace ChtemeleSurfaceApplication.Game_classes
             if (joueurN == null)
                 SurfaceWindow1.getInstance.PlayerNScatterView.Visibility = System.Windows.Visibility.Hidden;
 
-            //initialise la parti
-            if (joueurS != null)
-                _currentPlayer = joueurS;
-            else if (joueurO != null)
-                _currentPlayer = joueurO;
-            else
-                _currentPlayer = joueurN;       //On ne va pas plus loin, la parti est de minimum 2 joueurs
+            //initialise la parti avec un joueur aléatoire
+            Random rnd = new Random();
+            bool ok = false;
+            while (ok == false)
+            {
+                switch (rnd.Next(1, 4))
+                {
+                    case 1:
+                        if (joueurS != null)
+                        {
+                            _currentPlayer = joueurS;
+                            ok = true;
+                        }
+                        break;
+                    case 2:
+                        if (joueurO != null)
+                        {
+                            _currentPlayer = joueurO;
+                            ok = true;
+                        }
+                        break;
+                    case 3:
+                        if (joueurN != null)
+                        {
+                            _currentPlayer = joueurN;
+                            ok = true;
+                        }
+                        break;
+                    case 4:
+                        if (joueurE != null)
+                        {
+                            _currentPlayer = joueurE;
+                            ok = true;
+                        }
+                        break;
+                }
+            }
             gameStarted = true;
+        }
+
+        private int Random()
+        {
+            throw new NotImplementedException();
         }
     }
 }
