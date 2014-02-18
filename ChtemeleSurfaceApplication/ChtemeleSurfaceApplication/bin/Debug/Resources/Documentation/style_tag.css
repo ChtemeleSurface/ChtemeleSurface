@@ -5,6 +5,7 @@
 /* base font-size corresponds to 10px and is adapted to rem unit */
 html {
     font-size: 62.5%;
+	/*cybercrab.com/screencheck*/
 }
 body {
 	margin-left: 5%;
@@ -47,6 +48,7 @@ h2, .h2-like {
     font-weight: normal;
     line-height: 1.75em;
     margin: .875em 0 0 0;
+	color: rgb(100, 0, 0);
 }
 h3, .h3-like {
     font-size: 1.5714em; /* equiv 22px */
@@ -235,6 +237,8 @@ p{
 
 hr{
 	width: 90%;
+	color: rgb(100, 0, 0);
+	background-color: rgb(100, 0, 0):
 }
 
 aside.backToIndex{
@@ -259,7 +263,9 @@ background:url(img/boutonnoir2.png) no-repeat;
 
 section{
 	width: 85%;
-	margin-left: 15%;
+	margin-left: 8%;
+	right: 0em;
+	/*float: right;*/
 	/*margin-top: 10px;*/
 	padding: 2%;
     /*border: 1px solid blue;*/
@@ -268,6 +274,10 @@ section{
 nav{
 	color: rgb(100, 0, 0);
 	float: left;
+	left: 0em;
+	margin-right: 5%;
     width: 15%;
+	min-width: 2%;
+	max-width: 100%;
     /*border: 1px solid black;*/
 }
