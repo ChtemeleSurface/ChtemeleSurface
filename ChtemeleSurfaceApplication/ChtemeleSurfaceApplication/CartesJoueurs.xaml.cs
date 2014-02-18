@@ -36,6 +36,7 @@ namespace ChtemeleSurfaceApplication
 
         private MdlCarteJoueur _mdl;
         public int position;
+        private static int nbCarteJoueurActiv;
 
         private Timer timer_BrowserUpdate;
         private Timer timer_CrashBrowser;
@@ -56,6 +57,7 @@ namespace ChtemeleSurfaceApplication
             // Au départ, aucun modèle car aucun joueur.
             _mdl = null;
             position = 0;
+            nbCarteJoueurActiv = 0;
 
             // image effect cacher au départ
             EffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
@@ -232,6 +234,12 @@ namespace ChtemeleSurfaceApplication
             PseudoCarte.Text = _mdl.getPlayerName();
             //affiche points du joueur
             Points.Text = _mdl.getPlayerScore().ToString();
+            nbCarteJoueurActiv++;
+
+            if (nbCarteJoueurActiv == Game.getInstance.getNbPlayer())
+            {
+                Game.getInstance.initGame();
+            }
             //affiche dernière combinaison de balises posée
             Combinaison.Text = _mdl.getComboCode().ToString();
 

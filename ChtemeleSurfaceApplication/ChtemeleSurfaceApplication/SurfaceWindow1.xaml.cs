@@ -31,6 +31,7 @@ namespace ChtemeleSurfaceApplication
         // Constantes, enumérations         ======================================================================================================
 
         public static SurfaceWindow1 instance = null;               //Singleton
+        public static SurfaceWindow1 getInstance{get{return instance;}}
 
         // Variables membres                ======================================================================================================
 
@@ -117,8 +118,6 @@ namespace ChtemeleSurfaceApplication
             AddWindowAvailabilityHandlers();
 
             ComputeWidgetsPositions(MainScatterView.Width, MainScatterView.Height);
-
-            rotateCenterView(0);
         }
 
         // Evénements                  ======================================================================================================
@@ -200,38 +199,78 @@ namespace ChtemeleSurfaceApplication
         }
 
 
-        private void ComputeWidgetsPositions(double x, double y)
+        public void ComputeWidgetsPositions(double x, double y)
         {
             //Position des zones joueurs
             PlayerSScatterView.Center = new Point(x / 2, y - (PlayerSScatterView.Height / 2));
             PlayerOScatterView.Center = new Point(PlayerOScatterView.Height / 2, y / 2);
             PlayerNScatterView.Center = new Point(x / 2, PlayerSScatterView.Height / 2);
-            PlayerEScatterView.Center = new Point(x - PlayerOScatterView.Height / 2, y/2);
+            PlayerEScatterView.Center = new Point(x - PlayerOScatterView.Height / 2, y / 2);
 
             //taille et position du centralview
             CenterView.Height = y - PlayerSScatterView.Height - PlayerNScatterView.Height;
             CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
             CenterView.Center = new Point(x / 2.0, y / 2.0);
 
-            //Position Widgets Centeriew
+
+
+
             ScatterCenterView.Height = CenterView.Height;
             ScatterCenterView.Width = CenterView.Width;
 
-            ZonePioche.Height = ScatterCenterView.Height;
-            /*PageRendu.Height = ScatterCenterView.Height;
-            PageCode.Height = ScatterCenterView.Height;*/
 
-            ZonePioche.Width = 40;   // laisse deux bordure qu'on peut remplir avec un BG
-           /* PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
-            PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;*/
-            PageCode.Width = 548;
-            PageRendu.Width = 548;
-            PageCode.Height = 548;
-            PageRendu.Height = 548;
+            if ((CenterView.Orientation == 0 && PageCode.Orientation == 90) || (PageCode.Orientation == 180 && PageCode.Orientation == 90))
+            {
+                // valeurs en 1920 * 1080
+                /*PageCode.Width = 750;
+                PageCode.Height = 758;
+                PageRendu.Width = 750;
+                PageRendu.Height = 758;*/
+
+                ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;
+                ZonePioche.Height = ScatterCenterView.Height;
+
+                PageCode.Height = ScatterCenterView.Height;
+                PageRendu.Height = ScatterCenterView.Height;
+                PageRendu.Height = ScatterCenterView.Height;
+                PageCode.Height = ScatterCenterView.Height;
+
+                ZonePioche.Width = ScatterCenterView.Width / 10;
+                PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+                PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+                PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+                PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+            }
+            if ((CenterView.Orientation == 0 && PageCode.Orientation == 0) || (PageCode.Orientation == 180 && PageCode.Orientation == 0))
+            {
+                // valeurs en 1920 * 1080
+                /*PageCode.Width = 758;
+                PageCode.Height = 758;
+                PageRendu.Width = 758;
+                PageRendu.Height = 758;*/
+
+                ZonePioche.Height = ScatterCenterView.Height;
+
+                PageCode.Width = ScatterCenterView.Height;
+                PageRendu.Width = ScatterCenterView.Height;
+                PageRendu.Width = ScatterCenterView.Height;
+                PageCode.Width = ScatterCenterView.Height;
+
+                ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;
+
+                PageCode.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+                PageRendu.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+                PageCode.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+                PageRendu.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
+            }
+
+
+
+
 
             ZonePioche.Center = new Point(ScatterCenterView.Width / 2.0, ScatterCenterView.Height / 2.0);
-            PageCode.Center = new Point(PageCode.Width/2.0, ScatterCenterView.Height/2.0);
-            PageRendu.Center = new Point(ScatterCenterView.Width - PageCode.Width / 2.0, ScatterCenterView.Height / 2.0);
+            PageCode.Center = new Point(PageCode.Width / 2.0, ScatterCenterView.Height / 2.0);
+            PageRendu.Center = new Point(ScatterCenterView.Width - PageRendu.Width / 2.0, ScatterCenterView.Height / 2.0);
         }
 
         private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
@@ -252,8 +291,6 @@ namespace ChtemeleSurfaceApplication
                     CenterView.Orientation = 0;
                     PageCode.Orientation = 90;
                     PageRendu.Orientation = 90;
-                    PageCode.Width = 200;
-                    PageRendu.Width = 200;
                     break;
                 case 180:
                     CenterView.Orientation = 180;
@@ -266,6 +303,27 @@ namespace ChtemeleSurfaceApplication
                     PageRendu.Orientation = 90;
                     break;
             }
+        }
+
+        private void twoPlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(2);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void threePlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(3);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void fourPlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(4);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
         }
     }
 }
