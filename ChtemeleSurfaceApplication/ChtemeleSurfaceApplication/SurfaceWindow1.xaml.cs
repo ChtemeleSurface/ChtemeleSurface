@@ -221,7 +221,7 @@ namespace ChtemeleSurfaceApplication
             /*PageRendu.Height = ScatterCenterView.Height;
             PageCode.Height = ScatterCenterView.Height;*/
 
-            ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;   // laisse deux bordure qu'on peut remplir avec un BG
+            ZonePioche.Width = 40;   // laisse deux bordure qu'on peut remplir avec un BG
            /* PageCode.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
             PageRendu.Width = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;*/
             PageCode.Width = 548;

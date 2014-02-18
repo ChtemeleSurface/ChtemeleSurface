@@ -39,20 +39,18 @@ namespace ChtemeleSurfaceApplication.Modeles
         public bool hasBrowserUpdate()
         {
 
-            return false;
+            return true;
+        }
+
+        public bool hasCrashBrowser()
+        {
+            return true;
         }
 
         public bool hasFreeze()
         {
-            return false;
+            return true;
         }
-
-
-        public bool hasCrashBrowser()
-        {
-            return false;
-        }
-
 
     }
 }

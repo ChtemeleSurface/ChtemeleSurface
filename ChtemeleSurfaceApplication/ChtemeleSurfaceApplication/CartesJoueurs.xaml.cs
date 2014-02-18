@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Timers;
 
 //using System.Drawing;
 
@@ -36,6 +37,10 @@ namespace ChtemeleSurfaceApplication
         private MdlCarteJoueur _mdl;
         public int position;
 
+        private Timer timer_BrowserUpdate;
+        private Timer timer_CrashBrowser;
+        private Timer timer_Freeze;
+
         // Constructeurs                    ======================================================================================================
 
         public CartesJoueurs()
@@ -56,6 +61,22 @@ namespace ChtemeleSurfaceApplication
             EffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
             EffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
             EffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+
+            //pop up cachées
+            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
+            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
+            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+
+            // Timers popups
+            timer_BrowserUpdate = new Timer(3000);
+            timer_BrowserUpdate.Elapsed += new ElapsedEventHandler(OnTimedEvent_BrowserUpdate);
+            timer_BrowserUpdate.AutoReset = false;
+            timer_CrashBrowser = new Timer(3000);
+            timer_CrashBrowser.Elapsed += new ElapsedEventHandler(OnTimedEvent_CrashBrowser);
+            timer_CrashBrowser.AutoReset = false;
+            timer_Freeze = new Timer(3000);
+            timer_Freeze.Elapsed += new ElapsedEventHandler(OnTimedEvent_Freeze);
+            timer_Freeze.AutoReset = false;
 
         }
 
@@ -159,6 +180,47 @@ namespace ChtemeleSurfaceApplication
         {
             ChoixNavigateur(position, Player.OPERA);
             _mdl.setPlayerName(Player.browserNames[Player.OPERA]);
+        }
+
+        //Fonction click afin d'afficher la popup de description de chaque effect
+        private void EffectBrowserUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Visible;
+            timer_BrowserUpdate.Enabled = true;
+            
+        }
+
+        private void EffectCrashBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Visible;
+            timer_CrashBrowser.Enabled = true;
+        }
+
+        private void EffectFreeze_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Visible;
+            timer_Freeze.Enabled = true;
+            
+        }
+
+        // Timer popup
+
+        private void OnTimedEvent_BrowserUpdate(object source, ElapsedEventArgs e)
+        {
+            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
+            timer_BrowserUpdate.Enabled = false;
+        }
+
+        private void OnTimedEvent_CrashBrowser(object source, ElapsedEventArgs e)
+        {
+            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
+            timer_CrashBrowser.Enabled = false;
+        }
+
+        private void OnTimedEvent_Freeze(object source, ElapsedEventArgs e)
+        {
+            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+            timer_Freeze.Enabled = false;
         }
 
 
