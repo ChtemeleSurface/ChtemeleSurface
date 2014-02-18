@@ -44,18 +44,24 @@ namespace ChtemeleSurfaceApplication
 
         private void gotTag(object sender, RoutedEventArgs e)
         {
-            played = false;
             multiCardOnScreen++;
-            /*if (carteAssoc == null)
-                carteAssoc = new CarteAssoc();*/
-            if (multiCardOnScreen != 1)
-            {
-                ElemMenu.Visibility = System.Windows.Visibility.Hidden;
-                Retirer_carte.Visibility = System.Windows.Visibility.Visible;
-                Retirer_carte.Text = "Plusieurs cartes sont détectées, veuillez retirer cette carte.";
-            }
+            //Bloque les tags si la parti n'est pas initialisé
+            if (Game_classes.Game.getInstance.getGameStarted() == false)
+                this.Visibility = System.Windows.Visibility.Collapsed;
             else
-                curCard = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].getCarte();
+            {
+                played = false;
+                /*if (carteAssoc == null)
+                    carteAssoc = new CarteAssoc();*/
+                if (multiCardOnScreen != 1)
+                {
+                    ElemMenu.Visibility = System.Windows.Visibility.Hidden;
+                    Retirer_carte.Visibility = System.Windows.Visibility.Visible;
+                    Retirer_carte.Text = "Plusieurs cartes sont détectées, veuillez retirer cette carte.";
+                }
+                else
+                    curCard = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].getCarte();
+            }
         }
 
         private void lostTag(object sender, RoutedEventArgs e)

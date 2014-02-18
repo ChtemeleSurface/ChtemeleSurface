@@ -32,6 +32,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         private int _step;       // numéro du tour actuel
         private int _nbSteps;    // nombre de tours de la partie
         private Player _currentPlayer;     // joueur actif
+        private bool gameStarted;
 
         private HtmlPage _page;         // page HTML de la partie
 
@@ -50,6 +51,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
             _step = 0;
             _nbSteps = Game.defaultNbSteps;
             _currentPlayer = null;
+            gameStarted = false;
             _page = new HtmlPage();
             LocationNav = new Dictionary<int, int>
                 {
@@ -64,6 +66,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Accesseurs / Mutateurs           ======================================================================================================
 
         public HtmlPage getPage() { return _page; }
+        public bool getGameStarted() { return gameStarted; }
 
         // Fonctionnalités                  ======================================================================================================
 
@@ -83,33 +86,52 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public void nextPlayer()
         {
-            switch(_currentPlayer.position())
-            {
+            bool pass = false;
+            int curPos = _currentPlayer.position();
+            while(pass == false)
+                switch (curPos)
+                {
                 case 1:
-                    SurfaceWindow1.getInstance.rotateCenterView(270);
-                    _currentPlayer = joueurE;
-                    if (joueurE == null)
-                        nextPlayer();
+                        if (joueurE == null)
+                            curPos++;
+                        else
+                        {
+                            _currentPlayer = joueurE;
+                            SurfaceWindow1.getInstance.rotateCenterView(270);
+                            pass = true;
+                        }
                     break;
                 case 2:
-                    SurfaceWindow1.getInstance.rotateCenterView(0);
-                    _currentPlayer = joueurS;
                     if (joueurS == null)
-                        nextPlayer();
+                        curPos++;
+                    else
+                    {
+                        _currentPlayer = joueurS;
+                        SurfaceWindow1.getInstance.rotateCenterView(0);
+                        pass = true;
+                    }
                     break;
                 case 3:
-                    SurfaceWindow1.getInstance.rotateCenterView(90);
-                    _currentPlayer = joueurO;
                     if (joueurO == null)
-                        nextPlayer();
+                        curPos++;
+                    else
+                    {
+                        _currentPlayer = joueurO;
+                        SurfaceWindow1.getInstance.rotateCenterView(90);
+                        pass = true;
+                    }
                     break;
                 case 4:
-                    SurfaceWindow1.getInstance.rotateCenterView(180);
-                    _currentPlayer = joueurN;
                     if (joueurN == null)
-                        nextPlayer();
+                        curPos = 1;
+                    else
+                    {
+                        _currentPlayer = joueurN;
+                        SurfaceWindow1.getInstance.rotateCenterView(180);
+                        pass = true;
+                    }
                     break;
-            }
+                }
         }
 
         public void setNbPlayer(int nbPlayer)
@@ -141,6 +163,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                 _currentPlayer = joueurO;
             else
                 _currentPlayer = joueurN;       //On ne va pas plus loin, la parti est de minimum 2 joueurs
+            gameStarted = true;
         }
     }
 }
