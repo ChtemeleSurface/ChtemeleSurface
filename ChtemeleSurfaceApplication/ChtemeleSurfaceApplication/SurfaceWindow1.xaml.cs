@@ -117,6 +117,8 @@ namespace ChtemeleSurfaceApplication
             AddWindowAvailabilityHandlers();
 
             ComputeWidgetsPositions(MainScatterView.Width, MainScatterView.Height);
+
+            rotateCenterView(90);
         }
 
         // Evénements                  ======================================================================================================
@@ -231,6 +233,33 @@ namespace ChtemeleSurfaceApplication
         private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
         {
             _game = Game.getInstance;
+        }
+
+        public void rotateCenterView(int angle)
+        {
+            switch(angle)
+            {
+                case 0:
+                    CenterView.Orientation = 0;
+                    PageCode.Orientation = 0;
+                    PageRendu.Orientation = 0;
+                    break;
+                case 90:
+                    CenterView.Orientation = 0;
+                    PageCode.Orientation = 90;
+                    PageRendu.Orientation = 90;
+                    break;
+                case 180:
+                    CenterView.Orientation = 180;
+                    PageCode.Orientation = 0;
+                    PageRendu.Orientation = 0;
+                    break;
+                case 270:
+                    CenterView.Orientation = 180;
+                    PageCode.Orientation = 90;
+                    PageRendu.Orientation = 90;
+                    break;
+            }
         }
     }
 }
