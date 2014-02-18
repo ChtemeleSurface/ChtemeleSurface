@@ -9,111 +9,82 @@ namespace ChtemeleSurfaceApplication.Game_classes
 {
     class Player
     {
-        // score total du joueur
-        private int scoreJoueur;
-        // Nombre de carte en main du joueur
-        private int nbCarte;
-        // Nombre MAXIMAL de carte en main du joueur
-        private int MAXnbCarte;
-        // Permet au joueur de jouer ou non
-        private bool canPlay;
-        // Nombre de carte à piocher (par defaut : 10)
-        private int nbCardPlayerPioche; // ET OUAIS FRENGLISH !
+        // Constantes, enumérations         ======================================================================================================
 
-        public int position; //position du joueur sur l'écran : 1=nord, 2=est, 3=sud, 4=ouest
+        //Position du joueur sur la table de jeu
         public const int OUT = 0;
         public const int NORD = 1;
         public const int EST = 2;
         public const int SUD = 3;
         public const int OUEST = 4;
 
+        // Noms des navigateurs
+        public const int FIREFOX = 0;
+        public const int CHROME = 1;
+        public const int IE = 2;
+        public const int SAFARI = 3;
+        public const int OPERA = 4;
+        public static Dictionary<int, string> browserNames = new Dictionary<int, string>
+            {
+                {0, "Firefox"},
+                {1, "Chrome"},
+                {2, "Internet Explorer"},
+                {3, "Safari"},
+                {4, "Opera"}
+            };
 
-         //association des tags avec les cartes
-        public static Dictionary<string, int> Navigateur = new Dictionary<string, int>
+
+
+        // Variables membres                ======================================================================================================
+
+        public  string name;                //Nom du joueur
+        public  int score;                  //score total accumulé
+        private Combo _lastCombo;           //Dernière combinaison effectuée
+        public  int handSize;               //taille max de la main du joueur;
+        public  int nbCards;                //nombre de cartes en main.
+        private List<Effect> _effects;      //Effets actifs sur le joueur
+        private int _position;              //position du joueur (voir enumeration)
+
+        // Constructeurs                    ======================================================================================================
+
+        // Paramètres : n nom du joueur
+        //              p position du joueur
+        public Player(string n, int p)
         {
-            {"Firefox", 0},
-            {"Chrome", 1},
-            {"Internet Explorer", 2},
-            {"Safari", 3},
-            {"Opera", 4}
-        };
-        
-        // Nom joueur
-        private string Nom;
-
-        // variable lie play et cartejoueur
-        public CartesJoueurs Carte;
-
-
-        //constructeur
-        public Player(int navigateur, CartesJoueurs carteJ)
-        {
-            Nom = CartesJoueurs.Navigateurs[navigateur];
-            Carte = carteJ;
-
-            Carte.PseudoCarte.Text = Nom;
+            name = n;
+            score = 0;
+            _lastCombo = null;
+            handSize = Game.defaultHandSize;
+            nbCards = handSize;
+            _effects = new List<Effect>();
+            _position = p;
         }
 
 
 
-        // SET - GET
-        // variable -> scoreJoueur;
-        public int getScoreJoueur()
+        // Accesseurs / Mutateurs           ======================================================================================================
+
+        public Combo lastCombo(){ return _lastCombo;}
+        public List<Effect> effects() { return _effects; }
+        public int position() { return _position; }
+
+
+
+
+        // Fonctionnalités                  ======================================================================================================
+
+        // charge les données du joueur depuis une chaine de texte.
+        public void loadData()
         {
-            return scoreJoueur;
+
         }
 
-        public void setScoreJoueur(int score)
+        // retourne les données du joueur sous forme de chaine de texte
+        public string getSaveData()
         {
-            scoreJoueur = score;
-        }
+            string ret = "";
 
-        // SET - GET
-        // variable -> nbCarte;
-        public int getNbCartesJoueur()
-        {
-            return nbCarte;
-        }
-
-        public void setNbCartesJoueur(int a)
-        {
-            nbCarte = a;
-        }
-
-        // SET - GET
-        // variable -> canPlay;
-        public bool getCanPlayerPlay()
-        {
-            return canPlay;
-        }
-
-        public void setCanPlayerPlay(bool a)
-        {
-            canPlay = a;
-        }
-
-        // SET - GET
-        // variable -> MAXnbCarte;
-        public int getPlayerMAxNbCard()
-        {
-            return MAXnbCarte;
-        }
-
-        public void setPlayerMAxNbCard(int a)
-        {
-            MAXnbCarte = a;
-        }
-
-        // SET - GET
-        // variable -> MAXnbCarte;
-        public int getPlayerCanTake()
-        {
-            return nbCardPlayerPioche;
-        }
-
-        public void setPlayerCanTake(int a)
-        {
-            nbCardPlayerPioche = a;
+            return ret;
         }
     }
 }

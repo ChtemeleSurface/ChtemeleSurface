@@ -21,9 +21,7 @@ namespace ChtemeleSurfaceApplication.Effect_classes
         // Constructeur
         public Freeze()
         {
-            if (!player.getCanPlayerPlay())
-                return;
-            player.setCanPlayerPlay(false);
+
         }
     }
 }

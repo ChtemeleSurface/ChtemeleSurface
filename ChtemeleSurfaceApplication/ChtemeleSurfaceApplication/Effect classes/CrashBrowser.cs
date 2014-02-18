@@ -21,12 +21,6 @@ namespace ChtemeleSurfaceApplication.Effect_classes
         // Constructeur
         public CrashBrowser()
         {
-            // nombre actuel de cartes que le joueur peut piocher
-            //int actualMAXNbCards = 
-            int actualNbcards = player.getNbCartesJoueur();
-            // le joueur peut piocher :
-            //nombre de carte max - son nombre de carte actuel - 4
-            player.setPlayerCanTake( (player.getPlayerMAxNbCard() - actualNbcards) - 4 );
         }
     }
 }

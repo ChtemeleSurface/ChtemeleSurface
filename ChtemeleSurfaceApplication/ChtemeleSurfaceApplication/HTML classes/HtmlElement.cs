@@ -60,6 +60,10 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         }
 
+        public string getTagname() { return _tagname; }
+        public HtmlTag getOpenTag() { return _openTag; }
+        public HtmlTag getEndTag() { return _endTag; }
+
         public void closeTag()
         {
             _endTag = new HtmlTag(_tagname, HtmlTag.HTMLTagType.ENDTAG);

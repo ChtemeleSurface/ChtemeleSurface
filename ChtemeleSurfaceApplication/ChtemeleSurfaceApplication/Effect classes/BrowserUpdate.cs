@@ -21,10 +21,7 @@ namespace ChtemeleSurfaceApplication.Effect_classes
         // Constructeur
         public BrowserUpdate()
         {
-            // Calcul le nombre de carte actuel et ajoute 2
-            int addCardTOactualNbCards = player.getPlayerMAxNbCard() + 2;
-            // renvoie la valeur modifié du nombre de carte actuel (Maximum de carte)
-            player.setPlayerMAxNbCard(addCardTOactualNbCards);
+
         }
     }
 }
