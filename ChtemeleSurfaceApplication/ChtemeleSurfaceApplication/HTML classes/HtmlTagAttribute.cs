@@ -18,16 +18,5 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public string getKey() { return _key; }
         public string getValue() { return _value; }
-
-        public string RenderHTML()
-        {
-            string res = " ";
-            res += _key;
-            res += "=\"";
-            res += _value;
-            res += "\"";
-
-            return res;
-        }
     }
 }

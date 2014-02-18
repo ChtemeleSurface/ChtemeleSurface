@@ -23,9 +23,5 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         {
             _parent = parent;
         }
-
-
-        public abstract string renderHTML();
-        public abstract string renderHTML(string attribs);
     }
 }

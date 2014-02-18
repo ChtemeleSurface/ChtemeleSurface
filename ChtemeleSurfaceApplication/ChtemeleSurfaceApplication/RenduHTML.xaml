@@ -8,6 +8,6 @@
              mc:Ignorable="d" 
              Height="300" Width="300">
 
-    <awe:WebControl Name="webControl"></awe:WebControl>
+    <awe:WebControl Name="webControl" Loaded="webControl_Loaded" ></awe:WebControl>
 
 </s:ScatterViewItem>

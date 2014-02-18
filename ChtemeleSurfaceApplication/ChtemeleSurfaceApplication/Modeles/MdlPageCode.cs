@@ -43,6 +43,7 @@ namespace ChtemeleSurfaceApplication.Modeles
         public void renderPage()
         {
             _code = "";
+            _code += _page.doctype() + "\n";
             _code += renderHtmlElement(_page.mainTag());
             autoIndent();
         }
@@ -142,7 +143,7 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         public void autoIndent()
         {
-            _indentLevel = 1;
+            _indentLevel = 0;
             string res = "";
 
             //On parcout toutes les balises et les retours à la ligne de la séquence.
@@ -168,7 +169,12 @@ namespace ChtemeleSurfaceApplication.Modeles
         {
             string s = item.ToString();
 
-            if (Regex.IsMatch(s, @"^<(\w+)(\s[^>]*)?>$"))       //balise ouvrante
+            if (Regex.IsMatch(s, @"^<!.+>$"))                       //Doctype
+            {
+                //nothing
+            }
+
+            else if (Regex.IsMatch(s, @"^<(\w+)(\s[^>]*)?>$"))       //balise ouvrante
             {
                 if (HtmlElement.singleTags.Exists(v => v == item.Groups["tagname"].ToString()))
                 {

@@ -14,21 +14,6 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             _str = str;
         }
 
-        public override string renderHTML()
-        {
-            string ret = "";
-            //ret += new String(' ', HtmlElement.indentCount * HtmlElement.indentSize);
-            ret += _str;
-
-            return ret;
-
-        }
-
         public string getText() { return _str; }
-
-        public override string renderHTML(string attribs)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

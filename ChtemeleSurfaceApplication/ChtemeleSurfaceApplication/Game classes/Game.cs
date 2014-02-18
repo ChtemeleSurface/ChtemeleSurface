@@ -66,19 +66,5 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         // Fonctionnalités                  ======================================================================================================
 
-        // Retourne le code à interpréter dans le nativateur de rendu
-        public string getRawHTML()
-        {
-            string ret = _page.renderHTML();
-            return ret;
-        }
-
-        // Retourne le code à afficher dans l'éditeur de code
-        public string getFormatedHTML()
-        {
-            string ret = _page.renderHTML();
-            return ret;
-        }
-
     }
 }

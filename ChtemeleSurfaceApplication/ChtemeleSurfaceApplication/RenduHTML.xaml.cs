@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 
 using Microsoft.Surface.Presentation.Controls;
 
+using ChtemeleSurfaceApplication.Modeles;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -21,37 +23,41 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class RenduHTML : ScatterViewItem
     {
-        // Variable contenant l'URL ou URI du fichier
-        private string fileURL;
 
-        // Constructeur
+        // Constantes, enumérations         ======================================================================================================
+
+        // Variables membres                ======================================================================================================
+
+        private MdlRenduHtml _mdl;
+
+        // Constructeurs                    ======================================================================================================
+
         public RenduHTML()
         {
             InitializeComponent();
 
-            fileURL = System.IO.Directory.GetCurrentDirectory();
-            fileURL = fileURL + "/Resources/Savegame/game_0.html";
-            //fileURL = System.IO.Path.GetFullPath("./Resources/Savegame/game_0.html");
-            
-
-            WebRenderer();
+            _mdl = new MdlRenduHtml();
         }
 
-        
-        // GET & SET
-        public string getFileUrl()
+        // Fonctionnalités                  ======================================================================================================
+
+        // Evénements                       ======================================================================================================
+
+        private void webControl_Loaded(object sender, RoutedEventArgs e)
         {
-            return fileURL;
-        }
-        public void setFileUrl(string fileUrl)
-        {
-            fileURL = fileUrl;
+            update();
         }
 
-        // Initialise la source de la page à afficher
-        private void WebRenderer()
+        // Update                           ======================================================================================================
+
+        private void update()
         {
-            webControl.Source = new Uri(getFileUrl());
+            //webControl.Source = new Uri();
+            _mdl.renderPage();
+            webControl.LoadHTML(_mdl.getCode());
+            //webControl.Reload(false);
         }
+
+       
     }
 }

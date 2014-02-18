@@ -36,30 +36,5 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public string getTagName() { return _tagname; }
         public HTMLTagType getType() { return _type; }
-
-        public string renderHTML()
-        {
-            return renderHTML("");
-        }
-
-        public string renderHTML(string attribs)
-        {
-            string res = "";
-
-            //on insère la balise
-            res += openSymbol[_type];
-            res += _tagname;
-            if (_type == HTMLTagType.OPENTAG) res += attribs;
-            res += endSymbol;
-
-            //on met à jour l'indentation
-            if (HtmlElement.singleTags.Exists(v => v == _tagname))
-            {
-                if (_type == HTMLTagType.OPENTAG) HtmlPage.indentLevel++;
-                else HtmlPage.indentLevel--;
-            }
-            
-            return res;
-        }
     }
 }
