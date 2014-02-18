@@ -31,6 +31,7 @@ namespace ChtemeleSurfaceApplication
         // Constantes, enumérations         ======================================================================================================
 
         public static SurfaceWindow1 instance = null;               //Singleton
+        public static SurfaceWindow1 getInstance{get{return instance;}}
 
         // Variables membres                ======================================================================================================
 
@@ -258,6 +259,27 @@ namespace ChtemeleSurfaceApplication
                     PageRendu.Orientation = 90;
                     break;
             }
+        }
+
+        private void twoPlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(2);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void threePlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(3);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void fourPlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(4);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
         }
     }
 }

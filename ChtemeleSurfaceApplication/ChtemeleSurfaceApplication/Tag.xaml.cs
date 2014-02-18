@@ -39,6 +39,7 @@ namespace ChtemeleSurfaceApplication
                 Retirer_carte.Text = "Carte jouée, veuillez retirer cette carte.";
                 played = true;
             }
+            Game_classes.Game.getInstance.nextPlayer();
         }
 
         private void gotTag(object sender, RoutedEventArgs e)

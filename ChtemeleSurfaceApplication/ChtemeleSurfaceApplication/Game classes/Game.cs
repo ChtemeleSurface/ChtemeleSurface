@@ -28,6 +28,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public  Player joueurS, joueurN, joueurE, joueurO;       //les 4 joueurs
 
+        private int _nbPlayer;      //Nombre de joueur
         private int _step;       // numéro du tour actuel
         private int _nbSteps;    // nombre de tours de la partie
         private Player _currentPlayer;     // joueur actif
@@ -85,26 +86,52 @@ namespace ChtemeleSurfaceApplication.Game_classes
             switch(_currentPlayer.position())
             {
                 case 1:
+                    SurfaceWindow1.getInstance.rotateCenterView(270);
                     _currentPlayer = joueurE;
                     if (joueurE == null)
                         nextPlayer();
                     break;
                 case 2:
+                    SurfaceWindow1.getInstance.rotateCenterView(0);
                     _currentPlayer = joueurS;
                     if (joueurS == null)
                         nextPlayer();
                     break;
                 case 3:
+                    SurfaceWindow1.getInstance.rotateCenterView(90);
                     _currentPlayer = joueurO;
                     if (joueurO == null)
                         nextPlayer();
                     break;
                 case 4:
+                    SurfaceWindow1.getInstance.rotateCenterView(180);
                     _currentPlayer = joueurN;
                     if (joueurN == null)
                         nextPlayer();
                     break;
             }
+        }
+
+        public void setNbPlayer(int nbPlayer)
+        {
+            _nbPlayer = nbPlayer;
+        }
+
+        public int getNbPlayer()
+        {
+            return _nbPlayer;
+        }
+
+        public void hideCarteJoueur()
+        {
+            if(joueurS == null)
+                SurfaceWindow1.getInstance.PlayerSScatterView.Visibility = System.Windows.Visibility.Hidden;
+            if (joueurE == null)
+                SurfaceWindow1.getInstance.PlayerEScatterView.Visibility = System.Windows.Visibility.Hidden;
+            if (joueurO == null)
+                SurfaceWindow1.getInstance.PlayerOScatterView.Visibility = System.Windows.Visibility.Hidden;
+            if (joueurN == null)
+                SurfaceWindow1.getInstance.PlayerNScatterView.Visibility = System.Windows.Visibility.Hidden;
         }
     }
 }

@@ -33,6 +33,7 @@ namespace ChtemeleSurfaceApplication
 
         private MdlCarteJoueur _mdl;
         public int position;
+        private static int nbCarteJoueurActiv;
 
         // Constructeurs                    ======================================================================================================
 
@@ -49,6 +50,7 @@ namespace ChtemeleSurfaceApplication
             // Au départ, aucun modèle car aucun joueur.
             _mdl = null;
             position = 0;
+            nbCarteJoueurActiv = 0;
         }
 
         // Fonctionnalités                  ======================================================================================================
@@ -159,6 +161,12 @@ namespace ChtemeleSurfaceApplication
         {
             PseudoCarte.Text = _mdl.getPlayerName();
             Points.Text = _mdl.getPlayerScore().ToString();
+            nbCarteJoueurActiv++;
+
+            if (nbCarteJoueurActiv == Game.getInstance.getNbPlayer())
+            {
+                Game.getInstance.hideCarteJoueur();
+            }
         }
     }
 }
