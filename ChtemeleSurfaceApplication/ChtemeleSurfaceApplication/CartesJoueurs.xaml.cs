@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Timers;
+using System.Windows.Forms;
 
 //using System.Drawing;
 
@@ -70,15 +70,18 @@ namespace ChtemeleSurfaceApplication
             PopUpEffectFreeze.Visibility = System.Windows.Visibility.Hidden;
 
             // Timers popups
-            timer_BrowserUpdate = new Timer(3000);
-            timer_BrowserUpdate.Elapsed += new ElapsedEventHandler(OnTimedEvent_BrowserUpdate);
-            timer_BrowserUpdate.AutoReset = false;
-            timer_CrashBrowser = new Timer(3000);
-            timer_CrashBrowser.Elapsed += new ElapsedEventHandler(OnTimedEvent_CrashBrowser);
-            timer_CrashBrowser.AutoReset = false;
-            timer_Freeze = new Timer(3000);
-            timer_Freeze.Elapsed += new ElapsedEventHandler(OnTimedEvent_Freeze);
-            timer_Freeze.AutoReset = false;
+            timer_BrowserUpdate = new Timer();
+            timer_BrowserUpdate.Interval = 3000;
+            timer_BrowserUpdate.Tick += new EventHandler(OnTimedEvent_BrowserUpdate);
+            timer_BrowserUpdate.Enabled = false;
+            timer_CrashBrowser = new Timer();
+            timer_CrashBrowser.Interval = 3000;
+            timer_CrashBrowser.Tick += new EventHandler(OnTimedEvent_CrashBrowser);
+            timer_CrashBrowser.Enabled = false;
+            timer_Freeze = new Timer();
+            timer_Freeze.Interval = 3000;
+            timer_Freeze.Tick += new EventHandler(OnTimedEvent_Freeze);
+            timer_Freeze.Enabled = false;
 
         }
 
@@ -188,8 +191,7 @@ namespace ChtemeleSurfaceApplication
         private void EffectBrowserUpdate_Click(object sender, RoutedEventArgs e)
         {
             PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Visible;
-            timer_BrowserUpdate.Enabled = true;
-            
+            timer_BrowserUpdate.Enabled = true;            
         }
 
         private void EffectCrashBrowser_Click(object sender, RoutedEventArgs e)
@@ -202,24 +204,23 @@ namespace ChtemeleSurfaceApplication
         {
             PopUpEffectFreeze.Visibility = System.Windows.Visibility.Visible;
             timer_Freeze.Enabled = true;
-            
         }
 
         // Timer popup
 
-        private void OnTimedEvent_BrowserUpdate(object source, ElapsedEventArgs e)
+        private void OnTimedEvent_BrowserUpdate(object source, EventArgs e)
         {
             PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
             timer_BrowserUpdate.Enabled = false;
         }
 
-        private void OnTimedEvent_CrashBrowser(object source, ElapsedEventArgs e)
+        private void OnTimedEvent_CrashBrowser(object source, EventArgs e)
         {
             PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
             timer_CrashBrowser.Enabled = false;
         }
 
-        private void OnTimedEvent_Freeze(object source, ElapsedEventArgs e)
+        private void OnTimedEvent_Freeze(object source, EventArgs e)
         {
             PopUpEffectFreeze.Visibility = System.Windows.Visibility.Hidden;
             timer_Freeze.Enabled = false;
