@@ -7,16 +7,48 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.Modeles
 {
+    class StrTypePair{
+
+        public enum StrType                        // Toutes les sortes de chaines à styliser
+        {
+            DOCTYPE,
+
+            USR_TAG,
+            USR_TAG_ATTR_NAME,
+            USR_TAG_ATTR_AFFECT,
+            USR_TAG_ATTR_VALUE,
+            USR_TEXT,
+
+            AUTO_TAG,
+            AUTO_TAG_ATTR_NAME,
+            AUTO_TAG_ATTR_AFFECT,
+            AUTO_TAG_ATTR_VALUE,
+            AUTO_TEXT,
+
+            COMMENT,
+            LINE_BREAK
+
+        }
+
+        public string str;
+        public StrType type;
+
+        public StrTypePair(string s, StrType t) {
+            str = s;
+            type = t;
+        }
+    };
+
     class MdlPageCode : Modele
     {
         // Constantes, enumérations         ======================================================================================================
 
-
+        
 
         // Variables membres                ======================================================================================================
 
         private HtmlPage _page;     //Données du modèle
-        private string _code;       //Code généré
+        private List<StrTypePair> _code;       //Code généré
 
         private int _indentLevel;
         private int indentSize = 4;
@@ -28,30 +60,33 @@ namespace ChtemeleSurfaceApplication.Modeles
             : base()
         {
             _page = _game.getPage();
-            _code = "";
+            _code = new List<StrTypePair>();
 
             _indentLevel = 0;
         }
 
         // Accesseurs / Mutateurs           ======================================================================================================
 
-        public string getCode() { return _code; }
+        public List<StrTypePair> getCode() { return _code; }
 
         // Fonctionnalités                  ======================================================================================================
 
         // Rendu d'une page HTML
         public void renderPage()
         {
-            _code = "";
-            _code += _page.doctype() + "\n";
-            _code += renderHtmlElement(_page.mainTag());
-            autoIndent();
+            _code.Clear();
+            _code.Add(new StrTypePair(_page.doctype(), StrTypePair.StrType.DOCTYPE));
+            _code.Add(new StrTypePair("\n", StrTypePair.StrType.LINE_BREAK));
+
+            _code.AddRange(renderHtmlElement(_page.mainTag()));
+
+            //autoIndent();
         }
 
         // Rendu d'un élément HTML
-        public string renderHtmlElement(HtmlElement elem)
+        public List<StrTypePair> renderHtmlElement(HtmlElement elem)
         {
-            string res = "";
+            List<StrTypePair> res = new List<StrTypePair>();
 
             //on détermine le type de balise
             bool multiline = HtmlElement.multiLineTags.Exists(v => v == elem.getTagname());
@@ -59,22 +94,22 @@ namespace ChtemeleSurfaceApplication.Modeles
             bool inline = (!multiline && !monoline);
 
             //chaine des attributs
-            string resattr = "";
+            List<StrTypePair> resattr = new List<StrTypePair>();
             if (elem.attributes.Count > 0)
             {
                 foreach (HtmlTagAttribute attr in elem.attributes)
                 {
-                    resattr += " ";
-                    resattr += renderHtmlTagAttribute(attr);
+                    resattr.Add(new StrTypePair(" ", StrTypePair.StrType.USR_TAG));
+                    resattr.AddRange(renderHtmlTagAttribute(attr));
                 }
             }
 
             //OpenTag
             //if (multiline) res += '\n';
-            res += renderHtmlTag(elem.getOpenTag(), resattr);
+            res.AddRange(renderHtmlTag(elem.getOpenTag(), resattr));
 
             //retour à la ligne post-OpenTag multiline
-            if (multiline) res += '\n';
+            if (multiline) res.Add(new StrTypePair("\n", StrTypePair.StrType.LINE_BREAK));
 
             //content
             if (elem.tagContent.Count > 0)
@@ -82,66 +117,64 @@ namespace ChtemeleSurfaceApplication.Modeles
                 foreach (HtmlTagContent e in elem.tagContent)
                 {
                     if(e is HtmlElement)
-                        res += renderHtmlElement(e as HtmlElement);
+                        res.AddRange(renderHtmlElement(e as HtmlElement));
                     else if(e is HtmlText)
-                        res += renderHtmlText(e as HtmlText);
+                        res.Add(renderHtmlText(e as HtmlText));
                 }
             }
 
             //indentation avant les multilines (intent ='' pour les inlines)
-            if (multiline) res += '\n';
+            if (multiline) res.Add(new StrTypePair("\n", StrTypePair.StrType.LINE_BREAK));
 
             //EndTag
             if (elem.isClosed())
-                res += renderHtmlTag(elem.getEndTag());
+                res.AddRange(renderHtmlTag(elem.getEndTag()));
 
             //retour à la ligne post-non-inline
-            if (!inline) res += '\n';
+            if (!inline) res.Add(new StrTypePair("\n", StrTypePair.StrType.LINE_BREAK));
 
             return res;
         }
 
         // Rendu d'une balise HTML ouvrante ou fermante
-        public string renderHtmlTag(HtmlTag tag, string attribs = ""){
-            string res = "";
+        public List<StrTypePair> renderHtmlTag(HtmlTag tag, List<StrTypePair> attribs = null)
+        {
+            List<StrTypePair> res = new List<StrTypePair>();
+            string strtag = "";
 
             //on insère la balise
-            res += HtmlTag.openSymbol[tag.getType()];
-            res += tag.getTagName();
-            if (tag.getType() == HtmlTag.HTMLTagType.OPENTAG) res += attribs;
-            res += HtmlTag.endSymbol;
+            
+            strtag += HtmlTag.openSymbol[tag.getType()];
+            strtag += tag.getTagName();
+            res.Add(new StrTypePair(strtag, StrTypePair.StrType.USR_TAG));
 
-            //on met à jour l'indentation
-            if (HtmlElement.singleTags.Exists(v => v == tag.getTagName()))
-            {
-                if (tag.getType() == HtmlTag.HTMLTagType.OPENTAG) _indentLevel++;
-                else _indentLevel--;
-            }
+            if (tag.getType() == HtmlTag.HTMLTagType.OPENTAG && attribs != null) res.AddRange(attribs);
+
+            res.Add(new StrTypePair(HtmlTag.endSymbol, StrTypePair.StrType.USR_TAG));
 
             return res;
         }
 
 
-        public string renderHtmlText(HtmlText txt)
+        public StrTypePair renderHtmlText(HtmlText txt)
         {
-            string ret = "";
-            ret += txt.getText();
-
-            return ret;
+            return new StrTypePair(txt.getText(), StrTypePair.StrType.USR_TEXT);
         }
 
-        public string renderHtmlTagAttribute(HtmlTagAttribute attr)
+        public List<StrTypePair> renderHtmlTagAttribute(HtmlTagAttribute attr)
         {
-            string res = " ";
-            res += attr.getKey();
-            res += "=\"";
-            res += attr.getValue();
-            res += "\"";
+            List<StrTypePair> res = new List<StrTypePair>();
+
+            res.Add(new StrTypePair(attr.getKey(), StrTypePair.StrType.USR_TAG_ATTR_NAME));
+            res.Add(new StrTypePair("=", StrTypePair.StrType.USR_TAG_ATTR_AFFECT));
+
+            string value = "\"" + attr.getValue() +"\"";
+            res.Add(new StrTypePair(value, StrTypePair.StrType.USR_TAG_ATTR_VALUE));
 
             return res;
         }
 
-        public void autoIndent()
+        /*public void autoIndent()
         {
             _indentLevel = 0;
             string res = "";
@@ -216,6 +249,6 @@ namespace ChtemeleSurfaceApplication.Modeles
             string res = '\n' + new string(' ', indentSize * _indentLevel) + item.Groups["line"].ToString();
             if (computedIndentChanges > 0) _indentLevel += computedIndentChanges;
             return res;
-        }
+        }*/
     }
 }

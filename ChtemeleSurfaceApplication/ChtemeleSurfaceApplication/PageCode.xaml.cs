@@ -31,6 +31,46 @@ namespace ChtemeleSurfaceApplication
     {
         // Constantes, enumérations         ======================================================================================================
 
+        /*private Dictionary<StrTypePair.StrType, Color> colorTable = new Dictionary<StrTypePair.StrType, Color>
+        {
+            {StrTypePair.StrType.DOCTYPE, Colors.BlueViolet},
+
+            {StrTypePair.StrType.USR_TAG, Color.FromRgb(0, 0, 127)},
+            {StrTypePair.StrType.USR_TAG_ATTR_NAME, Color.FromRgb(255, 0, 0)},
+            {StrTypePair.StrType.USR_TAG_ATTR_AFFECT, Color.FromRgb(0, 0, 0)},
+            {StrTypePair.StrType.USR_TAG_ATTR_VALUE, Color.FromRgb(128, 0, 255)},
+            {StrTypePair.StrType.USR_TEXT, Color.FromRgb(0, 0, 0)},
+
+            {StrTypePair.StrType.USR_TAG, Color.FromRgb(127, 127, 255)},
+            {StrTypePair.StrType.USR_TAG_ATTR_NAME, Color.FromRgb(255, 127, 127)},
+            {StrTypePair.StrType.USR_TAG_ATTR_AFFECT, Color.FromRgb(127, 127, 127)},
+            {StrTypePair.StrType.USR_TAG_ATTR_VALUE, Color.FromRgb(180, 127, 255)},
+            {StrTypePair.StrType.USR_TEXT, Color.FromRgb(127, 127, 127)},
+
+            {StrTypePair.StrType.COMMENT, Color.FromRgb(0, 127, 0)},
+            {StrTypePair.StrType.LINE_BREAK, Color.FromRgb(0, 0, 0)}
+        };*/
+
+        private Dictionary<StrTypePair.StrType, Color> colorTable = new Dictionary<StrTypePair.StrType, Color>
+        {
+            {StrTypePair.StrType.DOCTYPE, Colors.BlueViolet},
+
+            {StrTypePair.StrType.USR_TAG, Colors.Blue},
+            {StrTypePair.StrType.USR_TAG_ATTR_NAME, Colors.Red},
+            {StrTypePair.StrType.USR_TAG_ATTR_AFFECT, Colors.Black},
+            {StrTypePair.StrType.USR_TAG_ATTR_VALUE, Colors.Purple},
+            {StrTypePair.StrType.USR_TEXT, Colors.Black},
+
+            {StrTypePair.StrType.AUTO_TAG, Colors.LightBlue},
+            {StrTypePair.StrType.AUTO_TAG_ATTR_NAME, Colors.Pink},
+            {StrTypePair.StrType.AUTO_TAG_ATTR_AFFECT, Colors.Gray},
+            {StrTypePair.StrType.AUTO_TAG_ATTR_VALUE, Colors.LightPink},
+            {StrTypePair.StrType.AUTO_TEXT, Colors.Gray},
+
+            {StrTypePair.StrType.COMMENT, Colors.Green},
+            {StrTypePair.StrType.LINE_BREAK, Colors.Black}
+        };
+
         // Variables membres                ======================================================================================================
 
         private string _text;               // texte html à afficher
@@ -70,7 +110,14 @@ namespace ChtemeleSurfaceApplication
         public void ShowCode()
         {
             _mdl.renderPage();
-            CodeText.Inlines.Add(new Run(_mdl.getCode()));
+            CodeText.Inlines.Clear();
+            foreach (StrTypePair pair in _mdl.getCode())
+            {
+                Run txt = new Run(pair.str);
+                txt.Foreground = new SolidColorBrush(colorTable[pair.type]);
+                CodeText.Inlines.Add(txt);
+            }
+            //CodeText.Inlines.Add(new Run(_mdl.getCode()));
         }
     }
 }
