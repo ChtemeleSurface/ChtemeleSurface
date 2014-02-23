@@ -103,6 +103,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             bool multiline = HtmlElement.multiLineTags.Exists(v => v == elem.getTagname());
             bool monoline = HtmlElement.monoLineTags.Exists(v => v == elem.getTagname());
             bool inline = (!multiline && !monoline);
+            _isAutoTag = _htmlAutoTags.Exists(v => v == elem.getTagname());
 
             //chaine des attributs
             List<StrTypePair> resattr = new List<StrTypePair>();

@@ -96,6 +96,9 @@ namespace ChtemeleSurfaceApplication
             //string temp = System.IO.Path.GetFullPath("./Resources/Savegame/game_0.html");
 
             ShowCode();
+
+            Width = ScatterCodeText.Width;
+            Height = ScatterCodeText.Height;
         }
 
         // Fonctionnalités                  ======================================================================================================

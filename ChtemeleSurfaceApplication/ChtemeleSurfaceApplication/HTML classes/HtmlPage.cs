@@ -73,6 +73,14 @@ namespace ChtemeleSurfaceApplication.HTML_classes
                     _baliseH3.closeTag();
                     _baliseDIV2.addContent(_baliseH3);
 
+                HtmlElement _baliseP2 = new HtmlElement("p");
+                _baliseP2.addContent(new HtmlText("Chaussette !! Chausseeeeeeette !!! Putain mais vous allez me le donner mon niveau ?"));
+                HtmlElement _baliseBR2 = new HtmlElement("br");
+                _baliseP2.addContent(_baliseBR2);
+                _baliseP2.addContent(new HtmlText("Je veux juste faire une longue phrase qui servira à tester le retour à la ligne non-automatique du TextBox."));
+                _baliseP2.closeTag();
+                _baliseDIV2.addContent(_baliseP2);
+
 
         }
 
