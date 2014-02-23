@@ -26,10 +26,31 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         // Fonctionnalités                  ======================================================================================================
 
+        //a partir de la classe Player
         public Player getPlayer() { return _player; }
         public string getPlayerName() { return _player.name; }
         public void setPlayerName(string n) { _player.name = n; }
         public int getPlayerScore() { return _player.score; }
+
+        //a partir de la classe Combo
+        public Combo getCombo() { return _player.lastCombo(); }
+        public string getComboCode() { return _player.lastCombo().getCodeJoueur(); }
+
+        public bool hasBrowserUpdate()
+        {
+
+            return true;
+        }
+
+        public bool hasCrashBrowser()
+        {
+            return true;
+        }
+
+        public bool hasFreeze()
+        {
+            return true;
+        }
 
     }
 }

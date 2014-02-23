@@ -11,6 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
+
+//using System.Drawing;
 
 using Microsoft.Surface.Presentation.Controls;
 
@@ -33,6 +36,11 @@ namespace ChtemeleSurfaceApplication
 
         private MdlCarteJoueur _mdl;
         public int position;
+        private static int nbCarteJoueurActiv;
+
+        private Timer timer_BrowserUpdate;
+        private Timer timer_CrashBrowser;
+        private Timer timer_Freeze;
 
         // Constructeurs                    ======================================================================================================
 
@@ -45,10 +53,36 @@ namespace ChtemeleSurfaceApplication
             ChoixNav.Visibility = System.Windows.Visibility.Visible;
             CarteJoueurGrid.IsEnabled = false;
             ChoixNav.IsEnabled = true;
-            
+
             // Au départ, aucun modèle car aucun joueur.
             _mdl = null;
             position = 0;
+            nbCarteJoueurActiv = 0;
+
+            // image effect cacher au départ
+            EffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
+            EffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
+            EffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+
+            //pop up cachées
+            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
+            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
+            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+
+            // Timers popups
+            timer_BrowserUpdate = new Timer();
+            timer_BrowserUpdate.Interval = 3000;
+            timer_BrowserUpdate.Tick += new EventHandler(OnTimedEvent_BrowserUpdate);
+            timer_BrowserUpdate.Enabled = false;
+            timer_CrashBrowser = new Timer();
+            timer_CrashBrowser.Interval = 3000;
+            timer_CrashBrowser.Tick += new EventHandler(OnTimedEvent_CrashBrowser);
+            timer_CrashBrowser.Enabled = false;
+            timer_Freeze = new Timer();
+            timer_Freeze.Interval = 3000;
+            timer_Freeze.Tick += new EventHandler(OnTimedEvent_Freeze);
+            timer_Freeze.Enabled = false;
+
         }
 
         // Fonctionnalités                  ======================================================================================================
@@ -59,27 +93,27 @@ namespace ChtemeleSurfaceApplication
             // Si le navigateur sélectionné a déjà été pris, on se barre direct.
             if (Game.getInstance.LocationNav[NavClicke] != 0)
             {
-                return ;
+                return;
             }
             // On dit à Game que ce navigateur est désormais pris.
             Game.getInstance.LocationNav[NavClicke] = positionJoueur;
 
             //On créée le nouveau joueur
-            switch(positionJoueur)
+            switch (positionJoueur)
             {
-                case Player.NORD :
+                case Player.NORD:
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
                     Game.getInstance.joueurN = _mdl.getPlayer();
                     break;
-                case Player.EST: 
+                case Player.EST:
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
                     Game.getInstance.joueurE = _mdl.getPlayer();
                     break;
-                case Player.SUD: 
+                case Player.SUD:
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
                     Game.getInstance.joueurS = _mdl.getPlayer();
                     break;
-                case Player.OUEST: 
+                case Player.OUEST:
                     _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
                     Game.getInstance.joueurO = _mdl.getPlayer();
                     break;
@@ -106,7 +140,7 @@ namespace ChtemeleSurfaceApplication
                         }
                     }
                 }
-                
+
             }
 
             // On déactive le choix de navigateur et on active la carte Joueur
@@ -117,7 +151,7 @@ namespace ChtemeleSurfaceApplication
 
             // Update final
             update();
-            
+
         }
 
         // Evénements                  ======================================================================================================
@@ -153,12 +187,97 @@ namespace ChtemeleSurfaceApplication
             _mdl.setPlayerName(Player.browserNames[Player.OPERA]);
         }
 
+        //Fonction click afin d'afficher la popup de description de chaque effect
+        private void EffectBrowserUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Visible;
+            timer_BrowserUpdate.Enabled = true;            
+        }
+
+        private void EffectCrashBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Visible;
+            timer_CrashBrowser.Enabled = true;
+        }
+
+        private void EffectFreeze_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Visible;
+            timer_Freeze.Enabled = true;
+        }
+
+        // Timer popup
+
+        private void OnTimedEvent_BrowserUpdate(object source, EventArgs e)
+        {
+            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
+            timer_BrowserUpdate.Enabled = false;
+        }
+
+        private void OnTimedEvent_CrashBrowser(object source, EventArgs e)
+        {
+            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
+            timer_CrashBrowser.Enabled = false;
+        }
+
+        private void OnTimedEvent_Freeze(object source, EventArgs e)
+        {
+            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+            timer_Freeze.Enabled = false;
+        }
+
+
         // Update                         ======================================================================================================
 
         public void update()
         {
+            //affiche pseudo du joueur
             PseudoCarte.Text = _mdl.getPlayerName();
+            //affiche points du joueur
             Points.Text = _mdl.getPlayerScore().ToString();
+            nbCarteJoueurActiv++;
+
+            if (nbCarteJoueurActiv == Game.getInstance.getNbPlayer())
+            {
+                Game.getInstance.initGame();
+            }
+            //affiche dernière combinaison de balises posée
+            Combinaison.Text = _mdl.getComboCode().ToString();
+
+            //affichage des effects
+            if (_mdl.hasBrowserUpdate())
+            {
+                EffectBrowserUpdate.Visibility = System.Windows.Visibility.Visible;
+                EffectBrowserUpdate.IsEnabled = true;
+            }
+            else
+            {
+                EffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
+                EffectBrowserUpdate.IsEnabled = false;
+            }
+
+            if (_mdl.hasCrashBrowser())
+            {
+                EffectCrashBrowser.Visibility = System.Windows.Visibility.Visible;
+                EffectCrashBrowser.IsEnabled = true;
+            }
+            else
+            {
+                EffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
+                EffectCrashBrowser.IsEnabled = false;
+            }
+
+            if (_mdl.hasBrowserUpdate())
+            {
+                EffectFreeze.Visibility = System.Windows.Visibility.Visible;
+                EffectFreeze.IsEnabled = true;
+            }
+            else
+            {
+                EffectFreeze.Visibility = System.Windows.Visibility.Hidden;
+                EffectFreeze.IsEnabled = false;
+            }
         }
+
     }
 }

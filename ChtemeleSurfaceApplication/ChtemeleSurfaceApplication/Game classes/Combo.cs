@@ -24,6 +24,13 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         // Constructeurs                    ======================================================================================================
 
+        public Combo()
+        {
+            code = "";
+            codeScore = 0;
+            nbCarte = 0;
+        }
+
         // Accesseurs / Mutateurs           ======================================================================================================
 
         public int getScore() { return codeScore; }

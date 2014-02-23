@@ -28,9 +28,11 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public  Player joueurS, joueurN, joueurE, joueurO;       //les 4 joueurs
 
+        private int _nbPlayer;      //Nombre de joueur
         private int _step;       // numéro du tour actuel
         private int _nbSteps;    // nombre de tours de la partie
         private Player _currentPlayer;     // joueur actif
+        private bool gameStarted;
 
         private HtmlPage _page;         // page HTML de la partie
 
@@ -49,6 +51,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
             _step = 0;
             _nbSteps = Game.defaultNbSteps;
             _currentPlayer = null;
+            gameStarted = false;
             _page = new HtmlPage();
             LocationNav = new Dictionary<int, int>
                 {
@@ -63,8 +66,125 @@ namespace ChtemeleSurfaceApplication.Game_classes
         // Accesseurs / Mutateurs           ======================================================================================================
 
         public HtmlPage getPage() { return _page; }
+        public bool getGameStarted() { return gameStarted; }
 
         // Fonctionnalités                  ======================================================================================================
 
+        public void nextPlayer()
+        {
+            bool pass = false;
+            int curPos = _currentPlayer.position();
+            while(pass == false)
+                switch (curPos)
+                {
+                case 1:
+                        if (joueurE == null)
+                            curPos++;
+                        else
+                        {
+                            _currentPlayer = joueurE;
+                            SurfaceWindow1.getInstance.rotateCenterView(270);
+                            pass = true;
+                        }
+                    break;
+                case 2:
+                    if (joueurS == null)
+                        curPos++;
+                    else
+                    {
+                        _currentPlayer = joueurS;
+                        SurfaceWindow1.getInstance.rotateCenterView(0);
+                        pass = true;
+                    }
+                    break;
+                case 3:
+                    if (joueurO == null)
+                        curPos++;
+                    else
+                    {
+                        _currentPlayer = joueurO;
+                        SurfaceWindow1.getInstance.rotateCenterView(90);
+                        pass = true;
+                    }
+                    break;
+                case 4:
+                    if (joueurN == null)
+                        curPos = 1;
+                    else
+                    {
+                        _currentPlayer = joueurN;
+                        SurfaceWindow1.getInstance.rotateCenterView(180);
+                        pass = true;
+                    }
+                    break;
+                }
+        }
+
+        public void setNbPlayer(int nbPlayer)
+        {
+            _nbPlayer = nbPlayer;
+        }
+
+        public int getNbPlayer()
+        {
+            return _nbPlayer;
+        }
+
+        public void initGame()
+        {
+            //Supprime les zone de joueur inactive
+            if(joueurS == null)
+                SurfaceWindow1.getInstance.PlayerSScatterView.Visibility = System.Windows.Visibility.Hidden;
+            if (joueurE == null)
+                SurfaceWindow1.getInstance.PlayerEScatterView.Visibility = System.Windows.Visibility.Hidden;
+            if (joueurO == null)
+                SurfaceWindow1.getInstance.PlayerOScatterView.Visibility = System.Windows.Visibility.Hidden;
+            if (joueurN == null)
+                SurfaceWindow1.getInstance.PlayerNScatterView.Visibility = System.Windows.Visibility.Hidden;
+
+            //initialise la parti avec un joueur aléatoire
+            Random rnd = new Random();
+            bool ok = false;
+            while (ok == false)
+            {
+                switch (rnd.Next(1, 4))
+                {
+                    case 1:
+                        if (joueurS != null)
+                        {
+                            _currentPlayer = joueurS;
+                            ok = true;
+                        }
+                        break;
+                    case 2:
+                        if (joueurO != null)
+                        {
+                            _currentPlayer = joueurO;
+                            ok = true;
+                        }
+                        break;
+                    case 3:
+                        if (joueurN != null)
+                        {
+                            _currentPlayer = joueurN;
+                            ok = true;
+                        }
+                        break;
+                    case 4:
+                        if (joueurE != null)
+                        {
+                            _currentPlayer = joueurE;
+                            ok = true;
+                        }
+                        break;
+                }
+            }
+            gameStarted = true;
+        }
+
+        private int Random()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
