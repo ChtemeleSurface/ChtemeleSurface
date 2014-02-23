@@ -16,6 +16,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             USR_TAG,
             USR_OPEN_TAG,
             USR_END_TAG,
+            USR_TAG_NAME,
             USR_TAG_ATTR_NAME,
             USR_TAG_ATTR_AFFECT,
             USR_TAG_ATTR_VALUE,
@@ -24,6 +25,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             AUTO_TAG,
             AUTO_OPEN_TAG,
             AUTO_END_TAG,
+            AUTO_TAG_NAME,
             AUTO_TAG_ATTR_NAME,
             AUTO_TAG_ATTR_AFFECT,
             AUTO_TAG_ATTR_VALUE,
@@ -47,7 +49,10 @@ namespace ChtemeleSurfaceApplication.Modeles
     {
         // Constantes, enumérations         ======================================================================================================
 
-        
+        public static List<string> _htmlAutoTags = new List<string>
+        {
+            "html", "head", "title", "body", "link", "meta"
+        };
 
         // Variables membres                ======================================================================================================
 
@@ -57,6 +62,7 @@ namespace ChtemeleSurfaceApplication.Modeles
         private int _indentLevel;
         private int indentSize = 4;
         private StrTypePair _currentLineBreak;
+        private bool _isAutoTag = false;
 
         // Constructeurs                    ======================================================================================================
 
@@ -104,7 +110,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             {
                 foreach (HtmlTagAttribute attr in elem.attributes)
                 {
-                    resattr.Add(new StrTypePair(" ", StrTypePair.StrType.USR_TAG));
+                    resattr.Add(new StrTypePair(" ", (_isAutoTag) ? StrTypePair.StrType.AUTO_TAG : StrTypePair.StrType.USR_TAG));
                     resattr.AddRange(renderHtmlTagAttribute(attr));
                 }
             }
@@ -145,19 +151,21 @@ namespace ChtemeleSurfaceApplication.Modeles
         public List<StrTypePair> renderHtmlTag(HtmlTag tag, List<StrTypePair> attribs = null)
         {
             List<StrTypePair> res = new List<StrTypePair>();
-            string strtag = "";
+
+            _isAutoTag = _htmlAutoTags.Exists(v => v == tag.getTagName());
 
             //on insère la balise
-            strtag += HtmlTag.openSymbol[tag.getType()];
-            strtag += tag.getTagName();
+            
             if(tag.getType() == HtmlTag.HTMLTagType.OPENTAG)
-                res.Add(new StrTypePair(strtag, StrTypePair.StrType.USR_OPEN_TAG));
+                res.Add(new StrTypePair(HtmlTag.openSymbol[tag.getType()], (_isAutoTag) ? StrTypePair.StrType.AUTO_OPEN_TAG : StrTypePair.StrType.USR_OPEN_TAG));
             else
-                res.Add(new StrTypePair(strtag, StrTypePair.StrType.USR_END_TAG));
+                res.Add(new StrTypePair(HtmlTag.openSymbol[tag.getType()], (_isAutoTag) ? StrTypePair.StrType.AUTO_END_TAG : StrTypePair.StrType.USR_END_TAG));
+
+            res.Add(new StrTypePair(tag.getTagName(), (_isAutoTag) ? StrTypePair.StrType.AUTO_TAG_NAME : StrTypePair.StrType.USR_TAG_NAME));
 
             if (tag.getType() == HtmlTag.HTMLTagType.OPENTAG && attribs != null) res.AddRange(attribs);
 
-            res.Add(new StrTypePair(HtmlTag.endSymbol, StrTypePair.StrType.USR_TAG));
+            res.Add(new StrTypePair(HtmlTag.endSymbol, (_isAutoTag) ? StrTypePair.StrType.AUTO_TAG : StrTypePair.StrType.USR_TAG));
 
             return res;
         }
@@ -165,18 +173,18 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         public StrTypePair renderHtmlText(HtmlText txt)
         {
-            return new StrTypePair(txt.getText(), StrTypePair.StrType.USR_TEXT);
+            return new StrTypePair(txt.getText(), (_isAutoTag) ? StrTypePair.StrType.AUTO_TEXT : StrTypePair.StrType.USR_TEXT);
         }
 
         public List<StrTypePair> renderHtmlTagAttribute(HtmlTagAttribute attr)
         {
             List<StrTypePair> res = new List<StrTypePair>();
 
-            res.Add(new StrTypePair(attr.getKey(), StrTypePair.StrType.USR_TAG_ATTR_NAME));
-            res.Add(new StrTypePair("=", StrTypePair.StrType.USR_TAG_ATTR_AFFECT));
+            res.Add(new StrTypePair(attr.getKey(), (_isAutoTag) ? StrTypePair.StrType.AUTO_TAG_ATTR_NAME : StrTypePair.StrType.USR_TAG_ATTR_NAME));
+            res.Add(new StrTypePair("=", (_isAutoTag) ? StrTypePair.StrType.AUTO_TAG_ATTR_AFFECT : StrTypePair.StrType.USR_TAG_ATTR_AFFECT));
 
             string value = "\"" + attr.getValue() +"\"";
-            res.Add(new StrTypePair(value, StrTypePair.StrType.USR_TAG_ATTR_VALUE));
+            res.Add(new StrTypePair(value, (_isAutoTag) ? StrTypePair.StrType.AUTO_TAG_ATTR_VALUE : StrTypePair.StrType.USR_TAG_ATTR_VALUE));
 
             return res;
         }
@@ -184,24 +192,30 @@ namespace ChtemeleSurfaceApplication.Modeles
         public void autoIndent()
         {
             _indentLevel = 0;
-            string patternTag = @"<(?<symbol>[/!]?)(?<tagname>\w+)";
 
             //On parcourt tous les éléments du dictionnaire
             foreach (StrTypePair elem in _code)
             {
-                indentItem(Regex.Match(elem.str, patternTag), elem);
+                indentItem(elem);
             }
         }
 
-        private void indentItem(Match item, StrTypePair elem)
+        private void indentItem(StrTypePair elem)
         {
 
             switch (elem.type)
             {
                 case StrTypePair.StrType.USR_OPEN_TAG:
                 case StrTypePair.StrType.AUTO_OPEN_TAG:
-                    if (!HtmlElement.singleTags.Exists(v => v == item.Groups["tagname"].ToString()))    // si ce n'est pas une balise simple
-                        _indentLevel++;
+                    _indentLevel++;
+                    break;
+                case StrTypePair.StrType.USR_TAG_NAME:
+                case StrTypePair.StrType.AUTO_TAG_NAME:
+                    if (HtmlElement.singleTags.Exists(v => v == elem.str))
+                    {    // si ce n'est pas une balise simple, on annule la précédente auto-indentation
+                        _indentLevel--;
+                        _currentLineBreak.str = '\n' + new string(' ', indentSize * (_indentLevel));
+                    }
                     break;
                 case StrTypePair.StrType.USR_END_TAG:
                 case StrTypePair.StrType.AUTO_END_TAG:

@@ -36,6 +36,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             _mainTag.addContent(_headTag);
 
             _bodyTag = new HtmlElement("body");
+            _bodyTag.attributes.Add(new HtmlTagAttribute("id", "Tamère"));
             _bodyTag.closeTag();
             _mainTag.addContent(_bodyTag);
 
