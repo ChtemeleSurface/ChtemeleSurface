@@ -10,7 +10,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
     class HtmlElement : HtmlTagContent
     {
         private string _name;
-        private bool _isCorrect;
+        private bool _isCorrect;    // non implémenté
         private string _tagname;
         public List<HtmlTagAttribute> attributes;
         public List<HtmlTagContent> tagContent;
@@ -49,6 +49,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
 
         public HtmlElement(string name)
+            : base()
         {
             _name = name;
             _isCorrect = false;

@@ -53,15 +53,19 @@ namespace ChtemeleSurfaceApplication
 
         private Dictionary<StrTypePair.StrType, Color> colorTable = new Dictionary<StrTypePair.StrType, Color>
         {
-            {StrTypePair.StrType.DOCTYPE, Colors.BlueViolet},
+            {StrTypePair.StrType.DOCTYPE, Colors.SaddleBrown},
 
             {StrTypePair.StrType.USR_TAG, Colors.Blue},
+            {StrTypePair.StrType.USR_OPEN_TAG, Colors.Blue},
+            {StrTypePair.StrType.USR_END_TAG, Colors.Blue},
             {StrTypePair.StrType.USR_TAG_ATTR_NAME, Colors.Red},
-            {StrTypePair.StrType.USR_TAG_ATTR_AFFECT, Colors.Black},
+            {StrTypePair.StrType.USR_TAG_ATTR_AFFECT, Colors.Black },
             {StrTypePair.StrType.USR_TAG_ATTR_VALUE, Colors.Purple},
             {StrTypePair.StrType.USR_TEXT, Colors.Black},
 
             {StrTypePair.StrType.AUTO_TAG, Colors.LightBlue},
+            {StrTypePair.StrType.AUTO_OPEN_TAG, Colors.LightBlue},
+            {StrTypePair.StrType.AUTO_END_TAG, Colors.LightBlue},
             {StrTypePair.StrType.AUTO_TAG_ATTR_NAME, Colors.Pink},
             {StrTypePair.StrType.AUTO_TAG_ATTR_AFFECT, Colors.Gray},
             {StrTypePair.StrType.AUTO_TAG_ATTR_VALUE, Colors.LightPink},

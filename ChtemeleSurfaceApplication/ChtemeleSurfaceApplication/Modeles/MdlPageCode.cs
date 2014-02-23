@@ -14,12 +14,16 @@ namespace ChtemeleSurfaceApplication.Modeles
             DOCTYPE,
 
             USR_TAG,
+            USR_OPEN_TAG,
+            USR_END_TAG,
             USR_TAG_ATTR_NAME,
             USR_TAG_ATTR_AFFECT,
             USR_TAG_ATTR_VALUE,
             USR_TEXT,
 
             AUTO_TAG,
+            AUTO_OPEN_TAG,
+            AUTO_END_TAG,
             AUTO_TAG_ATTR_NAME,
             AUTO_TAG_ATTR_AFFECT,
             AUTO_TAG_ATTR_VALUE,
@@ -30,7 +34,7 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         }
 
-        public string str;
+        public string str = null;
         public StrType type;
 
         public StrTypePair(string s, StrType t) {
@@ -52,7 +56,7 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         private int _indentLevel;
         private int indentSize = 4;
-        private int computedIndentChanges = 0;
+        private StrTypePair _currentLineBreak;
 
         // Constructeurs                    ======================================================================================================
 
@@ -80,7 +84,8 @@ namespace ChtemeleSurfaceApplication.Modeles
 
             _code.AddRange(renderHtmlElement(_page.mainTag()));
 
-            //autoIndent();
+            removeDoubleLineBreaks();
+            autoIndent();
         }
 
         // Rendu d'un élément HTML
@@ -143,10 +148,12 @@ namespace ChtemeleSurfaceApplication.Modeles
             string strtag = "";
 
             //on insère la balise
-            
             strtag += HtmlTag.openSymbol[tag.getType()];
             strtag += tag.getTagName();
-            res.Add(new StrTypePair(strtag, StrTypePair.StrType.USR_TAG));
+            if(tag.getType() == HtmlTag.HTMLTagType.OPENTAG)
+                res.Add(new StrTypePair(strtag, StrTypePair.StrType.USR_OPEN_TAG));
+            else
+                res.Add(new StrTypePair(strtag, StrTypePair.StrType.USR_END_TAG));
 
             if (tag.getType() == HtmlTag.HTMLTagType.OPENTAG && attribs != null) res.AddRange(attribs);
 
@@ -174,81 +181,71 @@ namespace ChtemeleSurfaceApplication.Modeles
             return res;
         }
 
-        /*public void autoIndent()
+        public void autoIndent()
         {
             _indentLevel = 0;
-            string res = "";
+            string patternTag = @"<(?<symbol>[/!]?)(?<tagname>\w+)";
 
-            //On parcout toutes les balises et les retours à la ligne de la séquence.
-
-
-            MatchEvaluator evalLine = new MatchEvaluator(fetchLine);
-
-            string linePattern = @"\n+(?<line>.*)";
-
-            try
+            //On parcourt tous les éléments du dictionnaire
+            foreach (StrTypePair elem in _code)
             {
-                res = Regex.Replace(_code, linePattern, evalLine);
+                indentItem(Regex.Match(elem.str, patternTag), elem);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            _code = res;
         }
 
-        private string fetchIndentItem(Match item)
+        private void indentItem(Match item, StrTypePair elem)
         {
-            string s = item.ToString();
 
-            if (Regex.IsMatch(s, @"^<!.+>$"))                       //Doctype
+            switch (elem.type)
             {
-                //nothing
+                case StrTypePair.StrType.USR_OPEN_TAG:
+                case StrTypePair.StrType.AUTO_OPEN_TAG:
+                    if (!HtmlElement.singleTags.Exists(v => v == item.Groups["tagname"].ToString()))    // si ce n'est pas une balise simple
+                        _indentLevel++;
+                    break;
+                case StrTypePair.StrType.USR_END_TAG:
+                case StrTypePair.StrType.AUTO_END_TAG:
+                    _indentLevel--;
+                    _currentLineBreak.str = '\n' + new string(' ', indentSize * (_indentLevel));
+                    break;
+                case StrTypePair.StrType.LINE_BREAK:
+                    indentLine(elem);
+                    break;
             }
 
-            else if (Regex.IsMatch(s, @"^<(\w+)(\s[^>]*)?>$"))       //balise ouvrante
+
+        }
+
+        private void indentLine(StrTypePair elem)
+        {
+            // On stocke le retour à la ligne, s'il faut la modifier par la suite
+            _currentLineBreak = elem;
+
+            if (_indentLevel < 0) _indentLevel = 0;
+
+            _currentLineBreak.str = '\n' + new string(' ', indentSize * _indentLevel);
+
+        }
+
+        public void removeDoubleLineBreaks()
+        {
+            bool linebreak = false;
+            for (int i = 0; i < _code.Count; ++i)
             {
-                if (HtmlElement.singleTags.Exists(v => v == item.Groups["tagname"].ToString()))
+                if (_code[i].type == StrTypePair.StrType.LINE_BREAK)
                 {
-                    //balise simple
+                    if (linebreak)
+                    {
+                        _code.RemoveAt(i);
+                    }
+                    else
+                    {
+                        linebreak = true;
+                    }
                 }
                 else
-                    computedIndentChanges++;
+                    linebreak = false;
             }
-            else //if (Regex.IsMatch(s, @"^</\w+>$"))       //balise fermante seule
-            {
-                computedIndentChanges--;
-            }
-
-            return s;
         }
-
-        private string fetchLine(Match item)
-        {
-            computedIndentChanges = 0;
-            string s = item.ToString();
-
-            string pattern = @"</?(?<tagname>\w+)(\s[^>]*)?>";
-            MatchEvaluator evalElem = new MatchEvaluator(fetchIndentItem);
-
-            try
-            {
-                s = Regex.Replace(s, pattern, evalElem);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            if (computedIndentChanges < 0)
-            {
-                _indentLevel += computedIndentChanges;
-                if (_indentLevel < 0) _indentLevel = 0;
-            }
-            string res = '\n' + new string(' ', indentSize * _indentLevel) + item.Groups["line"].ToString();
-            if (computedIndentChanges > 0) _indentLevel += computedIndentChanges;
-            return res;
-        }*/
     }
 }

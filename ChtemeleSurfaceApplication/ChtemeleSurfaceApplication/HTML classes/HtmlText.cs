@@ -10,6 +10,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private string _str;
 
         public HtmlText(string str)
+            : base()
         {
             _str = str;
         }
