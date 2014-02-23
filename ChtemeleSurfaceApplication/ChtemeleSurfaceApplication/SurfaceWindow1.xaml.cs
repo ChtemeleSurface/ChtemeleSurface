@@ -214,11 +214,11 @@ namespace ChtemeleSurfaceApplication
 
 
 
-
+            // Taille du scatter contenant les deux rendus + la zone de pioche
             ScatterCenterView.Height = CenterView.Height;
             ScatterCenterView.Width = CenterView.Width;
 
-
+            // Emplacement selon rotation des élements des rendus
             if ((CenterView.Orientation == 0 && PageCode.Orientation == 90) || (PageCode.Orientation == 180 && PageCode.Orientation == 90))
             {
                 // valeurs en 1920 * 1080
