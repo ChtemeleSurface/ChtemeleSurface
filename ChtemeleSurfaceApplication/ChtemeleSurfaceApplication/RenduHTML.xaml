@@ -10,13 +10,9 @@
 
     <awe:WebControl Name="webControl" Loaded="webControl_Loaded" ></awe:WebControl>
 
+    <!--<Grid Name="initGrid" Visibility="Visible">
 
-            
-
-
-    <Grid Name="initGrid" Visibility="Visible">
-
-        <awe:WebControl Name="webControl"></awe:WebControl>
+        <awe:WebControl Name="webControl" Loaded="webControl_Loaded"></awe:WebControl>
                 
                 <Grid>
                     
@@ -41,7 +37,7 @@
                     <s:SurfaceButton Grid.Row="1" Grid.Column="2" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="applyCss3">CSS3</s:SurfaceButton>
                 </Grid>
 
-    </Grid>
+    </Grid>-->
 
 
 </s:ScatterViewItem>
