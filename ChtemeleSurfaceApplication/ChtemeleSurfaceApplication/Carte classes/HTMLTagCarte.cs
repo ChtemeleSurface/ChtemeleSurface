@@ -11,13 +11,15 @@ namespace ChtemeleSurfaceApplication.Carte_classes
     {
         private string _tag;
         private HtmlTag.HTMLTagType _type;
+        private int _score;
 
         public static Dictionary<AvailableTags, int> ValeurTags;
 
-        public HTMLTagCarte(string tag, HtmlTag.HTMLTagType type)
+        public HTMLTagCarte(string tag, HtmlTag.HTMLTagType type, int score)
         {
             _tag = tag;
             _type = type;
+            _score = score;
 
             //valeur balises ouvrantes
             ValeurTags = new Dictionary<AvailableTags, int>();
@@ -93,7 +95,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes
 
         public override void onValid()
         {
-            throw new NotImplementedException();
+            Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
         }
 
         public override void onDelete()

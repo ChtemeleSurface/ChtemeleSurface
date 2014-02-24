@@ -86,5 +86,23 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
             return ret;
         }
+
+        public void addPoint(int scoreAdd)
+        {
+            score += scoreAdd;
+            updateCarteJoueur();
+        }
+
+        public void updateCarteJoueur()
+        {
+            if(Game.getInstance.joueurE != null)
+                SurfaceWindow1.getInstance.CarteEst.update();
+            if (Game.getInstance.joueurS != null)
+                SurfaceWindow1.getInstance.CarteSud.update();
+            if (Game.getInstance.joueurN != null)
+                SurfaceWindow1.getInstance.CarteNord.update();
+            if (Game.getInstance.joueurO != null)
+                SurfaceWindow1.getInstance.CarteOuest.update();
+        }
     }
 }

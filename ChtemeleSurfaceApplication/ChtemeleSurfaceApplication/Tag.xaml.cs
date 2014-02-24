@@ -37,6 +37,7 @@ namespace ChtemeleSurfaceApplication
                 Retirer_carte.Visibility = System.Windows.Visibility.Visible;
                 ElemMenu.Visibility = System.Windows.Visibility.Hidden;
                 Retirer_carte.Text = "Carte jouée, veuillez retirer cette carte.";
+                curCard.onValid();
                 played = true;
             }
             Game_classes.Game.getInstance.nextPlayer();
