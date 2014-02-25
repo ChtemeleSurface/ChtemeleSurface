@@ -67,19 +67,19 @@ namespace ChtemeleSurfaceApplication
 
             tabCartes = new Dictionary<int, CartesJoueurs>
             {
-                {Player.SUD, CarteSud},
-                {Player.EST, CarteEst},
-                {Player.NORD, CarteNord},
-                {Player.OUEST, CarteOuest}
+                {Player.SUD, ZoneJoueurS.CarteJoueur},
+                {Player.EST, ZoneJoueurE.CarteJoueur},
+                {Player.NORD, ZoneJoueurN.CarteJoueur},
+                {Player.OUEST, ZoneJoueurO.CarteJoueur}
             };
 
             // Position des cartes joueurs
-            CarteNord.position = Player.NORD;
-            CarteSud.position = Player.SUD;
-            CarteEst.position = Player.EST;
-            CarteOuest.position = Player.OUEST;
+            ZoneJoueurN.CarteJoueur.position = Player.NORD;
+            ZoneJoueurS.CarteJoueur.position = Player.SUD;
+            ZoneJoueurE.CarteJoueur.position = Player.EST;
+            ZoneJoueurO.CarteJoueur.position = Player.OUEST;
 
-            // Documentations
+            /*// Documentations
             ScatterViewItem DocN = new ScatterViewItem();
             DocN.Content = new PageDoc();
 
@@ -90,7 +90,7 @@ namespace ChtemeleSurfaceApplication
             DocE.Content = new PageDoc();
 
             ScatterViewItem DocO = new ScatterViewItem();
-            DocO.Content = new PageDoc();
+            DocO.Content = new PageDoc();*/
 
             // NE FONCTIONNE PAS (n'est pas utilisé par surface pour placer les élements)
            /* //Initialisation positions zone Nord
@@ -202,14 +202,14 @@ namespace ChtemeleSurfaceApplication
         public void ComputeWidgetsPositions(double x, double y)
         {
             //Position des zones joueurs
-            PlayerSScatterView.Center = new Point(x / 2, y - (PlayerSScatterView.Height / 2));
-            PlayerOScatterView.Center = new Point(PlayerOScatterView.Height / 2, y / 2);
-            PlayerNScatterView.Center = new Point(x / 2, PlayerSScatterView.Height / 2);
-            PlayerEScatterView.Center = new Point(x - PlayerOScatterView.Height / 2, y / 2);
+            ZoneJoueurS.Center = new Point(x / 2, y - (ZoneJoueurS.Height / 2));
+            ZoneJoueurO.Center = new Point(ZoneJoueurO.Height / 2, y / 2);
+            ZoneJoueurN.Center = new Point(x / 2, ZoneJoueurN.Height / 2);
+            ZoneJoueurE.Center = new Point(x - ZoneJoueurE.Height / 2, y / 2);
 
             //taille et position du centralview
-            CenterView.Height = y - PlayerSScatterView.Height - PlayerNScatterView.Height;
-            CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
+            CenterView.Height = y - ZoneJoueurS.Height - ZoneJoueurN.Height;
+            CenterView.Width = x - ZoneJoueurO.Height - ZoneJoueurE.Height;
             CenterView.Center = new Point(x / 2.0, y / 2.0);
 
 

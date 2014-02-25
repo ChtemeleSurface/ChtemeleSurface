@@ -78,6 +78,9 @@
     <Compile Include="Tag.xaml.cs">
       <DependentUpon>Tag.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ZoneJoueur.xaml.cs">
+      <DependentUpon>ZoneJoueur.xaml</DependentUpon>
+    </Compile>
     <Page Include="CartesJoueurs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +159,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Tag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZoneJoueur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

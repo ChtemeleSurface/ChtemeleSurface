@@ -134,13 +134,13 @@ namespace ChtemeleSurfaceApplication.Game_classes
         {
             //Supprime les zone de joueur inactive
             if(joueurS == null)
-                SurfaceWindow1.getInstance.PlayerSScatterView.Visibility = System.Windows.Visibility.Hidden;
+                SurfaceWindow1.getInstance.ZoneJoueurS.Visibility = System.Windows.Visibility.Hidden;
             if (joueurE == null)
-                SurfaceWindow1.getInstance.PlayerEScatterView.Visibility = System.Windows.Visibility.Hidden;
+                SurfaceWindow1.getInstance.ZoneJoueurE.Visibility = System.Windows.Visibility.Hidden;
             if (joueurO == null)
-                SurfaceWindow1.getInstance.PlayerOScatterView.Visibility = System.Windows.Visibility.Hidden;
+                SurfaceWindow1.getInstance.ZoneJoueurO.Visibility = System.Windows.Visibility.Hidden;
             if (joueurN == null)
-                SurfaceWindow1.getInstance.PlayerNScatterView.Visibility = System.Windows.Visibility.Hidden;
+                SurfaceWindow1.getInstance.ZoneJoueurN.Visibility = System.Windows.Visibility.Hidden;
 
             //initialise la parti avec un joueur aléatoire
             Random rnd = new Random();

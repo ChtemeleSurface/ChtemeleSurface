@@ -61,7 +61,7 @@ namespace ChtemeleSurfaceApplication
             {StrTypePair.StrType.USR_TAG_NAME, Colors.Blue},
             {StrTypePair.StrType.USR_TAG_ATTR_NAME, Colors.Red},
             {StrTypePair.StrType.USR_TAG_ATTR_AFFECT, Colors.Black },
-            {StrTypePair.StrType.USR_TAG_ATTR_VALUE, Colors.Purple},
+            {StrTypePair.StrType.USR_TAG_ATTR_VALUE, Colors.Purple}, 
             {StrTypePair.StrType.USR_TEXT, Colors.Black},
 
             {StrTypePair.StrType.AUTO_TAG, Colors.LightSlateGray},
