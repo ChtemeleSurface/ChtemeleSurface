@@ -96,6 +96,10 @@ namespace ChtemeleSurfaceApplication.Carte_classes
         public override void onValid()
         {
             Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
+
+           /* Game_classes.Game.getInstance.getPage().bodyTag().addContent(new HtmlElement("h2"));
+            SurfaceWindow1.getInstance.PageCode.ShowCode();
+            SurfaceWindow1.getInstance.PageRendu.update();*/
         }
 
         public override void onDelete()
