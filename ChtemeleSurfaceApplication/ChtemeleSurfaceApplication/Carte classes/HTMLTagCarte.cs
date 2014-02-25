@@ -51,7 +51,6 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             ValeurTags.Add(AvailableTags.S_HR,          6);
             ValeurTags.Add(AvailableTags.S_IMG,         8);
 
-            _type = HtmlTag.HTMLTagType.OPENTAG; 
         }
 
         public enum AvailableTags
@@ -97,9 +96,20 @@ namespace ChtemeleSurfaceApplication.Carte_classes
         {
             Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
 
-           /* Game_classes.Game.getInstance.getPage().bodyTag().addContent(new HtmlElement("h2"));
+            if(_type == HtmlTag.HTMLTagType.OPENTAG)
+            {
+                HtmlElement._currentElement = new HtmlElement(_tag);
+                Game_classes.Game.getInstance.getPage().bodyTag().addContent(HtmlElement._currentElement);
+            }
+            else 
+            {
+                if (HtmlElement._currentElement == null) return;
+                if (HtmlElement._currentElement.getTagname() == _tag)
+                    HtmlElement._currentElement.closeTag();
+
+            }
             SurfaceWindow1.getInstance.PageCode.ShowCode();
-            SurfaceWindow1.getInstance.PageRendu.update();*/
+            SurfaceWindow1.getInstance.PageRendu.update();
         }
 
         public override void onDelete()

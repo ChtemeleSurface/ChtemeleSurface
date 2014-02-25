@@ -9,12 +9,15 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 {
     class HtmlElement : HtmlTagContent
     {
+        public static HtmlElement _currentElement = null;
+
         private string _name;
         private bool _isCorrect;    // non implémenté
         private string _tagname;
         public List<HtmlTagAttribute> attributes;
         public List<HtmlTagContent> tagContent;
         private int _score;
+
 
         private HtmlTag _openTag;
         private HtmlTag _endTag;
