@@ -14,7 +14,7 @@ using ChtemeleSurfaceApplication.Game_classes;
 
 namespace ChtemeleSurfaceApplication.Effect_classes
 {
-    class CrashBrowser
+    class CrashBrowser : Effect
     {
         public Player player;
 

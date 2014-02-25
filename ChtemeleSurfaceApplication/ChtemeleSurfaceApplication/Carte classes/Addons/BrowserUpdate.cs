@@ -10,7 +10,9 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 
         public override void onValid()
         {
-            throw new NotImplementedException();
+            Game_classes.Player curplayer = Game_classes.Game.getInstance.getCurPlayer();
+            curplayer.effects().Add(new Effect_classes.BrowserUpdate());
+            curplayer.updateCarteJoueur();
         }
 
         public override void onDelete()

@@ -7,9 +7,16 @@ namespace ChtemeleSurfaceApplication.Game_classes
 {
     class Effect
     {
-        // Tableau des codes effets
-        private int[] codeEffect;
-        // Effet
+        public enum EffectType
+        {
+            BROWSERUPDATE,
+            CRASHBROWSER,
+            FREEZE
+        };
+
+        protected EffectType _type;
+
+        public EffectType getTypeEffect() { return _type; }
 
         // constructeur
         public Effect()
