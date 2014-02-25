@@ -10,10 +10,7 @@ namespace ChtemeleSurfaceApplication
 {
     abstract class HTMLCarte : Carte
     {
-
         override public abstract void onPlay();
         override public abstract void onValid();
-
-        
     }
 }

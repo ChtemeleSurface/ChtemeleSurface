@@ -113,12 +113,17 @@ namespace ChtemeleSurfaceApplication
         // Variables membres                ======================================================================================================
 
         private string _description;
+        protected bool _textEdit;
+        protected bool _imageEdit;
+        protected String _text;
 
         // Constructeurs                    ======================================================================================================
 
         public Carte()
         {
             loadDescription();
+            _textEdit = false;
+            _imageEdit = false;
         }
 
         // Fonctionnalités                  ======================================================================================================
@@ -126,10 +131,16 @@ namespace ChtemeleSurfaceApplication
         public abstract void onPlay();
         public abstract void onValid();
         public abstract void onDelete();
-
+        
         public void loadDescription()
         {
 
         }
+
+
+        // Accesseurs / Mutateurs           ======================================================================================================
+        public bool getTextEdit() { return _textEdit; }
+        public bool getImageEdit() { return _imageEdit; }
+        public void setText(String text) { _text = text; }
     }
 }

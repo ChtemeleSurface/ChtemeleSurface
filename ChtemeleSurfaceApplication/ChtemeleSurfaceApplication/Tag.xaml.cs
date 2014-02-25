@@ -38,9 +38,13 @@ namespace ChtemeleSurfaceApplication
 
                 Retirer_carte.Visibility = System.Windows.Visibility.Visible;
                 ElemMenu.Visibility = System.Windows.Visibility.Hidden;
+                inputBox.Visibility = System.Windows.Visibility.Hidden;
                 Retirer_carte.Text = "Carte jouée, veuillez retirer cette carte.";
                 played = true;
             }
+            if (curCard.getTextEdit() == true)
+                curCard.setText(inputBox.Text);
+            curCard.onValid();
             Game_classes.Game.getInstance.nextPlayer();
         }
 
@@ -59,10 +63,17 @@ namespace ChtemeleSurfaceApplication
                 {
                     ElemMenu.Visibility = System.Windows.Visibility.Hidden;
                     Retirer_carte.Visibility = System.Windows.Visibility.Visible;
+                    inputBox.Visibility = System.Windows.Visibility.Hidden;
                     Retirer_carte.Text = "Plusieurs cartes sont détectées, veuillez retirer cette carte.";
                 }
                 else
+                {
                     curCard = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].getCarte();
+                    if (curCard.getTextEdit() == false)
+                    {
+                        inputBox.Visibility = System.Windows.Visibility.Hidden;
+                    }
+                }
             }
         }
 

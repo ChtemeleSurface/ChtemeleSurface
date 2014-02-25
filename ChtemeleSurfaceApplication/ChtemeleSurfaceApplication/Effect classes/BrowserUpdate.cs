@@ -14,14 +14,15 @@ using ChtemeleSurfaceApplication.Game_classes;
 
 namespace ChtemeleSurfaceApplication.Effect_classes
 {
-    class BrowserUpdate
+    class BrowserUpdate : Effect
     {
         public Player player;
 
         // Constructeur
         public BrowserUpdate()
+            : base()
         {
-
+            _type = EffectType.BROWSERUPDATE;
         }
     }
 }

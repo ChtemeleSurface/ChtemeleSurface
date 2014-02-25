@@ -38,18 +38,32 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         public bool hasBrowserUpdate()
         {
-
-            return true;
+            foreach (Effect effect in _player.effects())
+            {
+                if (effect.getTypeEffect() == Effect.EffectType.BROWSERUPDATE)
+                    return true;
+            }
+            return false;
         }
 
         public bool hasCrashBrowser()
         {
-            return true;
+            foreach (Effect effect in _player.effects())
+            {
+                if (effect.getTypeEffect() == Effect.EffectType.CRASHBROWSER)
+                    return true;
+            }
+            return false;
         }
 
         public bool hasFreeze()
         {
-            return true;
+            foreach (Effect effect in _player.effects())
+            {
+                if (effect.getTypeEffect() == Effect.EffectType.FREEZE)
+                    return true;
+            }
+            return false;
         }
 
     }

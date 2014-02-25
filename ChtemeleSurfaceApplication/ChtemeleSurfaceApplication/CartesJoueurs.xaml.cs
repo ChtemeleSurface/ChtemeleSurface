@@ -267,7 +267,7 @@ namespace ChtemeleSurfaceApplication
                 EffectCrashBrowser.IsEnabled = false;
             }
 
-            if (_mdl.hasBrowserUpdate())
+            if (_mdl.hasFreeze())
             {
                 EffectFreeze.Visibility = System.Windows.Visibility.Visible;
                 EffectFreeze.IsEnabled = true;

@@ -48,23 +48,6 @@ namespace ChtemeleSurfaceApplication
             InitializeComponent();
             instance = this;
 
-            /* //Clavier Nord
-            ScatterViewItem clavN = new ScatterViewItem();
-            clavN.Content = new Clavier();
-
-            //Clavier Sud
-            ScatterViewItem clavS = new ScatterViewItem();
-            clavS.Content = new Clavier();
-
-            //Clavier Est
-            ScatterViewItem clavE = new ScatterViewItem();
-            clavE.Content = new Clavier();
-
-            //Clavier Ouest
-            ScatterViewItem clavO = new ScatterViewItem();
-            clavO.Content = new Clavier();
-            */
-
             tabCartes = new Dictionary<int, CartesJoueurs>
             {
                 {Player.SUD, ZoneJoueurS.CarteJoueur},
@@ -91,28 +74,6 @@ namespace ChtemeleSurfaceApplication
 
             ScatterViewItem DocO = new ScatterViewItem();
             DocO.Content = new PageDoc();*/
-
-            // NE FONCTIONNE PAS (n'est pas utilisé par surface pour placer les élements)
-           /* //Initialisation positions zone Nord
-            DocNord.Center = new Point(PlayerNScatterView.Width / 6, PlayerNScatterView.Height / 2);
-            // ClavierNord.Center = new Point(PlayerNScatterView.Width / 2, PlayerNScatterView.Height / 2);
-            CarteNord.Center = new Point((PlayerNScatterView.Width / 2) + (PlayerNScatterView.Width / 3), PlayerNScatterView.Height / 2);
-
-            //Initialisation positions zone Sud
-            DocSud.Center = new Point(PlayerSScatterView.Width / 6, PlayerSScatterView.Height / 2);
-            // ClavierSud.Center = new Point(PlayerSScatterView.Width / 2, PlayerSScatterView.Height / 2);
-            CarteSud.Center = new Point((PlayerSScatterView.Width / 2) + (PlayerSScatterView.Width / 3), PlayerSScatterView.Height / 2);
-
-            //Initialisation positions zone Est
-            DocEst.Center = new Point(PlayerEScatterView.Width / 6, PlayerEScatterView.Height / 2);
-            // ClavierEst.Center = new Point(PlayerEScatterView.Width / 2, PlayerEScatterView.Height / 2);
-            CarteEst.Center = new Point((PlayerEScatterView.Width / 2) + (PlayerEScatterView.Width / 3), PlayerEScatterView.Height / 2);
-
-            //Initialisation positions zone Ouest
-            DocOuest.Center = new Point(PlayerOScatterView.Width / 6, PlayerOScatterView.Height / 2);
-            // ClavierOuest.Center = new Point(PlayerOScatterView.Width / 2, PlayerOScatterView.Height / 2);
-            CarteOuest.Center = new Point((PlayerOScatterView.Width / 2) + (PlayerOScatterView.Width / 3), PlayerOScatterView.Height / 2);
-            */
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
@@ -221,11 +182,6 @@ namespace ChtemeleSurfaceApplication
             // Emplacement selon rotation des élements des rendus
             if ((CenterView.Orientation == 0 && PageCode.Orientation == 90) || (PageCode.Orientation == 180 && PageCode.Orientation == 90))
             {
-                // valeurs en 1920 * 1080
-                /*PageCode.Width = 750;
-                PageCode.Height = 758;
-                PageRendu.Width = 750;
-                PageRendu.Height = 758;*/
 
                 ZonePioche.Width = ScatterCenterView.Width - PageCode.Width - PageRendu.Width;
                 ZonePioche.Height = ScatterCenterView.Height;
@@ -243,11 +199,6 @@ namespace ChtemeleSurfaceApplication
             }
             if ((CenterView.Orientation == 0 && PageCode.Orientation == 0) || (PageCode.Orientation == 180 && PageCode.Orientation == 0))
             {
-                // valeurs en 1920 * 1080
-                /*PageCode.Width = 758;
-                PageCode.Height = 758;
-                PageRendu.Width = 758;
-                PageRendu.Height = 758;*/
 
                 ZonePioche.Height = ScatterCenterView.Height;
 
@@ -263,9 +214,6 @@ namespace ChtemeleSurfaceApplication
                 PageCode.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
                 PageRendu.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
             }
-
-
-
 
 
             ZonePioche.Center = new Point(ScatterCenterView.Width / 2.0, ScatterCenterView.Height / 2.0);

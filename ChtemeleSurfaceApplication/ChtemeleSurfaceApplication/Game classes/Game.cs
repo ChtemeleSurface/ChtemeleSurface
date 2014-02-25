@@ -67,6 +67,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public HtmlPage getPage() { return _page; }
         public bool getGameStarted() { return gameStarted; }
+        public Player getCurPlayer() { return _currentPlayer; }
 
         // Fonctionnalités                  ======================================================================================================
 
@@ -153,6 +154,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                         if (joueurS != null)
                         {
                             _currentPlayer = joueurS;
+                            SurfaceWindow1.getInstance.rotateCenterView(0);
                             ok = true;
                         }
                         break;
@@ -160,6 +162,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                         if (joueurO != null)
                         {
                             _currentPlayer = joueurO;
+                            SurfaceWindow1.getInstance.rotateCenterView(90);
                             ok = true;
                         }
                         break;
@@ -167,6 +170,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                         if (joueurN != null)
                         {
                             _currentPlayer = joueurN;
+                            SurfaceWindow1.getInstance.rotateCenterView(180);
                             ok = true;
                         }
                         break;
@@ -174,6 +178,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                         if (joueurE != null)
                         {
                             _currentPlayer = joueurE;
+                            SurfaceWindow1.getInstance.rotateCenterView(270);
                             ok = true;
                         }
                         break;

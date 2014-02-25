@@ -11,80 +11,15 @@ namespace ChtemeleSurfaceApplication.Carte_classes
     {
         private string _tag;
         private HtmlTag.HTMLTagType _type;
+        private int _score;
 
-        public static Dictionary<AvailableTags, int> ValeurTags;
-
-        public HTMLTagCarte(string tag, HtmlTag.HTMLTagType type)
+        public HTMLTagCarte(string tag, HtmlTag.HTMLTagType type, int score, bool textEdit)
         {
             _tag = tag;
             _type = type;
-
-            //valeur balises ouvrantes
-            ValeurTags = new Dictionary<AvailableTags, int>();
-            ValeurTags.Add(AvailableTags.O_H1,          2);
-            ValeurTags.Add(AvailableTags.O_H2,          2);
-            ValeurTags.Add(AvailableTags.O_P,           2);
-            ValeurTags.Add(AvailableTags.O_DIV,         2);
-            ValeurTags.Add(AvailableTags.O_BLOCKQUOTE,  2);
-            ValeurTags.Add(AvailableTags.O_HEADER,      4);
-            ValeurTags.Add(AvailableTags.O_FOOTER,      4);
-            ValeurTags.Add(AvailableTags.O_ASIDE,       4);
-            ValeurTags.Add(AvailableTags.O_STRONG,      6);
-            ValeurTags.Add(AvailableTags.O_EM,          6);
-            ValeurTags.Add(AvailableTags.O_A,           8);
-            //valeur balises fermantes
-            ValeurTags.Add(AvailableTags.E_H1,          2);
-            ValeurTags.Add(AvailableTags.E_H2,          2);
-            ValeurTags.Add(AvailableTags.E_P,           2);
-            ValeurTags.Add(AvailableTags.E_DIV,         2);
-            ValeurTags.Add(AvailableTags.E_BLOCKQUOTE,  2);
-            ValeurTags.Add(AvailableTags.E_HEADER,      4);
-            ValeurTags.Add(AvailableTags.E_FOOTER,      4);
-            ValeurTags.Add(AvailableTags.E_ASIDE,       4);
-            ValeurTags.Add(AvailableTags.E_STRONG,      6);
-            ValeurTags.Add(AvailableTags.E_EM,          6);
-            ValeurTags.Add(AvailableTags.E_A,           8);
-            //valeur balises simples
-            ValeurTags.Add(AvailableTags.S_BR,          4);
-            ValeurTags.Add(AvailableTags.S_HR,          6);
-            ValeurTags.Add(AvailableTags.S_IMG,         8);
-
-            _type = HtmlTag.HTMLTagType.OPENTAG; 
+            _score = score;
+            _textEdit = textEdit;
         }
-
-        public enum AvailableTags
-        {
-            //balises ouvrantes
-            O_H1,
-            O_H2,
-            O_P,
-            O_DIV,
-            O_BLOCKQUOTE,
-            O_HEADER,
-            O_FOOTER,
-            O_ASIDE,
-            O_STRONG,
-            O_EM,
-            O_A,
-            //balises fermantes
-            E_H1,
-            E_H2,
-            E_P,
-            E_DIV,
-            E_BLOCKQUOTE,
-            E_HEADER,
-            E_FOOTER,
-            E_ASIDE,
-            E_STRONG,
-            E_EM,
-            E_A,
-            //balises simples
-            S_BR,
-            S_HR,
-            S_IMG
-
-        };
-
 
         public override void onPlay()
         {
@@ -93,7 +28,23 @@ namespace ChtemeleSurfaceApplication.Carte_classes
 
         public override void onValid()
         {
-            throw new NotImplementedException();
+            Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
+
+            if(_type == HtmlTag.HTMLTagType.OPENTAG)
+            {
+                HtmlElement._currentElement = new HtmlElement(_tag);
+                HtmlElement._currentElement.addContent(new HtmlText(_text));
+                Game_classes.Game.getInstance.getPage().bodyTag().addContent(HtmlElement._currentElement);
+            }
+            else 
+            {
+                if (HtmlElement._currentElement == null) return;
+                if (HtmlElement._currentElement.getTagname() == _tag)
+                    HtmlElement._currentElement.closeTag();
+
+            }
+            SurfaceWindow1.getInstance.PageCode.ShowCode();
+            SurfaceWindow1.getInstance.PageRendu.update();
         }
 
         public override void onDelete()
