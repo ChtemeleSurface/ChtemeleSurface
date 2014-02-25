@@ -19,8 +19,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             _type = type;
             _score = score;
             _textEdit = textEdit;
-
-                   }
+        }
 
         public override void onPlay()
         {
@@ -34,6 +33,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             if(_type == HtmlTag.HTMLTagType.OPENTAG)
             {
                 HtmlElement._currentElement = new HtmlElement(_tag);
+                HtmlElement._currentElement.addContent(new HtmlText(_text));
                 Game_classes.Game.getInstance.getPage().bodyTag().addContent(HtmlElement._currentElement);
             }
             else 

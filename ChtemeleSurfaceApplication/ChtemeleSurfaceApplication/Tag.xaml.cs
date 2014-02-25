@@ -40,6 +40,8 @@ namespace ChtemeleSurfaceApplication
                 Retirer_carte.Text = "Carte jouée, veuillez retirer cette carte.";
                 played = true;
             }
+            if (curCard.getTextEdit() == true)
+                curCard.setText(inputBox.Text);
             curCard.onValid();
             Game_classes.Game.getInstance.nextPlayer();
         }
