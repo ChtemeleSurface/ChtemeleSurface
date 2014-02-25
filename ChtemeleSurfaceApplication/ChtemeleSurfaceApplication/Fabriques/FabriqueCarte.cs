@@ -84,127 +84,127 @@ namespace ChtemeleSurfaceApplication.Fabriques
         //Balises ouvrante
         public static HTMLTagCarte CreateOpenH1()
         {
-            return new HTMLTagCarte("h1", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("h1", HtmlTag.HTMLTagType.OPENTAG, 2, true);
         }
 
         public static HTMLTagCarte CreateOpenH2()
         {
-            return new HTMLTagCarte("h2", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("h2", HtmlTag.HTMLTagType.OPENTAG, 2, true);
         }
 
         public static HTMLTagCarte CreateOpenP()
         {
-            return new HTMLTagCarte("p", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("p", HtmlTag.HTMLTagType.OPENTAG, 2, true);
         }
 
         public static HTMLTagCarte CreateOpenDIV()
         {
-            return new HTMLTagCarte("div", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("div", HtmlTag.HTMLTagType.OPENTAG, 2, true);
         }
 
         public static HTMLTagCarte CreateOpenBLOCKQUOTE()
         {
-            return new HTMLTagCarte("blockquote", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("blockquote", HtmlTag.HTMLTagType.OPENTAG, 2, true);
         }
 
         public static HTMLTagCarte CreateOpenHEADER()
         {
-            return new HTMLTagCarte("header", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("header", HtmlTag.HTMLTagType.OPENTAG, 4, true);
         }
 
         public static HTMLTagCarte CreateOpenFOOTER()
         {
-            return new HTMLTagCarte("footer", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("footer", HtmlTag.HTMLTagType.OPENTAG, 4, true);
         }
         public static HTMLTagCarte CreateOpenASIDE()
         {
-            return new HTMLTagCarte("aside", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("aside", HtmlTag.HTMLTagType.OPENTAG, 4, true);
         }
 
         public static HTMLTagCarte CreateOpenSTRONG()
         {
-            return new HTMLTagCarte("strong", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("strong", HtmlTag.HTMLTagType.OPENTAG, 6, true);
         }
 
         public static HTMLTagCarte CreateOpenEM()
         {
-            return new HTMLTagCarte("em", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("em", HtmlTag.HTMLTagType.OPENTAG, 6, true);
         }
 
         public static HTMLTagCarte CreateOpenA()
         {
-            return new HTMLTagCarte("a", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("a", HtmlTag.HTMLTagType.OPENTAG, 8, true);
         }
 
         //Balises fermante
         public static HTMLTagCarte CreateEndH1()
         {
-            return new HTMLTagCarte("h1", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("h1", HtmlTag.HTMLTagType.ENDTAG, 2, false);
         }
 
         public static HTMLTagCarte CreateEndH2()
         {
-            return new HTMLTagCarte("h2", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("h2", HtmlTag.HTMLTagType.ENDTAG, 2, false);
         }
 
         public static HTMLTagCarte CreateEndP()
         {
-            return new HTMLTagCarte("p", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("p", HtmlTag.HTMLTagType.ENDTAG, 2, false);
         }
 
         public static HTMLTagCarte CreateEndDIV()
         {
-            return new HTMLTagCarte("div", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("div", HtmlTag.HTMLTagType.ENDTAG, 2, false);
         }
 
         public static HTMLTagCarte CreateEndBLOCKQUOTE()
         {
-            return new HTMLTagCarte("blockquote", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("blockquote", HtmlTag.HTMLTagType.ENDTAG, 2, false);
         }
 
         public static HTMLTagCarte CreateEndHEADER()
         {
-            return new HTMLTagCarte("header", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("header", HtmlTag.HTMLTagType.ENDTAG, 4, false);
         }
 
         public static HTMLTagCarte CreateEndFOOTER()
         {
-            return new HTMLTagCarte("footer", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("footer", HtmlTag.HTMLTagType.ENDTAG, 4, false);
         }
         public static HTMLTagCarte CreateEndASIDE()
         {
-            return new HTMLTagCarte("aside", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("aside", HtmlTag.HTMLTagType.ENDTAG, 4, false);
         }
 
         public static HTMLTagCarte CreateEndSTRONG()
         {
-            return new HTMLTagCarte("strong", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("strong", HtmlTag.HTMLTagType.ENDTAG, 6, false);
         }
 
         public static HTMLTagCarte CreateEndEM()
         {
-            return new HTMLTagCarte("em", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("em", HtmlTag.HTMLTagType.ENDTAG, 6, false);
         }
 
         public static HTMLTagCarte CreateEndA()
         {
-            return new HTMLTagCarte("a", HtmlTag.HTMLTagType.ENDTAG, 1);
+            return new HTMLTagCarte("a", HtmlTag.HTMLTagType.ENDTAG, 8, false);
         }
 
         //Balises simples
         public static HTMLTagCarte CreateBR()
         {
-            return new HTMLTagCarte("br", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("br", HtmlTag.HTMLTagType.OPENTAG, 4, false);
         }
 
         public static HTMLTagCarte CreateHR()
         {
-            return new HTMLTagCarte("hr", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("hr", HtmlTag.HTMLTagType.OPENTAG, 6, false);
         }
 
         public static HTMLTagCarte CreateIMG()
         {
-            return new HTMLTagCarte("img", HtmlTag.HTMLTagType.OPENTAG, 1);
+            return new HTMLTagCarte("img", HtmlTag.HTMLTagType.OPENTAG, 8, false);
         }
 
         /*---- Cartes Attributs ----*/
