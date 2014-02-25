@@ -13,13 +13,25 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="150" />
             <RowDefinition Height="100" />
-        </Grid.RowDefinitions>
+			
+			</Grid.RowDefinitions>	
+
         <s:SurfaceTextBox Name="Retirer_carte" Grid.Row="0" Visibility="Hidden" Focusable="False"></s:SurfaceTextBox>
         <s:ElementMenu Name="ElemMenu" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
-            <s:ElementMenuItem Header="Valider" Click="valider"></s:ElementMenuItem>
-            <s:ElementMenuItem Header="Afficher la Doc"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="validate"  Header="Valider" Click="valider"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="doc" Header="Afficher la Doc"></s:ElementMenuItem>
+            
+
+        </s:ElementMenu>
+        <s:ElementMenu Name="choosePlayer" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+            <s:ElementMenuItem Name="doc1" Header="Afficher la Doc"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="PS" Header="PlayerS"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="PE" Header="PlayerE"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="PN" Header="PlayerN"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="PO" Header="PlayerO"></s:ElementMenuItem>
         </s:ElementMenu>
         <Ellipse Width="120" Height="120" Fill="BlueViolet" Grid.Row="1"></Ellipse>
-        <s:SurfaceTextBox Name="inputBox" Grid.Row="2"></s:SurfaceTextBox>
-    </Grid>
+		<s:SurfaceTextBox Name="inputBox" Grid.Row="2"></s:SurfaceTextBox>
+    </Grid>    
 </s:TagVisualization>
+
