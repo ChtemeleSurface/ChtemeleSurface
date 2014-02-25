@@ -50,7 +50,7 @@ namespace ChtemeleSurfaceApplication
 
         // Update                           ======================================================================================================
 
-        private void update()
+        public void update()
         {
             //webControl.Source = new Uri();
             _mdl.renderPage();
