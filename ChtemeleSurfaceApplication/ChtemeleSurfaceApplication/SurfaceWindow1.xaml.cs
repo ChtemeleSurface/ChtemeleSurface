@@ -163,10 +163,10 @@ namespace ChtemeleSurfaceApplication
         public void ComputeWidgetsPositions(double x, double y)
         {
             //Position des zones joueurs
-            ZoneJoueurS.Center = new Point(x / 2, y - (ZoneJoueurS.Height / 2));
-            ZoneJoueurO.Center = new Point(ZoneJoueurO.Height / 2, y / 2);
-            ZoneJoueurN.Center = new Point(x / 2, ZoneJoueurN.Height / 2);
-            ZoneJoueurE.Center = new Point(x - ZoneJoueurE.Height / 2, y / 2);
+            ZoneJoueurS.Center = new Point((x / 2) - 20, y - (ZoneJoueurS.Height / 2));
+            ZoneJoueurO.Center = new Point(ZoneJoueurO.Height / 2, (y / 2) - 20);
+            ZoneJoueurN.Center = new Point((x / 2) + 20, ZoneJoueurN.Height / 2);
+            ZoneJoueurE.Center = new Point(x - ZoneJoueurE.Height / 2, (y / 2) + 20);
 
             //taille et position du centralview
             CenterView.Height = y - ZoneJoueurS.Height - ZoneJoueurN.Height;
@@ -272,6 +272,13 @@ namespace ChtemeleSurfaceApplication
             _game.setNbPlayer(4);
             initGrid.Visibility = System.Windows.Visibility.Hidden;
             playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        public void updateZonesJoueur(){
+            ZoneJoueurE.update();
+            ZoneJoueurN.update();
+            ZoneJoueurO.update();
+            ZoneJoueurS.update();
         }
     }
 }

@@ -92,45 +92,21 @@
                     <custom:ZoneJoueur 
                         x:Name="ZoneJoueurS"
                         Orientation="0"
-                        CanMove="False"
-                        CanRotate="False"
-                        CanScale="False"
-                        Width="700"
-                        Height="150"
-                        Background="Transparent"
                         ></custom:ZoneJoueur>
 
                     <custom:ZoneJoueur 
                         x:Name="ZoneJoueurO"
                         Orientation="90"
-                        CanMove="False"
-                        CanRotate="False"
-                        CanScale="False"
-                        Width="700"
-                        Height="150"
-                        Background="Transparent"
                         ></custom:ZoneJoueur>
 
                     <custom:ZoneJoueur 
                         x:Name="ZoneJoueurN"
                         Orientation="180"
-                        CanMove="False"
-                        CanRotate="False"
-                        CanScale="False"
-                        Width="700"
-                        Height="150"
-                        Background="Transparent"
                         ></custom:ZoneJoueur>
 
                     <custom:ZoneJoueur 
                         x:Name="ZoneJoueurE"
                         Orientation="270"
-                        CanMove="False"
-                        CanRotate="False"
-                        CanScale="False"
-                        Width="700"
-                        Height="150"
-                        Background="Transparent"
                         ></custom:ZoneJoueur>
 
 

@@ -45,7 +45,7 @@ namespace ChtemeleSurfaceApplication
             if (curCard.getTextEdit() == true)
                 curCard.setText(inputBox.Text);
             curCard.onValid();
-            Game_classes.Game.getInstance.nextPlayer();
+            //Game_classes.Game.getInstance.nextPlayer();       // Maintenant cela se fait quand on appuie sur le bouton !
         }
 
         private void gotTag(object sender, RoutedEventArgs e)

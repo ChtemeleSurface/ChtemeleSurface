@@ -21,14 +21,33 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class ZoneJoueur : ScatterViewItem
     {
+        public bool active = false;
+
         public ZoneJoueur()
         {
             InitializeComponent();
+            ButtonNextPlayer.IsEnabled = false;
         }
 
         private void ButtonNextPlayer_Click(object sender, RoutedEventArgs e)
         {
+            Game_classes.Game.getInstance.nextPlayer();
+        }
 
+        public void update()
+        {
+            if (active)
+            {
+                ButtonNextPlayer.IsEnabled = true;
+                ButtonNextPlayer.Visibility = System.Windows.Visibility.Visible;
+                Background = new SolidColorBrush(Colors.Ivory);
+            }
+            else
+            {
+                ButtonNextPlayer.IsEnabled = false;
+                ButtonNextPlayer.Visibility = System.Windows.Visibility.Hidden;
+                Background = new SolidColorBrush(Colors.RosyBrown);
+            }
         }
     }
 }

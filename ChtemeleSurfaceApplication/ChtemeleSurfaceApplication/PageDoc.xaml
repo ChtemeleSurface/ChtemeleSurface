@@ -6,7 +6,7 @@
              xmlns:s="http://schemas.microsoft.com/surface/2008"
              xmlns:awe="http://schemas.awesomium.com/winfx"
              mc:Ignorable="d" 
-             Height="150" Width="360">
+             Height="150" Width="400">
     <Grid Name="grid">
         <awe:WebControl Name="webControl"></awe:WebControl>
     </Grid>
