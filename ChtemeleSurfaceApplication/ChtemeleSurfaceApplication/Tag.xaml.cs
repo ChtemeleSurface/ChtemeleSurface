@@ -192,6 +192,7 @@ namespace ChtemeleSurfaceApplication
                 }
                 else
                 {
+                    //tester si c'est une attaque
                     curCard = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].getCarte();
                     if (curCard.getTextEdit() == false)
                     {

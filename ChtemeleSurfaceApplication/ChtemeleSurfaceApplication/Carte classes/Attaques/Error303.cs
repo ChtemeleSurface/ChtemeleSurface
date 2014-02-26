@@ -8,9 +8,14 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
     class Error303 : AttaqueCarte
     {
       
+        public  Error303()
+            : base()
+        { 
+        }
+
         public override void onValid()
         {
-            throw new NotImplementedException();
+            // Elfe airien
         }
 
         public override void onDelete()

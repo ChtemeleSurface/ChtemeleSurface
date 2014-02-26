@@ -20,7 +20,9 @@ namespace ChtemeleSurfaceApplication.Effect_classes
 
         // Constructeur
         public CrashBrowser()
+            : base()
         {
+            _type = EffectType.CRASHBROWSER;
         }
     }
 }
