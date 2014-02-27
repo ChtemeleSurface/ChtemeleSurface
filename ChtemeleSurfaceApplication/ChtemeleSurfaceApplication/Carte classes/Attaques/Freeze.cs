@@ -15,8 +15,8 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
         public override void onValid()
         {
             //Game_classes.Player curplayer = Game_classes.Game.getInstance.getCurPlayer();
-            _cible.effects().Add(new Effect_classes.Freeze());
-            _cible.updateCarteJoueur();
+            target.effects().Add(new Effect_classes.Freeze());
+            target.updateCarteJoueur();
         }
         public override void onDelete()
         {

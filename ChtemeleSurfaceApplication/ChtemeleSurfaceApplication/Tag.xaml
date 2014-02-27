@@ -25,10 +25,10 @@
         
         <s:ElementMenu Name="MenuAttaque" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
             <s:ElementMenuItem Name="MA_Doc_Display" Header="Afficher la Doc"></s:ElementMenuItem>
-            <s:ElementMenuItem Name="MA_PlayerSud" Header="PlayerS"></s:ElementMenuItem>
-            <s:ElementMenuItem Name="MA_PlayerEst" Header="PlayerE"></s:ElementMenuItem>
-            <s:ElementMenuItem Name="MA_PlayerNord" Header="PlayerN"></s:ElementMenuItem>
-            <s:ElementMenuItem Name="MA_PlayerOuest" Header="PlayerO"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="MA_PlayerSud" Header="PlayerS" Click="validerSud"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="MA_PlayerEst" Header="PlayerE" Click="validerEst"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="MA_PlayerNord" Header="PlayerN" Click="validerNord"></s:ElementMenuItem>
+            <s:ElementMenuItem Name="MA_PlayerOuest" Header="PlayerO" Click="validerOuest"></s:ElementMenuItem>
         </s:ElementMenu>
         
         <Ellipse Width="120" Height="120" Fill="BlueViolet" Grid.Row="1"></Ellipse>

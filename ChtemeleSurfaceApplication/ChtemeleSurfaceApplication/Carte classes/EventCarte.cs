@@ -9,10 +9,12 @@ namespace ChtemeleSurfaceApplication
 {
     abstract class EventCarte : Carte
     {
+        public EventCarte() : base() { }
+
         override public abstract void onPlay();
         override public abstract void onValid();
         override public abstract void onDelete();
-        private Player _target;
+        public Player target;
 
     }
 }

@@ -124,7 +124,6 @@ namespace ChtemeleSurfaceApplication
         protected string _description;
         protected bool _textEdit;
         protected bool _imageEdit;
-        protected String _text;
         protected TypeCarte _type;
 
         // Constructeurs                    ======================================================================================================
@@ -152,6 +151,5 @@ namespace ChtemeleSurfaceApplication
         // Accesseurs / Mutateurs           ======================================================================================================
         public bool getTextEdit() { return _textEdit; }
         public bool getImageEdit() { return _imageEdit; }
-        public void setText(String text) { _text = text; }
     }
 }

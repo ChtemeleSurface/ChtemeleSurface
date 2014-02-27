@@ -211,43 +211,43 @@ namespace ChtemeleSurfaceApplication.Fabriques
         // Href pour <a>
         public static HTMLAttributeCarte CreateHREF()
         {
-            return new HTMLAttributeCarte("href", "");
+            return new HTMLAttributeCarte("href", "", 8);
         }
 
         // Src pour <img>
         public static HTMLAttributeCarte CreateSRC()
         {
-            return new HTMLAttributeCarte("src", "");
+            return new HTMLAttributeCarte("src", "", 8);
         }
 
         // alt pour <img>
         public static HTMLAttributeCarte CreateALT()
         {
-            return new HTMLAttributeCarte("alt", "");
+            return new HTMLAttributeCarte("alt", "", 8);
         }
 
         // class
         public static HTMLAttributeCarte CreateCLASS()
         {
-            return new HTMLAttributeCarte("alt", "");
+            return new HTMLAttributeCarte("alt", "", 4);
         }
 
         // id
         public static HTMLAttributeCarte CreateID()
         {
-            return new HTMLAttributeCarte("id", "");
+            return new HTMLAttributeCarte("id", "", 4);
         }
 
         // style
         public static HTMLAttributeCarte CreateSTYLE()
         {
-            return new HTMLAttributeCarte("style", "");
+            return new HTMLAttributeCarte("style", "", 4);
         }
 
         // title
         public static HTMLAttributeCarte CreateTITLE()
         {
-            return new HTMLAttributeCarte("title", "");
+            return new HTMLAttributeCarte("title", "", 4);
         }
     }
 }

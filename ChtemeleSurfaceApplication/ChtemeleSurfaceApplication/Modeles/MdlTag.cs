@@ -122,7 +122,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             else if (_card is AttaqueCarte) _typeCard = Carte.TypeCarte.ATTACK_CARD;
 
             //On détermine le layout à afficher
-            if (_typeCard == Carte.TypeCarte.HTML_TAG_CARD || _typeCard == Carte.TypeCarte.HTML_TAG_CARD)
+            if ((_typeCard == Carte.TypeCarte.HTML_TAG_CARD && ((HTMLTagCarte)_card).getTagtype() == HTML_classes.HtmlTag.HTMLTagType.OPENTAG) || _typeCard == Carte.TypeCarte.HTML_ATTRIB_CARD)
                 _hasTextEdit = true;
             if (_typeCard == Carte.TypeCarte.ATTACK_CARD)
                 _hasPlayerSelector = true;
@@ -133,6 +133,21 @@ namespace ChtemeleSurfaceApplication.Modeles
         public void validerCarte()
         {
             if (!isPlayable()) return;
+
+            //On configure la carte
+            if (_typeCard == Carte.TypeCarte.ADDON_CARD || _typeCard == Carte.TypeCarte.ATTACK_CARD)
+            {
+                ((EventCarte)_card).target = targetPlayer;
+            }
+            else if (_typeCard == Carte.TypeCarte.HTML_TAG_CARD || _typeCard == Carte.TypeCarte.HTML_ATTRIB_CARD)
+            {
+                ((HTMLCarte)_card).textcontent = textContent;
+            }
+            else if (_tag == (int)TagCorrespondance.ATTRIB_SRC)
+            {
+                //obtenir le chemin de l'image
+                ((HTMLAttributeCarte)_card).textcontent = textContent;
+            }
 
             _card.onValid();
             _played = true;
@@ -157,6 +172,25 @@ namespace ChtemeleSurfaceApplication.Modeles
             return (!_played
                 && !_multicard
                 && _game.getGameStarted());
+        }
+
+        public void setTargetPlayer(int position)
+        {
+            switch (position)
+            {
+                case Game_classes.Player.NORD:
+                    targetPlayer = _game.joueurN;
+                    break;
+                case Game_classes.Player.SUD:
+                    targetPlayer = _game.joueurS;
+                    break;
+                case Game_classes.Player.EST:
+                    targetPlayer = _game.joueurE;
+                    break;
+                case Game_classes.Player.OUEST:
+                    targetPlayer = _game.joueurO;
+                    break;
+            }
         }
 
         public void newTag() { nbCards++; }

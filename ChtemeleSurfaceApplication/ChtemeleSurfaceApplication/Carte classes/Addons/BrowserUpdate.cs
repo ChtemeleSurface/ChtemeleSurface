@@ -7,6 +7,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 {
     class BrowserUpdate : AddonCarte
     {
+        public BrowserUpdate() : base(){}
 
         public override void onValid()
         {

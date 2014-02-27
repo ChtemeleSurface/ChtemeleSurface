@@ -7,6 +7,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 {
     class Antivirus : AddonCarte
     {
+        public Antivirus() : base(){}
 
         public override void onDelete()
         {

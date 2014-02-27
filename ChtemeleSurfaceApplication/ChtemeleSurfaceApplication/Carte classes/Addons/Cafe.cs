@@ -7,6 +7,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 {
     class Cafe : AddonCarte
     {
+        public Cafe() : base(){}
 
         public override void onValid()
         {

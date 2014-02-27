@@ -60,10 +60,19 @@ namespace ChtemeleSurfaceApplication
 
         private void valider(object sender, RoutedEventArgs e)
         {
-            //_mdls[(int)VisualizedTag.Value].validerCarte();
+            //On saisit les informatiosn entrées dans le modèle
+            if (_mdl.hasTextEdit()) _mdl.textContent = TextSelector.Text;
+            if (_mdl.hasImageSelector()) _mdl.textContent = ImageSelector.Text;
+
+            //On valide la carte
             _mdl.validerCarte();
             updateAll();
         }
+
+        private void validerNord(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.NORD); valider(sender, e); }
+        private void validerSud(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.SUD); valider(sender, e); }
+        private void validerEst(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.EST); valider(sender, e); }
+        private void validerOuest(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.OUEST); valider(sender, e); }
 
         private void gotTag(object sender, RoutedEventArgs e)
         {

@@ -10,16 +10,17 @@ namespace ChtemeleSurfaceApplication.Carte_classes
     class HTMLTagCarte : HTMLCarte
     {
         private string _tag;
-        private HtmlTag.HTMLTagType _type;
-        private int _score;
+        private HtmlTag.HTMLTagType _tagtype;
 
         public HTMLTagCarte(string tag, HtmlTag.HTMLTagType type, int score, bool textEdit)
+            : base(score)
         {
             _tag = tag;
-            _type = type;
-            _score = score;
+            _tagtype = type;
             _textEdit = textEdit;
         }
+
+        public HtmlTag.HTMLTagType getTagtype() { return _tagtype; }
 
         public override void onPlay()
         {
@@ -28,12 +29,11 @@ namespace ChtemeleSurfaceApplication.Carte_classes
 
         public override void onValid()
         {
-            Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
 
-            if(_type == HtmlTag.HTMLTagType.OPENTAG)
+            if (_tagtype == HtmlTag.HTMLTagType.OPENTAG)
             {
                 HtmlElement._currentElement = new HtmlElement(_tag);
-                HtmlElement._currentElement.addContent(new HtmlText(_text));
+                HtmlElement._currentElement.addContent(new HtmlText(textcontent));
                 Game_classes.Game.getInstance.getPage().bodyTag().addContent(HtmlElement._currentElement);
             }
             else 
@@ -43,6 +43,9 @@ namespace ChtemeleSurfaceApplication.Carte_classes
                     HtmlElement._currentElement.closeTag();
 
             }
+
+            Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
+
             SurfaceWindow1.getInstance.PageCode.ShowCode();
             SurfaceWindow1.getInstance.PageRendu.update();
         }

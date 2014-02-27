@@ -7,6 +7,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 {
     class CodeInspector : AddonCarte
     {
+        public CodeInspector() : base(){}
 
         public override void onValid()
         {
