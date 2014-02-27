@@ -39,8 +39,8 @@ namespace ChtemeleSurfaceApplication
             InitializeComponent();
 
             //On masque par défaut tous les éléments du TagVisualiseur
-            Retirer_carte.Visibility = System.Windows.Visibility.Hidden;
-            Retirer_carte.IsEnabled = false;
+            Message.Visibility = System.Windows.Visibility.Hidden;
+            Message.IsEnabled = false;
 
             MenuDefault.Visibility = System.Windows.Visibility.Hidden;
             MenuDefault.IsEnabled = false;
@@ -48,11 +48,11 @@ namespace ChtemeleSurfaceApplication
             MenuAttaque.Visibility = System.Windows.Visibility.Hidden;
             MenuAttaque.IsEnabled = false;
 
-            inputBox.Visibility = System.Windows.Visibility.Hidden;
-            inputBox.IsEnabled = false;
+            TextSelector.Visibility = System.Windows.Visibility.Hidden;
+            TextSelector.IsEnabled = false;
 
-            imageSelector.Visibility = System.Windows.Visibility.Hidden;
-            imageSelector.IsEnabled = false;
+            ImageSelector.Visibility = System.Windows.Visibility.Hidden;
+            ImageSelector.IsEnabled = false;
 
         }
 
@@ -225,15 +225,15 @@ namespace ChtemeleSurfaceApplication
 
             foreach (KeyValuePair<int, Tag> view in _views)
             {
-                view.Value.Retirer_carte.Text = view.Value._mdl.getInfoMessage();
-                view.Value.Retirer_carte.Visibility = (view.Value.Retirer_carte.Text == "") ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                view.Value.Message.Text = view.Value._mdl.getInfoMessage();
+                view.Value.Message.Visibility = (view.Value.Message.Text == "") ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
 
                 if (view.Value._mdl.isPlayable())
                 {
                     if (view.Value._mdl.hasTextEdit())  // inputBox
                     {
-                        view.Value.inputBox.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                        view.Value.inputBox.IsEnabled = view.Value._mdl.isPlayable();
+                        view.Value.TextSelector.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                        view.Value.TextSelector.IsEnabled = view.Value._mdl.isPlayable();
                     }
 
 
@@ -254,8 +254,8 @@ namespace ChtemeleSurfaceApplication
 
                     if (view.Value._mdl.hasImageSelector())  // imageSelector
                     {
-                        view.Value.imageSelector.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
-                        view.Value.imageSelector.IsEnabled = view.Value._mdl.isPlayable();
+                        view.Value.ImageSelector.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                        view.Value.ImageSelector.IsEnabled = view.Value._mdl.isPlayable();
                     }
                 }
                 else
@@ -266,17 +266,29 @@ namespace ChtemeleSurfaceApplication
                     view.Value.MenuAttaque.Visibility = System.Windows.Visibility.Hidden;
                     view.Value.MenuAttaque.IsEnabled = false;
 
-                    view.Value.inputBox.Visibility = System.Windows.Visibility.Hidden;
-                    view.Value.inputBox.IsEnabled = false;
+                    view.Value.TextSelector.Visibility = System.Windows.Visibility.Hidden;
+                    view.Value.TextSelector.IsEnabled = false;
 
-                    view.Value.imageSelector.Visibility = System.Windows.Visibility.Hidden;
-                    view.Value.imageSelector.IsEnabled = false;
+                    view.Value.ImageSelector.Visibility = System.Windows.Visibility.Hidden;
+                    view.Value.ImageSelector.IsEnabled = false;
                 }
 
 
                 
             }
             
+        }
+
+        private void layoutMenu()
+        {
+            if (_mdl.hasPlayerSelector())    // MenuAttaque
+            {
+
+            }
+            else    // MenuDefault
+            {
+
+            }
         }
 
         private void attackPlayer(object sender, RoutedEventArgs e)
