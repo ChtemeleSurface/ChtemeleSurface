@@ -1,9 +1,11 @@
 ﻿using System.Windows;
 using Microsoft.Surface.Presentation.Controls;
+using System.Collections.Generic;
 
 using ChtemeleSurfaceApplication.Carte_classes.Addons;
 using ChtemeleSurfaceApplication.Carte_classes.Attaques;
 using ChtemeleSurfaceApplication.Carte_classes;
+using ChtemeleSurfaceApplication.Modeles;
 
 namespace ChtemeleSurfaceApplication
 {
@@ -14,7 +16,14 @@ namespace ChtemeleSurfaceApplication
     {
         // Constantes, enumérations         ======================================================================================================
 
+        private static Dictionary<int, MdlTag> _mdls = new Dictionary<int,MdlTag>();
+        private static Dictionary<int, Tag> _views = new Dictionary<int, Tag>();
+        private static int lastIDInsert = 0;
+
         // Variables membres                ======================================================================================================
+
+        private MdlTag _mdl = null;
+        private int _id;
 
         private bool played;
         public static int multiCardOnScreen = 0;
@@ -34,7 +43,11 @@ namespace ChtemeleSurfaceApplication
 
         private void valider(object sender, RoutedEventArgs e)
         {
-            if (played == false)
+            //_mdls[(int)VisualizedTag.Value].validerCarte();
+            _mdl.validerCarte();
+
+
+            /*if (played == false)
             {
                 //On valid() de la carte
 
@@ -48,27 +61,25 @@ namespace ChtemeleSurfaceApplication
                 curCard.setText(inputBox.Text);
             curCard.onValid();
             //Game_classes.Game.getInstance.nextPlayer();       // Maintenant cela se fait quand on appuie sur le bouton !
+             * 
+             * */
         }
 
         private void gotTag(object sender, RoutedEventArgs e)
         {
+            //On a récupéré un tag sur la table, on créée un MdlTag
+            ++lastIDInsert;
+            _id = lastIDInsert;
+            _mdl = new MdlTag((int)VisualizedTag.Value);
+            _mdls.Add(lastIDInsert, _mdl);
+            _views.Add(lastIDInsert, this);
 
+            updateAll();
+
+            /*
             int test3 = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].tag;
 
-            /* int hexa
-             * Besoin clavier
-             * 101 65
-             * 105 69
-             * 106 6A
-             * 111 6F
-             * 119 77
-             * 121 79
-             * 215 D7
-             * 219 DB
-             * 221 DD
-             * 229 E5
-             * 230 E6
-             * */
+
             if (test3 == 101 || test3 == 105 || test3 == 106 || test3 == 111
                 || test3 == 119 || test3 == 121 || test3 == 215 || test3 == 219 ||
                 test3 == 221 || test3 == 229 || test3 == 230)
@@ -77,26 +88,12 @@ namespace ChtemeleSurfaceApplication
                 Retirer_carte.Text = "clavier";
                 // SurfaceTextBox.IsEnabledProperty;
             }
-            /*
-            * Besoin image
-            * 217 D9
-            * 
-            * */
             if (test3 == 217)
             {
                 Retirer_carte.Visibility = System.Windows.Visibility.Visible;
                 Retirer_carte.Text = "image";
                 // SurfaceScrollViewer.ActualHeightProperty = 50;
             }
-            /*
-            * action
-            * 87 57
-            * 89 59
-            * 91 5B
-            * 81 51
-            * 94 5E
-            * 95 5F
-            * */
             if (test3 == 87 || test3 == 89 || test3 == 91 ||
                 test3 == 81 || test3 == 94 || test3 == 95)
             {
@@ -107,16 +104,15 @@ namespace ChtemeleSurfaceApplication
                 validate.Visibility = System.Windows.Visibility.Hidden;
 
                 // ne pas affichier les positions/joueurs inactives
-                /*if (players.joueurS == null)
+                if (players.joueurS == null)
                     PS.Visibility = System.Windows.Visibility.Hidden;
                 if (players.joueurE == null)
                     PE.Visibility = System.Windows.Visibility.Hidden;
-                /*if (players.joueurO == null)
+                if (players.joueurO == null)
                     PO.Visibility = System.Windows.Visibility.Hidden;
                 if (players.joueurN == null)
                     PN.Visibility = System.Windows.Visibility.Hidden;
-                */
-
+                
                 // desangage le joueur actif
                 switch (gameClass.getCurPlayer().position())
                 {
@@ -181,8 +177,8 @@ namespace ChtemeleSurfaceApplication
             else
             {
                 played = false;
-                /*if (carteAssoc == null)
-                    carteAssoc = new CarteAssoc();*/
+                if (carteAssoc == null)
+                    carteAssoc = new CarteAssoc();
                 if (multiCardOnScreen != 1)
                 {
                     ElemMenu.Visibility = System.Windows.Visibility.Hidden;
@@ -199,12 +195,36 @@ namespace ChtemeleSurfaceApplication
                         inputBox.Visibility = System.Windows.Visibility.Hidden;
                     }
                 }
-            }
+            }*/
         }
 
         private void lostTag(object sender, RoutedEventArgs e)
         {
-            multiCardOnScreen--;
+
+            _mdls.Remove(_id);
+            _views.Remove(_id);
+            _mdl.loseTag();
+            _mdl = null;
+            
+            updateAll();
+
+            //multiCardOnScreen--;
+        }
+
+        private static void updateAll()
+        {
+            foreach (KeyValuePair<int, MdlTag> mdl in _mdls)
+            {
+                mdl.Value.computeMulticard();
+
+            }
+
+            foreach (KeyValuePair<int, Tag> view in _views)
+            {
+                view.Value.Retirer_carte.Text = view.Value._mdl.getInfoMessage();
+                view.Value.Retirer_carte.Visibility = (view.Value.Retirer_carte.Text == "") ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+            }
+            
         }
 
         private void attackPlayer(object sender, RoutedEventArgs e)

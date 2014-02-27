@@ -70,6 +70,7 @@ namespace ChtemeleSurfaceApplication
 
         public delegate Carte generateCarte();
 
+
         // Variables membres                ======================================================================================================
 
         public int tag;
@@ -109,13 +110,22 @@ namespace ChtemeleSurfaceApplication
     {
         // Constantes, enumérations         ======================================================================================================
 
+        public enum TypeCarte
+        {
+            HTML_TAG_CARD,
+            HTML_ATTRIB_CARD,
+            ATTACK_CARD,
+            ADDON_CARD,
+            CARD    // Celui-ci est abstrait, il ne doit pas être utilisé hors de la classe Carte.
+        }
 
         // Variables membres                ======================================================================================================
 
-        private string _description;
+        protected string _description;
         protected bool _textEdit;
         protected bool _imageEdit;
         protected String _text;
+        protected TypeCarte _type;
 
         // Constructeurs                    ======================================================================================================
 
@@ -124,6 +134,7 @@ namespace ChtemeleSurfaceApplication
             loadDescription();
             _textEdit = false;
             _imageEdit = false;
+            _type = TypeCarte.CARD;
         }
 
         // Fonctionnalités                  ======================================================================================================
