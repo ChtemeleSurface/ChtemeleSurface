@@ -37,6 +37,23 @@ namespace ChtemeleSurfaceApplication
         public Tag()
         {
             InitializeComponent();
+
+            //On masque par défaut tous les éléments du TagVisualiseur
+            Retirer_carte.Visibility = System.Windows.Visibility.Hidden;
+            Retirer_carte.IsEnabled = false;
+
+            MenuDefault.Visibility = System.Windows.Visibility.Hidden;
+            MenuDefault.IsEnabled = false;
+
+            MenuAttaque.Visibility = System.Windows.Visibility.Hidden;
+            MenuAttaque.IsEnabled = false;
+
+            inputBox.Visibility = System.Windows.Visibility.Hidden;
+            inputBox.IsEnabled = false;
+
+            imageSelector.Visibility = System.Windows.Visibility.Hidden;
+            imageSelector.IsEnabled = false;
+
         }
 
         // Fonctionnalités                  ======================================================================================================
@@ -46,23 +63,6 @@ namespace ChtemeleSurfaceApplication
             //_mdls[(int)VisualizedTag.Value].validerCarte();
             _mdl.validerCarte();
             updateAll();
-
-            /*if (played == false)
-            {
-                //On valid() de la carte
-
-                Retirer_carte.Visibility = System.Windows.Visibility.Visible;
-                ElemMenu.Visibility = System.Windows.Visibility.Hidden;
-                inputBox.Visibility = System.Windows.Visibility.Hidden;
-                Retirer_carte.Text = "Carte jouée, veuillez retirer cette carte.";
-                played = true;
-            }
-            if (curCard.getTextEdit() == true)
-                curCard.setText(inputBox.Text);
-            curCard.onValid();
-            //Game_classes.Game.getInstance.nextPlayer();       // Maintenant cela se fait quand on appuie sur le bouton !
-             * 
-             * */
         }
 
         private void gotTag(object sender, RoutedEventArgs e)
@@ -74,9 +74,11 @@ namespace ChtemeleSurfaceApplication
             _mdls.Add(lastIDInsert, _mdl);
             _views.Add(lastIDInsert, this);
 
+            _mdl.onTag();
+
+            // Affichage du bon Layout
             updateAll();
 
-            _mdl.onTag();
 
             /*
             int test3 = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].tag;
@@ -225,7 +227,54 @@ namespace ChtemeleSurfaceApplication
             {
                 view.Value.Retirer_carte.Text = view.Value._mdl.getInfoMessage();
                 view.Value.Retirer_carte.Visibility = (view.Value.Retirer_carte.Text == "") ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
-                view.Value.ElemMenu.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+
+                if (view.Value._mdl.isPlayable())
+                {
+                    if (view.Value._mdl.hasTextEdit())  // inputBox
+                    {
+                        view.Value.inputBox.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                        view.Value.inputBox.IsEnabled = view.Value._mdl.isPlayable();
+                    }
+
+
+                    if (view.Value._mdl.hasPlayerSelector())    // MenuAttaque
+                    {
+                        view.Value.MenuAttaque.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                        view.Value.MenuAttaque.IsEnabled = view.Value._mdl.isPlayable();
+                        view.Value.MenuDefault.Visibility = System.Windows.Visibility.Hidden;
+                        view.Value.MenuDefault.IsEnabled = false;
+                    }
+                    else    // MenuDefault
+                    {
+                        view.Value.MenuDefault.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                        view.Value.MenuDefault.IsEnabled = view.Value._mdl.isPlayable();
+                        view.Value.MenuAttaque.Visibility = System.Windows.Visibility.Hidden;
+                        view.Value.MenuAttaque.IsEnabled = false;
+                    }
+
+                    if (view.Value._mdl.hasImageSelector())  // imageSelector
+                    {
+                        view.Value.imageSelector.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+                        view.Value.imageSelector.IsEnabled = view.Value._mdl.isPlayable();
+                    }
+                }
+                else
+                {
+                    view.Value.MenuDefault.Visibility = System.Windows.Visibility.Hidden;
+                    view.Value.MenuDefault.IsEnabled = false;
+
+                    view.Value.MenuAttaque.Visibility = System.Windows.Visibility.Hidden;
+                    view.Value.MenuAttaque.IsEnabled = false;
+
+                    view.Value.inputBox.Visibility = System.Windows.Visibility.Hidden;
+                    view.Value.inputBox.IsEnabled = false;
+
+                    view.Value.imageSelector.Visibility = System.Windows.Visibility.Hidden;
+                    view.Value.imageSelector.IsEnabled = false;
+                }
+
+
+                
             }
             
         }

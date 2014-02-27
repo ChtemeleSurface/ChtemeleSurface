@@ -17,21 +17,24 @@
 			</Grid.RowDefinitions>	
 
         <s:SurfaceTextBox Name="Retirer_carte" Grid.Row="0" Visibility="Hidden" Focusable="False"></s:SurfaceTextBox>
-        <s:ElementMenu Name="ElemMenu" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+        
+        <s:ElementMenu Name="MenuDefault" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
             <s:ElementMenuItem Name="validate"  Header="Valider" Click="valider"></s:ElementMenuItem>
             <s:ElementMenuItem Name="doc" Header="Afficher la Doc"></s:ElementMenuItem>
-            
-
         </s:ElementMenu>
-        <!--<s:ElementMenu Name="choosePlayer" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+        
+        <s:ElementMenu Name="MenuAttaque" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
             <s:ElementMenuItem Name="doc1" Header="Afficher la Doc"></s:ElementMenuItem>
             <s:ElementMenuItem Name="PS" Header="PlayerS"></s:ElementMenuItem>
             <s:ElementMenuItem Name="PE" Header="PlayerE"></s:ElementMenuItem>
             <s:ElementMenuItem Name="PN" Header="PlayerN"></s:ElementMenuItem>
             <s:ElementMenuItem Name="PO" Header="PlayerO"></s:ElementMenuItem>
-        </s:ElementMenu>-->
+        </s:ElementMenu>
+        
         <Ellipse Width="120" Height="120" Fill="BlueViolet" Grid.Row="1"></Ellipse>
-		<s:SurfaceTextBox Name="inputBox" Grid.Row="2"></s:SurfaceTextBox>
+        
+		<s:SurfaceTextBox Name="inputBox" Grid.Row="2" Background="Aquamarine"></s:SurfaceTextBox>
+        <s:SurfaceTextBox Name="imageSelector" Grid.Row="2" Background="Chocolate"></s:SurfaceTextBox>
     </Grid>    
 </s:TagVisualization>
 

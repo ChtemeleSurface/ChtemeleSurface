@@ -68,6 +68,7 @@ namespace ChtemeleSurfaceApplication.Modeles
         {
             public const string MULTICARD           = "Plusieurs cartes sur la table !";
             public const string PLAYED              = "Carte jouée, veuillez la défausser.";
+            public const string GAME_NOT_STARTED    = "La partie n'est pas encore commencée.";
         }
 
         private static int nbCards = 0;
@@ -101,6 +102,9 @@ namespace ChtemeleSurfaceApplication.Modeles
         // Accesseurs / Mutateurs           ======================================================================================================
 
         public bool isMulticard() { return _multicard; }
+        public bool hasTextEdit() { return _hasTextEdit; }
+        public bool hasImageSelector() { return _hasImageSelector; }
+        public bool hasPlayerSelector() { return _hasPlayerSelector; }
 
         // Fonctionnalités                  ======================================================================================================
 
@@ -141,7 +145,8 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         public string getInfoMessage()
         {
-            if (_multicard) return InfoMessage.MULTICARD;
+            if (!_game.getGameStarted()) return InfoMessage.GAME_NOT_STARTED;
+            else if (_multicard) return InfoMessage.MULTICARD;
             else if (_played) return InfoMessage.PLAYED;
 
             else return "";
