@@ -45,7 +45,7 @@ namespace ChtemeleSurfaceApplication
         {
             //_mdls[(int)VisualizedTag.Value].validerCarte();
             _mdl.validerCarte();
-
+            updateAll();
 
             /*if (played == false)
             {
@@ -75,6 +75,8 @@ namespace ChtemeleSurfaceApplication
             _views.Add(lastIDInsert, this);
 
             updateAll();
+
+            _mdl.onTag();
 
             /*
             int test3 = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].tag;
@@ -223,6 +225,7 @@ namespace ChtemeleSurfaceApplication
             {
                 view.Value.Retirer_carte.Text = view.Value._mdl.getInfoMessage();
                 view.Value.Retirer_carte.Visibility = (view.Value.Retirer_carte.Text == "") ? System.Windows.Visibility.Hidden : System.Windows.Visibility.Visible;
+                view.Value.ElemMenu.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             }
             
         }
