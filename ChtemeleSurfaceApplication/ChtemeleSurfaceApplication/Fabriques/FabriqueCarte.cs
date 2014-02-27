@@ -229,7 +229,7 @@ namespace ChtemeleSurfaceApplication.Fabriques
         // class
         public static HTMLAttributeCarte CreateCLASS()
         {
-            return new HTMLAttributeCarte("alt", "", 4);
+            return new HTMLAttributeCarte("class", "", 4);
         }
 
         // id

@@ -4,9 +4,109 @@ using System.Linq;
 using System.Text;
 using ChtemeleSurfaceApplication.Game_classes;
 using ChtemeleSurfaceApplication.Carte_classes;
+using ChtemeleSurfaceApplication.Fabriques;
 
 namespace ChtemeleSurfaceApplication.Modeles
 {
+    //Classe qui gère le lien entre le tag, la carte et sa description.
+    class CarteAssoc
+    {
+        // Constantes, enumérations         ======================================================================================================
+
+        public static Dictionary<int, CarteAssoc> AssocTagCarte = new Dictionary<int, CarteAssoc>
+            {
+                // cartes addons
+                {(int)MdlTag.TagCorrespondance.ANTIVIRUS,           new CarteAssoc((int)MdlTag.TagCorrespondance.ANTIVIRUS,             FabriqueCarte.CreateAntivirus(),        "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.BROWSER_UPDATE,      new CarteAssoc((int)MdlTag.TagCorrespondance.BROWSER_UPDATE,        FabriqueCarte.CreateBrowserUpdate(),    "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.CAFE,                new CarteAssoc((int)MdlTag.TagCorrespondance.CAFE,                  FabriqueCarte.CreateCafe(),             "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.CODE_INSPECTOR,      new CarteAssoc((int)MdlTag.TagCorrespondance.CODE_INSPECTOR,        FabriqueCarte.CreateCodeInspector(),    "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.CTRL_F5,             new CarteAssoc((int)MdlTag.TagCorrespondance.CTRL_F5,               FabriqueCarte.CreateCtrlF5(),           "ba", "ab")},
+                // cartes attaques
+                {(int)MdlTag.TagCorrespondance.CRASH_BROWSER,       new CarteAssoc((int)MdlTag.TagCorrespondance.CRASH_BROWSER,         FabriqueCarte.CreateCrashBrowser(),     "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ERROR_303,           new CarteAssoc((int)MdlTag.TagCorrespondance.ERROR_303,             FabriqueCarte.CreateError303(),         "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ERROR_403,           new CarteAssoc((int)MdlTag.TagCorrespondance.ERROR_403,             FabriqueCarte.CreateError403(),         "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ERROR_404,           new CarteAssoc((int)MdlTag.TagCorrespondance.ERROR_404,             FabriqueCarte.CreateError404(),         "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.FREEZE,              new CarteAssoc((int)MdlTag.TagCorrespondance.FREEZE,                FabriqueCarte.CreateFreeze(),           "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.MAN_IN_THE_MIDDLE,   new CarteAssoc((int)MdlTag.TagCorrespondance.MAN_IN_THE_MIDDLE,     FabriqueCarte.CreateManInTheMiddle(),   "ba", "ab")},
+                // cartes ouvrantes
+                {(int)MdlTag.TagCorrespondance.OPEN_H1,             new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_H1,               FabriqueCarte.CreateOpenH1(),           "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_H2,             new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_H2,               FabriqueCarte.CreateOpenH2(),           "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_P,              new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_P,                FabriqueCarte.CreateOpenP(),            "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_DIV,            new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_DIV,              FabriqueCarte.CreateOpenDIV(),          "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_BLOCKQUOTE,     new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_BLOCKQUOTE,       FabriqueCarte.CreateOpenBLOCKQUOTE(),   "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_HEADER,         new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_HEADER,           FabriqueCarte.CreateOpenHEADER(),       "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_FOOTER,         new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_FOOTER,           FabriqueCarte.CreateOpenFOOTER(),       "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_ASIDE,          new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_ASIDE,            FabriqueCarte.CreateOpenASIDE(),        "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_STRONG,         new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_STRONG,           FabriqueCarte.CreateOpenSTRONG(),       "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_EM,             new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_EM,               FabriqueCarte.CreateOpenEM(),           "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.OPEN_A,              new CarteAssoc((int)MdlTag.TagCorrespondance.OPEN_A,                FabriqueCarte.CreateOpenA(),            "ba", "ab")},
+                // cartes fermantes
+                {(int)MdlTag.TagCorrespondance.END_H1,              new CarteAssoc((int)MdlTag.TagCorrespondance.END_H1,                FabriqueCarte.CreateEndH1(),            "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_H2,              new CarteAssoc((int)MdlTag.TagCorrespondance.END_H2,                FabriqueCarte.CreateEndH2(),            "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_P,               new CarteAssoc((int)MdlTag.TagCorrespondance.END_P,                 FabriqueCarte.CreateEndP(),             "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_DIV,             new CarteAssoc((int)MdlTag.TagCorrespondance.END_DIV,               FabriqueCarte.CreateEndDIV(),           "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_BLOCKQUOTE,      new CarteAssoc((int)MdlTag.TagCorrespondance.END_BLOCKQUOTE,        FabriqueCarte.CreateEndBLOCKQUOTE(),    "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_HEADER,          new CarteAssoc((int)MdlTag.TagCorrespondance.END_HEADER,            FabriqueCarte.CreateEndHEADER(),        "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_FOOTER,          new CarteAssoc((int)MdlTag.TagCorrespondance.END_FOOTER,            FabriqueCarte.CreateEndFOOTER(),        "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_ASIDE,           new CarteAssoc((int)MdlTag.TagCorrespondance.END_ASIDE,             FabriqueCarte.CreateEndASIDE(),         "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_STRONG,          new CarteAssoc((int)MdlTag.TagCorrespondance.END_STRONG,            FabriqueCarte.CreateEndSTRONG(),        "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_EM,              new CarteAssoc((int)MdlTag.TagCorrespondance.END_EM,                FabriqueCarte.CreateEndEM(),            "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.END_A,               new CarteAssoc((int)MdlTag.TagCorrespondance.END_A,                 FabriqueCarte.CreateEndA(),             "ba", "ab")},
+                // cartes simple
+                {(int)MdlTag.TagCorrespondance.SINGLE_BR,           new CarteAssoc((int)MdlTag.TagCorrespondance.SINGLE_BR,             FabriqueCarte.CreateBR(),               "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.SINGLE_HR,           new CarteAssoc((int)MdlTag.TagCorrespondance.SINGLE_HR,             FabriqueCarte.CreateHR(),               "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.SINGLE_IMG,          new CarteAssoc((int)MdlTag.TagCorrespondance.SINGLE_IMG,            FabriqueCarte.CreateIMG(),              "ba", "ab")},
+                // cartes attributs
+                {(int)MdlTag.TagCorrespondance.ATTRIB_HREF,         new CarteAssoc((int)MdlTag.TagCorrespondance.ATTRIB_HREF,           FabriqueCarte.CreateHREF(),             "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ATTRIB_SRC,          new CarteAssoc((int)MdlTag.TagCorrespondance.ATTRIB_SRC,            FabriqueCarte.CreateSRC(),              "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ATTRIB_ALT,          new CarteAssoc((int)MdlTag.TagCorrespondance.ATTRIB_ALT,            FabriqueCarte.CreateALT(),              "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ATTRIB_CLASS,        new CarteAssoc((int)MdlTag.TagCorrespondance.ATTRIB_CLASS,          FabriqueCarte.CreateCLASS(),            "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ATTRIB_ID,           new CarteAssoc((int)MdlTag.TagCorrespondance.ATTRIB_ID,             FabriqueCarte.CreateID(),               "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ATTRIB_STYLE,        new CarteAssoc((int)MdlTag.TagCorrespondance.ATTRIB_STYLE,          FabriqueCarte.CreateSTYLE(),            "ba", "ab")},
+                {(int)MdlTag.TagCorrespondance.ATTRIB_TITLE,        new CarteAssoc((int)MdlTag.TagCorrespondance.ATTRIB_TITLE,          FabriqueCarte.CreateTITLE(),            "ba", "ab")}
+            };
+
+        public delegate Carte generateCarte();
+
+
+        // Variables membres                ======================================================================================================
+
+        public int tag;
+        public string descriptionFilename;
+        public string keyword;
+        public Carte card;
+
+        // Constructeurs                    ======================================================================================================
+
+        // Paramètres : t tag
+        //              delegate de construction
+        //              d uri du fichier de description
+        //              k mot-clé de la carte
+        public CarteAssoc(int t, Carte carte, string d, string k)
+        {
+            tag = t;
+            descriptionFilename = d;
+            keyword = k;
+            card = carte;
+        }
+
+        // Accesseurs / Mutateurs           ======================================================================================================
+
+        public Carte getCarte()
+        {
+            return card;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
     class MdlTag : Modele
     {
         // Constantes, enumérations         ======================================================================================================
