@@ -31,10 +31,10 @@
             <s:ElementMenuItem Name="MA_PlayerOuest" Header="PlayerO" Click="validerOuest"></s:ElementMenuItem>
         </s:ElementMenu>
         
-        <Ellipse Width="120" Height="120" Fill="BlueViolet" Grid.Row="1"></Ellipse>
-        
-		<s:SurfaceTextBox Name="TextSelector" Grid.Row="2" Background="Aquamarine"></s:SurfaceTextBox>
-        <s:SurfaceTextBox Name="ImageSelector" Grid.Row="2" Background="Chocolate"></s:SurfaceTextBox>
+        <Ellipse Width="120" Height="120" Fill="DarkRed" Grid.Row="1"></Ellipse>
+
+        <s:SurfaceTextBox Name="TextSelector" Grid.Row="2" Background="Black"></s:SurfaceTextBox>
+        <s:SurfaceTextBox Name="ImageSelector" Grid.Row="2" Background="MidnightBlue"></s:SurfaceTextBox>
     </Grid>    
 </s:TagVisualization>
 
