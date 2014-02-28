@@ -46,7 +46,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public static List<string> singleTags = new List<string>
         {
-            "br", "hr", "img"
+            "br", "hr", "img", "link"
         };
 
 

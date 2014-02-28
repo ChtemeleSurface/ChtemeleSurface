@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
+
+
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
     class HtmlPage
@@ -19,6 +21,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private HtmlElement _headTag;       //Balise HEAD
         private string _doctype;            //Balise DOCTYPE
         private string _title;              //Titre
+        private HtmlElement _cssTag;        //Balise LINK
+        public string cssFile = "Resources/css/chtemele.css";
 
         // Constructeurs                    ======================================================================================================
 
@@ -39,6 +43,12 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             _bodyTag.attributes.Add(new HtmlTagAttribute("id", "Tamère"));
             _bodyTag.closeTag();
             _mainTag.addContent(_bodyTag);
+
+            _cssTag = new HtmlElement("link");
+            _cssTag.attributes.Add(new HtmlTagAttribute("type", "text/css"));
+            _cssTag.attributes.Add(new HtmlTagAttribute("rel", "stylesheet"));
+            _cssTag.attributes.Add(new HtmlTagAttribute("href", cssFile));
+            _headTag.addContent(_cssTag);
 
             HtmlElement _baliseH1 = new HtmlElement("h1");
                 _baliseH1.addContent(new HtmlText("Ceci est un putain de titre !"));
@@ -96,6 +106,15 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             ret.addContent(new HtmlText(_title));
             ret.closeTag();
             return ret;
+        }
+
+        public void changeCSS(string f)
+        {
+            cssFile = f;
+            _cssTag.attributes.Clear();
+            _cssTag.attributes.Add(new HtmlTagAttribute("type", "text/css"));
+            _cssTag.attributes.Add(new HtmlTagAttribute("rel", "stylesheet"));
+            _cssTag.attributes.Add(new HtmlTagAttribute("href", cssFile));
         }
     }
 }

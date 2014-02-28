@@ -1,0 +1,11 @@
+/*      Chtemele.css
+Design ressemblant au renud natif du jeu Chtemele
+*/
+
+body
+{
+    background : #d00;
+    border : solid 20px #aaa;
+    color : #000;
+    text-shadow : #eee 0px 1px 0px;
+}

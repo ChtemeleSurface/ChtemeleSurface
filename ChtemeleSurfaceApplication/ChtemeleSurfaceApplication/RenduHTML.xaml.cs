@@ -54,8 +54,23 @@ namespace ChtemeleSurfaceApplication
         {
             //webControl.Source = new Uri();
             _mdl.renderPage();
-            webControl.LoadHTML(_mdl.getCode());
+            webControl.LoadHTML("http://pmob.co.uk/pob/rollovers.htm");
             //webControl.Reload(false);
+        }
+
+        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SurfaceButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SurfaceButton_Click_2(object sender, RoutedEventArgs e)
+        {
+
         }
 
        
