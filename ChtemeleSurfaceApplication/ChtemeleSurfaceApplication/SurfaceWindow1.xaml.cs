@@ -50,19 +50,19 @@ namespace ChtemeleSurfaceApplication
 
             tabCartes = new Dictionary<int, CartesJoueurs>
             {
-                {Player.SUD, CarteSud},
-                {Player.EST, CarteEst},
-                {Player.NORD, CarteNord},
-                {Player.OUEST, CarteOuest}
+                {Player.SUD, ZoneJoueurS.CarteJoueur},
+                {Player.EST, ZoneJoueurE.CarteJoueur},
+                {Player.NORD, ZoneJoueurN.CarteJoueur},
+                {Player.OUEST, ZoneJoueurO.CarteJoueur}
             };
 
             // Position des cartes joueurs
-            CarteNord.position = Player.NORD;
-            CarteSud.position = Player.SUD;
-            CarteEst.position = Player.EST;
-            CarteOuest.position = Player.OUEST;
+            ZoneJoueurN.CarteJoueur.position = Player.NORD;
+            ZoneJoueurS.CarteJoueur.position = Player.SUD;
+            ZoneJoueurE.CarteJoueur.position = Player.EST;
+            ZoneJoueurO.CarteJoueur.position = Player.OUEST;
 
-            // Documentations
+            /*// Documentations
             ScatterViewItem DocN = new ScatterViewItem();
             DocN.Content = new PageDoc();
 
@@ -73,7 +73,7 @@ namespace ChtemeleSurfaceApplication
             DocE.Content = new PageDoc();
 
             ScatterViewItem DocO = new ScatterViewItem();
-            DocO.Content = new PageDoc();
+            DocO.Content = new PageDoc();*/
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
@@ -163,14 +163,14 @@ namespace ChtemeleSurfaceApplication
         public void ComputeWidgetsPositions(double x, double y)
         {
             //Position des zones joueurs
-            PlayerSScatterView.Center = new Point(x / 2, y - (PlayerSScatterView.Height / 2));
-            PlayerOScatterView.Center = new Point(PlayerOScatterView.Height / 2, y / 2);
-            PlayerNScatterView.Center = new Point(x / 2, PlayerSScatterView.Height / 2);
-            PlayerEScatterView.Center = new Point(x - PlayerOScatterView.Height / 2, y / 2);
+            ZoneJoueurS.Center = new Point((x / 2) - 20, y - (ZoneJoueurS.Height / 2));
+            ZoneJoueurO.Center = new Point(ZoneJoueurO.Height / 2, (y / 2) - 20);
+            ZoneJoueurN.Center = new Point((x / 2) + 20, ZoneJoueurN.Height / 2);
+            ZoneJoueurE.Center = new Point(x - ZoneJoueurE.Height / 2, (y / 2) + 20);
 
             //taille et position du centralview
-            CenterView.Height = y - PlayerSScatterView.Height - PlayerNScatterView.Height;
-            CenterView.Width = x - PlayerOScatterView.Height - PlayerEScatterView.Height;
+            CenterView.Height = y - ZoneJoueurS.Height - ZoneJoueurN.Height;
+            CenterView.Width = x - ZoneJoueurO.Height - ZoneJoueurE.Height;
             CenterView.Center = new Point(x / 2.0, y / 2.0);
 
 
@@ -272,6 +272,13 @@ namespace ChtemeleSurfaceApplication
             _game.setNbPlayer(4);
             initGrid.Visibility = System.Windows.Visibility.Hidden;
             playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        public void updateZonesJoueur(){
+            ZoneJoueurE.update();
+            ZoneJoueurN.update();
+            ZoneJoueurO.update();
+            ZoneJoueurS.update();
         }
     }
 }

@@ -20,13 +20,10 @@ namespace ChtemeleSurfaceApplication.Effect_classes
 
         // Constructeur
         public Freeze()
+            : base()
         {
-
+            _type = EffectType.FREEZE;
         }
 
-        public void activate()
-        {
-
-        }
     }
 }

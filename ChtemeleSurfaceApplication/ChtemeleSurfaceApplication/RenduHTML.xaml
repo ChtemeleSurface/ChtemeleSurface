@@ -8,36 +8,28 @@
              mc:Ignorable="d" 
              Height="300" Width="300">
 
-    <awe:WebControl Name="webControl" Loaded="webControl_Loaded" ></awe:WebControl>
-
-    <!--<Grid Name="initGrid" Visibility="Visible">
+    <!--<awe:WebControl Name="webControl" Loaded="webControl_Loaded" ></awe:WebControl>-->
+    
+    <Grid Name="webGrid" Visibility="Visible">
 
         <awe:WebControl Name="webControl" Loaded="webControl_Loaded"></awe:WebControl>
                 
-                <Grid>
-                    
-                    <Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />   
+            </Grid.ColumnDefinitions>   
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
 
-                        <ColumnDefinition />
-                        
-                        <ColumnDefinition />
-                        
-                        <ColumnDefinition />
-                        
-                    </Grid.ColumnDefinitions>
-                    
-                    <Grid.RowDefinitions>
-                        
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
+            <s:SurfaceButton Grid.Row="1" Grid.Column="0" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="SurfaceButton_Click">CSS1</s:SurfaceButton>
+            <s:SurfaceButton Grid.Row="1" Grid.Column="1" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="SurfaceButton_Click_1">CSS2</s:SurfaceButton>
+            <s:SurfaceButton Grid.Row="1" Grid.Column="2" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="SurfaceButton_Click_2">CSS3</s:SurfaceButton>
+        </Grid>
 
-                    <s:SurfaceButton Grid.Row="1" Grid.Column="0" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="applyCss1">CSS1</s:SurfaceButton>
-                    <s:SurfaceButton Grid.Row="1" Grid.Column="1" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="applyCss2">CSS2</s:SurfaceButton>
-                    <s:SurfaceButton Grid.Row="1" Grid.Column="2" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="applyCss3">CSS3</s:SurfaceButton>
-                </Grid>
-
-    </Grid>-->
+    </Grid>
 
 
 </s:ScatterViewItem>

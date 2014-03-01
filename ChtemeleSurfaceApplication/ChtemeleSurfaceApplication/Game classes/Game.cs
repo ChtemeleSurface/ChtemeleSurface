@@ -73,6 +73,11 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public void nextPlayer()
         {
+            SurfaceWindow1.getInstance.ZoneJoueurE.active = false;
+            SurfaceWindow1.getInstance.ZoneJoueurN.active = false;
+            SurfaceWindow1.getInstance.ZoneJoueurO.active = false;
+            SurfaceWindow1.getInstance.ZoneJoueurS.active = false;
+
             bool pass = false;
             int curPos = _currentPlayer.position();
             while(pass == false)
@@ -84,6 +89,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                         else
                         {
                             _currentPlayer = joueurE;
+                            SurfaceWindow1.getInstance.ZoneJoueurE.active = true;
                             SurfaceWindow1.getInstance.rotateCenterView(270);
                             pass = true;
                         }
@@ -94,6 +100,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                     else
                     {
                         _currentPlayer = joueurS;
+                        SurfaceWindow1.getInstance.ZoneJoueurS.active = true;
                         SurfaceWindow1.getInstance.rotateCenterView(0);
                         pass = true;
                     }
@@ -104,6 +111,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                     else
                     {
                         _currentPlayer = joueurO;
+                        SurfaceWindow1.getInstance.ZoneJoueurO.active = true;
                         SurfaceWindow1.getInstance.rotateCenterView(90);
                         pass = true;
                     }
@@ -114,11 +122,16 @@ namespace ChtemeleSurfaceApplication.Game_classes
                     else
                     {
                         _currentPlayer = joueurN;
+                        SurfaceWindow1.getInstance.ZoneJoueurN.active = true;
                         SurfaceWindow1.getInstance.rotateCenterView(180);
                         pass = true;
                     }
                     break;
                 }
+
+
+
+            SurfaceWindow1.getInstance.updateZonesJoueur();
         }
 
         public void setNbPlayer(int nbPlayer)
@@ -135,13 +148,13 @@ namespace ChtemeleSurfaceApplication.Game_classes
         {
             //Supprime les zone de joueur inactive
             if(joueurS == null)
-                SurfaceWindow1.getInstance.PlayerSScatterView.Visibility = System.Windows.Visibility.Hidden;
+                SurfaceWindow1.getInstance.ZoneJoueurS.Visibility = System.Windows.Visibility.Hidden;
             if (joueurE == null)
-                SurfaceWindow1.getInstance.PlayerEScatterView.Visibility = System.Windows.Visibility.Hidden;
+                SurfaceWindow1.getInstance.ZoneJoueurE.Visibility = System.Windows.Visibility.Hidden;
             if (joueurO == null)
-                SurfaceWindow1.getInstance.PlayerOScatterView.Visibility = System.Windows.Visibility.Hidden;
+                SurfaceWindow1.getInstance.ZoneJoueurO.Visibility = System.Windows.Visibility.Hidden;
             if (joueurN == null)
-                SurfaceWindow1.getInstance.PlayerNScatterView.Visibility = System.Windows.Visibility.Hidden;
+                SurfaceWindow1.getInstance.ZoneJoueurN.Visibility = System.Windows.Visibility.Hidden;
 
             //initialise la parti avec un joueur aléatoire
             Random rnd = new Random();
@@ -154,31 +167,40 @@ namespace ChtemeleSurfaceApplication.Game_classes
                         if (joueurS != null)
                         {
                             _currentPlayer = joueurS;
+                            SurfaceWindow1.getInstance.rotateCenterView(0);
                             ok = true;
+                            SurfaceWindow1.getInstance.ZoneJoueurS.active = true;
                         }
                         break;
                     case 2:
                         if (joueurO != null)
                         {
                             _currentPlayer = joueurO;
+                            SurfaceWindow1.getInstance.rotateCenterView(90);
                             ok = true;
+                            SurfaceWindow1.getInstance.ZoneJoueurO.active = true;
                         }
                         break;
                     case 3:
                         if (joueurN != null)
                         {
                             _currentPlayer = joueurN;
+                            SurfaceWindow1.getInstance.rotateCenterView(180);
                             ok = true;
+                            SurfaceWindow1.getInstance.ZoneJoueurN.active = true;
                         }
                         break;
                     case 4:
                         if (joueurE != null)
                         {
                             _currentPlayer = joueurE;
+                            SurfaceWindow1.getInstance.rotateCenterView(270);
                             ok = true;
+                            SurfaceWindow1.getInstance.ZoneJoueurE.active = true;
                         }
                         break;
                 }
+                SurfaceWindow1.getInstance.updateZonesJoueur();
             }
             gameStarted = true;
         }

@@ -1,0 +1,27 @@
+﻿<s:ScatterViewItem x:Class="ChtemeleSurfaceApplication.ZoneJoueur"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:s="http://schemas.microsoft.com/surface/2008"
+             xmlns:custom="clr-namespace:ChtemeleSurfaceApplication"
+             mc:Ignorable="d"
+             Orientation="0"
+             CanMove="False"
+             CanRotate="False"
+             CanScale="False"
+             Width="740"
+             Height="150"
+             Background="Transparent">
+
+    <s:ScatterView Width="740" Height="150" Background="Transparent">
+        <s:ScatterViewItem CanMove="False" CanScale="False" CanRotate="False" Orientation="270" Center="20, 75" Height="40" MinHeight="40" Width="150" Background="Transparent">
+            <s:SurfaceButton Padding="0" Name="ButtonNextPlayer" Click="ButtonNextPlayer_Click" Visibility="Hidden" BorderThickness="0">
+                <TextBlock Width="150" Height="40" TextAlignment="Center" VerticalAlignment="Center">Au suivant !</TextBlock>
+            </s:SurfaceButton>
+        </s:ScatterViewItem>
+        <custom:PageDoc x:Name="Documentation" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="240, 75"></custom:PageDoc>
+        <custom:CartesJoueurs x:Name="CarteJoueur" Grid.Column="1" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="590, 75"></custom:CartesJoueurs>
+    </s:ScatterView>
+
+</s:ScatterViewItem>

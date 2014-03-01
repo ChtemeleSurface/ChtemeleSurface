@@ -96,13 +96,13 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public void updateCarteJoueur()
         {
             if(Game.getInstance.joueurE != null)
-                SurfaceWindow1.getInstance.CarteEst.update();
+                SurfaceWindow1.getInstance.ZoneJoueurE.CarteJoueur.update();
             if (Game.getInstance.joueurS != null)
-                SurfaceWindow1.getInstance.CarteSud.update();
+                SurfaceWindow1.getInstance.ZoneJoueurS.CarteJoueur.update();
             if (Game.getInstance.joueurN != null)
-                SurfaceWindow1.getInstance.CarteNord.update();
+                SurfaceWindow1.getInstance.ZoneJoueurN.CarteJoueur.update();
             if (Game.getInstance.joueurO != null)
-                SurfaceWindow1.getInstance.CarteOuest.update();
+                SurfaceWindow1.getInstance.ZoneJoueurO.CarteJoueur.update();
         }
     }
 }

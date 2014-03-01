@@ -32,63 +32,85 @@
         <Grid Name="playGrid" Visibility="Hidden">
             <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <s:TagVisualizer.Definitions>
-                    <s:TagVisualizationDefinition Value="0x6D" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x67" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x53" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x55" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x56" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-            
-                    <s:TagVisualizationDefinition Value="0x57" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x59" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x5B" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x51" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x5E" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x5F" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-            
-                    <s:TagVisualizationDefinition Value="0x65" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x69" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x6A" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x6B" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x6F" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x73" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x75" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x76" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x77" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x79" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x7A" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-            
-                    <s:TagVisualizationDefinition Value="0x7B" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x7D" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x7E" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x7F" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x9B" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x9D" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x9E" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x9F" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xB7" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xB9" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xBB" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x6D" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x67" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x53" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x55" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x56" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+
+                    <s:TagVisualizationDefinition Value="0x57" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x59" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x5B" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x51" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x5E" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x5F" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+
+                    <s:TagVisualizationDefinition Value="0x65" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x69" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x6A" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x6B" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x6F" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x73" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x75" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x76" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x77" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x79" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x7A" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+
+                    <s:TagVisualizationDefinition Value="0x7B" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x7D" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x7E" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x7F" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x9B" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x9D" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x9E" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x9F" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xB7" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xB9" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xBB" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
             
                     <s:TagVisualizationDefinition Value="0xBD" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
                     <s:TagVisualizationDefinition Value="0xBE" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
                     <s:TagVisualizationDefinition Value="0xBF" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-            
-                    <s:TagVisualizationDefinition Value="0xD7" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xD9" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xDB" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xDD" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xDF" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xE5" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xE6" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
+
+                    <s:TagVisualizationDefinition Value="0xD7" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xD9" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xDB" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xDD" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xDF" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xE5" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xE6" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
                 </s:TagVisualizer.Definitions>
 
                 <s:ScatterView Name="MainScatterView" SizeChanged="MainScatterView_SizeChanged">
                     <s:ScatterView.Background>
                         <ImageBrush ImageSource="resources/fond.jpg"/>
                     </s:ScatterView.Background>
-            
+                    
+                    
+                    <!--   Zones joueur   -->
+                    <custom:ZoneJoueur 
+                        x:Name="ZoneJoueurS"
+                        Orientation="0"
+                        ></custom:ZoneJoueur>
 
-                    <s:ScatterViewItem Name="PlayerSScatterView"
+                    <custom:ZoneJoueur 
+                        x:Name="ZoneJoueurO"
+                        Orientation="90"
+                        ></custom:ZoneJoueur>
+
+                    <custom:ZoneJoueur 
+                        x:Name="ZoneJoueurN"
+                        Orientation="180"
+                        ></custom:ZoneJoueur>
+
+                    <custom:ZoneJoueur 
+                        x:Name="ZoneJoueurE"
+                        Orientation="270"
+                        ></custom:ZoneJoueur>
+
+
+                    <!--<s:ScatterViewItem Name="PlayerSScatterView"
                                    Orientation="0"
                                    CanMove="False"
                                    CanRotate="False"
@@ -105,8 +127,8 @@
                             </Grid.ColumnDefinitions>
                             <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
                             <custom:PageDoc x:Name="DocSud" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0" ></custom:PageDoc>
-                            <!---
-                                <custom:Clavier x:Name="ClavierSud" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
+                            
+                                <custom:Clavier x:Name="ClavierSud" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier>
                         </Grid>
                 </s:ScatterViewItem>
 
@@ -127,7 +149,6 @@
                             </Grid.ColumnDefinitions>
                             <custom:CartesJoueurs x:Name="CarteOuest"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
                             <custom:PageDoc x:Name="DocOuest" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
-                            <!---  <custom:Clavier x:Name="ClavierOuest" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
                         </Grid>
                     </s:ScatterViewItem>
 
@@ -148,7 +169,6 @@
                             </Grid.ColumnDefinitions>
                             <custom:CartesJoueurs x:Name="CarteNord" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
                             <custom:PageDoc x:Name="DocNord"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
-                            <!---  <custom:Clavier x:Name="ClavierNord" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
                         </Grid>
                     </s:ScatterViewItem>
 
@@ -169,9 +189,8 @@
                             </Grid.ColumnDefinitions>
                             <custom:CartesJoueurs x:Name="CarteEst" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
                             <custom:PageDoc x:Name="DocEst"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
-                            <!---  <custom:Clavier x:Name="ClavierEst" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier> -->
                         </Grid>
-                    </s:ScatterViewItem>
+                    </s:ScatterViewItem>-->
 
                 <s:ScatterViewItem Name="CenterView"
                                    Orientation="0"

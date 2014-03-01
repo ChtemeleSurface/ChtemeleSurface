@@ -29,7 +29,7 @@ namespace ChtemeleSurfaceApplication
     {
         // Constantes, enumérations         ======================================================================================================
 
-        public static int tailleW = 200;
+        public static int tailleW = 300;
         public static int tailleH = 150;
 
         // Variables membres                ======================================================================================================

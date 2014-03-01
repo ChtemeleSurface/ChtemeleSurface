@@ -7,6 +7,8 @@ namespace ChtemeleSurfaceApplication
 {
     abstract class AddonCarte : EventCarte
     {
+        public AddonCarte() : base() { }
+
         override public void onPlay() { }
         override public void onValid() { }
     }

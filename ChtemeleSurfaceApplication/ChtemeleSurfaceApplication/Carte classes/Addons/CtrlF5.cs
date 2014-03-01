@@ -7,6 +7,8 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 {
     class CtrlF5 : AddonCarte
     {
+        public CtrlF5() : base(){}
+
         public override void onValid()
         {
             throw new NotImplementedException();
