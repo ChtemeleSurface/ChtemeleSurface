@@ -11,8 +11,8 @@ namespace ChtemeleSurfaceApplication.Game_classes
     {
         // Constantes, enumérations         ======================================================================================================
 
-        public static int defaultHandSize = 10;
-        public static int defaultNbSteps = 10;
+        public static int DEFAULT_HAND_SIZE = 10;
+        public static int DEFAULT_NB_STEPS = 10;
 
         //Singleton
         private static Game instance = null;
@@ -30,6 +30,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         private int _nbPlayer;      //Nombre de joueur
         private int _step;       // numéro du tour actuel
+        private int _playerStep;
         private int _nbSteps;    // nombre de tours de la partie
         private Player _currentPlayer;     // joueur actif
         private bool gameStarted;
@@ -49,7 +50,8 @@ namespace ChtemeleSurfaceApplication.Game_classes
             joueurE = null;
             joueurO = null;
             _step = 0;
-            _nbSteps = Game.defaultNbSteps;
+            _playerStep = 0;
+            _nbSteps = Game.DEFAULT_NB_STEPS;
             _currentPlayer = null;
             gameStarted = false;
             _page = new HtmlPage();
@@ -129,9 +131,14 @@ namespace ChtemeleSurfaceApplication.Game_classes
                     break;
                 }
 
-
-
             SurfaceWindow1.getInstance.updateZonesJoueur();
+
+            _playerStep++;
+            if (_playerStep >= _nbPlayer) _step++;
+            _playerStep %= _nbPlayer;
+
+            if (_step >= _nbSteps) endGame();
+
         }
 
         public void setNbPlayer(int nbPlayer)
@@ -203,6 +210,11 @@ namespace ChtemeleSurfaceApplication.Game_classes
                 SurfaceWindow1.getInstance.updateZonesJoueur();
             }
             gameStarted = true;
+        }
+
+        public void endGame()
+        {
+            // Fin de partie
         }
 
         private int Random()

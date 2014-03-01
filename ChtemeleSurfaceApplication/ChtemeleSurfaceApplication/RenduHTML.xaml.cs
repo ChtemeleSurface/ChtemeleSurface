@@ -54,7 +54,7 @@ namespace ChtemeleSurfaceApplication
         {
             //webControl.Source = new Uri();
             _mdl.renderPage();
-            webControl.LoadHTML("http://pmob.co.uk/pob/rollovers.htm");
+            webControl.LoadHTML(_mdl.getCode());
             //webControl.Reload(false);
         }
 
