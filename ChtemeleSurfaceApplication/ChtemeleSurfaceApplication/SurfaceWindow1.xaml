@@ -108,89 +108,10 @@
                         x:Name="ZoneJoueurE"
                         Orientation="270"
                         ></custom:ZoneJoueur>
-
-
-                    <!--<s:ScatterViewItem Name="PlayerSScatterView"
-                                   Orientation="0"
-                                   CanMove="False"
-                                   CanRotate="False"
-                                   CanScale="False"
-                                   Width="700"
-                                   Height="150"
-                                   Background="Transparent">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="200"/>
-                            </Grid.ColumnDefinitions>
-                            <custom:CartesJoueurs x:Name="CarteSud"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
-                            <custom:PageDoc x:Name="DocSud" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0" ></custom:PageDoc>
-                            
-                                <custom:Clavier x:Name="ClavierSud" CanScale="False" CanRotate="False" Orientation="0"></custom:Clavier>
-                        </Grid>
-                </s:ScatterViewItem>
-
-                <s:ScatterViewItem Name="PlayerOScatterView"
-                                   Orientation="90"
-                                   CanMove="False"
-                                   CanRotate="False"
-                                   CanScale="False"
-                                   Width="700"
-                                   Height="150"
-                                   Background="Transparent">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="200"/>
-                            </Grid.ColumnDefinitions>
-                            <custom:CartesJoueurs x:Name="CarteOuest"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
-                            <custom:PageDoc x:Name="DocOuest" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
-                        </Grid>
-                    </s:ScatterViewItem>
-
-                <s:ScatterViewItem Name="PlayerNScatterView"
-                                   Orientation="180"
-                                   CanMove="False"
-                                   CanRotate="False"
-                                   CanScale="False"
-                                   Width="700"
-                                   Height="150"
-                                   Background="Transparent">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="200"/>
-                            </Grid.ColumnDefinitions>
-                            <custom:CartesJoueurs x:Name="CarteNord" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
-                            <custom:PageDoc x:Name="DocNord"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
-                        </Grid>
-                    </s:ScatterViewItem>
-
-                <s:ScatterViewItem Name="PlayerEScatterView"
-                                   Orientation="270"
-                                   CanMove="False"
-                                   CanRotate="False"
-                                   CanScale="False"
-                                   Width="700"
-                                   Height="150"
-                                   Background="Transparent">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="200"/>
-                            </Grid.ColumnDefinitions>
-                            <custom:CartesJoueurs x:Name="CarteEst" CanScale="False" CanRotate="False" Orientation="0" Grid.Column="4"></custom:CartesJoueurs>
-                            <custom:PageDoc x:Name="DocEst"  CanScale="False" CanRotate="False" Orientation="0" Grid.Column="0"></custom:PageDoc>
-                        </Grid>
-                    </s:ScatterViewItem>-->
+                    
+                    
+                    
+                    
 
                 <s:ScatterViewItem Name="CenterView"
                                    Orientation="0"
@@ -202,12 +123,18 @@
                                    Background="AntiqueWhite">
                     <s:ScatterView Name="ScatterCenterView">
                         <custom:PageCode x:Name="PageCode" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:PageCode>
-                        <s:ScatterViewItem x:Name="ZonePioche" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></s:ScatterViewItem>
+                        <s:ScatterViewItem x:Name="ZonePioche" CanScale="False" CanMove="False" CanRotate="False" Orientation="0">
+                                <TextBlock Name="nbStep">
+                                    543
+                                </TextBlock>
+                            
+                        </s:ScatterViewItem>
                         <custom:RenduHTML x:Name="PageRendu" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:RenduHTML>
                     </s:ScatterView>
                 </s:ScatterViewItem>
         
                </s:ScatterView>
+                
             </s:TagVisualizer>
         </Grid>
     </Grid>
