@@ -280,5 +280,16 @@ namespace ChtemeleSurfaceApplication
             ZoneJoueurO.update();
             ZoneJoueurS.update();
         }
+
+        protected void OnPreviewTouchDown(object sender, TouchEventArgs e)
+        {
+            bool isFinger = e.TouchDevice.GetIsFingerRecognized();
+            bool isTag = e.TouchDevice.GetIsTagRecognized();
+
+            if (isFinger == false && isTag == false)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
