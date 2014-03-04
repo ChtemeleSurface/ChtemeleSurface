@@ -210,6 +210,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\lion.wav" />
+    <Content Include="Resources\maracas.wav" />
+    <Content Include="Resources\ouverture.wav" />
     <Resource Include="Resources\icon.jpg" />
     <Resource Include="Resources\fond.jpg" />
     <Resource Include="Resources\croix.bmp" />

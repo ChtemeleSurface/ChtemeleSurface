@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +17,7 @@ using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
 
 using ChtemeleSurfaceApplication.Game_classes;
+using System.Media;
 
 
 
@@ -258,6 +258,10 @@ namespace ChtemeleSurfaceApplication
             _game.setNbPlayer(2);
             initGrid.Visibility = System.Windows.Visibility.Hidden;
             playGrid.Visibility = System.Windows.Visibility.Visible;
+            using (SoundPlayer player = new SoundPlayer("Resources/ouverture.wav"))
+            {
+                player.Play();
+            }
         }
 
         private void threePlayer(object sender, RoutedEventArgs e)
@@ -265,6 +269,10 @@ namespace ChtemeleSurfaceApplication
             _game.setNbPlayer(3);
             initGrid.Visibility = System.Windows.Visibility.Hidden;
             playGrid.Visibility = System.Windows.Visibility.Visible;
+            using (SoundPlayer player = new SoundPlayer("Resources/ouverture.wav"))
+            {
+                player.Play();
+            }
         }
 
         private void fourPlayer(object sender, RoutedEventArgs e)
@@ -272,6 +280,10 @@ namespace ChtemeleSurfaceApplication
             _game.setNbPlayer(4);
             initGrid.Visibility = System.Windows.Visibility.Hidden;
             playGrid.Visibility = System.Windows.Visibility.Visible;
+            using (SoundPlayer player = new SoundPlayer("Resources/ouverture.wav"))
+            {
+                player.Play();
+            }
         }
 
         public void updateZonesJoueur(){
@@ -279,17 +291,6 @@ namespace ChtemeleSurfaceApplication
             ZoneJoueurN.update();
             ZoneJoueurO.update();
             ZoneJoueurS.update();
-        }
-
-        protected void OnPreviewTouchDown(object sender, TouchEventArgs e)
-        {
-            bool isFinger = e.TouchDevice.GetIsFingerRecognized();
-            bool isTag = e.TouchDevice.GetIsTagRecognized();
-
-            if (isFinger == false && isTag == false)
-            {
-                e.Handled = true;
-            }
         }
     }
 }
