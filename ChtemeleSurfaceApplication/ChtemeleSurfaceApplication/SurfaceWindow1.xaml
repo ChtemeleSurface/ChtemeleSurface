@@ -5,7 +5,8 @@
     xmlns:custom="clr-namespace:ChtemeleSurfaceApplication"
     Title="cHTeMeLe" Height="1080" Width="1920"
     Icon="resources/icon.jpg"
-    Loaded="SurfaceWindow_Loaded">
+    Loaded="SurfaceWindow_Loaded"
+    PreviewTouchDown="OnPreviewTouchDown">
     
     <Grid>
         <Grid Name="initGrid" Visibility="Visible">
@@ -120,7 +121,8 @@
                                    CanScale="False"
                                    Width="100"
                                    Height="100"
-                                   Background="AntiqueWhite">
+                                   Background="AntiqueWhite"
+                                   Focusable="False">
                     <s:ScatterView Name="ScatterCenterView">
                         <custom:PageCode x:Name="PageCode" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:PageCode>
                         <s:ScatterViewItem x:Name="ZonePioche" CanScale="False" CanMove="False" CanRotate="False" Orientation="0">
