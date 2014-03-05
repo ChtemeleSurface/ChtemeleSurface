@@ -11,15 +11,6 @@ using ChtemeleSurfaceApplication.Modeles;
 
 namespace ChtemeleSurfaceApplication
 {
-    
-
-
-
-
-
-
-
-
     abstract class Carte
     {
         // Constantes, enumérations         ======================================================================================================
