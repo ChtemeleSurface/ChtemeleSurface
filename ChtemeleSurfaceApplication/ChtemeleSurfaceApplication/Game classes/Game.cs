@@ -212,6 +212,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
                 SurfaceWindow1.getInstance.updateZonesJoueur();
             }
             gameStarted = true;
+            ChtemeleSurfaceApplication.SurfaceWindow1.getInstance.update();
         }
 
         public void endGame()

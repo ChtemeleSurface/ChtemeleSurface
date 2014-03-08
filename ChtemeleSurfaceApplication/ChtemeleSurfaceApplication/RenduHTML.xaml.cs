@@ -52,11 +52,22 @@ namespace ChtemeleSurfaceApplication
 
         public void update()
         {
-            //webControl.Source = new Uri();
             _mdl.renderPage();
-            webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
-            //string debug = System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html";
-            //webControl.Source = "./currenrHtml.html";   //TODO
+
+            //Les trucs ci-dessous sont tous des essais infructueux. Chier.
+
+            //webControl.Source = new Uri("file:\\\\\\" + System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
+            //Console.Write("file:\\\\\\" + System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
+
+            //webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
+            //Console.Write(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
+
+            //webControl.Source = new Uri(".\\currentHtml.html");
+            //('Console.Write(".\\currentHtml.html");
+
+            //webControl.DataContext = new Uri(System.IO.Directory.GetCurrentDirectory());
+            //webControl.LoadHTML(_mdl.getCode());
+
             webControl.Reload(false);
         }
 
