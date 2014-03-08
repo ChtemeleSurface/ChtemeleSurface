@@ -54,8 +54,10 @@ namespace ChtemeleSurfaceApplication
         {
             //webControl.Source = new Uri();
             _mdl.renderPage();
-            webControl.LoadHTML(_mdl.getCode());
-            //webControl.Reload(false);
+            webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
+            string debug = System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html";
+            //webControl.Source = "./currenrHtml.html";   //TODO
+            webControl.Reload(false);
         }
 
         private void SurfaceButton_Click(object sender, RoutedEventArgs e)

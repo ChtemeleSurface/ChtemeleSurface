@@ -67,6 +67,9 @@ namespace ChtemeleSurfaceApplication
             //On valide la carte
             _mdl.validerCarte();
             updateAll();
+
+            //On actualise le jeu
+            ChtemeleSurfaceApplication.SurfaceWindow1.getInstance.update();
         }
 
         private void validerNord(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.NORD); valider(sender, e); }
@@ -87,6 +90,8 @@ namespace ChtemeleSurfaceApplication
 
             // Affichage du bon Layout
             updateAll();
+
+            
 
 
             /*

@@ -17,6 +17,8 @@ using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
 
+using ChtemeleSurfaceApplication.Modeles;
+
 using ChtemeleSurfaceApplication.Game_classes;
 
 
@@ -35,7 +37,8 @@ namespace ChtemeleSurfaceApplication
 
         // Variables membres                ======================================================================================================
 
-        private Game _game;                                         // Référence vers le jeu
+        private MdlGame _mdl;
+        //private Game _game;                                         // Référence vers le jeu
         public static Dictionary<int, CartesJoueurs> tabCartes;     // Tableau des cartes Joueurs localisées
 
         // Constructeurs                    ======================================================================================================
@@ -62,19 +65,6 @@ namespace ChtemeleSurfaceApplication
             ZoneJoueurE.CarteJoueur.position = Player.EST;
             ZoneJoueurO.CarteJoueur.position = Player.OUEST;
 
-            /*// Documentations
-            ScatterViewItem DocN = new ScatterViewItem();
-            DocN.Content = new PageDoc();
-
-            ScatterViewItem DocS = new ScatterViewItem();
-            DocS.Content = new PageDoc();
-
-            ScatterViewItem DocE = new ScatterViewItem();
-            DocE.Content = new PageDoc();
-
-            ScatterViewItem DocO = new ScatterViewItem();
-            DocO.Content = new PageDoc();*/
-
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
 
@@ -82,6 +72,12 @@ namespace ChtemeleSurfaceApplication
         }
 
         // Evénements                  ======================================================================================================
+
+        private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            //_game = Game.getInstance;
+            _mdl = new MdlGame();
+        }
 
         /// <summary>
         /// Occurs when the window is about to close. 
@@ -159,8 +155,68 @@ namespace ChtemeleSurfaceApplication
             ComputeWidgetsPositions(e.NewSize.Width, e.NewSize.Height);
         }
 
+        public void rotateCenterView(int angle)
+        {
+            switch(angle)
+            {
+                case 0:
+                    CenterView.Orientation = 0;
+                    PageCode.Orientation = 0;
+                    PageRendu.Orientation = 0;
+                    break;
+                case 90:
+                    CenterView.Orientation = 0;
+                    PageCode.Orientation = 90;
+                    PageRendu.Orientation = 90;
+                    break;
+                case 180:
+                    CenterView.Orientation = 180;
+                    PageCode.Orientation = 0;
+                    PageRendu.Orientation = 0;
+                    break;
+                case 270:
+                    CenterView.Orientation = 180;
+                    PageCode.Orientation = 90;
+                    PageRendu.Orientation = 90;
+                    break;
+            }
+        }
 
-        public void ComputeWidgetsPositions(double x, double y)
+        private void twoPlayer(object sender, RoutedEventArgs e)
+        {
+            _mdl.setNbPlayer(2);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void threePlayer(object sender, RoutedEventArgs e)
+        {
+            _mdl.setNbPlayer(3);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void fourPlayer(object sender, RoutedEventArgs e)
+        {
+            _mdl.setNbPlayer(4);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        protected void OnPreviewTouchDown(object sender, TouchEventArgs e)
+        {
+            bool isFinger = e.TouchDevice.GetIsFingerRecognized();
+            bool isTag = e.TouchDevice.GetIsTagRecognized();
+
+            if (isFinger == false && isTag == false)
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        // Fonctionnalités                  ======================================================================================================
+        private void ComputeWidgetsPositions(double x, double y)
         {
             //Position des zones joueurs
             ZoneJoueurS.Center = new Point((x / 2) - 20, y - (ZoneJoueurS.Height / 2));
@@ -172,8 +228,6 @@ namespace ChtemeleSurfaceApplication
             CenterView.Height = y - ZoneJoueurS.Height - ZoneJoueurN.Height;
             CenterView.Width = x - ZoneJoueurO.Height - ZoneJoueurE.Height;
             CenterView.Center = new Point(x / 2.0, y / 2.0);
-
-
 
             // Taille du scatter contenant les deux rendus + la zone de pioche
             ScatterCenterView.Height = CenterView.Height;
@@ -215,81 +269,24 @@ namespace ChtemeleSurfaceApplication
                 PageRendu.Height = (ScatterCenterView.Width - ZonePioche.Width) / 2.0;
             }
 
-
             ZonePioche.Center = new Point(ScatterCenterView.Width / 2.0, ScatterCenterView.Height / 2.0);
             PageCode.Center = new Point(PageCode.Width / 2.0, ScatterCenterView.Height / 2.0);
             PageRendu.Center = new Point(ScatterCenterView.Width - PageRendu.Width / 2.0, ScatterCenterView.Height / 2.0);
         }
 
-        private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
+        public void updateZonesJoueur()
         {
-            _game = Game.getInstance;
-        }
-
-        public void rotateCenterView(int angle)
-        {
-            switch(angle)
-            {
-                case 0:
-                    CenterView.Orientation = 0;
-                    PageCode.Orientation = 0;
-                    PageRendu.Orientation = 0;
-                    break;
-                case 90:
-                    CenterView.Orientation = 0;
-                    PageCode.Orientation = 90;
-                    PageRendu.Orientation = 90;
-                    break;
-                case 180:
-                    CenterView.Orientation = 180;
-                    PageCode.Orientation = 0;
-                    PageRendu.Orientation = 0;
-                    break;
-                case 270:
-                    CenterView.Orientation = 180;
-                    PageCode.Orientation = 90;
-                    PageRendu.Orientation = 90;
-                    break;
-            }
-        }
-
-        private void twoPlayer(object sender, RoutedEventArgs e)
-        {
-            _game.setNbPlayer(2);
-            initGrid.Visibility = System.Windows.Visibility.Hidden;
-            playGrid.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        private void threePlayer(object sender, RoutedEventArgs e)
-        {
-            _game.setNbPlayer(3);
-            initGrid.Visibility = System.Windows.Visibility.Hidden;
-            playGrid.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        private void fourPlayer(object sender, RoutedEventArgs e)
-        {
-            _game.setNbPlayer(4);
-            initGrid.Visibility = System.Windows.Visibility.Hidden;
-            playGrid.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        public void updateZonesJoueur(){
             ZoneJoueurE.update();
             ZoneJoueurN.update();
             ZoneJoueurO.update();
             ZoneJoueurS.update();
         }
 
-        protected void OnPreviewTouchDown(object sender, TouchEventArgs e)
-        {
-            bool isFinger = e.TouchDevice.GetIsFingerRecognized();
-            bool isTag = e.TouchDevice.GetIsTagRecognized();
+        // Update                           ======================================================================================================
 
-            if (isFinger == false && isTag == false)
-            {
-                e.Handled = true;
-            }
+        public void update()
+        {
+            _mdl.saveHTML();
         }
     }
 }

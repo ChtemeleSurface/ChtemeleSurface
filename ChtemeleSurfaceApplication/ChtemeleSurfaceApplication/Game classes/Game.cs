@@ -70,6 +70,8 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public HtmlPage getPage() { return _page; }
         public bool getGameStarted() { return gameStarted; }
         public Player getCurPlayer() { return _currentPlayer; }
+        public int getCurrentStep() { return _step; }
+        public int getTotalSteps() { return _nbSteps; }
 
         // Fonctionnalités                  ======================================================================================================
 

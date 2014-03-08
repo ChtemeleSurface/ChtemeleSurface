@@ -85,6 +85,7 @@
     </ApplicationDefinition>
     <Compile Include="Fabriques\FabriqueCarte.cs" />
     <Compile Include="Modeles\MdlCarteJoueur.cs" />
+    <Compile Include="Modeles\MdlGame.cs" />
     <Compile Include="Modeles\MdlPageCode.cs" />
     <Compile Include="Modeles\MdlRenduHtml.cs" />
     <Compile Include="Modeles\MdlTag.cs" />
