@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +19,7 @@ using Microsoft.Surface.Presentation.Input;
 using ChtemeleSurfaceApplication.Modeles;
 
 using ChtemeleSurfaceApplication.Game_classes;
+using System.Media;
 
 
 
@@ -276,6 +276,70 @@ namespace ChtemeleSurfaceApplication
 
         public void updateZonesJoueur()
         {
+            _game = Game.getInstance;
+        }
+
+        public void rotateCenterView(int angle)
+        {
+            switch(angle)
+            {
+                case 0:
+                    CenterView.Orientation = 0;
+                    PageCode.Orientation = 0;
+                    PageRendu.Orientation = 0;
+                    break;
+                case 90:
+                    CenterView.Orientation = 0;
+                    PageCode.Orientation = 90;
+                    PageRendu.Orientation = 90;
+                    break;
+                case 180:
+                    CenterView.Orientation = 180;
+                    PageCode.Orientation = 0;
+                    PageRendu.Orientation = 0;
+                    break;
+                case 270:
+                    CenterView.Orientation = 180;
+                    PageCode.Orientation = 90;
+                    PageRendu.Orientation = 90;
+                    break;
+            }
+        }
+
+        private void twoPlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(2);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+            using (SoundPlayer player = new SoundPlayer("Resources/ouverture.wav"))
+            {
+                player.Play();
+            }
+        }
+
+        private void threePlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(3);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+            using (SoundPlayer player = new SoundPlayer("Resources/ouverture.wav"))
+            {
+                player.Play();
+            }
+        }
+
+        private void fourPlayer(object sender, RoutedEventArgs e)
+        {
+            _game.setNbPlayer(4);
+            initGrid.Visibility = System.Windows.Visibility.Hidden;
+            playGrid.Visibility = System.Windows.Visibility.Visible;
+            using (SoundPlayer player = new SoundPlayer("Resources/ouverture.wav"))
+            {
+                player.Play();
+            }
+        }
+
+        public void updateZonesJoueur(){
             ZoneJoueurE.update();
             ZoneJoueurN.update();
             ZoneJoueurO.update();

@@ -6,6 +6,7 @@ using ChtemeleSurfaceApplication.Carte_classes.Addons;
 using ChtemeleSurfaceApplication.Carte_classes.Attaques;
 using ChtemeleSurfaceApplication.Carte_classes;
 using ChtemeleSurfaceApplication.Modeles;
+using System.Media;
 
 namespace ChtemeleSurfaceApplication
 {
@@ -70,6 +71,10 @@ namespace ChtemeleSurfaceApplication
 
             //On actualise le jeu
             ChtemeleSurfaceApplication.SurfaceWindow1.getInstance.update();
+            using (SoundPlayer player = new SoundPlayer("Resources/lion.wav"))
+            {
+                player.Play();
+            }
         }
 
         private void validerNord(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.NORD); valider(sender, e); }
@@ -97,123 +102,6 @@ namespace ChtemeleSurfaceApplication
             /*
             int test3 = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].tag;
 
-
-            if (test3 == 101 || test3 == 105 || test3 == 106 || test3 == 111
-                || test3 == 119 || test3 == 121 || test3 == 215 || test3 == 219 ||
-                test3 == 221 || test3 == 229 || test3 == 230)
-            {
-                Retirer_carte.Visibility = System.Windows.Visibility.Visible;
-                Retirer_carte.Text = "clavier";
-                // SurfaceTextBox.IsEnabledProperty;
-            }
-            if (test3 == 217)
-            {
-                Retirer_carte.Visibility = System.Windows.Visibility.Visible;
-                Retirer_carte.Text = "image";
-                // SurfaceScrollViewer.ActualHeightProperty = 50;
-            }
-            if (test3 == 87 || test3 == 89 || test3 == 91 ||
-                test3 == 81 || test3 == 94 || test3 == 95)
-            {
-                Retirer_carte.Visibility = System.Windows.Visibility.Visible;
-                Retirer_carte.Text = "Choisir joueur pour action";
-                // affiche la doc au centre car première position dans XAML
-                doc1.Visibility = System.Windows.Visibility.Visible;
-                validate.Visibility = System.Windows.Visibility.Hidden;
-
-                // ne pas affichier les positions/joueurs inactives
-                if (players.joueurS == null)
-                    PS.Visibility = System.Windows.Visibility.Hidden;
-                if (players.joueurE == null)
-                    PE.Visibility = System.Windows.Visibility.Hidden;
-                if (players.joueurO == null)
-                    PO.Visibility = System.Windows.Visibility.Hidden;
-                if (players.joueurN == null)
-                    PN.Visibility = System.Windows.Visibility.Hidden;
-                
-                // desangage le joueur actif
-                switch (gameClass.getCurPlayer().position())
-                {
-                    case 1:
-                        {
-                            PN.Visibility = System.Windows.Visibility.Hidden;
-                        } break;
-                    case 2:
-                        {
-                            PE.Visibility = System.Windows.Visibility.Hidden;
-                        } break;
-                    case 3:
-                        {
-                            PS.Visibility = System.Windows.Visibility.Hidden;
-                        } break;
-                    case 4:
-                        {
-                            PO.Visibility = System.Windows.Visibility.Hidden;
-                        } break;
-                }
-
-                // réception de la valeur retourné par le clic
-                int playerChoosen;
-
-
-
-                // lancera donc l'effet "test3" sur playerChoosen en modifiant ses variables
-                switch (test3)
-                {
-                    case 87:
-                        {
-
-                        } break;
-                    case 89:
-                        {
-
-                        } break;
-                    case 91:
-                        {
-
-                        } break;
-                    case 81:
-                        {
-
-                        } break;
-                    case 94:
-                        {
-
-                        } break;
-                    case 95:
-                        {
-
-                        } break;
-                }
-            }
-
-
-            multiCardOnScreen++;
-            //Bloque les tags si la parti n'est pas initialisé
-            if (Game_classes.Game.getInstance.getGameStarted() == false)
-                this.Visibility = System.Windows.Visibility.Collapsed;
-            else
-            {
-                played = false;
-                if (carteAssoc == null)
-                    carteAssoc = new CarteAssoc();
-                if (multiCardOnScreen != 1)
-                {
-                    ElemMenu.Visibility = System.Windows.Visibility.Hidden;
-                    Retirer_carte.Visibility = System.Windows.Visibility.Visible;
-                    inputBox.Visibility = System.Windows.Visibility.Hidden;
-                    Retirer_carte.Text = "Plusieurs cartes sont détectées, veuillez retirer cette carte.";
-                }
-                else
-                {
-                    //tester si c'est une attaque
-                    curCard = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].getCarte();
-                    if (curCard.getTextEdit() == false)
-                    {
-                        inputBox.Visibility = System.Windows.Visibility.Hidden;
-                    }
-                }
-            }*/
         }
 
         private void lostTag(object sender, RoutedEventArgs e)

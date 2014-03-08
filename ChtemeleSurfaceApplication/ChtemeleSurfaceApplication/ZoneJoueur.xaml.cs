@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Microsoft.Surface.Presentation.Controls;
+using System.Media;
 
 namespace ChtemeleSurfaceApplication
 {
@@ -32,15 +33,22 @@ namespace ChtemeleSurfaceApplication
         private void ButtonNextPlayer_Click(object sender, RoutedEventArgs e)
         {
             Game_classes.Game.getInstance.nextPlayer();
+
+            using (SoundPlayer player = new SoundPlayer("Resources/lion.wav"))
+            {
+                player.Play();
+            }
         }
 
         public void update()
         {
+
             if (active)
             {
                 ButtonNextPlayer.IsEnabled = true;
                 ButtonNextPlayer.Visibility = System.Windows.Visibility.Visible;
                 Background = new SolidColorBrush(Colors.Ivory);
+
             }
             else
             {

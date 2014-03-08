@@ -5,8 +5,7 @@
     xmlns:custom="clr-namespace:ChtemeleSurfaceApplication"
     Title="cHTeMeLe" Height="1080" Width="1920"
     Icon="resources/icon.jpg"
-    Loaded="SurfaceWindow_Loaded"
-    PreviewTouchDown="OnPreviewTouchDown">
+    Loaded="SurfaceWindow_Loaded">
     
     <Grid>
         <Grid Name="initGrid" Visibility="Visible">
