@@ -95,13 +95,6 @@ namespace ChtemeleSurfaceApplication
 
             // Affichage du bon Layout
             updateAll();
-
-            
-
-
-            /*
-            int test3 = CarteAssoc.AssocTagCarte[(int)VisualizedTag.Value].tag;
-
         }
 
         private void lostTag(object sender, RoutedEventArgs e)

@@ -55,7 +55,7 @@ namespace ChtemeleSurfaceApplication
             //webControl.Source = new Uri();
             _mdl.renderPage();
             webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
-            string debug = System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html";
+            //string debug = System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html";
             //webControl.Source = "./currenrHtml.html";   //TODO
             webControl.Reload(false);
         }
