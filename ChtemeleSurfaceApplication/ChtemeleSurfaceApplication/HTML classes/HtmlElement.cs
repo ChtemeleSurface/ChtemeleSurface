@@ -41,12 +41,12 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public static List<string> monoLineTags = new List<string>
         {
-            "h1", "h2", "h3", "h4", "h5", "h6", "br"
+            "h1", "h2", "h3", "h4", "h5", "h6", "br", "link", "meta", "title"
         };
 
         public static List<string> singleTags = new List<string>
         {
-            "br", "hr", "img", "link"
+            "br", "hr", "img", "link", "meta"
         };
 
 

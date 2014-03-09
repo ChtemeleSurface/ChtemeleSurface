@@ -22,6 +22,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private string _doctype;            //Balise DOCTYPE
         private string _title;              //Titre
         private HtmlElement _cssTag;        //Balise LINK
+        private HtmlElement _encodingTag;        //Balise LINK
         public string cssFile = "Resources/css/chtemele.css";
 
         // Constructeurs                    ======================================================================================================
@@ -49,6 +50,10 @@ namespace ChtemeleSurfaceApplication.HTML_classes
             _cssTag.attributes.Add(new HtmlTagAttribute("rel", "stylesheet"));
             _cssTag.attributes.Add(new HtmlTagAttribute("href", cssFile));
             _headTag.addContent(_cssTag);
+
+            _encodingTag = new HtmlElement("meta");
+            _encodingTag.attributes.Add(new HtmlTagAttribute("charset", "UTF-8"));
+            _headTag.addContent(_encodingTag);
 
             HtmlElement _baliseH1 = new HtmlElement("h1");
                 _baliseH1.addContent(new HtmlText("Ceci est un putain de titre !"));

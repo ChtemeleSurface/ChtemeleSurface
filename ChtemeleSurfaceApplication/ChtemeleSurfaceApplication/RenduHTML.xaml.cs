@@ -37,6 +37,7 @@ namespace ChtemeleSurfaceApplication
             InitializeComponent();
 
             _mdl = new MdlRenduHtml();
+            webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "/currentHtml.html");
         }
 
         // Fonctionnalités                  ======================================================================================================
@@ -67,6 +68,10 @@ namespace ChtemeleSurfaceApplication
 
             //webControl.DataContext = new Uri(System.IO.Directory.GetCurrentDirectory());
             //webControl.LoadHTML(_mdl.getCode());
+
+            //webControl.DataContext = new Uri(System.IO.Directory.GetCurrentDirectory() + "/");
+            //webControl.LoadHTML(_mdl.getCode());
+            webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "/currentHtml.html");
 
             webControl.Reload(false);
         }
