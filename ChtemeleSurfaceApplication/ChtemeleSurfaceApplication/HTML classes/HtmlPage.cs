@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
-    class HtmlPage
+    public class HtmlPage
     {
         // Constantes, enumérations         ======================================================================================================
 

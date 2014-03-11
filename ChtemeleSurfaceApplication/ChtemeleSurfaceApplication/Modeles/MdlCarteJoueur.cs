@@ -6,7 +6,7 @@ using ChtemeleSurfaceApplication.Game_classes;
 
 namespace ChtemeleSurfaceApplication.Modeles
 {
-    class MdlCarteJoueur : Modele
+    public class MdlCarteJoueur : Modele
     {
         // Constantes, enumérations         ======================================================================================================
 

@@ -34,6 +34,7 @@ namespace ChtemeleSurfaceApplication
 
         public static SurfaceWindow1 instance = null;               //Singleton
         public static SurfaceWindow1 getInstance{get{return instance;}}
+        public MdlGame getMdl { get { return _mdl; } }
 
         // Variables membres                ======================================================================================================
 
@@ -70,14 +71,15 @@ namespace ChtemeleSurfaceApplication
 
             ComputeWidgetsPositions(MainScatterView.Width, MainScatterView.Height);
         }
-
-        // Evénements                  ======================================================================================================
-
+        
         private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //_game = Game.getInstance;
             _mdl = new MdlGame();
+
+
         }
+
+        // Evénements                  ======================================================================================================
 
         /// <summary>
         /// Occurs when the window is about to close. 
@@ -155,30 +157,31 @@ namespace ChtemeleSurfaceApplication
             ComputeWidgetsPositions(e.NewSize.Width, e.NewSize.Height);
         }
 
-        public void rotateCenterView(int angle)
+        public void rotateCenterView(int pos)
         {
-            switch(angle)
+            switch(pos)
             {
-                case 0:
+                case Player.SUD:
                     CenterView.Orientation = 0;
                     PageCode.Orientation = 0;
                     PageRendu.Orientation = 0;
                     break;
-                case 90:
+                case Player.OUEST:
                     CenterView.Orientation = 0;
                     PageCode.Orientation = 90;
                     PageRendu.Orientation = 90;
                     break;
-                case 180:
+                case Player.NORD:
                     CenterView.Orientation = 180;
                     PageCode.Orientation = 0;
                     PageRendu.Orientation = 0;
                     break;
-                case 270:
+                case Player.EST:
                     CenterView.Orientation = 180;
                     PageCode.Orientation = 90;
                     PageRendu.Orientation = 90;
                     break;
+                default: break;
             }
         }
 
@@ -214,8 +217,8 @@ namespace ChtemeleSurfaceApplication
             }
         }
 
-
         // Fonctionnalités                  ======================================================================================================
+
         private void ComputeWidgetsPositions(double x, double y)
         {
             //Position des zones joueurs
@@ -274,6 +277,34 @@ namespace ChtemeleSurfaceApplication
             PageRendu.Center = new Point(ScatterCenterView.Width - PageRendu.Width / 2.0, ScatterCenterView.Height / 2.0);
         }
 
+        public void layoutGameStarted()
+        {
+            //Supprime les zone de joueur inactive
+            if (_mdl.getPlayerAt(Player.SUD) == null)
+                ZoneJoueurS.Visibility = System.Windows.Visibility.Hidden;
+            if (_mdl.getPlayerAt(Player.EST) == null)
+                ZoneJoueurE.Visibility = System.Windows.Visibility.Hidden;
+            if (_mdl.getPlayerAt(Player.OUEST) == null)
+                ZoneJoueurO.Visibility = System.Windows.Visibility.Hidden;
+            if (_mdl.getPlayerAt(Player.NORD) == null)
+                ZoneJoueurN.Visibility = System.Windows.Visibility.Hidden;
+
+            //_mdl.initGame();
+
+            switch (_mdl.getCurrentPlayer().position())
+            {
+                case Player.SUD:   ZoneJoueurS.active = true; break;
+                case Player.OUEST: ZoneJoueurO.active = true; break;
+                case Player.NORD:  ZoneJoueurN.active = true; break;
+                case Player.EST:   ZoneJoueurE.active = true; break;
+                default: break;
+            }
+
+            rotateCenterView(_mdl.getCurrentPlayer().position());
+            updateZonesJoueur();
+            update();
+        }
+
 
         // Update                           ======================================================================================================
 
@@ -282,12 +313,73 @@ namespace ChtemeleSurfaceApplication
             _mdl.saveHTML();
         }
 
+        public void updateRotation()
+        {
+            rotateCenterView(_mdl.getCurrentPlayer().position());
+        }
+
         public void updateZonesJoueur()
         {
-            ZoneJoueurS.update();
-            ZoneJoueurE.update();
-            ZoneJoueurN.update();
-            ZoneJoueurO.update();
+
+            // SUD
+            if (_mdl.getPlayerAt(Player.SUD) != null)
+            {
+                ZoneJoueurS.active = (_mdl.getCurrentPlayer() == _mdl.getPlayerAt(Player.SUD));
+                ZoneJoueurS.Visibility = System.Windows.Visibility.Visible;
+                ZoneJoueurS.IsEnabled = true;
+                ZoneJoueurS.update();
+            }
+            else
+            {
+                ZoneJoueurS.active = false;
+                ZoneJoueurS.Visibility = System.Windows.Visibility.Hidden;
+                ZoneJoueurS.IsEnabled = false;
+            }
+
+            // OUEST
+            if (_mdl.getPlayerAt(Player.OUEST) != null)
+            {
+                ZoneJoueurO.active = (_mdl.getCurrentPlayer() == _mdl.getPlayerAt(Player.OUEST));
+                ZoneJoueurO.Visibility = System.Windows.Visibility.Visible;
+                ZoneJoueurO.IsEnabled = true;
+                ZoneJoueurO.update();
+            }
+            else
+            {
+                ZoneJoueurO.active = false;
+                ZoneJoueurO.Visibility = System.Windows.Visibility.Hidden;
+                ZoneJoueurO.IsEnabled = false;
+            }
+
+            // NORD
+            if (_mdl.getPlayerAt(Player.NORD) != null)
+            {
+                ZoneJoueurN.active = (_mdl.getCurrentPlayer() == _mdl.getPlayerAt(Player.NORD));
+                ZoneJoueurN.Visibility = System.Windows.Visibility.Visible;
+                ZoneJoueurN.IsEnabled = true;
+                ZoneJoueurN.update();
+            }
+            else
+            {
+                ZoneJoueurN.active = false;
+                ZoneJoueurN.Visibility = System.Windows.Visibility.Hidden;
+                ZoneJoueurN.IsEnabled = false;
+            }
+
+            // EST
+            if (_mdl.getPlayerAt(Player.EST) != null)
+            {
+                ZoneJoueurE.active = (_mdl.getCurrentPlayer() == _mdl.getPlayerAt(Player.EST));
+                ZoneJoueurE.Visibility = System.Windows.Visibility.Visible;
+                ZoneJoueurE.IsEnabled = true;
+                ZoneJoueurE.update();
+            }
+            else
+            {
+                ZoneJoueurE.active = false;
+                ZoneJoueurE.Visibility = System.Windows.Visibility.Hidden;
+                ZoneJoueurE.IsEnabled = false;
+            }
         }
     }
 }

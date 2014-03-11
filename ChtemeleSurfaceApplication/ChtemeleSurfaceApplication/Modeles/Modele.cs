@@ -7,7 +7,7 @@ using ChtemeleSurfaceApplication.Game_classes;
 
 namespace ChtemeleSurfaceApplication.Modeles
 {
-    class Modele
+    public class Modele
     {
         protected Game _game;
 

@@ -85,45 +85,42 @@ namespace ChtemeleSurfaceApplication
 
         }
 
+        private void CartesJoueurs_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Nothing pour le moment
+        }
+
         // Fonctionnalités                  ======================================================================================================
 
         // Associe un nouveau joueur à la CarteJoueur
-        public void ChoixNavigateur(int positionJoueur, int NavClicke)
+        public void ChoixNavigateur(int positionJoueur, int navClicked)
         {
             // Si le navigateur sélectionné a déjà été pris, on se barre direct.
-            if (Game.getInstance.LocationNav[NavClicke] != 0)
+            if (SurfaceWindow1.getInstance.getMdl.getBrowserPosition(navClicked) != Player.OUT)
             {
                 return;
             }
             // On dit à Game que ce navigateur est désormais pris.
-            Game.getInstance.LocationNav[NavClicke] = positionJoueur;
+            Game.getInstance.LocationNav[navClicked] = positionJoueur;
 
             //On créée le nouveau joueur
+            SurfaceWindow1.getInstance.getMdl.newPlayer(new Player(Player.browserNames[navClicked], positionJoueur));
+            SurfaceWindow1.getInstance.getMdl.setBrowserPosition(navClicked, positionJoueur);
+
             switch (positionJoueur)
             {
-                case Player.NORD:
-                    _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
-                    Game.getInstance.joueurN = _mdl.getPlayer();
-                    break;
-                case Player.EST:
-                    _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
-                    Game.getInstance.joueurE = _mdl.getPlayer();
-                    break;
-                case Player.SUD:
-                    _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
-                    Game.getInstance.joueurS = _mdl.getPlayer();
-                    break;
-                case Player.OUEST:
-                    _mdl = new MdlCarteJoueur(new Player(Player.browserNames[NavClicke], positionJoueur));
-                    Game.getInstance.joueurO = _mdl.getPlayer();
-                    break;
+                case Player.SUD:   _mdl = SurfaceWindow1.getInstance.getMdl.mCarteS; break;
+                case Player.OUEST: _mdl = SurfaceWindow1.getInstance.getMdl.mCarteO; break;
+                case Player.NORD:  _mdl = SurfaceWindow1.getInstance.getMdl.mCarteN; break;
+                case Player.EST:   _mdl = SurfaceWindow1.getInstance.getMdl.mCarteE; break;
+                default: _mdl = null; break;
             }
 
             foreach (KeyValuePair<int, CartesJoueurs> carte in SurfaceWindow1.tabCartes)
             {
                 for (int i = 0; i < 5; i++)
                 {
-                    if (i == NavClicke)
+                    if (i == navClicked)
                     {
                         switch (i)
                         {
@@ -239,7 +236,8 @@ namespace ChtemeleSurfaceApplication
 
             if (nbCarteJoueurActiv == Game.getInstance.getNbPlayer())
             {
-                Game.getInstance.initGame();
+                SurfaceWindow1.getInstance.getMdl.initGame();
+                SurfaceWindow1.getInstance.layoutGameStarted();
             }
             //affiche dernière combinaison de balises posée
             Combinaison.Text = _mdl.getComboCode().ToString();
@@ -278,6 +276,8 @@ namespace ChtemeleSurfaceApplication
                 EffectFreeze.IsEnabled = false;
             }
         }
+
+        
 
     }
 }

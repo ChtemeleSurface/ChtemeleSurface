@@ -57,7 +57,7 @@ namespace ChtemeleSurfaceApplication
 
         }
 
-        // Fonctionnalités                  ======================================================================================================
+        // Evénements                  ======================================================================================================
 
         private void valider(object sender, RoutedEventArgs e)
         {
@@ -82,6 +82,8 @@ namespace ChtemeleSurfaceApplication
         private void validerEst(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.EST); valider(sender, e); }
         private void validerOuest(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.OUEST); valider(sender, e); }
 
+
+
         private void gotTag(object sender, RoutedEventArgs e)
         {
             //On a récupéré un tag sur la table, on créée un MdlTag
@@ -99,16 +101,29 @@ namespace ChtemeleSurfaceApplication
 
         private void lostTag(object sender, RoutedEventArgs e)
         {
-
             _mdls.Remove(_id);
             _views.Remove(_id);
             _mdl.loseTag();
             _mdl = null;
-            
-            updateAll();
 
-            //multiCardOnScreen--;
+            updateAll();
         }
+
+        // Fonctionnalités                  ======================================================================================================
+
+        private void layoutMenu()
+        {
+            if (_mdl.hasPlayerSelector())    // MenuAttaque
+            {
+
+            }
+            else    // MenuDefault
+            {
+
+            }
+        }
+
+        // Update                           ======================================================================================================
 
         private static void updateAll()
         {
@@ -172,23 +187,6 @@ namespace ChtemeleSurfaceApplication
                 
             }
             
-        }
-
-        private void layoutMenu()
-        {
-            if (_mdl.hasPlayerSelector())    // MenuAttaque
-            {
-
-            }
-            else    // MenuDefault
-            {
-
-            }
-        }
-
-        private void attackPlayer(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

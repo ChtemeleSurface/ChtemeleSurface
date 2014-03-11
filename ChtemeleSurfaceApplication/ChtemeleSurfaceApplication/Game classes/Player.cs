@@ -7,7 +7,7 @@ using ChtemeleSurfaceApplication;
 
 namespace ChtemeleSurfaceApplication.Game_classes
 {
-    class Player
+    public class Player
     {
         // Constantes, enumérations         ======================================================================================================
 
@@ -95,13 +95,13 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public void updateCarteJoueur()
         {
-            if(Game.getInstance.joueurE != null)
+            if(Game.getInstance.playerE != null)
                 SurfaceWindow1.getInstance.ZoneJoueurE.CarteJoueur.update();
-            if (Game.getInstance.joueurS != null)
+            if (Game.getInstance.playerS != null)
                 SurfaceWindow1.getInstance.ZoneJoueurS.CarteJoueur.update();
-            if (Game.getInstance.joueurN != null)
+            if (Game.getInstance.playerN != null)
                 SurfaceWindow1.getInstance.ZoneJoueurN.CarteJoueur.update();
-            if (Game.getInstance.joueurO != null)
+            if (Game.getInstance.playerO != null)
                 SurfaceWindow1.getInstance.ZoneJoueurO.CarteJoueur.update();
         }
     }

@@ -7,7 +7,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 {
     
 
-    class HtmlTag
+    public class HtmlTag
     {
         public enum HTMLTagType {OPENTAG, ENDTAG};
 

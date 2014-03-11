@@ -7,7 +7,7 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.Modeles
 {
-    class StrTypePair{
+    public class StrTypePair{
 
         public enum StrType                        // Toutes les sortes de chaines à styliser
         {
@@ -45,7 +45,7 @@ namespace ChtemeleSurfaceApplication.Modeles
         }
     };
 
-    class MdlPageCode : Modele
+    public class MdlPageCode : Modele
     {
         // Constantes, enumérations         ======================================================================================================
 

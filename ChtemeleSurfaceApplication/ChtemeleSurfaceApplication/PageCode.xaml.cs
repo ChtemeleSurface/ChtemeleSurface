@@ -88,7 +88,13 @@ namespace ChtemeleSurfaceApplication
         {
             InitializeComponent();
 
-            _mdl = new MdlPageCode();
+            Width = ScatterCodeText.Width;
+            Height = ScatterCodeText.Height;
+        }
+
+        private void PageCode_Loaded(object sender, RoutedEventArgs e)
+        {
+            _mdl = SurfaceWindow1.getInstance.getMdl.mPageCode;
 
             // URL du fichier local à lire (ne fonctionne pas avec les URLs distantes)
             //string temp = System.IO.Directory.GetCurrentDirectory();
@@ -96,9 +102,6 @@ namespace ChtemeleSurfaceApplication
             //string temp = System.IO.Path.GetFullPath("./Resources/Savegame/game_0.html");
 
             ShowCode();
-
-            Width = ScatterCodeText.Width;
-            Height = ScatterCodeText.Height;
         }
 
         // Fonctionnalités                  ======================================================================================================
@@ -128,5 +131,6 @@ namespace ChtemeleSurfaceApplication
             }
             //CodeText.Inlines.Add(new Run(_mdl.getCode()));
         }
+
     }
 }

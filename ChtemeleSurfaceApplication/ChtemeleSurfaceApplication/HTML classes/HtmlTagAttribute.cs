@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
-    class HtmlTagAttribute
+    public class HtmlTagAttribute
     {
         private string _key;
         private string _value;

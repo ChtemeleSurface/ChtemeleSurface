@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
-    class HtmlText : HtmlTagContent
+    public class HtmlText : HtmlTagContent
     {
         private string _str;
 

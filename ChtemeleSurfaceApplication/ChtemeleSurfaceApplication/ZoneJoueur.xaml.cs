@@ -22,7 +22,15 @@ namespace ChtemeleSurfaceApplication
     /// </summary>
     public partial class ZoneJoueur : ScatterViewItem
     {
+        // Constantes, enumérations         ======================================================================================================
+
+
+
+        // Variables membres                ======================================================================================================
+
         public bool active = false;
+
+        // Constructeurs                    ======================================================================================================
 
         public ZoneJoueur()
         {
@@ -30,9 +38,13 @@ namespace ChtemeleSurfaceApplication
             ButtonNextPlayer.IsEnabled = false;
         }
 
+        // Evénements                  ======================================================================================================
+
         private void ButtonNextPlayer_Click(object sender, RoutedEventArgs e)
         {
-            Game_classes.Game.getInstance.nextPlayer();
+            SurfaceWindow1.getInstance.getMdl.nextSubStep();
+            SurfaceWindow1.getInstance.updateRotation();
+            SurfaceWindow1.getInstance.updateZonesJoueur();
 
             using (SoundPlayer player = new SoundPlayer("Resources/lion.wav"))
             {
@@ -40,9 +52,14 @@ namespace ChtemeleSurfaceApplication
             }
         }
 
+        // Fonctionnalités                  ======================================================================================================
+
+
+
+        // Update                           ======================================================================================================
+
         public void update()
         {
-
             if (active)
             {
                 ButtonNextPlayer.IsEnabled = true;

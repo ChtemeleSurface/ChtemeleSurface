@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
-    abstract class HtmlTagContent
+    public abstract class HtmlTagContent
     {
         private int _uniqId;
         private int _score;

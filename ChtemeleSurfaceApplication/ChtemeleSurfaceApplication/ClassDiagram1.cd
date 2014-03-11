@@ -24,28 +24,28 @@
   <Class Name="ChtemeleSurfaceApplication.Carte" Collapsed="true">
     <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAgQAQEAAECAAAAAAAAAAAAACEAAAAIAAA=</HashCode>
       <FileName>Carte classes\Carte.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.EventCarte" Collapsed="true">
     <Position X="12.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAIAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\EventCarte.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.HTMLCarte" Collapsed="true">
     <Position X="26.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQgAAABEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\HTMLCarte.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.CartesJoueurs" Collapsed="true">
     <Position X="30.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAiAgQICDCAAYAAAAAJAICAAAAAAAEACBEAAAAgEAAA=</HashCode>
       <FileName>CartesJoueurs.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,208 +59,208 @@
   <Class Name="ChtemeleSurfaceApplication.PageCode" Collapsed="true">
     <Position X="32.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAISAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAgAAAAAAAAgAAAAAAAAAAAAAASAAAIBAAAAAAAAAA=</HashCode>
       <FileName>PageCode.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.RenduHTML" Collapsed="true">
     <Position X="35.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAACAAAAAAAAAAAAAAAACAAAAAABEAAAAAEAAA=</HashCode>
       <FileName>RenduHTML.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.SurfaceWindow1" Collapsed="true">
     <Position X="32.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAACACQAAAIgAAABAAADAAAAAgAAAAAQ=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAGECSBAAIgAAIBAAATABAAAkAAEAiA=</HashCode>
       <FileName>SurfaceWindow1.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Tag" Collapsed="true">
     <Position X="34" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AKAgAAAAAAAQAAAAAABpAEABAAAEgAABpDBAAAgAAAA=</HashCode>
       <FileName>Tag.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Addons.Antivirus" Collapsed="true">
     <Position X="8.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Addons\Antivirus.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Addons.BrowserUpdate" Collapsed="true">
     <Position X="10.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Addons\BrowserUpdate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Addons.Cafe" Collapsed="true">
     <Position X="1.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Addons\Cafe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Addons.CodeInspector" Collapsed="true">
     <Position X="3.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Addons\CodeInspector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Addons.CtrlF5" Collapsed="true">
     <Position X="6" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Addons\CtrlF5.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Attaques.CrashBrowser" Collapsed="true">
     <Position X="17.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Attaques\CrashBrowser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Attaques.Error303" Collapsed="true">
     <Position X="19.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Attaques\Error303.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Attaques.Error403" Collapsed="true">
     <Position X="21.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Attaques\Error403.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Attaques.Error404" Collapsed="true">
     <Position X="24" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Attaques\Error404.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Attaques.Freeze" Collapsed="true">
     <Position X="12.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Attaques\Freeze.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.Attaques.ManInTheMiddle" Collapsed="true">
     <Position X="15" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\Attaques\ManInTheMiddle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.HTMLAttributeCarte" Collapsed="true">
-    <Position X="34" Y="1.5" Width="1.5" />
+    <Position X="27.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAEEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte classes\HTMLAttributeCarte.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Carte_classes.HTMLTagCarte" Collapsed="true">
-    <Position X="30.5" Y="2.5" Width="1.5" />
+    <Position X="25.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAABAAAAgQAAAAAEAAAAAAAACAAAAACAAAAAAAAA=</HashCode>
       <FileName>Carte classes\HTMLTagCarte.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.File_classes.FileReader" Collapsed="true">
     <Position X="28.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAgAgAAAAEAAAACAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAQABAAAEAAIAgAgAAAAAAAAgCAAAQAAAAAAAAgAAA=</HashCode>
       <FileName>File classes\FileReader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.File_classes.FileWriter" Collapsed="true">
     <Position X="30.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>gAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>File classes\FileWriter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Game_classes.Combo" Collapsed="true">
     <Position X="34" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACACAAAgAIAAAAAAAAAIAAARAARE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAACACAAAgAIAAAAACAAAAAAABAAQE=</HashCode>
       <FileName>Game classes\Combo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Game_classes.Effect" Collapsed="true">
     <Position X="35.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game classes\Effect.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Game_classes.Game" Collapsed="true">
     <Position X="32.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAIAAAAgAAAEgIAAAAABAAAAAABA=</HashCode>
+      <HashCode>QgAAIAAQgAAAAQCCAQQUBBAAAEBAJAQAABAAoQBAIAA=</HashCode>
       <FileName>Game classes\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Game_classes.Player" Collapsed="true">
     <Position X="34" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAARAAAA=</HashCode>
+      <HashCode>BAAIABAgAAIAEAAAAgAIIAAEAAREAgAIAAIBgFBAQAA=</HashCode>
       <FileName>Game classes\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.HTML_classes.HtmlElement" Collapsed="true">
     <Position X="2.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAIAAAAAAAEgAAAAAAAAAAAAAAEAAAAAAAAAABAAA=</HashCode>
+      <HashCode>CCAAJIBIACABAgBAAAAAAAQBQEAAEAAAYAAAIBABAAA=</HashCode>
       <FileName>HTML classes\HtmlElement.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.HTML_classes.HtmlPage" Collapsed="true">
     <Position X="35.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gIAAABAAwIABAAIAAAAAQQAAAAIBAAAQAAAAAAABAAA=</HashCode>
       <FileName>HTML classes\HtmlPage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.HTML_classes.HtmlTag" Collapsed="true">
     <Position X="5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIBAAAAAAAQgAAAAAAAAAUAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>HTML classes\HtmlTag.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.HTML_classes.HtmlTagAttribute" Collapsed="true">
-    <Position X="28.75" Y="2.5" Width="1.5" />
+    <Position X="30.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAACAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAACAABACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>HTML classes\HtmlTagAttribute.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.HTML_classes.HtmlTagContent" Collapsed="true">
     <Position X="2.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEgAAAAAAAAAQAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAQAAAQAABAAAAAAAAAAAA=</HashCode>
       <FileName>HTML classes\HtmlTagContent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.HTML_classes.HtmlText" Collapsed="true">
     <Position X="0.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>HTML classes\HtmlText.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChtemeleSurfaceApplication.Properties.Resources" Collapsed="true">
-    <Position X="28.75" Y="3.5" Width="1.5" />
+    <Position X="30.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>

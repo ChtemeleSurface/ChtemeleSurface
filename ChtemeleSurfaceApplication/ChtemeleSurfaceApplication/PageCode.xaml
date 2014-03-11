@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              Height="300" Width="300"
              Background="LightGray"
-             Name="ScatterCodeText">
+             Name="ScatterCodeText"
+             Loaded="PageCode_Loaded">
     <TextBlock Name="CodeText" TextWrapping="WrapWithOverflow" FontFamily="Courier New" FontSize="12" FontWeight="Bold">
             
         </TextBlock>

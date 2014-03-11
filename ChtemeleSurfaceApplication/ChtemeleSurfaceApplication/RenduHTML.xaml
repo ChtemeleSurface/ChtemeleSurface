@@ -6,6 +6,7 @@
              xmlns:s="http://schemas.microsoft.com/surface/2008"
              xmlns:awe="http://schemas.awesomium.com/winfx"
              mc:Ignorable="d" 
+             Loaded="RenduHTML_Loaded"
              Height="300" Width="300">
 
     <!--<awe:WebControl Name="webControl" Loaded="webControl_Loaded" ></awe:WebControl>-->

@@ -7,7 +7,7 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.HTML_classes
 {
-    class HtmlElement : HtmlTagContent
+    public class HtmlElement : HtmlTagContent
     {
         public static HtmlElement _currentElement = null;
 

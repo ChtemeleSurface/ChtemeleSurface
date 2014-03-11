@@ -103,10 +103,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Clavier.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PageCode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,9 +141,6 @@
     <Compile Include="Carte classes\HTMLTagCarte.cs" />
     <Compile Include="CartesJoueurs.xaml.cs">
       <DependentUpon>CartesJoueurs.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Clavier.xaml.cs">
-      <DependentUpon>Clavier.xaml</DependentUpon>
     </Compile>
     <Compile Include="Carte classes\EventCarte.cs" />
     <Compile Include="Carte classes\HTMLCarte.cs" />

@@ -8,7 +8,7 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.Modeles
 {
-    class MdlRenduHtml : Modele
+    public class MdlRenduHtml : Modele
     {
         // Constantes, enumérations         ======================================================================================================
 

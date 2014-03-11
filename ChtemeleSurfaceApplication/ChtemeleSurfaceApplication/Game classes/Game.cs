@@ -7,7 +7,7 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.Game_classes
 {
-    class Game
+    public class Game
     {
         // Constantes, enumérations         ======================================================================================================
 
@@ -26,11 +26,11 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         // Variables membres                ======================================================================================================
 
-        public  Player joueurS, joueurN, joueurE, joueurO;       //les 4 joueurs
+        private Player _joueurS, _joueurN, _joueurE, _joueurO;       //les 4 joueurs
 
         private int _nbPlayer;      //Nombre de joueur
         private int _step;       // numéro du tour actuel
-        private int _playerStep;
+        private int _subStep;
         private int _nbSteps;    // nombre de tours de la partie
         private Player _currentPlayer;     // joueur actif
         private bool gameStarted;
@@ -45,23 +45,23 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         protected Game()
         {
-            joueurS = null;
-            joueurN = null;
-            joueurE = null;
-            joueurO = null;
+            _joueurS = null;
+            _joueurN = null;
+            _joueurE = null;
+            _joueurO = null;
             _step = 0;
-            _playerStep = 0;
+            _subStep = 0;
             _nbSteps = Game.DEFAULT_NB_STEPS;
             _currentPlayer = null;
             gameStarted = false;
             _page = new HtmlPage();
             LocationNav = new Dictionary<int, int>
                 {
-                    {Player.FIREFOX, 0},
-                    {Player.CHROME, 0},
-                    {Player.IE, 0},
-                    {Player.SAFARI, 0},
-                    {Player.OPERA, 0}
+                    {Player.FIREFOX, Player.OUT},
+                    {Player.CHROME, Player.OUT},
+                    {Player.IE, Player.OUT},
+                    {Player.SAFARI, Player.OUT},
+                    {Player.OPERA, Player.OUT}
                 };
         }
 
@@ -73,74 +73,45 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public int getCurrentStep() { return _step; }
         public int getTotalSteps() { return _nbSteps; }
 
+        public Player playerS { get { return _joueurS; } }
+        public Player playerO { get { return _joueurO; } }
+        public Player playerN { get { return _joueurN; } }
+        public Player playerE { get { return _joueurE; } }
+
         // Fonctionnalités                  ======================================================================================================
 
-        public void nextPlayer()
+        /// <summary>
+        /// Setter du joeur à la position spécifiée.
+        /// </summary>
+        /// <param name="p">Nouvelle valeur</param>
+        /// <param name="position">Player.NORD|SUD|EST|OUEST</param>
+        public void setPlayer(Player p, int position)
         {
-            SurfaceWindow1.getInstance.ZoneJoueurE.active = false;
-            SurfaceWindow1.getInstance.ZoneJoueurN.active = false;
-            SurfaceWindow1.getInstance.ZoneJoueurO.active = false;
-            SurfaceWindow1.getInstance.ZoneJoueurS.active = false;
+            switch (position)
+            {
+                case Player.SUD:   _joueurS = p; break;
+                case Player.OUEST: _joueurO = p; break;
+                case Player.NORD:  _joueurN = p; break;
+                case Player.EST:   _joueurE = p; break;
+                default: break;
+            }
+        }
 
-            bool pass = false;
-            int curPos = _currentPlayer.position();
-            while(pass == false)
-                switch (curPos)
-                {
-                case 1:
-                        if (joueurE == null)
-                            curPos++;
-                        else
-                        {
-                            _currentPlayer = joueurE;
-                            SurfaceWindow1.getInstance.ZoneJoueurE.active = true;
-                            SurfaceWindow1.getInstance.rotateCenterView(270);
-                            pass = true;
-                        }
-                    break;
-                case 2:
-                    if (joueurS == null)
-                        curPos++;
-                    else
-                    {
-                        _currentPlayer = joueurS;
-                        SurfaceWindow1.getInstance.ZoneJoueurS.active = true;
-                        SurfaceWindow1.getInstance.rotateCenterView(0);
-                        pass = true;
-                    }
-                    break;
-                case 3:
-                    if (joueurO == null)
-                        curPos++;
-                    else
-                    {
-                        _currentPlayer = joueurO;
-                        SurfaceWindow1.getInstance.ZoneJoueurO.active = true;
-                        SurfaceWindow1.getInstance.rotateCenterView(90);
-                        pass = true;
-                    }
-                    break;
-                case 4:
-                    if (joueurN == null)
-                        curPos = 1;
-                    else
-                    {
-                        _currentPlayer = joueurN;
-                        SurfaceWindow1.getInstance.ZoneJoueurN.active = true;
-                        SurfaceWindow1.getInstance.rotateCenterView(180);
-                        pass = true;
-                    }
-                    break;
-                }
-
-            SurfaceWindow1.getInstance.updateZonesJoueur();
-
-            _playerStep++;
-            if (_playerStep >= _nbPlayer) _step++;
-            _playerStep %= _nbPlayer;
-
-            if (_step >= _nbSteps) endGame();
-
+        /// <summary>
+        /// Setter du joeur à la position spécifiée.
+        /// </summary>
+        /// <param name="p">Nouvelle valeur</param>
+        /// <param name="position">Player.NORD|SUD|EST|OUEST</param>
+        public Player getPlayer(int position)
+        {
+            switch (position)
+            {
+                case Player.SUD: return _joueurS;
+                case Player.OUEST: return _joueurO;
+                case Player.NORD: return _joueurN;
+                case Player.EST: return _joueurE;
+                default: return null;
+            }
         }
 
         public void setNbPlayer(int nbPlayer)
@@ -155,69 +126,82 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         public void initGame()
         {
-            //Supprime les zone de joueur inactive
-            if(joueurS == null)
-                SurfaceWindow1.getInstance.ZoneJoueurS.Visibility = System.Windows.Visibility.Hidden;
-            if (joueurE == null)
-                SurfaceWindow1.getInstance.ZoneJoueurE.Visibility = System.Windows.Visibility.Hidden;
-            if (joueurO == null)
-                SurfaceWindow1.getInstance.ZoneJoueurO.Visibility = System.Windows.Visibility.Hidden;
-            if (joueurN == null)
-                SurfaceWindow1.getInstance.ZoneJoueurN.Visibility = System.Windows.Visibility.Hidden;
+            // Step 1 : On choisit le joueur qui commence au hasard.
+            Random rand = new Random();
 
-            //initialise la parti avec un joueur aléatoire
-            Random rnd = new Random();
-            bool ok = false;
-            while (ok == false)
-            {
-                switch (rnd.Next(1, 4))
-                {
-                    case 1:
-                        if (joueurS != null)
-                        {
-                            _currentPlayer = joueurS;
-                            SurfaceWindow1.getInstance.rotateCenterView(0);
-                            ok = true;
-                            SurfaceWindow1.getInstance.ZoneJoueurS.active = true;
-                        }
-                        break;
-                    case 2:
-                        if (joueurO != null)
-                        {
-                            _currentPlayer = joueurO;
-                            SurfaceWindow1.getInstance.rotateCenterView(90);
-                            ok = true;
-                            SurfaceWindow1.getInstance.ZoneJoueurO.active = true;
-                        }
-                        break;
-                    case 3:
-                        if (joueurN != null)
-                        {
-                            _currentPlayer = joueurN;
-                            SurfaceWindow1.getInstance.rotateCenterView(180);
-                            ok = true;
-                            SurfaceWindow1.getInstance.ZoneJoueurN.active = true;
-                        }
-                        break;
-                    case 4:
-                        if (joueurE != null)
-                        {
-                            _currentPlayer = joueurE;
-                            SurfaceWindow1.getInstance.rotateCenterView(270);
-                            ok = true;
-                            SurfaceWindow1.getInstance.ZoneJoueurE.active = true;
-                        }
-                        break;
-                }
-                SurfaceWindow1.getInstance.updateZonesJoueur();
-            }
+            //      Step 1.1 : On dresse une liste des joueurs disponibles
+            List<int> listePos = new List<int>();
+            if (_joueurS != null) listePos.Add(Player.SUD);
+            if (_joueurO != null) listePos.Add(Player.OUEST);
+            if (_joueurN != null) listePos.Add(Player.NORD);
+            if (_joueurE != null) listePos.Add(Player.EST);
+
+            //      Step 1.2 : On choisit aléatoirement lequel de ces joueur sera celui qui commence
+            int numPlay = rand.Next(0, listePos.Count - 1);
+            _currentPlayer = getPlayer(listePos[numPlay]);
+
+            // Step 2 : On dit que le jeu a commencé.
             gameStarted = true;
-            ChtemeleSurfaceApplication.SurfaceWindow1.getInstance.update();
+        }
+
+        /// <summary>
+        /// Met dans currentPlayer le jour suivant en suivant le sens horaire.
+        /// </summary>
+        public void nextPlayer()
+        {
+            //      Step 1.1 : On dresse une liste des joueurs disponibles
+            int indexCurPlayer = 0;
+            bool found = false;
+            List<int> listePos = new List<int>();
+            if (_joueurS != null){
+                listePos.Add(Player.SUD);
+                if (_currentPlayer != _joueurS) //c'est le 1ere test, on sait que found = false, forcément, pas besoin de tester.
+                    indexCurPlayer++;
+                else
+                    found = true;
+            }
+            if (_joueurO != null)
+            {
+                listePos.Add(Player.OUEST);
+                if (_currentPlayer != _joueurO && !found)
+                    indexCurPlayer++;
+                else
+                    found = true;
+            }
+            if (_joueurN != null)
+            {
+                listePos.Add(Player.NORD);
+                if (_currentPlayer != _joueurN && !found)
+                    indexCurPlayer++;
+                else
+                    found = true;
+            }
+            if (_joueurE != null)
+            {
+                listePos.Add(Player.EST);
+                if (_currentPlayer != _joueurE && !found)
+                    indexCurPlayer++;
+                else
+                    found = true;
+            }
+
+            indexCurPlayer++;
+            indexCurPlayer %= _nbPlayer;
+
+            _currentPlayer = getPlayer(listePos[indexCurPlayer]);
+            
+            _subStep++;
+            if (_subStep >= _nbPlayer) _step++;
+            _subStep %= _nbPlayer;
+
+            //if (_step >= _nbSteps) endGame();
+
         }
 
         public void endGame()
         {
             // Fin de partie
+            gameStarted = false;
         }
 
         private int Random()

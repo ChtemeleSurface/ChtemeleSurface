@@ -116,7 +116,7 @@ namespace ChtemeleSurfaceApplication.Modeles
 
 
 
-    class MdlTag : Modele
+    public class MdlTag : Modele
     {
         // Constantes, enumérations         ======================================================================================================
 
@@ -288,16 +288,16 @@ namespace ChtemeleSurfaceApplication.Modeles
             switch (position)
             {
                 case Game_classes.Player.NORD:
-                    targetPlayer = _game.joueurN;
+                    targetPlayer = _game.playerN;
                     break;
                 case Game_classes.Player.SUD:
-                    targetPlayer = _game.joueurS;
+                    targetPlayer = _game.playerS;
                     break;
                 case Game_classes.Player.EST:
-                    targetPlayer = _game.joueurE;
+                    targetPlayer = _game.playerE;
                     break;
                 case Game_classes.Player.OUEST:
-                    targetPlayer = _game.joueurO;
+                    targetPlayer = _game.playerO;
                     break;
             }
         }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.Game_classes
 {
-    class Combo
+    public class Combo
     {
         // Constantes, enumérations         ======================================================================================================
 

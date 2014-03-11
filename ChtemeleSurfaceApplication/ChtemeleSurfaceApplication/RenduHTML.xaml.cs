@@ -35,8 +35,11 @@ namespace ChtemeleSurfaceApplication
         public RenduHTML()
         {
             InitializeComponent();
+        }
 
-            _mdl = new MdlRenduHtml();
+        private void RenduHTML_Loaded(object sender, RoutedEventArgs e)
+        {
+            _mdl = SurfaceWindow1.getInstance.getMdl.mPageRendu;
             webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "/currentHtml.html");
         }
 

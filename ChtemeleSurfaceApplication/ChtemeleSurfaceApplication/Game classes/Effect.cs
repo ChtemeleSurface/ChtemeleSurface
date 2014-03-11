@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.Game_classes
 {
-    class Effect
+    public class Effect
     {
         public enum EffectType
         {
