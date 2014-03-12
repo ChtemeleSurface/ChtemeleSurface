@@ -24,7 +24,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private string _title;              //Titre
         private HtmlElement _cssTag;        //Balise LINK
         private HtmlElement _encodingTag;        //Balise LINK
-        public string cssFile = "chtemele.css";
+        public string cssFile = cssDirectory + "chtemele.css";
 
         // Constructeurs                    ======================================================================================================
 
