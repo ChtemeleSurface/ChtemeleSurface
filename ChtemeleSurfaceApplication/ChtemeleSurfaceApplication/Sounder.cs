@@ -24,7 +24,7 @@ namespace ChtemeleSurfaceApplication
 
         // Variables membres                ======================================================================================================
 
-
+        public static bool mute = false;
 
         // Constructeurs                    ======================================================================================================
 
@@ -41,6 +41,7 @@ namespace ChtemeleSurfaceApplication
 
         public static void playSound(string filename)
         {
+            if (mute) return;
             using (SoundPlayer player = new SoundPlayer(filename))
             {
                 player.Play();
