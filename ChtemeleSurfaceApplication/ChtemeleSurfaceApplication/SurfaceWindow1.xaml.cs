@@ -307,12 +307,12 @@ namespace ChtemeleSurfaceApplication
             updateCodeView();
         }
 
-
         // Update                           ======================================================================================================
 
         public void updateCodeView()
         {
             PageCode.saveHTML(_mdl.htmlFilePath);
+            PageCode.ShowCode();
             PageRendu.update();
         }
 

@@ -45,9 +45,6 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             }
 
             Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
-
-            SurfaceWindow1.getInstance.PageCode.ShowCode();
-            SurfaceWindow1.getInstance.PageRendu.update();
         }
 
         public override void onDelete()

@@ -135,5 +135,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             return _game.getCurPlayer();
         }
 
+
+
     }
 }

@@ -221,5 +221,10 @@ namespace ChtemeleSurfaceApplication.Modeles
             System.IO.StreamReader file = new System.IO.StreamReader(filepath);
             return file.ReadToEnd();
         }
+
+        public void changeCSS(string cssname)
+        {
+            _game.getPage().changeCSS(cssname);
+        }
     }
 }

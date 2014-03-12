@@ -13,6 +13,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         // Constantes, enumérations         ======================================================================================================
 
         public const string defaultDoctype = "<!DOCTYPE html>";
+        public const string cssDirectory = "Resources/css/";
 
         // Variables membres                ======================================================================================================
 
@@ -23,7 +24,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
         private string _title;              //Titre
         private HtmlElement _cssTag;        //Balise LINK
         private HtmlElement _encodingTag;        //Balise LINK
-        public string cssFile = "Resources/css/chtemele.css";
+        public string cssFile = "chtemele.css";
 
         // Constructeurs                    ======================================================================================================
 
@@ -115,7 +116,7 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public void changeCSS(string f)
         {
-            cssFile = f;
+            cssFile = cssDirectory + f + ".css";
             _cssTag.attributes.Clear();
             _cssTag.attributes.Add(new HtmlTagAttribute("type", "text/css"));
             _cssTag.attributes.Add(new HtmlTagAttribute("rel", "stylesheet"));

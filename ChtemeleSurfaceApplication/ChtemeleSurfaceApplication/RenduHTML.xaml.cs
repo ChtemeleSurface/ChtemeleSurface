@@ -48,53 +48,38 @@ namespace ChtemeleSurfaceApplication
 
         // Fonctionnalités                  ======================================================================================================
 
+
+
         // Evénements                       ======================================================================================================
 
         private void webControl_Loaded(object sender, RoutedEventArgs e)
         {
-            //update();
             webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
+        }
+
+        private void CssChangerChtemele_Click(object sender, RoutedEventArgs e)
+        {
+            _mdl.changeCSS("chtemele");
+            SurfaceWindow1.getInstance.updateCodeView();
+        }
+
+        private void CssChangerDark_Click(object sender, RoutedEventArgs e)
+        {
+            _mdl.changeCSS("dark");
+            SurfaceWindow1.getInstance.updateCodeView();
+        }
+
+        private void CssChangerLight_Click(object sender, RoutedEventArgs e)
+        {
+            _mdl.changeCSS("light");
+            SurfaceWindow1.getInstance.updateCodeView();
         }
 
         // Update                           ======================================================================================================
 
         public void update()
         {
-            //_mdl.renderPage();
-
-            //Les trucs ci-dessous sont tous des essais infructueux. Chier.
-
-            //webControl.Source = new Uri("file:\\\\\\" + System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
-            //Console.Write("file:\\\\\\" + System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
-
-            //webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
-            //Console.Write(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
-
-            //webControl.DataContext = new Uri(System.IO.Directory.GetCurrentDirectory());
-            //webControl.LoadHTML(_mdl.getCode());
-
-            //webControl.DataContext = new Uri(System.IO.Directory.GetCurrentDirectory() + "/");
-            //webControl.LoadHTML(_mdl.getCode());
-            //webControl.Source = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html");
             webControl.Reload(false);
-            //webControl.loadUrl("file:\\\\\\" + System.IO.Directory.GetCurrentDirectory() + "\\currentHtml.html")
         }
-
-        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SurfaceButton_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SurfaceButton_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-       
     }
 }

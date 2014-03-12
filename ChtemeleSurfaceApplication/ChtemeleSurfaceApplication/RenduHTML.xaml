@@ -26,9 +26,9 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <s:SurfaceButton Grid.Row="1" Grid.Column="0" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="SurfaceButton_Click">CSS1</s:SurfaceButton>
-            <s:SurfaceButton Grid.Row="1" Grid.Column="1" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="SurfaceButton_Click_1">CSS2</s:SurfaceButton>
-            <s:SurfaceButton Grid.Row="1" Grid.Column="2" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="SurfaceButton_Click_2">CSS3</s:SurfaceButton>
+            <s:SurfaceButton Name="CssChangerChtemele" Grid.Row="1" Grid.Column="0" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="CssChangerChtemele_Click">CSS1</s:SurfaceButton>
+            <s:SurfaceButton Name="CssChangerDark" Grid.Row="1" Grid.Column="1" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="CssChangerDark_Click">CSS2</s:SurfaceButton>
+            <s:SurfaceButton Name="CssChangerLight" Grid.Row="1" Grid.Column="2" Height="38" VerticalAlignment="Bottom" Background="Gainsboro" Click="CssChangerLight_Click">CSS3</s:SurfaceButton>
         </Grid>
 
     </Grid>
