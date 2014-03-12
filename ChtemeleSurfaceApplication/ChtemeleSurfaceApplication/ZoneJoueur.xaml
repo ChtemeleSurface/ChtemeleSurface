@@ -15,13 +15,16 @@
              Background="Transparent">
 
     <s:ScatterView Width="740" Height="150" Background="Transparent">
-        <s:ScatterViewItem CanMove="False" CanScale="False" CanRotate="False" Orientation="270" Center="20, 75" Height="40" MinHeight="40" Width="150" Background="Transparent">
+        <s:ScatterViewItem CanMove="False" CanScale="False" CanRotate="False" Orientation="270" Center="20, 75" Height="40" MinHeight="40" Width="150" Background="Transparent" BorderThickness="0" ZIndex="50">
             <s:SurfaceButton Padding="0" Name="ButtonNextPlayer" Click="ButtonNextPlayer_Click" Visibility="Hidden" BorderThickness="0">
                 <TextBlock Width="150" Height="40" TextAlignment="Center" VerticalAlignment="Center">Au suivant !</TextBlock>
             </s:SurfaceButton>
         </s:ScatterViewItem>
-        <custom:PageDoc x:Name="Documentation" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="240, 75"></custom:PageDoc>
-        <custom:CartesJoueurs x:Name="CarteJoueur" Grid.Column="1" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="590, 75"></custom:CartesJoueurs>
+        <custom:PageDoc x:Name="Documentation" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="240, 75" ZIndex="50"></custom:PageDoc>
+        <custom:CartesJoueurs x:Name="CarteJoueur" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="590, 75" ZIndex="50"></custom:CartesJoueurs>
+        <s:ScatterViewItem Name="ScatterIndicator" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Width="700" Height="40" MinHeight="40" Center="390, 130" Background="Transparent" BorderThickness="0" ZIndex="100" Margin="0" Padding="0">
+            <s:SurfaceTextBox Name="Indicator" Background="Black" Foreground="Wheat" BorderThickness="0" TextAlignment="Center" VerticalAlignment="Center" Opacity="0.7" Focusable="False" Visibility="Hidden">Indicator</s:SurfaceTextBox>
+        </s:ScatterViewItem>
     </s:ScatterView>
 
 </s:ScatterViewItem>

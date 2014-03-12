@@ -308,6 +308,23 @@ namespace ChtemeleSurfaceApplication
             Sounder.playCurrentPlayerSound();
         }
 
+        public void indicatorAt(string text, Player p)
+        {
+            switch (p.position())
+            {
+                case Player.SUD: ZoneJoueurS.showIndicator(text); break;
+                case Player.OUEST: ZoneJoueurO.showIndicator(text); break;
+                case Player.NORD: ZoneJoueurN.showIndicator(text); break;
+                case Player.EST: ZoneJoueurE.showIndicator(text); break;
+                default: break;
+            }
+        }
+
+        public void indicatorCurrentPlayer(string text)
+        {
+            indicatorAt(text, _mdl.getCurrentPlayer());
+        }
+
         // Update                           ======================================================================================================
 
         public void updateCodeView()

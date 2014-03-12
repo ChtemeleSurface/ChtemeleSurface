@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Forms;
 
 using Microsoft.Surface.Presentation.Controls;
 using System.Media;
@@ -32,12 +33,18 @@ namespace ChtemeleSurfaceApplication
 
         public bool active = false;
 
+        private Timer timerIndicator;
+
         // Constructeurs                    ======================================================================================================
 
         public ZoneJoueur()
         {
             InitializeComponent();
             ButtonNextPlayer.IsEnabled = false;
+
+            timerIndicator = new Timer();
+            timerIndicator.Interval = 3000;
+            timerIndicator.Tick += new EventHandler(OnTimedEvent_IndicatorDissappear);
         }
 
         // Evénements                  ======================================================================================================
@@ -48,13 +55,26 @@ namespace ChtemeleSurfaceApplication
             SurfaceWindow1.getInstance.updateRotation();
             SurfaceWindow1.getInstance.updateZonesJoueur();
             SurfaceWindow1.getInstance.updateStepIndicator();
+            SurfaceWindow1.getInstance.indicatorCurrentPlayer("A vous de jouer !");
 
             Sounder.playCurrentPlayerSound();
         }
 
+        private void OnTimedEvent_IndicatorDissappear(object source, EventArgs e)
+        {
+            Indicator.Visibility = System.Windows.Visibility.Hidden;
+            timerIndicator.Stop();
+        }
+
         // Fonctionnalités                  ======================================================================================================
 
-
+        public void showIndicator(string text)
+        {
+            Indicator.Text = text;
+            Indicator.Visibility = System.Windows.Visibility.Visible;
+            timerIndicator.Stop();
+            timerIndicator.Start();
+        }
 
         // Update                           ======================================================================================================
 
