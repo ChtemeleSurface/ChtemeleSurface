@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 {
-    class CtrlF5 : AddonCarte
+    public class CtrlF5 : AddonCarte
     {
         public CtrlF5() : base(){}
 

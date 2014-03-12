@@ -7,7 +7,7 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.Carte_classes
 {
-    class HTMLTagCarte : HTMLCarte
+    public class HTMLTagCarte : HTMLCarte
     {
         private string _tag;
         private HtmlTag.HTMLTagType _tagtype;
@@ -41,10 +41,10 @@ namespace ChtemeleSurfaceApplication.Carte_classes
                 if (HtmlElement._currentElement == null) return;
                 if (HtmlElement._currentElement.getTagname() == _tag)
                     HtmlElement._currentElement.closeTag();
-
             }
 
             Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
+            Game_classes.Game.getInstance.getCurPlayer().lastCombo().addCard(this);
         }
 
         public override void onDelete()

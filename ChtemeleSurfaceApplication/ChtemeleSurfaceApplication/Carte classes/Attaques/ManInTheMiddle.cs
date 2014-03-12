@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
 {
-    class ManInTheMiddle : AttaqueCarte
+    public class ManInTheMiddle : AttaqueCarte
     {
 
         public ManInTheMiddle()

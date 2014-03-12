@@ -93,6 +93,7 @@
     <Compile Include="PageDoc.xaml.cs">
       <DependentUpon>PageDoc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sounder.cs" />
     <Compile Include="Tag.xaml.cs">
       <DependentUpon>Tag.xaml</DependentUpon>
     </Compile>

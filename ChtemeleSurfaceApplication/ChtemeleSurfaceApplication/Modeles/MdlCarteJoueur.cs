@@ -34,7 +34,7 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         //a partir de la classe Combo
         public Combo getCombo() { return _player.lastCombo(); }
-        public string getComboCode() { return _player.lastCombo().getCodeJoueur(); }
+        public string getComboCode() { return _player.lastCombo().code; }
 
         public bool hasBrowserUpdate()
         {

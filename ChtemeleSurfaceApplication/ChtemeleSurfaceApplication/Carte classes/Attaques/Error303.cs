@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
 {
-    class Error303 : AttaqueCarte
+    public class Error303 : AttaqueCarte
     {
       
         public  Error303()

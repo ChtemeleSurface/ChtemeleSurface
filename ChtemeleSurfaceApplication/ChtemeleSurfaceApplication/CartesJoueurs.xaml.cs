@@ -104,7 +104,7 @@ namespace ChtemeleSurfaceApplication
             Game.getInstance.LocationNav[navClicked] = positionJoueur;
 
             //On créée le nouveau joueur
-            SurfaceWindow1.getInstance.getMdl.newPlayer(new Player(Player.browserNames[navClicked], positionJoueur));
+            SurfaceWindow1.getInstance.getMdl.newPlayer(new Player(Player.browserNames[navClicked], positionJoueur, navClicked));
             SurfaceWindow1.getInstance.getMdl.setBrowserPosition(navClicked, positionJoueur);
 
             switch (positionJoueur)
@@ -241,6 +241,7 @@ namespace ChtemeleSurfaceApplication
             }
             //affiche dernière combinaison de balises posée
             Combinaison.Text = _mdl.getComboCode().ToString();
+            PointsCombo.Text = _mdl.getCombo().score.ToString();
 
             //affichage des effects
             if (_mdl.hasBrowserUpdate())

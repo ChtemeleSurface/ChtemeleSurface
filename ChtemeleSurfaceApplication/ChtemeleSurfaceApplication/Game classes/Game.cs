@@ -149,6 +149,14 @@ namespace ChtemeleSurfaceApplication.Game_classes
         /// </summary>
         public void nextPlayer()
         {
+            // Step 0 : On incrémente les valeurs des étapes, et on passe la fin 
+            _subStep++;
+            if (_subStep >= _nbPlayer) _step++;
+            _subStep %= _nbPlayer;
+
+            if (_step >= _nbSteps) endGame();
+
+
             //      Step 1.1 : On dresse une liste des joueurs disponibles
             int indexCurPlayer = 0;
             bool found = false;
@@ -189,13 +197,10 @@ namespace ChtemeleSurfaceApplication.Game_classes
             indexCurPlayer %= _nbPlayer;
 
             _currentPlayer = getPlayer(listePos[indexCurPlayer]);
-            
-            _subStep++;
-            if (_subStep >= _nbPlayer) _step++;
-            _subStep %= _nbPlayer;
 
-            //if (_step >= _nbSteps) endGame();
+            // On a le joueur suivant, on reset sa dernière combo
 
+            _currentPlayer.lastCombo().reset();
         }
 
         public void endGame()

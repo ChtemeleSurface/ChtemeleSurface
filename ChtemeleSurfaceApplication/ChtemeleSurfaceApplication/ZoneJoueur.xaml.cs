@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using Microsoft.Surface.Presentation.Controls;
 using System.Media;
 
+using ChtemeleSurfaceApplication.Game_classes;
+
 namespace ChtemeleSurfaceApplication
 {
     /// <summary>
@@ -47,10 +49,7 @@ namespace ChtemeleSurfaceApplication
             SurfaceWindow1.getInstance.updateZonesJoueur();
             SurfaceWindow1.getInstance.updateStepIndicator();
 
-            using (SoundPlayer player = new SoundPlayer("Resources/lion.wav"))
-            {
-                player.Play();
-            }
+            Sounder.playCurrentPlayerSound();
         }
 
         // Fonctionnalités                  ======================================================================================================
@@ -66,6 +65,7 @@ namespace ChtemeleSurfaceApplication
                 ButtonNextPlayer.IsEnabled = true;
                 ButtonNextPlayer.Visibility = System.Windows.Visibility.Visible;
                 Background = new SolidColorBrush(Colors.Ivory);
+                CarteJoueur.update();
 
             }
             else

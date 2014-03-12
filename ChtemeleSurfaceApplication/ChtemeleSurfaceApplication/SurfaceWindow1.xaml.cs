@@ -305,6 +305,7 @@ namespace ChtemeleSurfaceApplication
             rotateCenterView(_mdl.getCurrentPlayer().position());
             updateZonesJoueur();
             updateCodeView();
+            Sounder.playCurrentPlayerSound();
         }
 
         // Update                           ======================================================================================================

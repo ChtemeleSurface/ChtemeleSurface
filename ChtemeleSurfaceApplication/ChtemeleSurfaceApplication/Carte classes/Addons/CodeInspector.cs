@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 {
-    class CodeInspector : AddonCarte
+    public class CodeInspector : AddonCarte
     {
         public CodeInspector() : base(){}
 

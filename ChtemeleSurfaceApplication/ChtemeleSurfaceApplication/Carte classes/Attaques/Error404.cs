@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
 {
-    class Error404 : AttaqueCarte
+    public class Error404 : AttaqueCarte
     {
         public  Error404()
             : base()

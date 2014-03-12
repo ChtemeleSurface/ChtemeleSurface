@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 {
-    class Antivirus : AddonCarte
+    public class Antivirus : AddonCarte
     {
         public Antivirus() : base(){}
 

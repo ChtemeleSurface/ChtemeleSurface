@@ -42,7 +42,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             _htmlFilePath = DEFAULT_HTMLCODE_FILEPATH;
         }
 
-        // Accesseurs & Mutateurs
+        // Accesseurs & Mutateurs           ======================================================================================================
 
         public MdlCarteJoueur mCarteS { get { return _mCarteS; } }
         public MdlCarteJoueur mCarteO { get { return _mCarteO; } }

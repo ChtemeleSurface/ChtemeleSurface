@@ -18,30 +18,39 @@ namespace ChtemeleSurfaceApplication.Game_classes
 
         // Variables membres                ======================================================================================================
 
-        private string code;                // code de la combinaison
-        private int codeScore;              // Score généré par la combinaison
-        private int nbCarte;                // Nombre de cartes de la combinaison
+        private string _code;                // code de la combinaison
+        private int _codeScore;              // Score généré par la combinaison
+        private int _nbCards;                // Nombre de cartes de la combinaison
 
         // Constructeurs                    ======================================================================================================
 
         public Combo()
         {
-            code = "";
-            codeScore = 0;
-            nbCarte = 0;
+            _code = "";
+            _codeScore = 0;
+            _nbCards = 0;
         }
 
         // Accesseurs / Mutateurs           ======================================================================================================
 
-        public int getScore() { return codeScore; }
-        public void setScoreJoueur(int a) { codeScore = a; }
-
-        public string getCodeJoueur() { return code; }
-        public void setCodeJoueur(string a) { code = a; }
-
-        public int getNbCarte() { return nbCarte; }
-        public void setComboJoueur(int a) { nbCarte = a; }
+        public string code { get { return _code; } }
+        public int score { get { return _codeScore; } }
+        public int nbCards { get { return _nbCards; } }
 
         // Fonctionnalités                  ======================================================================================================
+
+        public void addCard(HTMLCarte c)
+        {
+            _nbCards++;
+            _codeScore += c.score;
+            // TODO : trouver comment récupréer le code
+        }
+
+        public void reset()
+        {
+            _code = "";
+            _codeScore = 0;
+            _nbCards = 0;
+        }
     }
 }

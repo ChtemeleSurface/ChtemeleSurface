@@ -7,7 +7,7 @@ using ChtemeleSurfaceApplication.HTML_classes;
 
 namespace ChtemeleSurfaceApplication.Carte_classes
 {
-    class HTMLAttributeCarte : HTMLCarte
+    public class HTMLAttributeCarte : HTMLCarte
     {
         public string key;
         //public string value;  //Stocké dans textContent
@@ -28,12 +28,17 @@ namespace ChtemeleSurfaceApplication.Carte_classes
         {
             if (HtmlElement._currentElement == null) return;
 
-            Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
-
+            //On ajoute l'attribut à la balise courante
             HtmlElement._currentElement.attributes.Add(new HtmlTagAttribute(key, textcontent));
 
-            SurfaceWindow1.getInstance.PageCode.ShowCode();
-            SurfaceWindow1.getInstance.PageRendu.update();
+            //On donne des points au joueur
+            Game_classes.Game.getInstance.getCurPlayer().addPoint(_score);
+            //On met à joour la combo du joueur
+            Game_classes.Game.getInstance.getCurPlayer().lastCombo().addCard(this);
+
+            //On met à jour l'affichage (TODO : ça ne se fait pas ici normalement)
+            //SurfaceWindow1.getInstance.PageCode.ShowCode();
+            //SurfaceWindow1.getInstance.PageRendu.update();
         }
 
         public override void onDelete()

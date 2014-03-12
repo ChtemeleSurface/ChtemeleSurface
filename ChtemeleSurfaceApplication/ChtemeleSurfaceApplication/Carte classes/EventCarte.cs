@@ -7,7 +7,7 @@ using ChtemeleSurfaceApplication.Game_classes;
 
 namespace ChtemeleSurfaceApplication
 {
-    abstract class EventCarte : Carte
+    public abstract class EventCarte : Carte
     {
         public EventCarte() : base() { }
 

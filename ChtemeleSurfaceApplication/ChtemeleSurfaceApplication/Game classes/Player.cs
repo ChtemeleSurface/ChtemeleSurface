@@ -44,12 +44,13 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public  int nbCards;                //nombre de cartes en main.
         private List<Effect> _effects;      //Effets actifs sur le joueur
         private int _position;              //position du joueur (voir enumeration)
+        private int _browser;               //navigateur
 
         // Constructeurs                    ======================================================================================================
 
         // Paramètres : n nom du joueur
         //              p position du joueur
-        public Player(string n, int p)
+        public Player(string n, int p, int b)
         {
             name = n;
             score = 0;
@@ -58,6 +59,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
             nbCards = handSize;
             _effects = new List<Effect>();
             _position = p;
+            _browser = b;
         }
 
 
@@ -67,7 +69,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public Combo lastCombo(){ return _lastCombo;}
         public List<Effect> effects() { return _effects; }
         public int position() { return _position; }
-
+        public int browser { get { return _browser; } }
 
 
 
@@ -90,19 +92,6 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public void addPoint(int scoreAdd)
         {
             score += scoreAdd;
-            updateCarteJoueur();
-        }
-
-        public void updateCarteJoueur()
-        {
-            if(Game.getInstance.playerE != null)
-                SurfaceWindow1.getInstance.ZoneJoueurE.CarteJoueur.update();
-            if (Game.getInstance.playerS != null)
-                SurfaceWindow1.getInstance.ZoneJoueurS.CarteJoueur.update();
-            if (Game.getInstance.playerN != null)
-                SurfaceWindow1.getInstance.ZoneJoueurN.CarteJoueur.update();
-            if (Game.getInstance.playerO != null)
-                SurfaceWindow1.getInstance.ZoneJoueurO.CarteJoueur.update();
         }
     }
 }

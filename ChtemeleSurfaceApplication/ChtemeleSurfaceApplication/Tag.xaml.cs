@@ -69,10 +69,11 @@ namespace ChtemeleSurfaceApplication
             _mdl.validerCarte();
             updateAll();
 
+            //Update du jeu
             SurfaceWindow1.getInstance.updateCodeView();
+            SurfaceWindow1.getInstance.updateZonesJoueur();
 
-            //On actualise le jeu
-            ChtemeleSurfaceApplication.SurfaceWindow1.getInstance.updateCodeView();
+            //Bruitage
             using (SoundPlayer player = new SoundPlayer("Resources/lion.wav"))
             {
                 player.Play();
