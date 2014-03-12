@@ -45,6 +45,7 @@ namespace ChtemeleSurfaceApplication
             SurfaceWindow1.getInstance.getMdl.nextSubStep();
             SurfaceWindow1.getInstance.updateRotation();
             SurfaceWindow1.getInstance.updateZonesJoueur();
+            SurfaceWindow1.getInstance.updateStepIndicator();
 
             using (SoundPlayer player = new SoundPlayer("Resources/lion.wav"))
             {

@@ -75,7 +75,7 @@ namespace ChtemeleSurfaceApplication
         private void SurfaceWindow_Loaded(object sender, RoutedEventArgs e)
         {
             _mdl = new MdlGame();
-
+            updateStepIndicator();
 
         }
 
@@ -275,6 +275,10 @@ namespace ChtemeleSurfaceApplication
             ZonePioche.Center = new Point(ScatterCenterView.Width / 2.0, ScatterCenterView.Height / 2.0);
             PageCode.Center = new Point(PageCode.Width / 2.0, ScatterCenterView.Height / 2.0);
             PageRendu.Center = new Point(ScatterCenterView.Width - PageRendu.Width / 2.0, ScatterCenterView.Height / 2.0);
+
+            //Zone de pioche/defausse/StepIndicator
+            ZonePiocheGrid.Width = ZonePioche.Width;
+            ZonePiocheGrid.Height = ZonePioche.Height;
         }
 
         public void layoutGameStarted()
@@ -289,8 +293,6 @@ namespace ChtemeleSurfaceApplication
             if (_mdl.getPlayerAt(Player.NORD) == null)
                 ZoneJoueurN.Visibility = System.Windows.Visibility.Hidden;
 
-            //_mdl.initGame();
-
             switch (_mdl.getCurrentPlayer().position())
             {
                 case Player.SUD:   ZoneJoueurS.active = true; break;
@@ -302,20 +304,26 @@ namespace ChtemeleSurfaceApplication
 
             rotateCenterView(_mdl.getCurrentPlayer().position());
             updateZonesJoueur();
-            update();
+            updateCodeView();
         }
 
 
         // Update                           ======================================================================================================
 
-        public void update()
+        public void updateCodeView()
         {
-            _mdl.saveHTML();
+            PageCode.saveHTML(_mdl.htmlFilePath);
+            PageRendu.update();
         }
 
         public void updateRotation()
         {
             rotateCenterView(_mdl.getCurrentPlayer().position());
+        }
+
+        public void updateStepIndicator()
+        {
+            StepIndicator.Text = _mdl.getCurrentStep().ToString() + '/' + _mdl.getTotalStep().ToString();
         }
 
         public void updateZonesJoueur()

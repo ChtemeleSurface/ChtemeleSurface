@@ -13,7 +13,8 @@
     
     <Grid Name="webGrid" Visibility="Visible">
 
-        <awe:WebControl Name="webControl" Loaded="webControl_Loaded"></awe:WebControl>
+        <awe:WebControl Name="webControl" Loaded="webControl_Loaded">
+        </awe:WebControl>
                 
         <Grid>
             <Grid.ColumnDefinitions>

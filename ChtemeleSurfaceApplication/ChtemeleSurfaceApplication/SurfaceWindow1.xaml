@@ -125,9 +125,20 @@
                     <s:ScatterView Name="ScatterCenterView">
                         <custom:PageCode x:Name="PageCode" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:PageCode>
                         <s:ScatterViewItem x:Name="ZonePioche" CanScale="False" CanMove="False" CanRotate="False" Orientation="0">
-                                <TextBlock Name="nbStep">
-                                    543
-                                </TextBlock>
+                                <Grid Name="ZonePiocheGrid">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Label Name="Pioche" Grid.Row="0" Grid.Column="0"></Label>
+                                    <TextBlock Name="StepIndicator" Grid.Row="1" Grid.Column="0"></TextBlock>
+                                    <Label Name="Defausse" Grid.Row="2" Grid.Column="0"></Label>
+                                </Grid>
                             
                         </s:ScatterViewItem>
                         <custom:RenduHTML x:Name="PageRendu" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:RenduHTML>

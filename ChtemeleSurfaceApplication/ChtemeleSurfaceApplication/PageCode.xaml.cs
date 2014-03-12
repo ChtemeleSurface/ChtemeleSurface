@@ -132,5 +132,10 @@ namespace ChtemeleSurfaceApplication
             //CodeText.Inlines.Add(new Run(_mdl.getCode()));
         }
 
+        public void saveHTML(string filepath)
+        {
+            _mdl.saveHTML(filepath);
+        }
+
     }
 }

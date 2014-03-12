@@ -262,5 +262,15 @@ namespace ChtemeleSurfaceApplication.Modeles
                     linebreak = false;
             }
         }
+
+        public void saveHTML(string filepath)
+        {
+            MdlRenduHtml mdlRendu = new MdlRenduHtml();
+            mdlRendu.renderPage();
+            string toSave = mdlRendu.getCode();
+            System.IO.StreamWriter file = new System.IO.StreamWriter(filepath);
+            file.WriteLine(toSave);
+            file.Close();
+        }
     }
 }

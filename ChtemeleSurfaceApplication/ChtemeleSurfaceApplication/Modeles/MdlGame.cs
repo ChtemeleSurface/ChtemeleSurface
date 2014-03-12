@@ -51,8 +51,10 @@ namespace ChtemeleSurfaceApplication.Modeles
         public MdlPageCode mPageCode { get { return _mPageCode; } }
         public MdlRenduHtml mPageRendu { get { return _mPageRendu; } }
 
+        public string htmlFilePath { get { return _htmlFilePath; } set { _htmlFilePath = value; } }
+
         void setGameFilePath(string s) { _gameFilePath = s; }
-        void setHtmlFilePath(string s) { _htmlFilePath = s; }
+        //void setHtmlFilePath(string s) { _htmlFilePath = s; }
 
         // Fonctionnalités                  ======================================================================================================
 
@@ -68,22 +70,6 @@ namespace ChtemeleSurfaceApplication.Modeles
         public bool loadGame()
         {
             return false;
-        }
-
-        public void saveHTML()
-        {
-            MdlRenduHtml mdlRendu = new MdlRenduHtml();
-            mdlRendu.renderPage();
-            string toSave = mdlRendu.getCode();
-            System.IO.StreamWriter file = new System.IO.StreamWriter(_htmlFilePath);
-            file.WriteLine(toSave);
-            file.Close();
-        }
-
-        public string loadHTML()
-        {
-            System.IO.StreamReader file = new System.IO.StreamReader(_htmlFilePath);
-            return file.ReadToEnd();
         }
 
         /// <summary>

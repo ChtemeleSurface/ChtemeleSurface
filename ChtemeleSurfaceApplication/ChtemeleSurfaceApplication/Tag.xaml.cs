@@ -70,7 +70,7 @@ namespace ChtemeleSurfaceApplication
             updateAll();
 
             //On actualise le jeu
-            ChtemeleSurfaceApplication.SurfaceWindow1.getInstance.update();
+            ChtemeleSurfaceApplication.SurfaceWindow1.getInstance.updateCodeView();
             using (SoundPlayer player = new SoundPlayer("Resources/lion.wav"))
             {
                 player.Play();

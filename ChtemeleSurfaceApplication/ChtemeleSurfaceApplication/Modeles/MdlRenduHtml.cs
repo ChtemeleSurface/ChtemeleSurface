@@ -215,5 +215,11 @@ namespace ChtemeleSurfaceApplication.Modeles
             if (computedIndentChanges > 0) _indentLevel += computedIndentChanges;
             return res;
         }
+
+        public string loadHTML(string filepath)
+        {
+            System.IO.StreamReader file = new System.IO.StreamReader(filepath);
+            return file.ReadToEnd();
+        }
     }
 }
