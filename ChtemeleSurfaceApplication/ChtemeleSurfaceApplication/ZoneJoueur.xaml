@@ -20,10 +20,10 @@
                 <TextBlock Width="150" Height="40" TextAlignment="Center" VerticalAlignment="Center">Au suivant !</TextBlock>
             </s:SurfaceButton>
         </s:ScatterViewItem>
-        <custom:PageDoc x:Name="Documentation" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="240, 75" ZIndex="50"></custom:PageDoc>
-        <custom:CartesJoueurs x:Name="CarteJoueur" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="590, 75" ZIndex="50"></custom:CartesJoueurs>
-        <s:ScatterViewItem Name="ScatterIndicator" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Width="700" Height="40" MinHeight="40" Center="390, 130" Background="Transparent" BorderThickness="0" ZIndex="100" Margin="0" Padding="0">
-            <s:SurfaceTextBox Name="Indicator" Background="Black" Foreground="Wheat" BorderThickness="0" TextAlignment="Center" VerticalAlignment="Center" Opacity="0.7" Focusable="False" Visibility="Hidden">Indicator</s:SurfaceTextBox>
+        <custom:PageDoc x:Name="Documentation" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="240, 75" ZIndex="50" IsTopmostOnActivation="False"></custom:PageDoc>
+        <custom:CartesJoueurs x:Name="CarteJoueur" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Center="590, 75" ZIndex="50" IsTopmostOnActivation="False"></custom:CartesJoueurs>
+        <s:ScatterViewItem Name="ScatterIndicator" CanMove="False" CanScale="False" CanRotate="False" Orientation="0" Width="700" Height="40" MinHeight="40" Center="390, 130" Background="Transparent" BorderThickness="0" ZIndex="100" Margin="0" Padding="0"  Focusable="False" IsEnabled="False" Visibility="Collapsed">
+            <s:SurfaceTextBox Name="Indicator" Background="Black" Foreground="Wheat" BorderThickness="0" TextAlignment="Center" VerticalAlignment="Center" Opacity="0.7">Indicator</s:SurfaceTextBox>
         </s:ScatterViewItem>
     </s:ScatterView>
 

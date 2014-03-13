@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 
 using Microsoft.Surface.Presentation.Controls;
+using Microsoft.Surface.Presentation.Generic;
 using System.Media;
 
 using ChtemeleSurfaceApplication.Game_classes;
@@ -45,6 +46,7 @@ namespace ChtemeleSurfaceApplication
             timerIndicator = new Timer();
             timerIndicator.Interval = 3000;
             timerIndicator.Tick += new EventHandler(OnTimedEvent_IndicatorDissappear);
+
         }
 
         // Evénements                  ======================================================================================================
@@ -62,7 +64,8 @@ namespace ChtemeleSurfaceApplication
 
         private void OnTimedEvent_IndicatorDissappear(object source, EventArgs e)
         {
-            Indicator.Visibility = System.Windows.Visibility.Hidden;
+            ScatterIndicator.Visibility = System.Windows.Visibility.Collapsed;
+            ScatterIndicator.IsEnabled = false;
             timerIndicator.Stop();
         }
 
@@ -71,7 +74,8 @@ namespace ChtemeleSurfaceApplication
         public void showIndicator(string text)
         {
             Indicator.Text = text;
-            Indicator.Visibility = System.Windows.Visibility.Visible;
+            ScatterIndicator.Visibility = System.Windows.Visibility.Visible;
+            ScatterIndicator.IsEnabled = true;
             timerIndicator.Stop();
             timerIndicator.Start();
         }
@@ -89,7 +93,7 @@ namespace ChtemeleSurfaceApplication
             else
             {
                 ButtonNextPlayer.IsEnabled = false;
-                ButtonNextPlayer.Visibility = System.Windows.Visibility.Hidden;
+                ButtonNextPlayer.Visibility = System.Windows.Visibility.Collapsed;
                 Background = new SolidColorBrush(Colors.RosyBrown);
             }
             CarteJoueur.update();
