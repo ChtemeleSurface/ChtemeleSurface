@@ -306,6 +306,7 @@ namespace ChtemeleSurfaceApplication
             updateZonesJoueur();
             updateCodeView();
             Sounder.playCurrentPlayerSound();
+            SurfaceWindow1.getInstance.indicatorCurrentPlayer("A vous de jouer !");
         }
 
         public void indicatorAt(string text, Player p)

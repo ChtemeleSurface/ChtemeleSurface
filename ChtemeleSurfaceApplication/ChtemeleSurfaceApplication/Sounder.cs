@@ -5,10 +5,11 @@ using System.Text;
 using System.Media;
 
 using ChtemeleSurfaceApplication.Game_classes;
+using ChtemeleSurfaceApplication.Carte_classes;
 
 namespace ChtemeleSurfaceApplication
 {
-    public class Sounder
+    public static class Sounder
     {
         // Constantes, enumérations         ======================================================================================================
 
@@ -21,6 +22,12 @@ namespace ChtemeleSurfaceApplication
         public const string FX_EXPLORER =   soundDir + "explorer.wav";
 
         public const string FX_BOOM =       soundDir + "boom.wav";
+        public const string FX_POINTS =     soundDir + "points.wav";
+        public const string FX_BONUS =      soundDir + "bonus.wav";
+        public const string FX_MALUS =      soundDir + "malus.wav";
+        public const string FX_OK =         soundDir + "ok.wav";
+        public const string FX_ERROR =      soundDir + "error.wav";
+        public const string FX_TAGOK =      soundDir + "cymbal.wav";
 
         // Variables membres                ======================================================================================================
 
@@ -28,10 +35,7 @@ namespace ChtemeleSurfaceApplication
 
         // Constructeurs                    ======================================================================================================
 
-        private Sounder()   // Classe statique, on ne l'instancie pas.
-        {
-
-        }
+        // Classe statique, on ne l'instancie pas.
 
         // Accesseurs / Mutateurs           ======================================================================================================
 
@@ -61,6 +65,16 @@ namespace ChtemeleSurfaceApplication
                 default: snd = Sounder.FX_BOOM; break;
             }
             Sounder.playSound(snd);
+        }
+
+        public static void playCardSound(Carte card)
+        {
+            if (card is HTMLTagCarte || card is HTMLAttributeCarte)
+                Sounder.playSound(Sounder.FX_POINTS);
+            else if (card is AttaqueCarte)
+                Sounder.playSound(Sounder.FX_MALUS);
+            else if (card is AddonCarte)
+                Sounder.playSound(Sounder.FX_BONUS);
         }
     }
 }

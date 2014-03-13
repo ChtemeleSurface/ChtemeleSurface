@@ -187,20 +187,23 @@ namespace ChtemeleSurfaceApplication
         //Fonction click afin d'afficher la popup de description de chaque effect
         private void EffectBrowserUpdate_Click(object sender, RoutedEventArgs e)
         {
-            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Visible;
-            timer_BrowserUpdate.Enabled = true;            
+            //PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Visible;
+            //timer_BrowserUpdate.Enabled = true;
+            SurfaceWindow1.getInstance.indicatorAt("Browser Update", _mdl.getPlayer());
         }
 
         private void EffectCrashBrowser_Click(object sender, RoutedEventArgs e)
         {
-            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Visible;
-            timer_CrashBrowser.Enabled = true;
+            //PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Visible;
+            //timer_CrashBrowser.Enabled = true;
+            SurfaceWindow1.getInstance.indicatorAt("Crash Browser", _mdl.getPlayer());
         }
 
         private void EffectFreeze_Click(object sender, RoutedEventArgs e)
         {
-            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Visible;
-            timer_Freeze.Enabled = true;
+            //PopUpEffectFreeze.Visibility = System.Windows.Visibility.Visible;
+            //timer_Freeze.Enabled = true;
+            SurfaceWindow1.getInstance.indicatorAt("Freeze", _mdl.getPlayer());
         }
 
         // Timer popup

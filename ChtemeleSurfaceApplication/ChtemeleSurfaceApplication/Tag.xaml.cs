@@ -26,13 +26,6 @@ namespace ChtemeleSurfaceApplication
         private MdlTag _mdl = null;
         private int _id;
 
-        private bool played;
-        public static int multiCardOnScreen = 0;
-        private static Game_classes.Game gameClass;
-        private static Game_classes.Player players;
-        private static Carte curCard;
-        private static CarteAssoc carteAssoc;
-
         // Constructeurs                    ======================================================================================================
 
         public Tag()
@@ -74,10 +67,7 @@ namespace ChtemeleSurfaceApplication
             SurfaceWindow1.getInstance.updateZonesJoueur();
 
             //Bruitage
-            using (SoundPlayer player = new SoundPlayer("Resources/lion.wav"))
-            {
-                player.Play();
-            }
+            Sounder.playCardSound(_mdl.card);
         }
 
         private void validerNord(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.NORD); valider(sender, e); }
@@ -100,6 +90,12 @@ namespace ChtemeleSurfaceApplication
 
             // Affichage du bon Layout
             updateAll();
+
+            // Bruitage
+            if (!_mdl.isPlayable())
+                Sounder.playSound(Sounder.FX_ERROR);
+            else
+                Sounder.playSound(Sounder.FX_TAGOK);
         }
 
         private void lostTag(object sender, RoutedEventArgs e)

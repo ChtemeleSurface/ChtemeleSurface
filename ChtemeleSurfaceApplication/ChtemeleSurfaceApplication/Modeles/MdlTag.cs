@@ -214,7 +214,7 @@ namespace ChtemeleSurfaceApplication.Modeles
         public bool hasTextEdit() { return _hasTextEdit; }
         public bool hasImageSelector() { return _hasImageSelector; }
         public bool hasPlayerSelector() { return _hasPlayerSelector; }
-
+        public Carte card { get { return _card; } }
         // Fonctionnalités                  ======================================================================================================
 
         // Nouveau tag détecté et validé (on est en droit de le poser et il est seul sur la table)

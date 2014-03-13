@@ -85,8 +85,6 @@ namespace ChtemeleSurfaceApplication
                 ButtonNextPlayer.IsEnabled = true;
                 ButtonNextPlayer.Visibility = System.Windows.Visibility.Visible;
                 Background = new SolidColorBrush(Colors.Ivory);
-                CarteJoueur.update();
-
             }
             else
             {
@@ -94,6 +92,7 @@ namespace ChtemeleSurfaceApplication
                 ButtonNextPlayer.Visibility = System.Windows.Visibility.Hidden;
                 Background = new SolidColorBrush(Colors.RosyBrown);
             }
+            CarteJoueur.update();
         }
     }
 }
