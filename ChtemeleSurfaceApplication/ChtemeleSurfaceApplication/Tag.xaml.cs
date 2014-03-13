@@ -130,11 +130,50 @@ namespace ChtemeleSurfaceApplication
         {
             if (_mdl.hasPlayerSelector())    // MenuAttaque
             {
+                // Il ne faut afficher que les joueurs présents dans la partie
+                // Nord
+                if (_mdl.playerExists(Game_classes.Player.NORD))
+                {
+                    MA_PlayerNord.Header = SurfaceWindow1.getInstance.getMdl.getPlayerAt(Game_classes.Player.NORD).name;
+                    MA_PlayerNord.Visibility = System.Windows.Visibility.Visible;
+                    MA_PlayerNord.IsEnabled = true;
+                }
+                else
+                {
+                    MA_PlayerNord.Visibility = System.Windows.Visibility.Collapsed;
+                    MA_PlayerNord.IsEnabled = false;
+                }
 
+                //Est
+                if (_mdl.playerExists(Game_classes.Player.EST))
+                {
+                    MA_PlayerEst.Header = SurfaceWindow1.getInstance.getMdl.getPlayerAt(Game_classes.Player.EST).name;
+                    MA_PlayerEst.Visibility = System.Windows.Visibility.Visible;
+                    MA_PlayerEst.IsEnabled = true;
+                }
+                else
+                {
+                    MA_PlayerEst.Visibility = System.Windows.Visibility.Collapsed;
+                    MA_PlayerEst.IsEnabled = false;
+                }
+
+                //Ouest
+                if (_mdl.playerExists(Game_classes.Player.OUEST))
+                {
+                    MA_PlayerOuest.Header = SurfaceWindow1.getInstance.getMdl.getPlayerAt(Game_classes.Player.OUEST).name;
+                    MA_PlayerOuest.Visibility = System.Windows.Visibility.Visible;
+                    MA_PlayerOuest.IsEnabled = true;
+                }
+                else
+                {
+                    MA_PlayerOuest.Visibility = System.Windows.Visibility.Collapsed;
+                    MA_PlayerOuest.IsEnabled = false;
+                }
+                    
             }
             else    // MenuDefault
             {
-
+                // Rien à changer
             }
         }
 
@@ -228,6 +267,8 @@ namespace ChtemeleSurfaceApplication
                         view.Value.ImageSelector.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                         view.Value.ImageSelector.IsEnabled = view.Value._mdl.isPlayable();
                     }
+                    view.Value.layoutMenu();
+                    
                 }
                 else
                 {

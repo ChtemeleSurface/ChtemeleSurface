@@ -338,5 +338,10 @@ namespace ChtemeleSurfaceApplication.Modeles
             else nbCards--;
         }
 
+        public bool playerExists(int pos)
+        {
+            return _game.getPlayer(pos) != null;
+        }
+
     }
 }
