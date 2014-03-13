@@ -57,7 +57,7 @@ namespace ChtemeleSurfaceApplication
             SurfaceWindow1.getInstance.updateRotation();
             SurfaceWindow1.getInstance.updateZonesJoueur();
             SurfaceWindow1.getInstance.updateStepIndicator();
-            SurfaceWindow1.getInstance.indicatorCurrentPlayer("A vous de jouer !");
+            SurfaceWindow1.getInstance.indicatorCurrentPlayer(IndicatorMessages.YOUR_TURN);
 
             Sounder.playCurrentPlayerSound();
         }
@@ -98,5 +98,22 @@ namespace ChtemeleSurfaceApplication
             }
             CarteJoueur.update();
         }
+    }
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /// <summary>
+    /// Contient les différentes chaines de texte qui peuvent être affichées dans l'indicateur
+    /// </summary>
+    public static class IndicatorMessages
+    {
+        public const string YOUR_TURN                               = "C'est à vous de jouer !";
+
+        public const string BROWSER_UPDATE_TOOLTIP                  = "Browser Update : Au prochain tour vous piochez 2 cartes de plus.";
+        public const string CRASH_BROWSER_TOOLTIP                   = "Crash Browser : Au prochain tour vous piocherez 4 cartes de moins.";
+        public const string FREEZE_TOOLTIP                          = "Freeze : Vous passerez votre prochain tour.";
     }
 }

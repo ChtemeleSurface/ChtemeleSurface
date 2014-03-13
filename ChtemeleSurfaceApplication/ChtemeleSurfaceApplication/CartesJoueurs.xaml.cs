@@ -38,10 +38,6 @@ namespace ChtemeleSurfaceApplication
         public int position;
         private static int nbCarteJoueurActiv;
 
-        private Timer timer_BrowserUpdate;
-        private Timer timer_CrashBrowser;
-        private Timer timer_Freeze;
-
         // Constructeurs                    ======================================================================================================
 
         public CartesJoueurs()
@@ -63,25 +59,6 @@ namespace ChtemeleSurfaceApplication
             EffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
             EffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
             EffectFreeze.Visibility = System.Windows.Visibility.Hidden;
-
-            //pop up cachées
-            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
-            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
-            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Hidden;
-
-            // Timers popups
-            timer_BrowserUpdate = new Timer();
-            timer_BrowserUpdate.Interval = 3000;
-            timer_BrowserUpdate.Tick += new EventHandler(OnTimedEvent_BrowserUpdate);
-            timer_BrowserUpdate.Enabled = false;
-            timer_CrashBrowser = new Timer();
-            timer_CrashBrowser.Interval = 3000;
-            timer_CrashBrowser.Tick += new EventHandler(OnTimedEvent_CrashBrowser);
-            timer_CrashBrowser.Enabled = false;
-            timer_Freeze = new Timer();
-            timer_Freeze.Interval = 3000;
-            timer_Freeze.Tick += new EventHandler(OnTimedEvent_Freeze);
-            timer_Freeze.Enabled = false;
 
         }
 
@@ -189,43 +166,22 @@ namespace ChtemeleSurfaceApplication
         {
             //PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Visible;
             //timer_BrowserUpdate.Enabled = true;
-            SurfaceWindow1.getInstance.indicatorAt("Browser Update", _mdl.getPlayer());
+            SurfaceWindow1.getInstance.indicatorAt(IndicatorMessages.BROWSER_UPDATE_TOOLTIP, _mdl.getPlayer());
         }
 
         private void EffectCrashBrowser_Click(object sender, RoutedEventArgs e)
         {
             //PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Visible;
             //timer_CrashBrowser.Enabled = true;
-            SurfaceWindow1.getInstance.indicatorAt("Crash Browser", _mdl.getPlayer());
+            SurfaceWindow1.getInstance.indicatorAt(IndicatorMessages.CRASH_BROWSER_TOOLTIP, _mdl.getPlayer());
         }
 
         private void EffectFreeze_Click(object sender, RoutedEventArgs e)
         {
             //PopUpEffectFreeze.Visibility = System.Windows.Visibility.Visible;
             //timer_Freeze.Enabled = true;
-            SurfaceWindow1.getInstance.indicatorAt("Freeze", _mdl.getPlayer());
+            SurfaceWindow1.getInstance.indicatorAt(IndicatorMessages.FREEZE_TOOLTIP, _mdl.getPlayer());
         }
-
-        // Timer popup
-
-        private void OnTimedEvent_BrowserUpdate(object source, EventArgs e)
-        {
-            PopUpEffectBrowserUpdate.Visibility = System.Windows.Visibility.Hidden;
-            timer_BrowserUpdate.Enabled = false;
-        }
-
-        private void OnTimedEvent_CrashBrowser(object source, EventArgs e)
-        {
-            PopUpEffectCrashBrowser.Visibility = System.Windows.Visibility.Hidden;
-            timer_CrashBrowser.Enabled = false;
-        }
-
-        private void OnTimedEvent_Freeze(object source, EventArgs e)
-        {
-            PopUpEffectFreeze.Visibility = System.Windows.Visibility.Hidden;
-            timer_Freeze.Enabled = false;
-        }
-
 
         // Update                         ======================================================================================================
 

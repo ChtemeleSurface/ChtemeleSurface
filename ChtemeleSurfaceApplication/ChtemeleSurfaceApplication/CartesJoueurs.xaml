@@ -39,10 +39,6 @@
                 <Image  Source="Resources/croix.bmp"  ></Image>
             </s:SurfaceButton>
 
-            <s:SurfaceTextBox Name="PopUpEffectBrowserUpdate" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6" Opacity="1.0" FontSize="14" Background="Black">+2 cartes au prochain tour</s:SurfaceTextBox>
-            <s:SurfaceTextBox Name="PopUpEffectCrashBrowser" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6" Opacity="1.0" FontSize="14" Background="Black">-4 cartes au prochain tour</s:SurfaceTextBox>
-            <s:SurfaceTextBox Name="PopUpEffectFreeze" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6" Opacity="1.0" FontSize="12" Background="Black">Vous passez le prochain tour</s:SurfaceTextBox>
-
             <TextBlock Grid.Column="0" Grid.Row="2" FontSize="12" Grid.ColumnSpan="4" Padding="5,15,0,0" FontStyle="Italic" >Dernière combinaison :</TextBlock>
             <TextBlock Name="Combinaison" Grid.Column="0" Grid.Row="3" FontSize="12" Grid.ColumnSpan="4" Padding="5,0,0,0" ></TextBlock>
             <TextBlock Name="Points" Grid.Column="4" Grid.Row="0" FontSize="42" Grid.ColumnSpan="2" Grid.RowSpan="2" Padding="10,0,10,0" FontWeight="Normal" HorizontalAlignment="Right"></TextBlock>
