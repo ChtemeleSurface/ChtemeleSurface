@@ -15,9 +15,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
             curplayer.effects().Add(new Effect_classes.BrowserUpdate());
         }
 
-        public override void onDelete()
-        {
-            throw new NotImplementedException();
-        }
+        public override void onPlay() { }
+        public override void onDelete() { }
     }
 }

@@ -31,6 +31,13 @@ namespace ChtemeleSurfaceApplication.Game_classes
             _nbCards = 0;
         }
 
+        public Combo(Combo other)
+        {
+            _code = other.code;
+            _codeScore = other.score;
+            _nbCards = other.nbCards;
+        }
+
         // Accesseurs / Mutateurs           ======================================================================================================
 
         public string code { get { return _code; } }

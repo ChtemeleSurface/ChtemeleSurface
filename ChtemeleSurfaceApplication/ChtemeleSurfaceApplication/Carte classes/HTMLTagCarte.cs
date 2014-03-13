@@ -22,11 +22,6 @@ namespace ChtemeleSurfaceApplication.Carte_classes
 
         public HtmlTag.HTMLTagType getTagtype() { return _tagtype; }
 
-        public override void onPlay()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void onValid()
         {
 
@@ -47,9 +42,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             Game_classes.Game.getInstance.getCurPlayer().lastCombo().addCard(this);
         }
 
-        public override void onDelete()
-        {
-            throw new NotImplementedException();
-        }
+        public override void onPlay() { }
+        public override void onDelete() { }
     }
 }

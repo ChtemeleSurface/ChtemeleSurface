@@ -7,11 +7,10 @@ namespace ChtemeleSurfaceApplication
 {
     public abstract class AttaqueCarte : EventCarte
     {
-        public AttaqueCarte() : base()
-        {
-        }
+        public AttaqueCarte() : base() { }
 
         override public void onPlay() { }
         override public void onValid() { }
+        override public void onDelete() { }
     }
 }

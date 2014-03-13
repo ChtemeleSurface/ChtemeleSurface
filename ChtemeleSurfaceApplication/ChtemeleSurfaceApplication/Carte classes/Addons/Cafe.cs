@@ -14,9 +14,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
             throw new NotImplementedException();
         }
 
-        public override void onDelete()
-        {
-            throw new NotImplementedException();
-        }
+        public override void onPlay() { }
+        public override void onDelete() { }
     }
 }

@@ -20,6 +20,7 @@ namespace ChtemeleSurfaceApplication
         private static Dictionary<int, MdlTag> _mdls = new Dictionary<int,MdlTag>();
         private static Dictionary<int, Tag> _views = new Dictionary<int, Tag>();
         private static int lastIDInsert = 0;
+        private static Tag antivirus = null;
 
         // Variables membres                ======================================================================================================
 
@@ -49,6 +50,8 @@ namespace ChtemeleSurfaceApplication
             ImageSelector.IsEnabled = false;
 
         }
+
+
 
         // Evénements                  ======================================================================================================
 
@@ -88,6 +91,13 @@ namespace ChtemeleSurfaceApplication
 
             _mdl.onTag();
 
+            //Si on a un antivirus, on le stocke
+            if (_mdl.tag == (int)MdlTag.TagCorrespondance.ANTIVIRUS)
+                antivirus = this;
+
+            //On vérifie les catalyses  (si des cartes s'activent automatiquement)
+            catalyse();
+
             // Affichage du bon Layout
             updateAll();
 
@@ -100,9 +110,9 @@ namespace ChtemeleSurfaceApplication
 
         private void lostTag(object sender, RoutedEventArgs e)
         {
+            _mdl.onRemoved();
             _mdls.Remove(_id);
             _views.Remove(_id);
-            _mdl.loseTag();
             _mdl = null;
 
             updateAll();
@@ -122,6 +132,21 @@ namespace ChtemeleSurfaceApplication
             }
         }
 
+        private void catalyse()
+        {
+            foreach (KeyValuePair<int, MdlTag> mdl in _mdls)
+            {
+                if (!mdl.Value.isPlayable()) continue;
+
+                // CAS 1 : Antivirus + Attaque quelconque
+                if (antivirus != null && mdl.Value.typeCard == Carte.TypeCarte.ATTACK_CARD && antivirus._mdl.isPlayable())
+                {
+                    antivirus._mdl.validerCarte();
+                    mdl.Value.canceled = true;
+                }
+            }
+        }
+
         // Update                           ======================================================================================================
 
         private static void updateAll()
@@ -129,7 +154,6 @@ namespace ChtemeleSurfaceApplication
             foreach (KeyValuePair<int, MdlTag> mdl in _mdls)
             {
                 mdl.Value.computeMulticard();
-
             }
 
             foreach (KeyValuePair<int, Tag> view in _views)

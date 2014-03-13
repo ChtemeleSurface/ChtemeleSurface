@@ -45,6 +45,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         private List<Effect> _effects;      //Effets actifs sur le joueur
         private int _position;              //position du joueur (voir enumeration)
         private int _browser;               //navigateur
+        private Player _save;               // Sauvegarde de l'état du joueur
 
         // Constructeurs                    ======================================================================================================
 
@@ -60,6 +61,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
             _effects = new List<Effect>();
             _position = p;
             _browser = b;
+            _save = null;
         }
 
 
@@ -93,5 +95,36 @@ namespace ChtemeleSurfaceApplication.Game_classes
         {
             score += scoreAdd;
         }
+
+        /*/// <summary>
+        /// Sauvegarde l'état du joueur
+        /// </summary>
+        public void save()
+        {
+            _save = this.clone();
+        }
+
+        /// <summary>
+        /// Restaure le joueur tel qu'il a été sauvegardé.
+        /// </summary>
+        public void restore()
+        {
+
+        }
+
+        /// <summary>
+        /// Clone le joueur en mémoire et renvoie la copie
+        /// </summary>
+        /// <returns></returns>
+        public Player clone()
+        {
+            Player ret = new Player(this.name, this._position, this._browser);
+            ret._lastCombo = new Combo(this._lastCombo);
+            ret._effects = new List<Effect>();
+            this._effects.CopyTo(ret._effects.ToArray());
+
+
+            return ret;
+        }*/
     }
 }

@@ -9,9 +9,22 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
     {
         public Antivirus() : base(){}
 
+        public override void onValid()      // Normalement celle-ci est applée automatiquement
+        {
+            base.onValid();
+            Game_classes.Game.getInstance.isThereAntivirus = false;
+        }
+
+        public override void onPlay()
+        {
+            base.onPlay();
+            Game_classes.Game.getInstance.isThereAntivirus = true;
+        }
+
         public override void onDelete()
         {
-            throw new NotImplementedException();
+            base.onDelete();
+            Game_classes.Game.getInstance.isThereAntivirus = false;
         }
     }
 }

@@ -36,5 +36,6 @@ namespace ChtemeleSurfaceApplication
 
         override public abstract void onPlay();
         override public abstract void onValid();
+        override public abstract void onDelete();
     }
 }

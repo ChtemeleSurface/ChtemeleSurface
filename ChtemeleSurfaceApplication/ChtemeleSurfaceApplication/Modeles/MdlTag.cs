@@ -178,6 +178,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             public const string MULTICARD           = "Plusieurs cartes sur la table !";
             public const string PLAYED              = "Carte jouée, veuillez la défausser.";
             public const string GAME_NOT_STARTED    = "La partie n'est pas encore commencée.";
+            public const string CANCELED            = "Cette action a été contrée.";
         }
 
         public static List<int> ghostList = new List<int>
@@ -198,6 +199,7 @@ namespace ChtemeleSurfaceApplication.Modeles
         public string textContent;
         private bool _played = false;
         private bool _multicard = false;
+        private bool _canceled = false;
         private bool _isGhost = false;
 
         //Booléens d'affichage de widgets
@@ -224,6 +226,9 @@ namespace ChtemeleSurfaceApplication.Modeles
         public bool hasImageSelector() { return _hasImageSelector; }
         public bool hasPlayerSelector() { return _hasPlayerSelector; }
         public Carte card { get { return _card; } }
+        public Carte.TypeCarte typeCard { get { return _typeCard; } }
+        public int tag { get { return _tag; } }
+        public bool canceled { get { return _canceled; } set { _canceled = value; } }
 
         // Fonctionnalités                  ======================================================================================================
 
@@ -247,6 +252,8 @@ namespace ChtemeleSurfaceApplication.Modeles
                 _hasPlayerSelector = true;
             if (_tag == (int)TagCorrespondance.ATTRIB_SRC)
                 _hasImageSelector = true;
+
+            _card.onPlay();
         }
 
         public void validerCarte()
@@ -272,6 +279,11 @@ namespace ChtemeleSurfaceApplication.Modeles
             _played = true;
         }
 
+        public void onRemoved(){
+            loseTag();
+            _card.onDelete();
+        }
+
         public void computeMulticard()
         {
             _multicard = nbCards > 1 || nbGhosts > 1;
@@ -282,6 +294,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             if (!_game.getGameStarted()) return InfoMessage.GAME_NOT_STARTED;
             else if (_multicard) return InfoMessage.MULTICARD;
             else if (_played) return InfoMessage.PLAYED;
+            else if (_canceled) return InfoMessage.CANCELED;
 
             else return "";
         }
@@ -290,6 +303,7 @@ namespace ChtemeleSurfaceApplication.Modeles
         {
             return (!_played
                 && !_multicard
+                && !_canceled
                 && _game.getGameStarted());
         }
 

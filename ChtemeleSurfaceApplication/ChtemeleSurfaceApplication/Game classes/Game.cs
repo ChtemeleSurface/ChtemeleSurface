@@ -34,6 +34,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         private int _nbSteps;    // nombre de tours de la partie
         private Player _currentPlayer;     // joueur actif
         private bool gameStarted;
+        private bool _isThereAntivirus = false;     // Y'a-t-il un antivirus sur la table ?
 
         private HtmlPage _page;         // page HTML de la partie
 
@@ -72,6 +73,7 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public Player getCurPlayer() { return _currentPlayer; }
         public int getCurrentStep() { return _step; }
         public int getTotalSteps() { return _nbSteps; }
+        public bool isThereAntivirus { get { return _isThereAntivirus; } set { _isThereAntivirus = value; } }
 
         public Player playerS { get { return _joueurS; } }
         public Player playerO { get { return _joueurO; } }
@@ -207,11 +209,6 @@ namespace ChtemeleSurfaceApplication.Game_classes
         {
             // Fin de partie
             gameStarted = false;
-        }
-
-        private int Random()
-        {
-            throw new NotImplementedException();
         }
     }
 }

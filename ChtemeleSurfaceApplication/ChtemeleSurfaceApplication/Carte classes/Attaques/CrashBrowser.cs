@@ -18,9 +18,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
             target.effects().Add(new Effect_classes.CrashBrowser());
         }
 
-        public override void onDelete()
-        {
-            throw new NotImplementedException();
-        }
+        public override void onPlay() { }
+        public override void onDelete() { }
     }
 }

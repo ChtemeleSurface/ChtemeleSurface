@@ -17,9 +17,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
             // Elfe airien
         }
 
-        public override void onDelete()
-        {
-            throw new NotImplementedException();
-        }
+        public override void onPlay() { }
+        public override void onDelete() { }
     }
 }

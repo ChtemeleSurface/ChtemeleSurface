@@ -19,11 +19,6 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             textcontent = v;
         }
 
-        public override void onPlay()
-        {
-            throw new NotImplementedException();
-        }
-
         public override void onValid()
         {
             if (HtmlElement._currentElement == null) return;
@@ -41,9 +36,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes
             //SurfaceWindow1.getInstance.PageRendu.update();
         }
 
-        public override void onDelete()
-        {
-            throw new NotImplementedException();
-        }
+        public override void onPlay() { }
+        public override void onDelete() { }
     }
 }
