@@ -8,10 +8,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
     public class ManInTheMiddle : AttaqueCarte
     {
 
-        public ManInTheMiddle()
-            : base()
-        { 
-        }
+        public ManInTheMiddle() : base() { }
 
         public override void onValid()
         {

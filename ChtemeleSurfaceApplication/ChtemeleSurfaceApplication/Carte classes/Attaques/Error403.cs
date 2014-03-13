@@ -8,10 +8,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
     public class Error403 : AttaqueCarte
     {
 
-        public  Error403()
-            : base()
-        { 
-        }
+        public Error403() : base() { }
 
         public override void onValid()
         {

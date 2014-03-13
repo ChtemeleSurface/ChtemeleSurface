@@ -7,11 +7,8 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
 {
     public class Error303 : AttaqueCarte
     {
-      
-        public  Error303()
-            : base()
-        { 
-        }
+
+        public Error303() : base() { }
 
         public override void onValid()
         {

@@ -79,6 +79,20 @@ namespace ChtemeleSurfaceApplication
 
         }
 
+        // Accesseurs & Mutateurs           ======================================================================================================
+
+        public ZoneJoueur getCurrentPlayerZone()
+        {
+            switch (_mdl.getCurrentPlayer().position())
+            {
+                case Player.SUD: return SurfaceWindow1.getInstance.ZoneJoueurS;
+                case Player.OUEST: return SurfaceWindow1.getInstance.ZoneJoueurO;
+                case Player.NORD: return SurfaceWindow1.getInstance.ZoneJoueurN;
+                case Player.EST: return SurfaceWindow1.getInstance.ZoneJoueurE;
+                default: return null;
+            }
+        }
+
         // Evénements                  ======================================================================================================
 
         /// <summary>

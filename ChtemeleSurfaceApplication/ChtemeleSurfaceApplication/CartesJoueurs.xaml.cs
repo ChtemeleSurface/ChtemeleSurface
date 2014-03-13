@@ -35,6 +35,7 @@ namespace ChtemeleSurfaceApplication
         // Variables membres                ======================================================================================================
 
         private MdlCarteJoueur _mdl;
+        public MdlCarteJoueur getMdl { get { return _mdl; } }
         public int position;
         private static int nbCarteJoueurActiv;
 

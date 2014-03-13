@@ -40,8 +40,8 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public  string name;                //Nom du joueur
         public  int score;                  //score total accumulé
         private Combo _lastCombo;           //Dernière combinaison effectuée
-        public  int handSize;               //taille max de la main du joueur;
-        public  int nbCards;                //nombre de cartes en main.
+        private  int _handSize;               //taille max de la main du joueur;
+        private  int _nbCards;                //nombre de cartes en main.
         private List<Effect> _effects;      //Effets actifs sur le joueur
         private int _position;              //position du joueur (voir enumeration)
         private int _browser;               //navigateur
@@ -56,8 +56,8 @@ namespace ChtemeleSurfaceApplication.Game_classes
             name = n;
             score = 0;
             _lastCombo = new Combo();
-            handSize = Game.DEFAULT_HAND_SIZE;
-            nbCards = handSize;
+            _handSize = Game.DEFAULT_HAND_SIZE;
+            _nbCards = _handSize;
             _effects = new List<Effect>();
             _position = p;
             _browser = b;
@@ -72,8 +72,8 @@ namespace ChtemeleSurfaceApplication.Game_classes
         public List<Effect> effects() { return _effects; }
         public int position() { return _position; }
         public int browser { get { return _browser; } }
-
-
+        public int handSize { get { return _handSize; } }
+        public int nbCards { get { return _nbCards; } set { _nbCards = value; } }
 
         // Fonctionnalités                  ======================================================================================================
 
@@ -96,35 +96,19 @@ namespace ChtemeleSurfaceApplication.Game_classes
             score += scoreAdd;
         }
 
-        /*/// <summary>
-        /// Sauvegarde l'état du joueur
-        /// </summary>
-        public void save()
+        public void applyEffects()
         {
-            _save = this.clone();
+            // aucun effet n'a de sens sur le jeu. Cette focntion se contente de vider la liste des effets.
+            _effects.Clear();
         }
 
-        /// <summary>
-        /// Restaure le joueur tel qu'il a été sauvegardé.
-        /// </summary>
-        public void restore()
+        public bool isFrozen()
         {
-
+            foreach (Effect effect in _effects)
+            {
+                if (effect is Effect_classes.Freeze) return true;
+            }
+            return false;
         }
-
-        /// <summary>
-        /// Clone le joueur en mémoire et renvoie la copie
-        /// </summary>
-        /// <returns></returns>
-        public Player clone()
-        {
-            Player ret = new Player(this.name, this._position, this._browser);
-            ret._lastCombo = new Combo(this._lastCombo);
-            ret._effects = new List<Effect>();
-            this._effects.CopyTo(ret._effects.ToArray());
-
-
-            return ret;
-        }*/
     }
 }

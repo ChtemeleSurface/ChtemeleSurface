@@ -7,14 +7,11 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Attaques
 {
     public class Error404 : AttaqueCarte
     {
-        public  Error404()
-            : base()
-        { 
-        }
+        public Error404() : base() { }
 
         public override void onValid()
         {
-            // Elfe airien
+            target.addPoint(-target.lastCombo().score);
         }
 
         public override void onPlay() { }

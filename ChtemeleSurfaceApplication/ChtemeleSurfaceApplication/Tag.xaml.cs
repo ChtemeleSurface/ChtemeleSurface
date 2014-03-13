@@ -62,15 +62,21 @@ namespace ChtemeleSurfaceApplication
             if (_mdl.hasImageSelector()) _mdl.textContent = ImageSelector.Text;
 
             //On valide la carte
-            _mdl.validerCarte();
+            bool success = _mdl.validerCarte();
+
             updateAll();
 
             //Update du jeu
             SurfaceWindow1.getInstance.updateCodeView();
             SurfaceWindow1.getInstance.updateZonesJoueur();
 
+            showIndicators();
+
             //Bruitage
-            Sounder.playCardSound(_mdl.card);
+            if (success)
+                Sounder.playCardSound(_mdl.card);
+            else
+                Sounder.playSound(Sounder.FX_ERROR);
         }
 
         private void validerNord(object sender, RoutedEventArgs e) { if (_mdl.hasPlayerSelector()) _mdl.setTargetPlayer(Game_classes.Player.NORD); valider(sender, e); }
@@ -145,6 +151,38 @@ namespace ChtemeleSurfaceApplication
                     mdl.Value.canceled = true;
                 }
             }
+        }
+
+        private void showIndicators(){
+            string currentPlayerIndicator = "";
+            string targetPlayerIndicator = "";
+
+            switch (_mdl.tag)
+            {
+                case (int)MdlTag.TagCorrespondance.ANTIVIRUS: break;
+                case (int)MdlTag.TagCorrespondance.BROWSER_UPDATE: break;
+                case (int)MdlTag.TagCorrespondance.CAFE:
+                    currentPlayerIndicator = IndicatorMessages.CAFE_EFFECT; break;
+                case (int)MdlTag.TagCorrespondance.CODE_INSPECTOR:
+                    currentPlayerIndicator = IndicatorMessages.CODE_INSPECTOR_EFFECT; break;
+                case (int)MdlTag.TagCorrespondance.CTRL_F5:
+                    currentPlayerIndicator = IndicatorMessages.CTRL_F5_EFFECT; break;
+                case (int)MdlTag.TagCorrespondance.ERROR_303:
+                    currentPlayerIndicator = string.Format(IndicatorMessages.ERROR303_EFFECT, _mdl.targetPlayer.name); break;
+                case (int)MdlTag.TagCorrespondance.ERROR_403:
+                    currentPlayerIndicator = string.Format(IndicatorMessages.ERROR403_EFFECT, _mdl.targetPlayer.name); break;
+                case (int)MdlTag.TagCorrespondance.ERROR_404:
+                    targetPlayerIndicator = string.Format(IndicatorMessages.ERROR404_EFFECT, _mdl.targetPlayer.lastCombo().score.ToString()); break;
+                case (int)MdlTag.TagCorrespondance.MAN_IN_THE_MIDDLE:
+                    currentPlayerIndicator = string.Format(IndicatorMessages.MAN_IN_THE_MIDDLE_EFFECT, _mdl.targetPlayer.name); break;
+
+                default: break;
+            }
+
+            if (currentPlayerIndicator.Length != 0)
+                SurfaceWindow1.getInstance.indicatorCurrentPlayer(currentPlayerIndicator);
+            if (targetPlayerIndicator.Length != 0)
+                SurfaceWindow1.getInstance.indicatorAt(targetPlayerIndicator, _mdl.targetPlayer);
         }
 
         // Update                           ======================================================================================================

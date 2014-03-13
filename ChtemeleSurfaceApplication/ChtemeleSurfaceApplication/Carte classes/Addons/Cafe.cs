@@ -11,7 +11,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes.Addons
 
         public override void onValid()
         {
-            throw new NotImplementedException();
+            // Ne fait rien
         }
 
         public override void onPlay() { }

@@ -256,9 +256,9 @@ namespace ChtemeleSurfaceApplication.Modeles
             _card.onPlay();
         }
 
-        public void validerCarte()
+        public bool validerCarte()
         {
-            if (!isPlayable()) return;
+            if (!isPlayable()) return false;
 
             //On configure la carte
             if (_typeCard == Carte.TypeCarte.ADDON_CARD || _typeCard == Carte.TypeCarte.ATTACK_CARD)
@@ -277,6 +277,8 @@ namespace ChtemeleSurfaceApplication.Modeles
 
             _card.onValid();
             _played = true;
+
+            return true;
         }
 
         public void onRemoved(){

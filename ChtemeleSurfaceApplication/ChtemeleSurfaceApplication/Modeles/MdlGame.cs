@@ -127,13 +127,21 @@ namespace ChtemeleSurfaceApplication.Modeles
         /// </summary>
         public void nextSubStep()
         {
+            bool toPass = false;
             _game.nextPlayer();
+            SurfaceWindow1.getInstance.getCurrentPlayerZone().showEffectsIndicator();
+            if (_game.getCurPlayer().isFrozen()) toPass = true;
+            _game.getCurPlayer().applyEffects();
+
+            if (toPass) nextSubStep();
         }
 
         public Player getCurrentPlayer()
         {
             return _game.getCurPlayer();
         }
+
+        
 
 
 
