@@ -180,11 +180,17 @@ namespace ChtemeleSurfaceApplication.Modeles
             public const string GAME_NOT_STARTED    = "La partie n'est pas encore commencée.";
         }
 
+        public static List<int> ghostList = new List<int>
+        {
+            (int)TagCorrespondance.ANTIVIRUS
+        };
+
         private static int nbCards = 0;
+        private static int nbGhosts = 0;    // Les cartes fantômes sont traitées à part : il peut y avoir une carte fantôme sur la table même s'il y a déjà une carte normale.
 
         // Variables membres                ======================================================================================================
 
-        private int _tag;
+        private int _tag;                   // Numéro du Tag
         private Carte _card;
         private Carte.TypeCarte _typeCard;
         //private Player _activePlayer;     // On s'en sert pas, normalement, mais je le laisse au cas où j'me sois gourré.
@@ -192,8 +198,9 @@ namespace ChtemeleSurfaceApplication.Modeles
         public string textContent;
         private bool _played = false;
         private bool _multicard = false;
+        private bool _isGhost = false;
 
-        //Booldées d'affichage de widgets
+        //Booléens d'affichage de widgets
         private bool _hasTextEdit = false;
         private bool _hasImageSelector = false;
         private bool _hasPlayerSelector = false;
@@ -204,6 +211,8 @@ namespace ChtemeleSurfaceApplication.Modeles
             : base()
         {
             _tag = tag;
+            _isGhost = ghostList.Contains(tag);
+
             newTag();
             computeMulticard();
         }
@@ -215,6 +224,7 @@ namespace ChtemeleSurfaceApplication.Modeles
         public bool hasImageSelector() { return _hasImageSelector; }
         public bool hasPlayerSelector() { return _hasPlayerSelector; }
         public Carte card { get { return _card; } }
+
         // Fonctionnalités                  ======================================================================================================
 
         // Nouveau tag détecté et validé (on est en droit de le poser et il est seul sur la table)
@@ -264,7 +274,7 @@ namespace ChtemeleSurfaceApplication.Modeles
 
         public void computeMulticard()
         {
-            _multicard = nbCards > 1;
+            _multicard = nbCards > 1 || nbGhosts > 1;
         }
 
         public string getInfoMessage()
@@ -302,8 +312,15 @@ namespace ChtemeleSurfaceApplication.Modeles
             }
         }
 
-        public void newTag() { nbCards++; }
-        public void loseTag() { nbCards--; }
+        public void newTag() {
+            if (_isGhost) nbGhosts++;
+            else nbCards++;
+        }
+
+        public void loseTag() {
+            if (_isGhost) nbGhosts--;
+            else nbCards--;
+        }
 
     }
 }
