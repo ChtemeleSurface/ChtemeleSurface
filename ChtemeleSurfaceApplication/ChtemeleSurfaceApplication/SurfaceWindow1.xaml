@@ -32,54 +32,54 @@
         <Grid Name="playGrid" Visibility="Hidden">
             <s:TagVisualizer Name="Visualizer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <s:TagVisualizer.Definitions>
-                    <s:TagVisualizationDefinition Value="0x6D" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x67" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x53" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x55" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x56" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x6D" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x67" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x53" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x55" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x56" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
 
-                    <s:TagVisualizationDefinition Value="0x57" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x59" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x5B" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x51" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x5E" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x5F" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x57" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x59" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x5B" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x51" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x5E" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x5F" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
 
-                    <s:TagVisualizationDefinition Value="0x65" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x69" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x6A" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x6B" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x6F" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x73" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x75" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x76" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x77" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x79" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x7A" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x65" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x69" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x6A" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x6B" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x6F" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x73" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x75" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x76" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x77" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x79" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x7A" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
 
-                    <s:TagVisualizationDefinition Value="0x7B" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x7D" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x7E" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x7F" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x9B" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x9D" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x9E" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0x9F" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xB7" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xB9" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xBB" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-            
-                    <s:TagVisualizationDefinition Value="0xBD" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xBE" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xBF" TagRemovedBehavior="Fade" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0x7B" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x7D" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x7E" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x7F" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x9B" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x9D" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x9E" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0x9F" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xB7" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xB9" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xBB" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
 
-                    <s:TagVisualizationDefinition Value="0xD7" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xD9" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xDB" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xDD" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xDF" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xE5" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
-                    <s:TagVisualizationDefinition Value="0xE6" TagRemovedBehavior="Disappear" Source="Tag.xaml"/>
+                    <s:TagVisualizationDefinition Value="0xBD" TagRemovedBehavior="Fade" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xBE" TagRemovedBehavior="Fade" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xBF" TagRemovedBehavior="Fade" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+
+                    <s:TagVisualizationDefinition Value="0xD7" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xD9" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xDB" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xDD" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xDF" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xE5" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
+                    <s:TagVisualizationDefinition Value="0xE6" TagRemovedBehavior="Disappear" Source="Tag.xaml" OrientationOffsetFromTag="270" />
                 </s:TagVisualizer.Definitions>
 
                 <s:ScatterView Name="MainScatterView" SizeChanged="MainScatterView_SizeChanged">

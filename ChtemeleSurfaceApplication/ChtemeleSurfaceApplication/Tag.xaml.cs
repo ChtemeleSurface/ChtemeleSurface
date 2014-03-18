@@ -48,7 +48,6 @@ namespace ChtemeleSurfaceApplication
 
             ImageSelector.Visibility = System.Windows.Visibility.Hidden;
             ImageSelector.IsEnabled = false;
-
         }
 
 
