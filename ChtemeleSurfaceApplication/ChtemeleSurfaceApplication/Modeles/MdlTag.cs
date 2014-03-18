@@ -246,7 +246,7 @@ namespace ChtemeleSurfaceApplication.Modeles
             else if (_card is AttaqueCarte) _typeCard = Carte.TypeCarte.ATTACK_CARD;
 
             //On détermine le layout à afficher
-            if ((_typeCard == Carte.TypeCarte.HTML_TAG_CARD && ((HTMLTagCarte)_card).getTagtype() == HTML_classes.HtmlTag.HTMLTagType.OPENTAG) || _typeCard == Carte.TypeCarte.HTML_ATTRIB_CARD)
+            if ((_typeCard == Carte.TypeCarte.HTML_TAG_CARD && ((HTMLTagCarte)_card).getTagtype() == HTML_classes.HtmlTag.HTMLTagType.OPENTAG) && !HTML_classes.HtmlElement.singleTags.Exists(v => v == ((HTMLTagCarte)_card).getTag()) || _typeCard == Carte.TypeCarte.HTML_ATTRIB_CARD)
                 _hasTextEdit = true;
             if (_typeCard == Carte.TypeCarte.ATTACK_CARD)
                 _hasPlayerSelector = true;

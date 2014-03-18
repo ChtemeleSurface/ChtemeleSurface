@@ -10,6 +10,9 @@
     <Grid>
         <Grid Name="initGrid" Visibility="Visible">
             <s:ScatterView>
+                <s:ScatterView.Background>
+                    <ImageBrush ImageSource="resources/fond.jpg"/>
+                </s:ScatterView.Background>
                 <s:ScatterViewItem Width="400" Height="250">
                     <Grid>
                         <Grid.ColumnDefinitions>

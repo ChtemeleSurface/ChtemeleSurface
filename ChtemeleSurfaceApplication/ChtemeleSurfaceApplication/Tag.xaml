@@ -20,9 +20,6 @@
         
         <s:ElementMenu Name="MenuDefault" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
             <s:ElementMenuItem Name="MD_Validate"  Header="Valider" Click="valider"></s:ElementMenuItem>
-            <s:ElementMenuItem Visibility="Collapsed" IsEnabled="False"></s:ElementMenuItem> <!-- Ces deux items ne sont là que pour positionner correctement les autres dans le menu -->
-            <s:ElementMenuItem Visibility="Collapsed" IsEnabled="False"></s:ElementMenuItem>
-            <s:ElementMenuItem Name="MD_Doc_Display" Header="Afficher la Doc"></s:ElementMenuItem>
         </s:ElementMenu>
         
         <s:ElementMenu Name="MenuAttaque" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">

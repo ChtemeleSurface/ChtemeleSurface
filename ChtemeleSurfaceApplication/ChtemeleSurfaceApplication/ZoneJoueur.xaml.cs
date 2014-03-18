@@ -44,7 +44,7 @@ namespace ChtemeleSurfaceApplication
             ButtonNextPlayer.IsEnabled = false;
 
             timerIndicator = new Timer();
-            timerIndicator.Interval = 3000;
+            timerIndicator.Interval = 6000;
             timerIndicator.Tick += new EventHandler(OnTimedEvent_IndicatorDissappear);
 
         }
@@ -104,7 +104,7 @@ namespace ChtemeleSurfaceApplication
             {
                 ButtonNextPlayer.IsEnabled = true;
                 ButtonNextPlayer.Visibility = System.Windows.Visibility.Visible;
-                Background = new SolidColorBrush(Colors.Ivory);
+                Background = new SolidColorBrush(Colors.Transparent);
             }
             else
             {

@@ -21,6 +21,7 @@ namespace ChtemeleSurfaceApplication.Carte_classes
         }
 
         public HtmlTag.HTMLTagType getTagtype() { return _tagtype; }
+        public string getTag() { return _tag; }
 
         public override void onValid()
         {

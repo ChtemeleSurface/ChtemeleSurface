@@ -205,11 +205,11 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\fond.jpg" />
     <Content Include="Resources\lion.wav" />
     <Content Include="Resources\maracas.wav" />
     <Content Include="Resources\ouverture.wav" />
     <Resource Include="Resources\icon.jpg" />
-    <Resource Include="Resources\fond.jpg" />
     <Resource Include="Resources\croix.bmp" />
     <Content Include="Resources\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
