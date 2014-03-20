@@ -111,6 +111,7 @@ namespace ChtemeleSurfaceApplication
                 ButtonNextPlayer.IsEnabled = false;
                 ButtonNextPlayer.Visibility = System.Windows.Visibility.Collapsed;
                 Background = new SolidColorBrush(Colors.RosyBrown);
+                SurfaceWindow1.getInstance.CenterView.Visibility = System.Windows.Visibility.Visible;
             }
             CarteJoueur.update();
         }

@@ -30,7 +30,8 @@ namespace ChtemeleSurfaceApplication.HTML_classes
 
         public HtmlPage()
         {
-            _mainTag = new HtmlElement("html");
+            //Page exemple
+            /*_mainTag = new HtmlElement("html");
             _mainTag.closeTag();
 
             _doctype = defaultDoctype;
@@ -96,8 +97,33 @@ namespace ChtemeleSurfaceApplication.HTML_classes
                 _baliseP2.addContent(new HtmlText("Je veux juste faire une longue phrase qui servira à tester le retour à la ligne non-automatique du TextBox."));
                 _baliseP2.closeTag();
                 _baliseDIV2.addContent(_baliseP2);
+            */
 
+            _mainTag = new HtmlElement("html");
+            _mainTag.closeTag();
 
+            _doctype = defaultDoctype;
+
+            //_title = "Bonjour, bienvenue, Hello world ! C'est tout !";
+            _headTag = new HtmlElement("head");
+            _headTag.closeTag();
+            _headTag.addContent(titleTag());
+            _mainTag.addContent(_headTag);
+
+            _bodyTag = new HtmlElement("body");
+            //_bodyTag.attributes.Add(new HtmlTagAttribute("id", "Tamère"));
+            _bodyTag.closeTag();
+            _mainTag.addContent(_bodyTag);
+
+            _cssTag = new HtmlElement("link");
+            _cssTag.attributes.Add(new HtmlTagAttribute("type", "text/css"));
+            _cssTag.attributes.Add(new HtmlTagAttribute("rel", "stylesheet"));
+            _cssTag.attributes.Add(new HtmlTagAttribute("href", cssFile));
+            _headTag.addContent(_cssTag);
+
+            _encodingTag = new HtmlElement("meta");
+            _encodingTag.attributes.Add(new HtmlTagAttribute("charset", "UTF-8"));
+            _headTag.addContent(_encodingTag);
         }
 
         // Accesseurs / Mutateurs           ======================================================================================================

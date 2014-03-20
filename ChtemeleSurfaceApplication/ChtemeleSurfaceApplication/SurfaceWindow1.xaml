@@ -124,7 +124,8 @@
                                    Width="100"
                                    Height="100"
                                    Background="AntiqueWhite"
-                                   Focusable="False">
+                                   Focusable="False"
+                                   Visibility="Hidden">
                     <s:ScatterView Name="ScatterCenterView">
                         <custom:PageCode x:Name="PageCode" CanScale="False" CanMove="False" CanRotate="False" Orientation="0"></custom:PageCode>
                         <s:ScatterViewItem x:Name="ZonePioche" CanScale="False" CanMove="False" CanRotate="False" Orientation="0">

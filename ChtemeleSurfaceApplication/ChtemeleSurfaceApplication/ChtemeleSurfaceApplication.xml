@@ -6,12 +6,12 @@ instructions.
 -->
 <ss:ApplicationInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ss="http://schemas.microsoft.com/Surface/2007/ApplicationMetadata">
   <Application>
-    <Title>ChtemeleSurfaceApplication</Title>
-    <Description>ChtemeleSurfaceApplication</Description>
+    <Title>Chtemele Surface Edition</Title>
+    <Description>Adaptation du jeu de carte cHTeMeLe sur table interactive !</Description>
     <ExecutableFile>ChtemeleSurfaceApplication.exe</ExecutableFile>
     <Arguments>
     </Arguments>
-    <IconImageFile>Resources\icon.png</IconImageFile>
+    <IconImageFile>Resources\iconLauncher.png</IconImageFile>
     <Tags>
       <!--
       If your application uses tagged objects, please uncomment this section to register the tags with the Shell. 
