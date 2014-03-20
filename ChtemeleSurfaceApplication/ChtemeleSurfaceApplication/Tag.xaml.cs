@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using Microsoft.Surface.Presentation.Controls;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows.Controls;
 
 using ChtemeleSurfaceApplication.Carte_classes.Addons;
 using ChtemeleSurfaceApplication.Carte_classes.Attaques;
@@ -58,7 +60,7 @@ namespace ChtemeleSurfaceApplication
         {
             //On saisit les informatiosn entrées dans le modèle
             if (_mdl.hasTextEdit()) _mdl.textContent = TextSelector.Text;
-            if (_mdl.hasImageSelector()) _mdl.textContent = ImageSelector.Text;
+            //if (_mdl.hasImageSelector()) _mdl.textContent = ImageSelector.Text;
 
             //On valide la carte
             bool success = _mdl.validerCarte();
@@ -265,6 +267,23 @@ namespace ChtemeleSurfaceApplication
                     {
                         view.Value.ImageSelector.Visibility = (view.Value._mdl.isPlayable()) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
                         view.Value.ImageSelector.IsEnabled = view.Value._mdl.isPlayable();
+                        view.Value.TextSelector.Visibility = System.Windows.Visibility.Hidden;
+                        
+                        string imagesPath = System.IO.Directory.GetCurrentDirectory();
+                        imagesPath = imagesPath + "\\Resources\\Image\\";
+
+                        try
+                        {
+                            string[] files = System.IO.Directory.GetFiles(imagesPath, "*.jpg");
+                            ObservableCollection<string> items = new ObservableCollection<string>();
+                            Collection<string> names = new Collection<string>();
+                            foreach (string file in files)
+                            {
+                                items.Add(file);
+                            }
+                            view.Value.ImageSelector.ItemsSource = items;
+                        }
+                        catch (System.IO.DirectoryNotFoundException) { }
                     }
                     view.Value.layoutMenu();
                     
@@ -283,11 +302,28 @@ namespace ChtemeleSurfaceApplication
                     view.Value.ImageSelector.Visibility = System.Windows.Visibility.Hidden;
                     view.Value.ImageSelector.IsEnabled = false;
                 }
-
-
-                
             }
+        }
+
+        private void img_Click(object sender, RoutedEventArgs e)
+        {
+            SurfaceButton btn = e.Source as SurfaceButton;
+            string imagesPath = System.IO.Directory.GetCurrentDirectory();
             
+            //On recupère le nom de l'image
+            string imgName = (btn.Content as Image).Source.ToString();
+            bool find = false;
+            int length = 0;
+            for (int i = imgName.Length-1; i > 0 && find != true; i--)
+            {
+                if (imgName[i] == '/')
+                {
+                    find = true;
+                    length = i+1;
+                }
+            }
+            imgName = imgName.Substring(length);
+            TextSelector.Text = "Resources/Documentation/img/" + imgName;
         }
     }
 }

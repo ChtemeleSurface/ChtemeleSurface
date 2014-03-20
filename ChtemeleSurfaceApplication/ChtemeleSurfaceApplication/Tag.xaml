@@ -4,25 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:s="http://schemas.microsoft.com/surface/2008"
+             xmlns:custom="clr-namespace:ChtemeleSurfaceApplication"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="300"
              GotTag="gotTag"
-             LostTag="lostTag">
+             LostTag="lostTag"
+             PhysicalCenterOffsetFromTag="0, 2.25">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="150" />
-            <RowDefinition Height="100" />
-			
-			</Grid.RowDefinitions>	
+            <RowDefinition Height="250" />
+		</Grid.RowDefinitions>	
 
-        <s:SurfaceTextBox Name="Message" Grid.Row="0" Visibility="Hidden" Focusable="False"></s:SurfaceTextBox>
-        
-        <s:ElementMenu Name="MenuDefault" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+        <s:SurfaceTextBox Name="Message" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Hidden" Focusable="False"></s:SurfaceTextBox>
+
+        <s:ElementMenu Name="MenuDefault"  ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1">
             <s:ElementMenuItem Name="MD_Validate"  Header="Valider" Click="valider"></s:ElementMenuItem>
         </s:ElementMenu>
         
-        <s:ElementMenu Name="MenuAttaque" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+        <s:ElementMenu Name="MenuAttaque" ActivationMode="AlwaysActive" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1">
                 
             <!--<s:ElementMenuItem Name="MA_PlayerSud" Header="PlayerS" Click="validerSud"></s:ElementMenuItem>  -->
             <s:ElementMenuItem Name="MA_PlayerNord" Header="PlayerN" Click="validerNord"></s:ElementMenuItem>
@@ -30,11 +35,19 @@
             <s:ElementMenuItem Name="MA_PlayerEst" Header="PlayerE" Click="validerEst"></s:ElementMenuItem>
             <s:ElementMenuItem Name="MA_Doc_Display" Header="Afficher la Doc"></s:ElementMenuItem>
         </s:ElementMenu>
-        
-        <Ellipse Width="120" Height="120" Fill="DarkRed" Grid.Row="1"></Ellipse>
 
-        <s:SurfaceTextBox Name="TextSelector" Grid.Row="2" Background="Black"></s:SurfaceTextBox>
-        <s:SurfaceTextBox Name="ImageSelector" Grid.Row="2" Background="MidnightBlue"></s:SurfaceTextBox>
+        <Ellipse Width="120" Height="120" Fill="DarkRed" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></Ellipse>
+
+        <s:SurfaceTextBox Name="TextSelector" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="Black" Width="250" Height="100" VerticalAlignment="Top"></s:SurfaceTextBox>
+        <s:LibraryBar Name="ImageSelector" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="MidnightBlue" Rows="1" Width="150" Height="150" Focusable="False" VerticalAlignment="Top">
+                <s:LibraryBar.ItemTemplate>
+                    <DataTemplate>
+                    <s:SurfaceButton Click="img_Click" Height="100">
+                        <Image Source="{Binding}" Height="100"/>
+                    </s:SurfaceButton>
+                </DataTemplate>
+                </s:LibraryBar.ItemTemplate>
+        </s:LibraryBar>
     </Grid>    
 </s:TagVisualization>
 
