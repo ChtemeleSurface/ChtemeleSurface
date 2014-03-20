@@ -96,15 +96,15 @@ namespace ChtemeleSurfaceApplication.HTML_classes
                 _baliseP2.addContent(_baliseBR2);
                 _baliseP2.addContent(new HtmlText("Je veux juste faire une longue phrase qui servira à tester le retour à la ligne non-automatique du TextBox."));
                 _baliseP2.closeTag();
-                _baliseDIV2.addContent(_baliseP2);
-            */
+                _baliseDIV2.addContent(_baliseP2);*/
+            
 
             _mainTag = new HtmlElement("html");
             _mainTag.closeTag();
 
             _doctype = defaultDoctype;
 
-            //_title = "Bonjour, bienvenue, Hello world ! C'est tout !";
+            _title = "Vous jouez actuellement à cHTeMeLe !";
             _headTag = new HtmlElement("head");
             _headTag.closeTag();
             _headTag.addContent(titleTag());
