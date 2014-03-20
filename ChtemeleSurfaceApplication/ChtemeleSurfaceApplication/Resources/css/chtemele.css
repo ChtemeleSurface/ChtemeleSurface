@@ -4,34 +4,43 @@ Design ressemblant au renud natif du jeu Chtemele
 
 body
 {
-    background : #efefef;
-    border : solid 20px #aaa;
-	border-image:url(img/border.png) 30 30 round;
+    background : #ddd;
+    text-shadow : rgba(255,255,255,0.3) 0px 1px 0px;
     color : #000;
+    margin : 0;
+    font-family : "Georgia", serif;
 }
 
 h1
 {
-    font-family:"Comic sans ms";
+    padding : 40px 10px 10px 10px;
+    background : #800;
+    color : #ddd;
+    text-shadow : rgba(0,0,0,0.4)  0px 1px 0px;
+    margin-top : 0;
 }
 
-h2
-{
-	font-family:"Comic sans ms";
+h2{
+    border-bottom : solid 1px #777;
 }
 
-strong
+h2, h3
 {
-	font-family:"Comic sans ms";
-}
-
-p
-{
-	font-family:"Comic sans ms";
+    margin-left : 20px;
 }
 
 img
 { 
-    height : 100%;
-    width : 100%;
+    max-height : 100%;
+    max-width : 100%;
+}
+
+p
+{
+    text-indent : 32px;
+    margin-left : 6px; margin-right : 6px;
+}
+
+a{
+    color : #c00;
 }
