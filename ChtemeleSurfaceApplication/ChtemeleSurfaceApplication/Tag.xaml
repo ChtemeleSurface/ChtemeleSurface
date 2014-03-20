@@ -33,7 +33,6 @@
             <s:ElementMenuItem Name="MA_PlayerNord" Header="PlayerN" Click="validerNord"></s:ElementMenuItem>
             <s:ElementMenuItem Name="MA_PlayerOuest" Header="PlayerO" Click="validerOuest"></s:ElementMenuItem>
             <s:ElementMenuItem Name="MA_PlayerEst" Header="PlayerE" Click="validerEst"></s:ElementMenuItem>
-            <s:ElementMenuItem Name="MA_Doc_Display" Header="Afficher la Doc"></s:ElementMenuItem>
         </s:ElementMenu>
 
         <Ellipse Width="120" Height="120" Fill="DarkRed" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></Ellipse>
