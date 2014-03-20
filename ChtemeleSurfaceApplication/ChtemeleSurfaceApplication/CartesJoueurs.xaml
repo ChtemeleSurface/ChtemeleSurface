@@ -27,16 +27,16 @@
             </Grid.RowDefinitions>
 
             <TextBlock Name="PseudoCarte" Grid.Column="0" Grid.Row="0" FontSize="12" Grid.ColumnSpan="4" Padding="10,10,0,0" FontWeight="Bold" ></TextBlock>
-            <s:SurfaceButton Name="EffectBrowserUpdate" Grid.Column="0" Grid.Row="1" Padding="0,0,0,0" Click="EffectBrowserUpdate_Click">
-                <Image  Source="Resources/croix.bmp"  ></Image>
+            <s:SurfaceButton Name="EffectBrowserUpdate" Grid.Column="0" Grid.Row="1" Padding="0,0,0,0" Click="EffectBrowserUpdate_Click" Background="Transparent">
+                <Image  Source="Resources/update.png"  ></Image>
             </s:SurfaceButton>
             
-            <s:SurfaceButton Name="EffectCrashBrowser" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Click="EffectCrashBrowser_Click">
-                <Image  Source="Resources/croix.bmp"  ></Image>
+            <s:SurfaceButton Name="EffectCrashBrowser" Grid.Column="1" Grid.Row="1" Padding="0,0,0,0" Click="EffectCrashBrowser_Click" Background="Transparent">
+                <Image  Source="Resources/crash.png"  ></Image>
             </s:SurfaceButton>
-            
-            <s:SurfaceButton Name="EffectFreeze" Grid.Column="2" Grid.Row="1" Padding="0,0,0,0" Click="EffectFreeze_Click">
-                <Image  Source="Resources/croix.bmp"  ></Image>
+
+            <s:SurfaceButton Name="EffectFreeze" Grid.Column="2" Grid.Row="1" Padding="0,0,0,0" Click="EffectFreeze_Click" Background="Transparent">
+                <Image  Source="Resources/freeze.png"  ></Image>
             </s:SurfaceButton>
 
             <TextBlock Grid.Column="0" Grid.Row="2" FontSize="12" Grid.ColumnSpan="4" Padding="5,15,0,0" FontStyle="Italic" >Dernière combinaison :</TextBlock>

@@ -205,8 +205,11 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\update.png" />
     <Resource Include="Resources\fond.jpg" />
     <Resource Include="Resources\iconLauncher.png" />
+    <Resource Include="Resources\crash.png" />
+    <Resource Include="Resources\freeze.png" />
     <Content Include="Resources\lion.wav" />
     <Content Include="Resources\maracas.wav" />
     <Content Include="Resources\ouverture.wav" />
