@@ -1,0 +1,40 @@
+/*      Chtemele.css
+Design ressemblant au renud natif du jeu Chtemele
+*/
+
+body
+{
+    background : #ffffff;
+    border : solid 1px #aaa;
+    color : #eeeeee;
+}
+
+h1
+{
+	color : #aaaaaa;
+    font-family:"calibri";
+}
+
+h2
+{
+	color : #aaaaaa;
+	font-family:"calibri";
+}
+
+strong
+{
+	color : #aaaaaa;
+	font-family:"calibri";
+}
+
+p
+{
+	color : #aaaaaa;
+	font-family:"calibri";
+}
+
+img
+{ 
+    height : 100%;
+    width : 100%;
+}

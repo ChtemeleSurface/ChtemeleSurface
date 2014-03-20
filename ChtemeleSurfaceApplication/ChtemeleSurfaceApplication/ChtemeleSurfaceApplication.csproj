@@ -206,7 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\fond.jpg" />
-    <Resource Include="Resources\iconLauncher.jpg" />
+    <Resource Include="Resources\iconLauncher.png" />
     <Content Include="Resources\lion.wav" />
     <Content Include="Resources\maracas.wav" />
     <Content Include="Resources\ouverture.wav" />
